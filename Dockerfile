@@ -10,4 +10,4 @@ RUN npm install
 EXPOSE 8888
 EXPOSE 43594
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
