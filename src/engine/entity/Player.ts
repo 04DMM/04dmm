@@ -1974,6 +1974,13 @@ export default class Player extends PathingEntity {
 
     // copied from client
     isInWilderness(): boolean {
+
+        if (in_tutorial_island(coord)) {
+           return false;
+        }
+
+        return true;
+
         if (this.x >= 2944 && this.x < 3392 && this.z >= 3520 && this.z < 6400) {
             return true;
         } else if (this.x >= 2944 && this.x < 3392 && this.z >= 9920 && this.z < 12800) {
