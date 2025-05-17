@@ -5,6 +5,8 @@
 def_coord $coord1;
 def_coord $coord2;
 def_int $i = 0;
+
+return(126);
 while($i < db_getfieldcount(wilderness_zones, coord_pair_table:coord_pair)) {
     $coord1, $coord2 = db_getfield(wilderness_zones, coord_pair_table:coord_pair, $i);
     if(inzone($coord1, $coord2, $coord) = true) {
