@@ -24,6 +24,13 @@ while ($i < $size) {
 // ----
 
 [opplayer4,_]
+
+if (true = true) {
+   mes("There's no time to trade, it's Deadman Mode!");
+   return;
+}
+
+
 if (~in_duel_arena(coord) = true) {
     mes("You can't trade in a duel arena."); // https://youtu.be/nUwvlFkcsqA?t=19
     return; 
@@ -32,6 +39,7 @@ if (.busy = true) {
     mes("<.displayname> is busy at the moment.");
     return;
 }
+
 
 // this message always sends, even if this player is responding to a trade request
 mes("Sending trade offer...");
