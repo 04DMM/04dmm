@@ -109,6 +109,9 @@ protect=no
 [poison]
 scope=perm
 
+[logout]
+scope=perm
+
 [stunned]
 
 [multiway]

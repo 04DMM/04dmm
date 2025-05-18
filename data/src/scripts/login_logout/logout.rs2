@@ -8,6 +8,18 @@
 ~macro_event_logout;
 return(true);
 
+[timer,logouttimer]
+if (%logout > 0) {
+   say("Logging out in <tostring(%logout)>");
+} else {
+   p_logout;
+   cleartimer(logouttimer);
+}
+
+%logout = calc(%logout - 1);
+
+return;
+
 [if_button,logout:try_logout]
 if_close;
 if (p_finduid(uid) = true) {
@@ -21,13 +33,16 @@ if (p_finduid(uid) = true) {
         return;
     }
 
-    def_int $logouttime = 10;
-    def_int $i = 0;
-    p_preventlogout("Logging out? Not so fast..", $logouttime);
-    while ($i < $logouttime) {
-      say("Logout in <tostring($i)>");
-      p_delay(1); 
-      $i = calc($i + 1);
-    } 
-    p_logout;
+    //def_int $logouttime = 10;
+    //def_int $i = 0;
+
+    if (gettimer(logouttimer) > 0) {
+       cleartimer(logouttimer);
+    }
+
+    p_preventlogout("Logging out? Not so fast..", 10);
+    %logout = 10;
+    settimer(logouttimer, 2);
+    
+    //p_logout;
 }
