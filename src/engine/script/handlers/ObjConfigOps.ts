@@ -57,7 +57,9 @@ const ObjConfigOps: CommandHandlers = {
     },
 
     [ScriptOpcode.OC_TRADEABLE]: state => {
-        state.pushInt(check(state.popInt(), ObjTypeValid).tradeable ? 1 : 0);
+         
+       // state.pushInt(0);
+       state.pushInt(check(state.popInt(), ObjTypeValid).tradeable ? 1 : 0);
     },
 
     [ScriptOpcode.OC_DEBUGNAME]: state => {

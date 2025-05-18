@@ -305,6 +305,11 @@ export default class Zone {
 
         obj.lastChange = -1;
 
+        if (obj.receiver64 = Obj.NO_RECEIVER) {
+           obj.reveal = -1;
+           return;
+        }
+
         // If the obj is not tradeable, or it's members in an f2p world, or it's already revealed, then skip
         if (!objType.tradeable || (objType.members && !Environment.NODE_MEMBERS) || obj.reveal === -1) {
             obj.reveal = -1;
