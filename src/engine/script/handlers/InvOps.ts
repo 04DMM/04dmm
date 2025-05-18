@@ -706,9 +706,10 @@ const InvOps: CommandHandlers = {
             return;
         }
 
-        if (!objType.tradeable) {
-            return; // stop untradables after delete.
-        }
+        // Untradeables will drop as well on PK
+        //if (!objType.tradeable) {
+        //    return; // stop untradables after delete.
+        //}
 
         World.addObj(new Obj(position.level, position.x, position.z, EntityLifeCycle.DESPAWN, obj.id, completed), toPlayer.hash64, duration);
     }),
