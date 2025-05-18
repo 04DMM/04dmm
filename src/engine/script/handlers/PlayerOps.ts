@@ -710,7 +710,16 @@ const PlayerOps: CommandHandlers = {
         check(stat, NumberNotNull);
         check(xp, NumberNotNull);
 
+        
         state.activePlayer.addXp(stat, xp);
+        
+    }),
+
+     // Define stat wipe engine call
+    [ScriptOpcode.STAT_WIPE]: checkedHandler(ActivePlayer, state => {
+       const [stat] = state.popInts(1);
+
+       state.activePlayer.addXp(stat, 1, true, true);
     }),
 
     [ScriptOpcode.DAMAGE]: state => {

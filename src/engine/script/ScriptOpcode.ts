@@ -102,6 +102,7 @@ export const enum ScriptOpcode {
     GENDER,
     GETQUEUE, // official
     STAT_ADVANCE,
+    STAT_WIPE,
     HEADICONS_GET,
     HEADICONS_SET,
     HEALENERGY, // official
@@ -548,6 +549,7 @@ export const ScriptOpcodeMap: Map<string, number> = new Map([
     ['GENDER', ScriptOpcode.GENDER],
     ['GETQUEUE', ScriptOpcode.GETQUEUE],
     ['STAT_ADVANCE', ScriptOpcode.STAT_ADVANCE],
+    ['STAT_WIPE', ScriptOpcode.STAT_WIPE],
     ['HEADICONS_GET', ScriptOpcode.HEADICONS_GET],
     ['HEADICONS_SET', ScriptOpcode.HEADICONS_SET],
     ['HEALENERGY', ScriptOpcode.HEALENERGY],

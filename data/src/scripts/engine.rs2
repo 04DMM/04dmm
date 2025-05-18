@@ -311,6 +311,8 @@
 [command,if_setposition](component $component, int $x, int $y);
 // info: Give xp in a stat
 [command,stat_advance](stat $stat, int $exp)
+// info: Wipe a stat to 0xp
+[command,stat_wipe](stat $stat)
 // info: Hurt a player
 [command,damage](player_uid $uid, int $type, int $amount)
 // info: Hurt the secondary player

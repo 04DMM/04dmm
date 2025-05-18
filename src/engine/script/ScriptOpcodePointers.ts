@@ -119,6 +119,9 @@ const ScriptOpcodePointers: {
     [ScriptOpcode.STAT_ADVANCE]: {
         require: ['active_player']
     },
+    [ScriptOpcode.STAT_WIPE]: {
+        require: ['active_player']
+    },
     [ScriptOpcode.HEADICONS_GET]: {
         require: ['active_player']
     },

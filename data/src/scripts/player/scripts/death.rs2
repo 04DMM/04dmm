@@ -16,6 +16,41 @@ anim(human_death, 0);
 p_delay(3);
 %death = ^false;
 
+[proc,wipe_stats]
+def_int $i = 0;
+while ($i < enum_getoutputcount(stats)) {
+    def_stat $stat = enum(int, stat, stats, $i);
+
+
+    stat_wipe($stat);
+    
+    $i = calc($i + 1);
+}
+
+stat_advance(hitpoints, 1154);
+
+[proc,reset_wipe]
+~wipe_stats;
+~reset_all_quests;
+inv_clear(bank);
+inv_clear(inv);
+inv_clear(worn);
+
+p_teleport(0_48_48_22_35);
+
+%thieving_stall_timer = 0;
+%cat_growth = 0;
+%follower_obj = null;
+%follower_uid = null;
+%handelmort_traps_disabled = 0;
+%thread_used = 0;
+%magearena = 0;
+%bunny_ears_unlocked = 0;
+%scythe_unlocked = 0;
+%tutorial_progress = 0;
+
+p_logout;
+
 [queue,player_death_default]
 ~player_death;
 ~midi_jingle(^death_jingle_2, ^death_jingle_2_millis);
@@ -35,8 +70,8 @@ if (findhero = true) {
     // todo: what npc killed the player
     session_log(^log_moderator, "Player died");
 }
-p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
-buildappearance(worn);
+//p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
+//buildappearance(worn);
 ~prayer_deactivate_all;
 ~follower_death;
 anim(null, 0);
@@ -50,8 +85,12 @@ healenergy(10000);
 ~initalltabs;
 // todo: end poison timer ~player_end_poison
 
+~reset_wipe;
+
 [proc,player_death_lose_items]
 if (staffmodlevel > 1 & map_production = true) { return; }
+
+//~reset_wipe;
 
 def_boolean $skulled = false;
 if (%pk_skull > 0) { $skulled = true; }
@@ -90,30 +129,30 @@ while ($i < $size) {
     $i = calc($i + 1);
 }
 
-inv_dropall(inv, coord, ^lootdrop_duration);
-inv_dropall(worn, coord, ^lootdrop_duration);
-obj_addall(coord, bones, 1, ^lootdrop_duration);
-~moveallinv(deathkeep, inv);
-inv_clear(deathkeep);
+//inv_dropall(inv, coord, ^lootdrop_duration);
+//inv_dropall(worn, coord, ^lootdrop_duration);
+//obj_addall(coord, bones, 1, ^lootdrop_duration);
+//~moveallinv(deathkeep, inv);
+//inv_clear(deathkeep);
 
 [proc,pvp_death_lose_items]
 ~pvp_death_message(.uid);
 if (staffmodlevel > 1 & map_production = true) { return; }
 
-def_boolean $skulled = false;
-if (%pk_skull > 0) { $skulled = true; }
-def_boolean $protecting_item = false;
-if (%prayer_protectitems = ^true) { $protecting_item = true; }
-inv_clear(deathkeep);
+//def_boolean $skulled = false;
+//if (%pk_skull > 0) { $skulled = true; }
+//def_boolean $protecting_item = false;
+//if (%prayer_protectitems = ^true) { $protecting_item = true; }
+//inv_clear(deathkeep);
 
-if($skulled = false) {
-    ~move_priciest_item_on_hero_to_death;
-    ~move_priciest_item_on_hero_to_death;
-    ~move_priciest_item_on_hero_to_death;
-}
-if($protecting_item = true) {
-    ~move_priciest_item_on_hero_to_death;
-}
+//if($skulled = false) {
+//    ~move_priciest_item_on_hero_to_death;
+//    ~move_priciest_item_on_hero_to_death;
+//    ~move_priciest_item_on_hero_to_death;
+//}
+//if($protecting_item = true) {
+//    ~move_priciest_item_on_hero_to_death;
+//}
 
 def_int $i = 0;
 def_int $size = inv_size(inv);
@@ -142,7 +181,10 @@ while ($i < $size) {
     }
     $i = calc($i + 1);
 }
+
+
 .obj_add(coord, bones, 1, ^lootdrop_duration);
+
 ~moveallinv(deathkeep, inv);
 inv_clear(deathkeep);
 

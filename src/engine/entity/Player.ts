@@ -1682,7 +1682,7 @@ export default class Player extends PathingEntity {
         }
     }
 
-    addXp(stat: number, xp: number, allowMulti: boolean = true) {
+    addXp(stat: number, xp: number, allowMulti: boolean = true, reset: boolean = false) {
         // require xp is >= 0. there is no reason for a requested addXp to be negative.
         if (xp < 0) {
             throw new Error(`Invalid xp parameter for addXp call: Stat was: ${stat}, Exp was: ${xp}`);
@@ -1693,8 +1693,22 @@ export default class Player extends PathingEntity {
             return;
         }
 
+        //const multi = allowMulti ? Environment.NODE_XPATE : 1;
+
+        // If addXP is called with -1 then reset the xp to 0.
+
+        //if (xp == -1) {
+        //   this.stats[stat] = 0;
+        //} else  {
+          //  this.stats[stat] += xp * multi;
+        //}
+
         const multi = allowMulti ? Environment.NODE_XPRATE : 1;
         this.stats[stat] += xp * multi;
+
+        if (reset) {
+           this.stats[stat] = 0;
+        }
 
         // cap to 200m, this is represented as "2 billion" because we use 32-bit signed integers and divide by 10 to give us a decimal point
         if (this.stats[stat] > 2_000_000_000) {
