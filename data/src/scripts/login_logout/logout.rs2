@@ -21,5 +21,13 @@ if (p_finduid(uid) = true) {
         return;
     }
 
+    def_int $logouttime = 10;
+    def_int $i = 0;
+    p_preventlogout("Logging out? Not so fast..", $logouttime);
+    while ($i < $logouttime) {
+      say("Logout in <tostring($i)>");
+      p_delay(1); 
+      $i = calc($i + 1);
+    } 
     p_logout;
 }
