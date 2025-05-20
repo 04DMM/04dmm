@@ -1830,6 +1830,8 @@ export default class Player extends PathingEntity {
     }
 
     applyDamage(damage: number, type: number) {
+        this.clearFleeTimers();
+
         this.damageTaken = damage;
         this.damageType = type;
 
