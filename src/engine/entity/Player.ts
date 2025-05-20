@@ -434,8 +434,9 @@ export default class Player extends PathingEntity {
         }
     }
 
-    clearLogoutTimers() {
+    clearFleeTimers() {
        this.timers.delete(ScriptProvider.getByName("[timer,logouttimer]").id);
+       this.timers.delete(ScriptProvider.getByName("[softtimer,teleporttimer]").id);
     }
 
     cleanup(): void {
@@ -1028,8 +1029,7 @@ export default class Player extends PathingEntity {
     // and for each interaction.
     processWalktrigger() {
 
-
-        this.clearLogoutTimers();
+        //this.clearFleeTimers();
         
 
         if (this.walktrigger !== -1 && !this.protect && !this.delayed) {
