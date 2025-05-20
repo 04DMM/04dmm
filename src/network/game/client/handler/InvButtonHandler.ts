@@ -10,6 +10,8 @@ import Environment from '#/util/Environment.js';
 
 export default class InvButtonHandler extends MessageHandler<InvButton> {
     handle(message: InvButton, player: Player): boolean {
+        
+       
         // jagex has if_button1-5
         const { op, obj: item, slot, component: comId } = message;
 

@@ -93,6 +93,7 @@ switch_obj(last_item) {
 // all normal foods use %eat_delay
 [label,player_consume_item](label $consume_effect, int $eat_delay, int $skill_delay)
 cleartimer(logouttimer);
+clearsofttimer(teleporttimer);
 
 def_obj $obj = inv_getobj(inv, last_slot);
 
