@@ -8,6 +8,7 @@
 ~macro_event_logout;
 return(true);
 
+
 [timer,logouttimer]
 if (%logout > 0) {
    say("Logging out in <tostring(%logout)>");

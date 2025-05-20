@@ -407,6 +407,8 @@ export default class Player extends PathingEntity {
 
     lastDate: bigint = 0n;
 
+    //logoutScriptID: number = 0;
+
     constructor(username: string, username37: bigint, hash64: bigint) {
         super(0, 3094, 3106, 1, 1, EntityLifeCycle.FOREVER, MoveRestrict.NORMAL, BlockWalk.NPC, MoveStrategy.SMART, PlayerInfoProt.FACE_COORD, PlayerInfoProt.FACE_ENTITY); // tutorial island.
         this.username = username;
@@ -419,6 +421,8 @@ export default class Player extends PathingEntity {
         this.lastLevels.fill(-1);
         this.input = new InputTracking(this);
 
+        //this.logoutScriptID = ScriptProvider.getByName("[timer,logouttimer]").id;
+
         for (let i = 0; i < this.vars.length; i++) {
             const varp = VarPlayerType.get(i);
             if (varp.type === ScriptVarType.STRING) {
@@ -428,6 +432,10 @@ export default class Player extends PathingEntity {
                 this.vars[i] = varp.type === ScriptVarType.INT ? 0 : -1;
             }
         }
+    }
+
+    clearLogoutTimers() {
+       this.timers.delete(ScriptProvider.getByName("[timer,logouttimer]").id);
     }
 
     cleanup(): void {
@@ -1019,6 +1027,11 @@ export default class Player extends PathingEntity {
     // we process walktriggers from regular movement in client input,
     // and for each interaction.
     processWalktrigger() {
+
+
+        this.clearLogoutTimers();
+        
+
         if (this.walktrigger !== -1 && !this.protect && !this.delayed) {
             const trigger = ScriptProvider.get(this.walktrigger);
             this.walktrigger = -1;

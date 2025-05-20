@@ -4,3 +4,5 @@ if (map_clock < %stunned) {
     p_walk(coord);
     walktrigger(stunned);
 }
+
+
