@@ -109,8 +109,11 @@ protect=no
 [poison]
 scope=perm
 
+[teleport]
+
+
 [logout]
-scope=perm
+
 
 [stunned]
 
