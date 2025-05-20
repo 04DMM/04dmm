@@ -92,6 +92,8 @@ switch_obj(last_item) {
 
 // all normal foods use %eat_delay
 [label,player_consume_item](label $consume_effect, int $eat_delay, int $skill_delay)
+cleartimer(logouttimer);
+
 def_obj $obj = inv_getobj(inv, last_slot);
 
 if (~duel_arena_consume_check($obj) = false) {
