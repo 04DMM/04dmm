@@ -5,47 +5,13 @@
 [if_button,magic:ardougne_teleport] @magic_teleport(^ardougne_teleport);
 [if_button,magic:watchtower_teleport] @magic_teleport(^watchtower_teleport);
 
-[timer,teleporttimer](int $spell)
-
-if (%teleport = 10) {
-   %teleport = 0;
-   @magic_teleport($spell);
-   //%teleport = 0;
-   cleartimer(teleporttimer);
-   
-
-} else {
-   //@magic_teleport($spell);
-   //cleartimer(teleporttimer);
-   def_string $spellname = "";
-   if ($spell = ^varrock_teleport) {
-      $spellname = "Varrock";
-   } else if ($spell = ^falador_teleport) {
-      $spellname = "Falador";
-   } else if ($spell = ^camelot_teleport) {
-      $spellname = "Camelot";
-   } else if ($spell = ^ardougne_teleport) {
-      $spellname = "Ardougne";
-   } else if ($spell = ^watchtower_teleport) {
-      $spellname = "Watchtower";
-   } else if ($spell = ^lumbridge_teleport) {
-      $spellname = "Lumbridge";
-   }
-   say("Casting teleport to <$spellname>:  <tostring(%teleport)>");
-
-   %teleport = calc(%teleport + 1);
-}
-
-return;
-
 [label,magic_teleport](int $spell)
 
-if (gettimer(teleporttimer) < 1) {
-   say("Timer");
-   settimer(teleporttimer, 2, $spell);
+if (add(%lastcombat, 16) > map_clock) {
+   mes("You can't teleport in combat on Deadman Mode.");
+   return;
 } else {
-   cleartimer(teleporttimer);
- if_close;
+if_close;
 if (p_finduid(uid) = true) {
     cleartimer(logouttimer);
     // look for spell in db
