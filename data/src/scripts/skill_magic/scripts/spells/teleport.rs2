@@ -5,12 +5,42 @@
 [if_button,magic:ardougne_teleport] @magic_teleport(^ardougne_teleport);
 [if_button,magic:watchtower_teleport] @magic_teleport(^watchtower_teleport);
 
-[label,magic_teleport](int $spell)
+[softtimer,teleporttimer](int $spell)
 
-if (add(%lastcombat, 16) > map_clock) {
-   mes("You can't teleport in combat on Deadman Mode.");
-   return;
+// Cast time has reached 10
+if (%teleport = 10) {
+   @magic_teleport($spell);
 } else {
+   //@magic_teleport($spell);
+   //cleartimer(teleporttimer);
+   def_string $spellname = "";
+   if ($spell = ^varrock_teleport) {
+      $spellname = "Varrock";
+   } else if ($spell = ^falador_teleport) {
+      $spellname = "Falador";
+   } else if ($spell = ^camelot_teleport) {
+      $spellname = "Camelot";
+   } else if ($spell = ^ardougne_teleport) {
+      $spellname = "Ardougne";
+   } else if ($spell = ^watchtower_teleport) {
+      $spellname = "Watchtower";
+   } else if ($spell = ^lumbridge_teleport) {
+      $spellname = "Lumbridge";
+   }
+   say("Casting teleport to <$spellname>:  <tostring(%teleport)>");
+
+   %teleport = calc(%teleport + 1);
+}
+
+return;
+
+[label,magic_teleport](int $spell)
+cleartimer(logouttimer);
+clearsofttimer(teleporttimer);
+//softtimer(teleporttimer, 2, $spell);
+if (%teleport = 10) {
+%teleport = 0;
+clearsofttimer(teleporttimer);
 if_close;
 if (p_finduid(uid) = true) {
     cleartimer(logouttimer);
@@ -19,11 +49,6 @@ if (p_finduid(uid) = true) {
     if (~check_spell_requirements($spell_data)= false) {
         return;
     }
-    //if (~wilderness_level(coord) > 20) {
-    //    mes("A mysterious force blocks your teleport spell!");
-    //    mes("You can't use this teleport after level 20 wilderness.");
-    //    return;
-    // }
    if($spell = ^ardougne_teleport & %elena_progress < ^elena_complete) {
         mes("You must have completed Plague City to use this spell.");
         return;
@@ -50,7 +75,9 @@ if (p_finduid(uid) = true) {
     // give additional affects
   // teleport player. Always a radius of 2
     ~player_teleport_normal(map_findsquare(db_getfield($spell_data, magic_spell_table:tele_coord, 0), 0, 2, ^map_findsquare_lineofwalk));
-  }
+  } 
+} else {
+  softtimer(teleporttimer, 2, $spell);
 }
 
 [proc,player_teleport_normal](coord $coord)

@@ -41,9 +41,10 @@ if (p_finduid(uid) = true) {
        cleartimer(logouttimer);
     }
 
+    clearsofttimer(teleporttimer);
     p_preventlogout("Logging out? Not so fast..", 10);
     %logout = 10;
     settimer(logouttimer, 2);
     
-    //p_logout;
+    p_logout;
 }

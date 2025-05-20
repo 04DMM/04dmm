@@ -110,7 +110,7 @@ protect=no
 scope=perm
 
 [teleport]
-
+protect=no
 
 [logout]
 
