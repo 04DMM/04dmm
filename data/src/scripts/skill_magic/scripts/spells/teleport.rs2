@@ -8,7 +8,7 @@
 [softtimer,teleporttimer](int $spell)
 
 // Cast time has reached 10
-if (%teleport = 10) {
+if (%teleport = 7) {
    @magic_teleport($spell);
 } else {
    //@magic_teleport($spell);
@@ -38,7 +38,7 @@ return;
 cleartimer(logouttimer);
 clearsofttimer(teleporttimer);
 //softtimer(teleporttimer, 2, $spell);
-if (%teleport = 10) {
+if (%teleport = 7) {
 %teleport = 0;
 clearsofttimer(teleporttimer);
 if_close;
