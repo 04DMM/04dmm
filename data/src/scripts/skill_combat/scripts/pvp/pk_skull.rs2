@@ -21,6 +21,15 @@ if (~deserves_pk_skull = true) {
 .%pk_predator2 = .%pk_predator1;
 .%pk_predator1 = uid;
 
+// This will lock opponent to us and them
+%pk_predator3 = %pk_predator2;
+%pk_predator2 = %pk_predator1;
+%pk_predator1 = .uid;
+
+// Set our last combat as well
+%lastcombat = map_clock;
+%lastcombat_pvp = map_clock;
+
 .%lastcombat = map_clock;
 .%lastcombat_pvp = map_clock;
 .%aggressive_npc = null; // prevents npc's from attacking your opponent after you attack them.

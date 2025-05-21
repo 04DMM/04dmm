@@ -109,6 +109,8 @@ protect=no
 [poison]
 scope=perm
 
+[lastpvpdamagedealt]
+
 [teleport]
 protect=no
 
