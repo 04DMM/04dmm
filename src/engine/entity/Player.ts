@@ -1839,6 +1839,7 @@ export default class Player extends PathingEntity {
         if (current - damage <= 0) {
             this.levels[PlayerStat.HITPOINTS] = 0;
             this.damageTaken = current;
+            World.broadcastMes(this.displayName + " has been eliminated!");
         } else {
             this.levels[PlayerStat.HITPOINTS] = current - damage;
         }
