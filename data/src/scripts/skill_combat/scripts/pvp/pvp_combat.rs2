@@ -107,36 +107,43 @@ if (map_multiway(.coord) = false) {
     // 2006 year / osrs mes I'm already under attack.
     // here's one from 2004: https://youtu.be/IC2n8t76DDY?t=34
     if (add(%lastcombat, 8) > map_clock) {
+        //if (npc_finduid(%aggressive_npc) = true) {
+        //    return(true);
+        //}
+
         if (%pk_predator1 ! .uid & %pk_predator1 ! null) {
-            mes("I'm already under attack");
+            mes("Your opponent is already fighting someone.");
             return(false);
         }
         if (npc_finduid(%aggressive_npc) = true) {
-            //mes("I'm already under attack");
-            return(true);
+            if (.%pk_predator1 ! uid) {
+               mes("Your opponent is already under attack.");
+               return(false);
+            }  else {
+               return(true);
+            }
+            //mes("I'm FART already under attack");
+            //return(true);
         }
     }
     // if your opponent has been attacked in the last 8 ticks, and the opponents last attacker is not you
     // or an npc attacked them 
     if (add(.%lastcombat, 8) > map_clock) {
+        if (npc_finduid(.%aggressive_npc) = true) {
+            return(true);
+        }
+
         if (.%pk_predator1 ! uid & .%pk_predator1 ! null) {
             mes("Someone else is already fighting your opponent.");
             return(false);
         }
-        if (npc_finduid(.%aggressive_npc) = true) {
-            //mes(" else is already fighting your opponent.");
-            return(true);
-        }
+        //if (npc_finduid(.%aggressive_npc) = true) {
+        //    //mes("Poo  else is already fighting your opponent.");
+        //    return(true);
+        //}
     }
 }
 return(true);
-
-
-
-// Default can't attack
-return(false);
-
-
 
 
 
