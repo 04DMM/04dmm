@@ -99,8 +99,8 @@ export default class Npc extends PathingEntity {
         this.varsString = new Array(VarNpcType.count);
         this.targetOp = npcType.defaultmode;
         this.huntMode = npcType.huntmode;
-        //this.huntrange = npcType.huntrange;
-        this.huntrange = 20;
+        this.huntrange = npcType.huntrange;
+        //this.huntrange = 20;
         this.wanderCounter = 0;
     }
 
@@ -914,10 +914,10 @@ export default class Npc extends PathingEntity {
             }
 
             
-           /*
-           if (hunt.checkNotBusy && player.busy()) {
-               continue;
-           }
+
+            if (hunt.checkNotBusy && player.busy()) {
+                continue;
+            }
 
            if (hunt.checkAfk && player.zonesAfk()) {
                 continue;
@@ -954,7 +954,7 @@ export default class Npc extends PathingEntity {
                 if (!hunt.checkHuntCondition(quantity, hunt.checkInvCondition, hunt.checkInvVal)) {
                    continue;
                 }
-            }*/
+            }
             players.push(player);
         }
         return players;
