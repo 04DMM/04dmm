@@ -45,6 +45,7 @@ export default class HuntType extends ConfigType {
 
             if (config.debugname) {
                 HuntType.configNames.set(config.debugname, id);
+                //console.log(config.debugname);
             }
         }
     }

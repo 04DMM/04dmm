@@ -73,13 +73,16 @@ export default class Npc extends PathingEntity {
 
     wanderCounter: number = 0;
 
+    // Hardcode huntrange
+    huntrange_hard: number = 10;
+
     heroPoints: HeroPoints = new HeroPoints(16); // be sure to reset when stats are recovered/reset
 
     constructor(level: number, x: number, z: number, width: number, length: number, lifecycle: EntityLifeCycle, nid: number, type: number, moveRestrict: MoveRestrict, blockWalk: BlockWalk) {
         super(level, x, z, width, length, lifecycle, moveRestrict, blockWalk, MoveStrategy.NAIVE, NpcInfoProt.FACE_COORD, NpcInfoProt.FACE_ENTITY);
         this.nid = nid;
         this.baseType = type;
-        this.type = type;
+        this.type = HuntModeType.PLAYER;
         this.uid = (type << 16) | nid;
         this.startX = this.x;
         this.startZ = this.z;
@@ -100,7 +103,7 @@ export default class Npc extends PathingEntity {
         this.targetOp = npcType.defaultmode;
         this.huntMode = npcType.huntmode;
         //this.huntrange = npcType.huntrange;
-        this.huntrange = 20;
+        this.huntrange = this.huntrange_hard;
         this.wanderCounter = 0;
     }
 
@@ -248,7 +251,7 @@ export default class Npc extends PathingEntity {
     huntAll(): void {
         this.huntTarget = null;
 
-        const hunt: HuntType = HuntType.get(this.huntMode);
+        const hunt: HuntType = HuntType.get(this.huntMode); 
 
         // If a huntrate is defined, this acts as a throttle
         if (this.huntClock < hunt.rate - 1) {
@@ -305,7 +308,7 @@ export default class Npc extends PathingEntity {
             this.resetDefaults();
 
             const npcType: NpcType = NpcType.get(this.type);
-            this.huntrange = npcType.huntrange;
+            this.huntrange = this.huntrange_hard;
             this.huntMode = npcType.huntmode;
             this.huntClock = 0;
             this.huntTarget = null;
@@ -416,7 +419,7 @@ export default class Npc extends PathingEntity {
 
         const npcType: NpcType = NpcType.get(this.type);
         this.huntMode = npcType.huntmode;
-        this.huntrange = npcType.huntrange;
+        this.huntrange = this.huntrange_hard;
         this.huntClock = 0;
         this.huntTarget = null;
         // Reset timer interval
@@ -914,7 +917,7 @@ export default class Npc extends PathingEntity {
             }
 
             
-           /*
+           
            if (hunt.checkNotBusy && player.busy()) {
                continue;
            }
@@ -954,7 +957,7 @@ export default class Npc extends PathingEntity {
                 if (!hunt.checkHuntCondition(quantity, hunt.checkInvCondition, hunt.checkInvVal)) {
                    continue;
                 }
-            }*/
+            }
             players.push(player);
         }
         return players;
