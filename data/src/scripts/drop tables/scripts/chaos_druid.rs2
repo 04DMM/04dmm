@@ -23,7 +23,10 @@ if ($random < 7)  {
     obj_add(npc_coord, naturerune, 3, ^lootdrop_duration);
 } else if ($random < 52) {
     obj_add(npc_coord, ~randomherb, ^lootdrop_duration);
+    obj_add(npc_coord, ~randomherb, ^lootdrop_duration);
 } else if ($random < 63) {
+    obj_add(npc_coord, ~randomherb, ^lootdrop_duration);
+    obj_add(npc_coord, ~randomherb, ^lootdrop_duration);
     obj_add(npc_coord, ~randomherb, ^lootdrop_duration);
     obj_add(npc_coord, ~randomherb, ^lootdrop_duration);
 } else if ($random < 68) {
