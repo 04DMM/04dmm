@@ -26,10 +26,10 @@ if (oc_category(last_useitem) = talismans) {
 
 [label,teleport_to_ruins]
 def_dbrow $data = ~get_runecraft_data(loc_param(rune_type));
-if ($data = null | db_getfield($data, runecraft_table:talisman, 0) ! last_useitem) {
-    ~displaymessage(^dm_default);
-    return;
-}
+//if ($data = null | db_getfield($data, runecraft_table:talisman, 0) ! last_useitem) {
+//    ~displaymessage(^dm_default);
+//    return;
+//}
 if (db_getfield($data, runecraft_table:members, 0) = ^true) {
     if (map_members = ^false) {
         mes(^mes_members_do_that); // guess
@@ -60,17 +60,17 @@ if (oc_members($rune) = true) {
 }
 def_int $level = stat(runecraft);
 if ($level < $levelreq) {
-    ~mesbox("You need a Runecrafting level of at least <tostring($levelreq)> to craft <oc_name($rune)>.");
+    ~mesbox("You need a Runecrafting level of at least <tostring($levelreq)> to runemine <oc_name($rune)>.");
     return;
 }
 
-def_int $total_ess = inv_total(inv, blankrune);
-if ($total_ess = 0) {
-    // osrs has rune essences. But when mining rune ess in this version it says rune stones
-    // so this is just a guess
-    ~mesbox("You do not have any rune stones to bind.");
-    return;
-}
+def_int $total_ess = 1;
+//if ($total_ess = 0) {
+//    // osrs has rune essences. But when mining rune ess in this version it says rune stones
+//    // so this is just a guess
+//    ~mesbox("You do not have any rune stones to bind.");
+//    return;
+//}
 
 anim(human_runecraft, 0);
 spotanim_pl(runecrafting, 96, 0);
@@ -79,22 +79,23 @@ def_int $rune_count_per_ess = 1;
 if (db_getfieldcount($data, runecraft_table:multiplier) > 0) {
     $rune_count_per_ess = calc($level / db_getfield($data, runecraft_table:multiplier, 0) + 1);
 }
+
 def_int $craft_count = calc($total_ess * $rune_count_per_ess);
 
 if(sub(^max_32bit_int, inv_total(inv, $rune)) < $craft_count) {
-    mes("You do not have enough inventory space to craft your essence into <lowercase(oc_name($rune))>s."); // osrs
+    mes("You do not have enough inventory space to runemine <lowercase(oc_name($rune))>s."); // osrs
     return;
 }
 
 // if $craft_count uses free_space as the value, it may not round exactly to $rune_count_per_ess
 $total_ess = calc($craft_count / $rune_count_per_ess);
 
-inv_del(inv, blankrune, $total_ess);
-stat_advance(runecraft, calc($total_ess * db_getfield($data, runecraft_table:experience, 0)));
+//inv_del(inv, blankrune, $total_ess);
+stat_advance(runecraft, calc($craft_count * db_getfield($data, runecraft_table:experience, 0)));
 // later revs they just use oc_name($rune), i think after 2007 or so
 mes("You bind the temple's power into <db_getfield($data, runecraft_table:name, 0)> Runes.");
-inv_add(inv, $rune, calc($total_ess * $rune_count_per_ess));
-p_delay(3);
+inv_add(inv, $rune, $craft_count);
+p_delay(1);
 
 
 [opheld4,_talismans]
