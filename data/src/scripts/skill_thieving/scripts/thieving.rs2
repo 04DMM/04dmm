@@ -150,7 +150,7 @@ while ($count >= 0) {
     if ($roll >= $reward_rarity_denominator) {
         def_int $quantity_roll = ~random_range($reward_quantity_min, $reward_quantity_max);
         // Pickpocketing can reward more than 1.
-        inv_add(inv, $reward, $quantity_roll);
+        inv_add(inv, $reward, multiply($quantity_roll, 2));
     }
 
     $count = calc($count - 1);
@@ -178,7 +178,7 @@ while ($count >= 0) {
         if ($reward = bread) {
             sound_synth(pick, 0, 0);
         }
-        inv_add(inv, $reward, $reward_count);
+        inv_add(inv, $reward, multiply($reward_count, 2));
         mes("You steal <$reward_message>.");
         return;
     }
@@ -200,7 +200,7 @@ while ($count >= 0) {
     if ($roll >= $reward_rarity_denominator) {
         def_int $quantity_roll = ~random_range($reward_quantity_min, $reward_quantity_max);
         // Trapped chests can reward more than 1.
-        inv_add(inv, $reward, $quantity_roll);
+        inv_add(inv, $reward, multiply($quantity_roll, 2));
     }
 
     $count = calc($count - 1);
