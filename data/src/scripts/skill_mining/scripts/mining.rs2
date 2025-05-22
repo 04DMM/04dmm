@@ -117,7 +117,7 @@ if ($neck ! null & oc_category($neck) = category_557) {
 if (random($chance) = ^true) {
     def_namedobj $gem = ~mining_gem_table;
     if ($gem ! null) {
-        inv_add(inv, $gem, 1);
+        inv_add(inv, $gem, multiply(1,2));
         db_find(gem_cutting_table:uncut_gem, $gem);
         $data = db_findnext;
         mes("You just found <~add_article(oc_name(db_getfield($data, gem_cutting_table:cut_gem, 0)))>!");
@@ -137,7 +137,7 @@ if (random($chance) = ^true) {
     if(inzone(^crest_perfect_mine_lower_bound, ^crest_perfect_mine_upper_bound, coord) = true) {
         $output = perfect_gold_ore;
     }
-    inv_add(inv, $output, 1);
+    inv_add(inv, $output, multiply(1,2));
     stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
@@ -162,7 +162,7 @@ if ($neck ! null & oc_category($neck) = category_557) {
 if (random($chance) = ^true) {
     def_namedobj $gem = ~mining_gem_table;
     if ($gem ! null) {
-        inv_add(inv, $gem, 1);
+        inv_add(inv, $gem, multiply(1,2));
         db_find(gem_cutting_table:uncut_gem, $gem);
         $data = db_findnext;
         mes("You just found <~add_article(oc_name(db_getfield($data, gem_cutting_table:cut_gem, 0)))>!");
@@ -174,7 +174,7 @@ if (random($chance) = ^true) {
     loc_change(loc_param(next_loc_stage_mining), $respawn);
     sound_synth(sound_230, 0, 0); // Sudden says its sound_230
     anim(null, 0);
-    inv_add(inv, db_getfield($data, mining_table:rock_output, 0), 1);
+    inv_add(inv, db_getfield($data, mining_table:rock_output, 0), multiply(1,2));
     stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
@@ -223,7 +223,7 @@ if (stat_random(mining, $low, $high) = true) {
     def_namedobj $gem;
     def_int $count;
     $gem, $count = ~roll_on_drop_table(gem_rock_table);
-    inv_add(inv, $gem, 1);
+    inv_add(inv, $gem, multiply(1,2));
     stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
 
     db_find(gem_cutting_table:uncut_gem, $gem);
