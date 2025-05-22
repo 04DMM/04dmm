@@ -85,5 +85,6 @@ if(calc(%gnome_course_progress + 1) >= $completed) {
 }
 if(%gnome_course_progress = 7) {
     stat_advance(agility, 390);
+    inv_add(inv, coins, 100);
     %gnome_course_progress = 0;
 }
