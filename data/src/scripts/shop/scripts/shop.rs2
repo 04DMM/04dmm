@@ -35,6 +35,9 @@ if ($item = coins) {
 } else if ((%shop = generalshop3 & $item = silk) | inv_allstock(%shop) = false & inv_stockbase(%shop, oc_uncert($item)) = -1) { // can't sell silk to al-kharid general store
     mes("You can't sell this item to this shop.");
     return (false);
+} else if ((%shop = generalshop1 | %shop = generalshop2 | %shop = generalshop3 | %shop = generalshop4 | %shop = generalshop5 | %shop = generalshop6 | %shop = generalshop7 | %shop = generalshop8 | %shop = upassgeneral | %shop = generalshopogre | %shop = taxfree)) {
+    mes("You can't sell items to general stores on Hardcore Deadman Mode");
+    return (false);
 }
 return (true);
 
