@@ -9,12 +9,18 @@ switch_int(%tutorial_progress) {
 
 [label,runescape_guide_welcome]
 if (true = true) {
-    ~chatnpc("<p,neutral>Do you want to skip the tutorial?");
-    def_int $choice = ~p_choice2("Yes please.", 1, "No, thank you.", 2);
+    ~chatnpc("<p,neutral>Where do you want to start?");
+    def_int $choice = ~p_choice3("Al Kharid", 1, "Lava Maze Dungeon", 2, "Taverly Dungeon", 3);
     if ($choice = 1) {
-        %tutorial_progress = ^tutorial_complete;
-        @tutorial_complete;
+            
+       
+    } ($choice = 2) {
+         
     }
+
+   
+    %tutorial_progress = ^tutorial_complete;
+    @tutorial_complete;
 }
 
 ~chatnpc("<p,neutral>Greetings! I see you are a new arrival to this land. My|job is to welcome all the new visitors. So welcome!");
