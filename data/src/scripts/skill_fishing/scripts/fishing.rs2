@@ -51,7 +51,7 @@ if ($fish2 ! null) { // if fish2 isnt null and roll for 2nd fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        inv_add(inv, $fish2, 1);
+        inv_add(inv, $fish2, multiply(1,2));
         stat_advance(fishing, struct_param($struct2, productexp));
         mes(struct_param($struct2, productmessage));
         return;
@@ -65,7 +65,7 @@ if ($fish1 ! null) { // else if fish1 isnt null and roll for 1st fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        inv_add(inv, $fish1, 1);
+        inv_add(inv, $fish1, multiply(1,2));
         stat_advance(fishing, struct_param($struct1, productexp));
         mes(struct_param($struct1, productmessage));
         return;
@@ -81,7 +81,7 @@ if ($fish2 ! null) { // if fish2 isnt null and roll for 2nd fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        inv_add(inv, $fish2, 1);
+        inv_add(inv, $fish2, multiply(1,2));
         stat_advance(fishing, struct_param($struct2, productexp));
         mes(struct_param($struct2, productmessage));
         return;
@@ -95,7 +95,7 @@ if ($fish1 ! null) { // else if fish1 isnt null and roll for 1st fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        inv_add(inv, $fish1, 1);
+        inv_add(inv, $fish1, multiply(1,2));
         stat_advance(fishing, struct_param($struct1, productexp));
         mes(struct_param($struct1, productmessage));
     }
