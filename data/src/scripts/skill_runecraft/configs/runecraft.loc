@@ -73,6 +73,7 @@ length=3
 category=rc_ruins
 param=rune_type,3
 
+
 [rc_water_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
