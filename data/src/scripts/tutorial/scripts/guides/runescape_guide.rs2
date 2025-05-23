@@ -10,18 +10,26 @@ switch_int(%tutorial_progress) {
 [label,runescape_guide_welcome]
 if (true = true) {
     ~chatnpc("<p,neutral>Where do you want to start?");
-    def_int $choice = ~p_choice3("Al Kharid", 1, "Lava Maze Dungeon", 2, "Taverly Dungeon", 3);
+    def_int $choice = ~p_choice4("Falador", 1, "Gnome Stronghold", 2, "Karamja", 3, "Varrock", 4);
     if ($choice = 1) {
-            
-       
-    } ($choice = 2) {
-         
+       //Falador
+       p_teleport(0_46_52_21_49);       
+    } else if ($choice = 2) {
+       //Gnome
+       p_teleport(0_38_53_42_46); 
+    } else if ($choice = 3) {
+       //Karamja
+       p_teleport(0_45_49_45_36);
+    } else if ($choice = 4) {
+      // Varrock
+      p_teleport(0_50_53_12_31);
     }
 
-   
     %tutorial_progress = ^tutorial_complete;
     @tutorial_complete;
 }
+
+return;
 
 ~chatnpc("<p,neutral>Greetings! I see you are a new arrival to this land. My|job is to welcome all the new visitors. So welcome!");
 ~chatnpc("<p,neutral>You have already learnt the first thing needed to|succeed in this world... Talking to other people!");
