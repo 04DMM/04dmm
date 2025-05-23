@@ -100,6 +100,13 @@ if (add(%lastcombat_pvp, 24) > map_clock) {
 // And this function is talking about an enemy, not yourself
 [proc,pvp_in_combat_check]()(boolean)
 // if multi, return true
+
+if (%pvpimmunity > 0) {
+    .mes("This player has recently killed someone and is immune to attack while they loot.");
+    return(false);
+}
+
+
 if (map_multiway(.coord) = false) {
     // if you have been attacked in the last 8 ticks, and the last person to attack you isnt your opponent
     // or an npc attacked you

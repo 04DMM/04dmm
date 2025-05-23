@@ -22,6 +22,8 @@ protect=no
 
 [eat_delay]
 
+[pvpimmunity]
+
 [aggressive_npc]
 type=npc_uid
 protect=no

@@ -135,6 +135,16 @@ while ($i < $size) {
 //~moveallinv(deathkeep, inv);
 //inv_clear(deathkeep);
 
+[softtimer, pvpimmunity] 
+
+if (%pvpimmunity = 0) {
+   %pvpimmunity = 100;
+}
+
+%pvpimmunity = sub(%pvpimmunity, 1);
+
+
+
 [proc,pvp_death_lose_items]
 ~pvp_death_message(.uid);
 if (staffmodlevel > 1 & map_production = true) { return; }
@@ -181,6 +191,11 @@ while ($i < $size) {
     }
     $i = calc($i + 1);
 }
+
+
+// The person who killed this player becomes immune for 1 minute
+//.%pvpimmunity = 100;
+.softtimer(pvpimmunity, 1);
 
 
 .obj_add(coord, bones, 1, ^lootdrop_duration);
