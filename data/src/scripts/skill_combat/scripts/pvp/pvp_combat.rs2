@@ -17,6 +17,7 @@ if ($attackrange <= 1 | $distance > $attackrange) {
 @pvp_combat_start;
 
 [label,pvp_combat_start]
+%pvpimmunity = 0;
 if (%damagetype = ^ranged_style) {
     @pvp_ranged_attack;
 }
@@ -99,15 +100,15 @@ if (add(%lastcombat_pvp, 24) > map_clock) {
 // Actually means "can be attacked"
 // And this function is talking about an enemy, not yourself
 [proc,pvp_in_combat_check]()(boolean)
-// if multi, return true
 
-if (%pvpimmunity > 0) {
-    .mes("This player has recently killed someone and is immune to attack while they loot.");
+
+if (.%pvpimmunity > 0) {
+    mes("This player has recently killed someone and is immune to attack while they loot.");
     return(false);
 }
 
 
-if (map_multiway(.coord) = false) {
+
     // if you have been attacked in the last 8 ticks, and the last person to attack you isnt your opponent
     // or an npc attacked you
     // https://cdn.discordapp.com/attachments/1126857544523063367/1332910417856565249/found-old-drive-with-rsdemon-and-some-screenshots-v0-36uacu7glqzd1.png?ex=67999c0f&is=67984a8f&hm=a4c34a40791a120dba06adebb15a652a722e486fddd6d5a9e47ee9aa2c329fb3&
@@ -149,8 +150,6 @@ if (map_multiway(.coord) = false) {
         //    return(true);
         //}
     }
-}
-return(true);
 
 
 
@@ -313,6 +312,7 @@ switch_int($damagestyle) {
 }
 stat_advance(hitpoints, scale($multiplier, 1000, scale(133, 100, $base)));
 %lastpvpdamagedealt = map_clock;
+
 
 [proc,.pvp_damage](int $delay, int $damage)
 .if_close;

@@ -23,6 +23,7 @@ protect=no
 [eat_delay]
 
 [pvpimmunity]
+protect=no
 
 [aggressive_npc]
 type=npc_uid

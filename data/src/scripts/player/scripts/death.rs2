@@ -135,13 +135,14 @@ while ($i < $size) {
 //~moveallinv(deathkeep, inv);
 //inv_clear(deathkeep);
 
-[softtimer, pvpimmunity] 
-
+[softtimer,pvpimmunity_timer] 
 if (%pvpimmunity = 0) {
-   %pvpimmunity = 100;
+  clearsofttimer(pvpimmunity_timer);
 }
-
 %pvpimmunity = sub(%pvpimmunity, 1);
+
+
+
 
 
 
@@ -192,10 +193,15 @@ while ($i < $size) {
     $i = calc($i + 1);
 }
 
+//if (p_finduid(.uid) = true) {
+//  .%pvpimmunity = 100;
+//  .softtimer(pvpimmunity_timer, 1);  
+//}
+
 
 // The person who killed this player becomes immune for 1 minute
-//.%pvpimmunity = 100;
-.softtimer(pvpimmunity, 1);
+.%pvpimmunity = 100;
+.softtimer(pvpimmunity_timer, 1);
 
 
 .obj_add(coord, bones, 1, ^lootdrop_duration);
