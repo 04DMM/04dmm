@@ -210,6 +210,17 @@ if ($random < 25) {
     inv_add(inv, oysterempty, 1);
 }
 
+[opheld1,starterkit]
+inv_delslot(inv, last_slot);
+inv_add(inv, tuna, 10);
+inv_add(inv, starterbow, 1);
+inv_add(inv, startersword, 1);
+inv_add(inv, starterstaff, 1);
+%starterstaff_charges = 500;
+%starterbow_charges = 1000;
+
+mes("You open the starter kit. There's everything you need.. well.. it's missing some skillz.");
+
 // i used this video. Osrs video from july 29 2020
 // https://youtu.be/Tp2VxwIWMcQ
 [opheld1,casket]

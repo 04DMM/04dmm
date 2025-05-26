@@ -1,3 +1,31 @@
+[starterbow]
+members=yes
+cost=200
+name=Starter bow
+desc=A shortbow made out of willow, still effective.
+model=model_2562_obj
+recol1s=6273
+recol1d=32000
+2dxof=7
+2dyof=2
+2dzoom=1200
+2dyan=124
+2dxan=508
+iop2=Wield
+wearpos=righthand
+wearpos2=lefthand
+manwear=model_512_obj_wear,0
+womanwear=model_512_obj_wear,6
+category=weapon_bow
+weight=3lb
+param=rangeattack,20
+param=levelrequire,20
+param=attackrange,7
+param=rangeattack_anim,human_bow
+param=defend_anim,human_unarmedblock
+param=rangeattack_sound,arrowlaunch2
+param=damagetype,^ranged_style
+
 [longbow]
 cost=80
 name=Longbow

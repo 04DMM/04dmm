@@ -891,6 +891,21 @@ weight=250g
 category=category_59
 members=yes
 
+
+[starterkit]
+name=Starter kit
+desc=I hope there's skill in it.
+model=model_2450_obj
+2dxof=3
+2dyof=-6
+2dzoom=1410
+2dyan=1592
+2dxan=164
+cost=50
+iop1=Open
+weight=5kg
+members=yes
+
 [casket]
 name=Casket
 desc=I hope there's treasure in it.

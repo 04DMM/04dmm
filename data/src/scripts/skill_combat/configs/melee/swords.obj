@@ -1,3 +1,34 @@
+[startersword]
+name=Starter sword
+desc=A razor sharp sword.
+cost=26
+model=model_2604_obj
+recol1s=15855
+recol1d=32000
+2dyof=-3
+2dzoom=1040
+2dyan=1156
+2dxan=352
+iop2=Wield
+wearpos=righthand
+manwear=model_519_obj_wear,0
+womanwear=model_519_obj_wear,6
+category=weapon_stab
+weight=4lb
+param=stabattack,16
+param=slashattack,11
+param=crushattack,-2
+param=slashdefence,2
+param=crushdefence,1
+param=strengthbonus,17
+param=stabattack_anim,human_sword_stab
+param=slashattack_anim,human_sword_slash
+param=defend_anim,human_sword_def
+param=stab_sound,stabsword_stab
+param=slash_sound,stabsword_slash
+
+
+
 [bronze_sword]
 name=Bronze sword
 desc=A razor sharp sword.

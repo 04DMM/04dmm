@@ -22,8 +22,20 @@ if ($rhand = null) {
 if (%damagestyle = ^style_ranged_rapid) {
     %action_delay = sub(%action_delay, 1);
 }
+
+def_obj $ammo = null;
+if ($rhand = starterbow) {
+  if (%starterbow_charges > 0) {
+    $ammo = bronze_arrow;
+  } else {
+    mes("Your Starter bow has run out of charges!");
+  }
+} else {
+  $ammo = ~player_ranged_check_ammo($rhand);
+}
+
 // this can be either the quiver or rhand.
-def_obj $ammo = ~player_ranged_check_ammo($rhand);
+//def_obj $ammo = ~player_ranged_check_ammo($rhand);
 if ($ammo = null) {
     p_stopaction;
     ~update_all($rhand);
@@ -77,7 +89,13 @@ if ($ammo = holy_water) {
     ~ranged_dropammo_npc($ammo, ^true, sub(divide($delay, 30), 2)); // 100% chance to drop ammo
     return;
 }
-~ranged_dropammo_npc($ammo, 5, sub(divide($delay, 30), 2));
+
+if ($rhand = starterbow) {
+  // Don't drop ammo 
+  %starterbow_charges = sub(%starterbow_charges, 1);
+}else {
+  ~ranged_dropammo_npc($ammo, 5, sub(divide($delay, 30), 2));
+}
 
 [proc,player_ranged_check_ammo](obj $rhand)(obj)
 def_category $weapon_cat = oc_category($rhand);

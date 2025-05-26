@@ -22,6 +22,14 @@ protect=no
 
 [eat_delay]
 
+[starterbow_charges]
+scope=perm
+protect=no
+
+[starterstaff_charges]
+scope=perm
+protect=no
+
 [pvpimmunity]
 protect=no
 
