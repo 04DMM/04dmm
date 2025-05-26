@@ -174,10 +174,12 @@ while ($i < $size) {
             inv_delslot(inv, $i);
         } else {
             def_obj $item = inv_getobj(inv, $i);
+            def_int $total = inv_total(inv, $item);
             if (~is_starter_kit_item($item) = true) {
 
             } else {
-              both_dropslot(inv, coord, $i, ^lootdrop_duration);
+              //both_dropslot(inv, coord, $i, ^lootdrop_duration);
+              .obj_add(coord, $item, $total, ^lootdrop_duration);
             }
         }
     }
@@ -195,10 +197,12 @@ while ($i < $size) {
             // Change so that items only show for the person that killed you
             //both_dropslot(worn, coord, $i, ^lootdrop_duration);
             def_obj $item = inv_getobj(worn, $i);
+            def_int $total = inv_total(worn, $item);
             if (~is_starter_kit_item($item) = true) {
 
             } else {
-              both_dropslot(worn, coord, $i, ^lootdrop_duration);
+              //both_dropslot(worn, coord, $i, ^lootdrop_duration);
+              .obj_add(coord, $item, $total, ^lootdrop_duration);
             }
         }
     }

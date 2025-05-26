@@ -690,9 +690,9 @@
 
 // Obj ops (3500-4000)
 // info: Spawn an object at $coord for the current player
-[command,obj_add](coord $coord, namedobj $obj, int $count, int $duration)
+[command,obj_add](coord $coord, obj $obj, int $count, int $duration)
 // info: Spawn an object at $coord for the secondary player
-[command,.obj_add](coord $coord, namedobj $obj, int $count, int $duration)
+[command,.obj_add](coord $coord, obj $obj, int $count, int $duration)
 // info: Spawn an object at $coord for all players
 [command,obj_addall](coord $coord, namedobj $obj, int $count, int $duration)
 // info: Get a param on the current object
