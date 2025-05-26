@@ -98,7 +98,7 @@ return($rune1, $rune_count1, $rune2, $rune_count2, $rune3, $rune_count3);
 def_obj $rhand = inv_getobj(worn, ^wearpos_rhand);
 def_int $spell = db_getfield($spell_data, magic_spell_table:spell, 0);
 
-if ($hand = starterstaff & %starterstaff_charges > 0 & $spell = ^fire_strike) {
+if ($rhand = starterstaff & %starterstaff_charges > 0 & $spell = ^fire_strike) {
    return;
 }
 
