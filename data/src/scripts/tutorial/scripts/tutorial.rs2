@@ -315,6 +315,7 @@ inv_add(inv, bronze_pickaxe, 1);
 inv_clear(worn);
 inv_clear(bank);
 inv_add(bank, coins, 25);
+inv_add(inv, starterkit, 1);
 
 ~stat_reset_all;
 
