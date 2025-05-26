@@ -173,7 +173,12 @@ while ($i < $size) {
             mes(oc_param(inv_getobj(inv, $i), lose_cape_message));
             inv_delslot(inv, $i);
         } else {
-            both_dropslot(inv, coord, $i, ^lootdrop_duration);
+            def_obj $item = inv_getobj(inv, $i);
+            if (~is_starter_kit_item($item) = true) {
+
+            } else {
+              both_dropslot(inv, coord, $i, ^lootdrop_duration);
+            }
         }
     }
     $i = calc($i + 1);
@@ -187,7 +192,14 @@ while ($i < $size) {
             mes(oc_param(inv_getobj(worn, $i), lose_cape_message));
             inv_delslot(worn, $i);
         } else {
-            both_dropslot(worn, coord, $i, ^lootdrop_duration);
+            // Change so that items only show for the person that killed you
+            //both_dropslot(worn, coord, $i, ^lootdrop_duration);
+            def_obj $item = inv_getobj(worn, $i);
+            if (~is_starter_kit_item($item) = true) {
+
+            } else {
+              both_dropslot(worn, coord, $i, ^lootdrop_duration);
+            }
         }
     }
     $i = calc($i + 1);
@@ -209,6 +221,13 @@ while ($i < $size) {
 ~moveallinv(deathkeep, inv);
 inv_clear(deathkeep);
 
+
+[proc,is_starter_kit_item](obj $item)(boolean)
+if ($item = starterkit | $item = tuna | $item = starterstaff | $item = startersword | $item = starterbow) {
+  return(true);
+} else {
+  return(false);
+}
 
 [proc,move_priciest_item_on_hero_to_death]
 def_obj $priciest_item;
