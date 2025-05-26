@@ -99,6 +99,7 @@ def_obj $rhand = inv_getobj(worn, ^wearpos_rhand);
 def_int $spell = db_getfield($spell_data, magic_spell_table:spell, 0);
 
 if ($rhand = starterstaff & %starterstaff_charges > 0 & $spell = ^fire_strike) {
+   %starterstaff_charges = sub(%starterstaff_charges, 1);
    return;
 }
 
