@@ -43,7 +43,12 @@ if (inv_total(worn, ring_of_wealth) > 0) {
     $random = random(128);
 }
 
-if ($random < 32) {
+//10x more likely to hit megarare table
+if ($random < 9) {
+   if (map_members = ^true) {
+        return (~megararetable);
+    }
+} else if ($random < 32) {
     return (uncut_sapphire, 1);
 } else if ($random < 48) {
     return (uncut_emerald, 1);
@@ -132,6 +137,18 @@ if ($random < 8) {
     return (dragonshield_a, 1);
 } else if ($random < 15) {
     return (dragon_spear, 1);
+} else if ($random < 18) {
+    return (vestas_longsword, 1);
+} else if ($random < 21) {
+    return (vestas_spear, 1);
+} else if ($random < 24) {
+    return (statius_warhammer, 1);
+} else if ($random < 27) {
+   return (morrigans_javelin, 250);
+} else if ($random < 30) {
+   return (morrigans_thrownaxe, 250);
+} else if ($random < 33) {
+   return (zurielstaff, 1);
 }
 
 [proc,randomjunk]()(namedobj, int) // guess
