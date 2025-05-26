@@ -544,8 +544,8 @@ womanwear=model_428_idk,0
 weight=2lb
 members=yes
 param=zamorakitem,1
-param=magicattack,2
-param=magicdefence,3
+param=magicattack,20
+param=magicdefence,20
 param=prayerbonus,3
 
 [zamrobetop]
@@ -568,8 +568,8 @@ womanwear2=model_456_idk
 weight=2lb
 members=yes
 param=zamorakitem,1
-param=magicattack,2
-param=magicdefence,3
+param=magicattack,15
+param=magicdefence,15
 param=prayerbonus,3
 
 [cape_of_legends]

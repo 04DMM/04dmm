@@ -16,8 +16,8 @@ womanwear=model_348_idk,0
 manwear2=model_292_idk
 womanwear2=model_456_idk
 weight=2lb
-param=magicattack,3
-param=magicdefence,3
+param=magicattack,10
+param=magicdefence,10
 
 [bluewizhat]
 cost=2
