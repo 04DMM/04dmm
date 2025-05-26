@@ -12,6 +12,14 @@ if (.%death = ^true) {
     return;
 }
 
+def_obj $item = inv_getobj(worn, ^wearpos_rhand);
+
+if ($item = startersword) {
+  p_stopaction;
+  mes("You cannot attack another player with a Starter sword.");
+  return;
+}
+
 p_opplayer(2);
 ~set_pk_vars;
 
