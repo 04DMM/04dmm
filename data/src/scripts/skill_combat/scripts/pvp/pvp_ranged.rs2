@@ -13,6 +13,12 @@ if (%action_delay > map_clock) {
 // this can be either the quiver or rhand.
 def_obj $rhand = inv_getobj(worn, ^wearpos_rhand);
 def_obj $ammo = ~player_ranged_check_ammo($rhand);
+
+if ($rhand = starterbow) {
+    p_stopaction;
+    mes("You cannot attack another player with a Starter bow.");
+}
+
 if ($ammo = null) {
     p_stopaction;
     ~update_all($rhand);
