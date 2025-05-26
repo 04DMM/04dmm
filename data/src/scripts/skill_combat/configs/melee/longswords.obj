@@ -1,3 +1,36 @@
+[vesta_longsword]
+name=Vesta's longsword
+desc=A powerful longsword.
+cost=250000
+model=model_2602_obj
+recol1s=15855
+recol1d=16777215
+2dxof=-13
+2dyof=-2
+2dzoom=860
+2dyan=1348
+2dzan=96
+2dxan=100
+iop2=Wield
+wearpos=righthand
+manwear=model_518_obj_wear,0
+womanwear=model_518_obj_wear,6
+category=weapon_slash
+weight=4lb
+param=stabattack,140
+param=slashattack,160
+param=crushattack,-2
+param=slashdefence,4
+param=crushdefence,3
+param=strengthbonus,160
+param=attackrate,5
+param=slashattack_anim,human_sword_slash
+param=stabattack_anim,human_sword_stab
+param=defend_anim,human_sword_def
+param=slash_sound,hacksword_slash
+param=stab_sound,hacksword_stab
+
+
 [bronze_longsword]
 name=Bronze longsword
 desc=A razor sharp longsword.
