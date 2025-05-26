@@ -98,7 +98,7 @@ stock7=oak_shortbow,2,200
 stock8=oak_longbow,2,200
 stock9=crossbow,2,400
 stock10=bone_crossbow,5,10000
-stock11=bone_bolts,2000,2
+stock11=bone_bolt,2000,2
 
 [fancyclothesstore]
 // https://classic.runescape.wiki/w/Tailor%27s_fancy_dress
