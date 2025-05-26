@@ -7,12 +7,32 @@
 if (~npc_is_attackable = false) { // test: wormbrain's special mes shows before if you dont have enough runes to autocast a specific spell
     return;
 }
-def_dbrow $spell_data = ~get_spell_data(%autocast_spell);
-if (~check_spell_requirements($spell_data) = false) {
-    if (%autocast_spell = db_getfield($spell_data, magic_spell_table:spell, 0)) { // matches osrs behavior
-        %attackstyle_magic = 0;
-    }
-    return;
+
+def_dbrow $spell_data = null;
+
+def_obj $rhand = inv_getobj(worn, ^wearpos_rhand);
+
+if ($rhand = starterstaff) {
+  $spell_data = ~get_spell_data(^fire_strike);
+} else {
+      $spell_data = ~get_spell_data(%autocast_spell);
+      if (~check_spell_requirements($spell_data) = false) {
+        if (%autocast_spell = db_getfield($spell_data, magic_spell_table:spell, 0)) { // matches osrs behavior
+            %attackstyle_magic = 0;
+        }
+        return;
+}
+
+ 
+
+//$spell_data = ~get_spell_data(%autocast_spell);
+
+//    if (~check_spell_requirements($spell_data) = false) {
+//        if (%autocast_spell = db_getfield($spell_data, magic_spell_table:spell, 0)) { // matches osrs behavior
+//            %attackstyle_magic = 0;
+//        }
+//        return;
+
 }
 p_opnpct(db_getfield($spell_data, magic_spell_table:spellcom, 0));
 
@@ -64,10 +84,12 @@ if (npc_type = ungadulu) {
 [apnpct,magic:stun] ~pvm_default_spell(^stun);
 
 [proc,pvm_default_spell](int $spell)
+ 
 def_dbrow $spell_data = ~get_spell_data($spell);
 if (~pvm_combat_spell_checks($spell_data) = false) {
     return;
 }
+
 if (~pvm_freeze_allowed($spell_data) = false) {
     return;
 }

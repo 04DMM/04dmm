@@ -46,6 +46,16 @@ if (p_finduid(uid) = true) {
     }
 
     ~update_all($previous);
+    if ($obj = ibanstaff) {
+       ~set_autocast_spell(41);
+       %iban_staff_charges = 2000;
+    }
+
+    if ($obj = starterstaff) {
+      %attackstyle_magic = 3;
+      %autocast_spell = ^fire_strike;
+    }
+
 }
 
 [proc,unequip](int $slot)
