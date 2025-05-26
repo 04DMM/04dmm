@@ -27,3 +27,5 @@ stock17=steel_2h_sword,2,500
 stock18=black_2h_sword,1,700
 stock19=mithril_2h_sword,1,1000
 stock20=adamant_2h_sword,1,15000
+stock21=rune_crossbow,1,60000
+stock22=runite_bolt,500,350
