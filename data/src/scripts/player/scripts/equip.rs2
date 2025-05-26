@@ -51,7 +51,12 @@ if (p_finduid(uid) = true) {
        %iban_staff_charges = 2000;
     }
 
+    if ($obj = starterbow) {
+      mes("You have <tostring(%starterbow_charges)> charges remaining on your Starter bow.");
+    }
+
     if ($obj = starterstaff) {
+      mes("You have <tostring(%starterstaff_charges)> charges remaining on your Starter staff.");
       %attackstyle_magic = 3;
       %autocast_spell = ^fire_strike;
     }
