@@ -6,6 +6,7 @@
 [opheld2,dragon_battleaxe] @levelrequire_attack(60, last_slot);
 [opheld2,dragon_spear] @levelrequire_attack(60, last_slot);
 [opheld2,dragon_spear_p] @levelrequire_attack(60, last_slot);
+[opheld2,dragon_scimitar] @levelrequire_attack(60, last_slot);
 
 [opheld2,dragon_med_helm] @levelrequire_defence(60, last_slot);
 [opheld2,dragon_sq_shield] @levelrequire_defence(60, last_slot);
