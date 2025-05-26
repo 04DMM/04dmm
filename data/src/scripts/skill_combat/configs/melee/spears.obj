@@ -1,4 +1,4 @@
-[vesta_spear]
+[vestas_spear]
 members=yes
 name=Vesta's spear
 desc=A powerful spear.
@@ -40,7 +40,7 @@ param=crush_sound,staff_hit
 param=weapon_poisoned,vestas_spear_p
 param=weapon_poisoned_message,You poison a spear.
 
-[vesta_spear_p]
+[vestas_spear_p]
 members=yes
 name=Vesta's spear (p)
 desc=A powerful spear.
