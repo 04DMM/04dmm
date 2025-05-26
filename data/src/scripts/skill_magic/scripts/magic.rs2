@@ -11,7 +11,8 @@ return ($spell_data);
 // accounts for staff and returns runes and their adjusted counts.
 [proc,check_spell_requirements](dbrow $spell_data)(boolean)
 
-
+def_obj $rhand = inv_getobj(worn, ^wearpos_rhand);
+def_int $spell = db_getfield($spell_data, magic_spell_table:spell, 0);
 
 // check if members
 if (db_getfield($spell_data, magic_spell_table:members, 0) = true & map_members = ^false) {
@@ -22,10 +23,13 @@ if (db_getfield($spell_data, magic_spell_table:members, 0) = true & map_members 
     return (false);
 }
 // check if high enough level
-if (stat(magic) < db_getfield($spell_data, magic_spell_table:levelrequired, 0)) {
+if ($rhand = starterstaff & %starterstaff_charges > 0 & $spell = ^fire_strike) {
+
+} else if (stat(magic) < db_getfield($spell_data, magic_spell_table:levelrequired, 0)) {
     mes("Your Magic level is not high enough for this spell.");
     return (false);
 }
+
 def_namedobj $rune1;
 def_int $rune_count1;
 def_namedobj $rune2;
@@ -34,8 +38,8 @@ def_namedobj $rune3;
 def_int $rune_count3;
 $rune1, $rune_count1, $rune2, $rune_count2, $rune3, $rune_count3 = ~staff_runes($spell_data);
 
-def_obj $rhand = inv_getobj(worn, ^wearpos_rhand);
-def_int $spell = db_getfield($spell_data, magic_spell_table:spell, 0);
+//def_obj $rhand = inv_getobj(worn, ^wearpos_rhand);
+//def_int $spell = db_getfield($spell_data, magic_spell_table:spell, 0);
 
 if ($rhand = starterstaff & %starterstaff_charges > 0 & $spell = ^fire_strike) {
   return(true);
