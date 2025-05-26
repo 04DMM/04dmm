@@ -1,3 +1,31 @@
+[statius_warhammer]
+cost=300000
+name=Statius's warhammer
+desc=A powerful warhammer.
+iop2=Wield
+wearpos=righthand
+manwear=model_542_obj_wear,0
+womanwear=model_542_obj_wear,6
+model=model_2731_obj
+recol1s=15855
+recol1d=16777215
+2dxof=3
+2dyof=3
+2dzoom=1050
+2dyan=456
+2dxan=344
+category=weapon_blunt
+weight=4lb
+param=attackrate,5
+param=stabattack,-4
+param=slashattack,0
+param=crushattack,150
+param=magicattack,0
+param=strengthbonus,150
+param=crushattack_anim,human_blunt_pound
+param=defend_anim,human_blunt_block
+param=crush_sound,baxe_crush
+
 [iron_warhammer]
 cost=173
 name=Iron warhammer

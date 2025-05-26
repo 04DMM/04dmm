@@ -1,3 +1,36 @@
+[morrigans_thrownaxe]
+members=yes
+cost=440
+name=Morrigan's throwing axe
+desc=A viscious throwing axe.
+model=model_2752_obj
+recol1s=15855
+recol1d=8456
+recol2s=14798
+recol2d=8456
+wearpos=righthand
+manwear=model_545_obj_wear,0
+womanwear=model_545_obj_wear,6
+2dxof=1
+2dyof=6
+2dzoom=750
+2dyan=208
+2dxan=388
+iop2=Wield
+category=weapon_thrown
+weight=3lb
+stackable=yes
+param=rangeattack,93
+param=rangebonus,117
+param=levelrequire,40
+param=attackrange,4
+param=attackrate,4
+param=rangeattack_anim,human_stake2
+param=defend_anim,human_unarmedblock
+param=rangeattack_sound,throwingaxe
+param=proj_launch,rune_taxe_launch
+param=proj_travel,rune_taxe_travel
+
 [bronze_thrownaxe]
 members=yes
 cost=3

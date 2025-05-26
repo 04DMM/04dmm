@@ -1,3 +1,38 @@
+[morrigans_javelin]
+name=Morrigan's javelin
+desc=A powerful javelin.
+cost=400
+iop2=Wield
+wearpos=righthand
+manwear=model_547_obj_wear,0
+womanwear=model_547_obj_wear,6
+model=model_2763_obj
+recol1s=15855
+recol1d=8456
+recol2s=800
+recol2d=8456
+2dxof=-2
+2dyof=63
+2dzoom=1470
+2dyan=1964
+2dxan=268
+category=weapon_javelin
+stackable=yes
+members=yes
+param=rangeattack,105
+param=rangebonus,145
+param=levelrequire,75
+param=attackrange,5
+param=attackrate,6
+param=rangeattack_anim,human_stake2
+param=defend_anim,human_unarmedblock
+param=rangeattack_sound,javelin
+param=proj_launch,rune_javelin_launch
+param=proj_travel,rune_javelin_travel
+param=weapon_poisoned,rune_javelin_p
+param=weapon_poisoned_message,You poison the javelins.
+param=poison_severity,30
+
 [bronze_javelin]
 name=Bronze javelin
 desc=A bronze tipped javelin.
