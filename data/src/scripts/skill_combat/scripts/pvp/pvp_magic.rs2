@@ -246,6 +246,10 @@ def_int $spell = db_getfield($spell_data, magic_spell_table:spell, 0);
 if (inv_total(worn, gauntlets_of_chaos) > 0 & $spell >= ^wind_bolt & $spell <= ^fire_bolt) {
     $maxhit = add($maxhit, 3);
 }
+if (inv_total(worn, zurielstaff) > 0) {
+    $maxhit = multiply($maxhit, 2);
+}
+
 return($maxhit);
 
 // https://youtu.be/1A_AITzasxE?t=431

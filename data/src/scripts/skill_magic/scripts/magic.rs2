@@ -59,10 +59,28 @@ if (inv_total(inv, $rune3) < $rune_count3 & $rune3 ! null) {
     return (false);
 }
 // check if worn is correct
-if (db_getfieldcount($spell_data, magic_spell_table:wornrequired) > 0 & inv_total(worn, db_getfield($spell_data, magic_spell_table:wornrequired, 0)) < 1) {
+def_namedobj $first;
+def_namedobj $second;
+$first = db_getfield($spell_data, magic_spell_table:wornrequired, 0);
+$second = db_getfield($spell_data, magic_spell_table:wornrequired2, 0);
+
+// Check if there is a worn requirement
+if (db_getfieldcount($spell_data, magic_spell_table:wornrequired) > 0 | db_getfieldcount($spell_data, magic_spell_table:wornrequired2) > 0) {
+  if (inv_total(worn, $first) > 0) {
+
+  } else if (inv_total(worn, $second) > 0) {
+
+  } else {
     mes(db_getfield($spell_data, magic_spell_table:worn_reqmessage, 0));
-    return(false);
+    return(false); 
+  }
 }
+
+//if (db_getfieldcount($spell_data, magic_spell_table:wornrequired) > 0 & inv_total(worn, $godstaff) < 1 & inv_total(worn, $zuriels) < 1) {
+//    mes(db_getfield($spell_data, magic_spell_table:worn_reqmessage, 0));
+//    return(false);
+//} 
+
 return (true);
 
 [proc,staff_runes](dbrow $spell_data)(namedobj, int, namedobj, int, namedobj, int)

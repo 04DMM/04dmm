@@ -60,6 +60,8 @@ if (p_finduid(uid) = true) {
     }
 
     if ($obj = starterstaff) {
+      //%magearena = ^mage_arena_staff_given;
+      //%flames_of_zamorak_casts = ^mage_arena_spell_finished;
       mes("You have <tostring(%starterstaff_charges)> charges remaining on your Starter staff.");
       %attackstyle_magic = 3;
       %autocast_spell = ^fire_strike;

@@ -18,7 +18,7 @@ if (%saradomin_strike_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_ta
 // spell hit
 if (~pvp_hit_roll(^magic_style) = true) {
     def_int $maxhit = ~magic_spell_maxhit($spell_data);
-    if (inv_total(worn, saradomin_cape) > 0 & inv_total(worn, saradomin_staff) > 0) {
+    if (inv_total(worn, saradomin_cape) > 0 & inv_total(worn, saradomin_staff) > 0 | inv_total(worn, zurielstaff) > 0 ) {
         .stat_sub(prayer, 1, 0);
         if (%charge_god_spell > 0) {
             $maxhit = scale(3, 2, $maxhit);
