@@ -69,10 +69,10 @@ if(~inzone_coord_pair_table(desert_zones, coord) = false) { // shouldnt ever hap
     cleartimer(desert_heat);
     return;
 }
-if(~inzone_coord_pair_table(desertheat_disabled_zones, coord) = true) { // todo: did this exist originally? maybe april 2005 change
-    ~calculate_desertheat_timer;
-    return;
-}
+//if(~inzone_coord_pair_table(desertheat_disabled_zones, coord) = true) { // todo: did this exist originally? maybe april 2005 change
+//    ~calculate_desertheat_timer;
+//    return;
+//}
 if(inv_total(inv, jug_water) > 0) {
     mes("The water in your jug evaporates in the desert heat.");
     inv_changeslot(inv, jug_water, jug_empty, 1); // 1 at a time

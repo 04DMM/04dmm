@@ -365,6 +365,8 @@ class World {
            //
            const rand = Math.round(Math.random() * 7);
            
+           
+
            switch (rand) {
                   case 0:
                     // mx << 6 + lx, mz << 6 + lz
@@ -404,9 +406,45 @@ class World {
 
         
       } else {
+        // Check for remaining player alive in desert.
+        const playersRemaining: Set<string> = new Set<string>();
+        for(const player of  this.players) {
+           // if player in desert zone
+           const x = player.x;
+           const z = player.z;
+           const lvl = player.level;
+           
+           //const from: CoordGrid = check(c1, CoordValid);
+           //const to: CoordGrid = check(c2, CoordValid);
+           //const pos: CoordGrid = check(c3, CoordValid);
+
+           if (this.inDesertZone(x, z, lvl) === true) {
+              this.broadcastMes("Player remains!");
+              playersRemaining.add(player.displayName);
+           }           
+        }
+
+        if (playersRemaining.count > 1) {
+           return;
+        } else if (playersRemaining.count === 1) {
+           const pl: string = playersRemaining.values().next();
+           if (pl !== null) {
+             this.broadcastMes("The winner of the 04 Deadman Mode Tournament is " + pl + " !!!! ");
+           } else {
+             this.broadcastMes("Ummmm.. something happened that shouldn't have.");
+           }
+           
+        } else {
+             this.broadcastMes("No players remain.");
+        }
+
         return;
       }      
     }
+
+    inDesertZone(x: number, z: number, lvl: number): boolean {
+      return true;
+    } 
 
     // ----
 
