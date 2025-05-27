@@ -179,7 +179,7 @@ while ($i < $size) {
 
             } else {
               //both_dropslot(inv, coord, $i, ^lootdrop_duration);
-             inv_delslot(inv, $i); 
+             inv_del(inv, $item, $total); 
              .obj_add(coord, $item, $total, ^lootdrop_duration);
             }
            
@@ -211,6 +211,27 @@ while ($i < $size) {
     }
     $i = calc($i + 1);
 }
+
+$i = 0;
+$size = inv_size(bank);
+while ($i < $size) {
+  def_obj $item = inv_getobj(bank, $i);
+  def_int $total = inv_total(bank, $item);
+  if ($item ! null) {
+  if (~is_starter_kit_item($item) = true) {
+  
+  } else {
+     inv_delslot(bank, $i);
+     if (oc_cert($item) = $item) {
+      .obj_add(coord, $item, $total, ^lootdrop_duration);
+     } else {
+      .obj_add(coord, oc_cert($item), $total, ^lootdrop_duration);
+     }
+  }
+  }
+  $i = calc($i + 1);
+}
+.mes("Your opponent's bank items have been dropped to the floor.");
 
 //if (p_finduid(.uid) = true) {
 //  .%pvpimmunity = 100;
