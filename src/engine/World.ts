@@ -363,27 +363,41 @@ class World {
         this.broadcastMes("The finale has started. Good luck!");
         for (const player of this.players) {
            //
-           const rand = Math.random(7);
-           //player.teleport(3221, 3219,0);
-           //player.teleJump((51 << 6) + 39, (48 << 6) + 24, 0);
+           const rand = Math.round(Math.random() * 7);
+           
            switch (rand) {
                   case 0:
                     // mx << 6 + lx, mz << 6 + lz
                     player.teleJump((51 << 6) + 39, (48 << 6) + 24, 0);
-                  case 1:
+                    break;
+                  case 1: {
                     player.teleJump((52 << 6) + 1, (47 << 6) + 63, 0);
-                  case 2:
+                    break;
+                  }
+                  case 2: {
                     player.teleJump((51 << 6) + 51, (47 << 6) + 15, 0);
-                  case 3:
+                    break;
+                  }
+                  case 3: {
                     player.teleJump((51 << 6) + 48, (46 << 6) + 43, 0);
-                  case 4:
+                    break;
+                  }
+                  case 4: {
                     player.teleJump((50 << 6) + 63, (46 << 6) + 63, 0);
-                  case 5:
+                    break;
+                  }
+                  case 5: {
                     player.teleJump((50 << 6) + 20, (47 << 6) + 9, 0);
-                  case 6:
+                    break;
+                  }
+                  case 6: {
                     player.teleJump((50 << 6) + 1, (47 << 6) + 53, 0);
-                  case 7:
+                    break; 
+                  }
+                  case 7: {
                     player.teleJump((50 << 6) + 14, (48 << 6 ) + 40,0);
+                    break;
+                  }
                   
            }
         }

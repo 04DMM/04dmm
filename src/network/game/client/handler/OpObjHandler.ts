@@ -12,6 +12,7 @@ export default class OpObjHandler extends MessageHandler<OpObj> {
     handle(message: OpObj, player: NetworkPlayer): boolean {
         const { x, z, obj: objId } = message;
 
+
         if (player.delayed) {
             player.write(new UnsetMapFlag());
             return false;
@@ -32,6 +33,13 @@ export default class OpObjHandler extends MessageHandler<OpObj> {
             player.moveClickRequest = false;
             player.clearPendingAction();
             return false;
+        }
+
+        if (World.DMM_FINALE_TRIGGRED) {
+           if (ObjType.getByName("shantay_pass") === ObjType.get(obj)) {
+              player.messageGame("You are not allowed to leave, Effendi."); 
+              return false;
+           } 
         }
 
         const objType = ObjType.get(obj.type);
