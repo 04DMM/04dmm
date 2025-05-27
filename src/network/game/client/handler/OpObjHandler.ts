@@ -35,12 +35,12 @@ export default class OpObjHandler extends MessageHandler<OpObj> {
             return false;
         }
 
-        if (World.DMM_FINALE_TRIGGRED) {
-           if (ObjType.getByName("shantay_pass") === ObjType.get(obj)) {
-              player.messageGame("You are not allowed to leave, Effendi."); 
-              return false;
-           } 
-        }
+        //if (World.DMM_FINALE_TRIGGRED) {
+        //   if (ObjType.getByName("shantay_pass") === ObjType.get(obj)) {
+        //      player.messageGame("You are not allowed to leave, Effendi."); 
+        //      return false;
+        //   } 
+        //}
 
         const objType = ObjType.get(obj.type);
         // todo: validate all options

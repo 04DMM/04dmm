@@ -41,6 +41,14 @@ export default class OpLocHandler extends MessageHandler<OpLoc> {
             return false;
         }
 
+        
+        if (World.DMM_FINALE_TRIGGERED === true) {
+           if (locType.id === 2669) {
+              player.messageGame("You are not allowed to leave, Effendi.");
+              return false;
+           }
+        }
+
         let mode: ServerTriggerType;
         if (message.op === 1) {
             mode = ServerTriggerType.APLOC1;
