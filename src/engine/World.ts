@@ -821,7 +821,12 @@ class World {
     private processLogouts(): void {
         const start: number = Date.now();
 
+        
+
         for (const player of this.players) {
+        
+           
+
             let force = false;
             if (this.shutdown || this.currentTick - player.lastResponse >= World.TIMEOUT_NO_RESPONSE) {
                 // world shutdown or x-logged / timed out for 60s: force logout
@@ -890,6 +895,12 @@ class World {
 
     private processLogins(): void {
         const start: number = Date.now();
+        
+           // if (this.DMM_FINALE_TRIGGERED === true) {
+           //    player.addSessionLog(LoggerEventType.ENGINE, 'Tried to login during finale - not allowed');
+           //    return;
+           // }
+
         player: for (const player of this.newPlayers) {
             // prevent logging in if a player save is being flushed
             if (this.logoutRequests.has(player.username)) {
@@ -958,6 +969,12 @@ class World {
                 }
 
                 continue;
+            }
+
+
+            if (this.DMM_FINALE_TRIGGERED === true) {
+               player.addSessionLog(LoggerEventType.ENGINE, 'Tried to login during finale - not allowed');
+               return;
             }
 
             // normal login process
