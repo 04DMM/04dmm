@@ -49,6 +49,8 @@ if (p_finduid(uid) = true) {
     if ($obj = ibanstaff) {
        ~set_autocast_spell(41);
        %iban_staff_charges = 2000;
+       %autocast_spell = 41;
+       %attackstyle_magic = 3;
     }
 
     if ($obj = starterbow) {
