@@ -134,7 +134,7 @@ def_int $random = random(128);
 if ($random < 8) {
     return (rune_spear, 1);
 } else if ($random < 12) {
-    return (dragonshield_a, 1);
+    return (dragon_sq_shield, 1);
 } else if ($random < 15) {
     return (dragon_spear, 1);
 } else if ($random < 18) {
