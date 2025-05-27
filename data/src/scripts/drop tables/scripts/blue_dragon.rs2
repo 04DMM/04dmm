@@ -6,7 +6,7 @@ if (npc_findhero = ^false) {
 
 // Default drop from config.
 obj_add(npc_coord, npc_param(death_drop), 2, ^lootdrop_duration);
-obj_add(npc_coord, dragonhide_blue, 2, ^lootdrop_duration);
+obj_add(npc_coord, dragon_leather_blue, 2, ^lootdrop_duration);
 
 // Tertiary
 ~trail_hardcluedrop(128, npc_coord);
