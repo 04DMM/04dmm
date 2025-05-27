@@ -424,10 +424,10 @@ class World {
            }           
         }
 
-        if (playersRemaining.count > 1) {
+        if (playersRemaining.size > 1) {
            return;
-        } else if (playersRemaining.count === 1) {
-           const pl: string = playersRemaining.values().next();
+        } else if (playersRemaining.size  === 1) {
+           const pl: string = playersRemaining.values().next().value;
            if (pl !== null) {
              this.broadcastMes("The winner of the 04 Deadman Mode Tournament is " + pl + " !!!! ");
            } else {
