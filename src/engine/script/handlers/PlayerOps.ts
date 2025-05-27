@@ -396,15 +396,26 @@ const PlayerOps: CommandHandlers = {
     [ScriptOpcode.P_TELEJUMP]: checkedHandler(ProtectedActivePlayer, state => {
         const coord: CoordGrid = check(state.popInt(), CoordValid);
 
-        state.activePlayer.teleJump(coord.x, coord.z, coord.level);
+        if (World.DMM_FINALE_TRIGGERED === true) {
+           state.activePlayer.messageGame("Zuriel prevents you from escaping!");
+           return;
+        } else {
+           state.activePlayer.teleJump(coord.x, coord.z, coord.level);
+        }
+        //state.activePlayer.teleJump(coord.x, coord.z, coord.level);
     }),
 
     // https://x.com/JagexAsh/status/1697517518007541917
     // https://x.com/JagexAsh/status/1790684996480442796
     [ScriptOpcode.P_TELEPORT]: checkedHandler(ProtectedActivePlayer, state => {
         const coord: CoordGrid = check(state.popInt(), CoordValid);
-
-        state.activePlayer.teleport(coord.x, coord.z, coord.level);
+        
+        if (World.DMM_FINALE_TRIGGERED === true) {
+           state.activePlayer.messageGame("Zuriel prevents you from escaping!");
+        } else {
+           state.activePlayer.teleport(coord.x, coord.z, coord.level);
+        }
+        //state.activePlayer.teleport(coord.x, coord.z, coord.level);
     }),
 
     // https://x.com/JagexAsh/status/1605130887292751873
