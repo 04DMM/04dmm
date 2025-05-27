@@ -51,6 +51,8 @@ if (p_finduid(uid) = true) {
        %iban_staff_charges = 2000;
        %autocast_spell = 41;
        %attackstyle_magic = 3;
+    } else {
+       %attackstyle_magic = 0;
     }
 
     if ($obj = starterbow) {
