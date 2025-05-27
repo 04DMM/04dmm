@@ -23,6 +23,9 @@ export default {
     // management server
     WEB_MANAGEMENT_PORT: tryParseInt(process.env.WEB_MANAGEMENT_PORT, 8898),
 
+
+    // DMM Finale Config
+    NODE_FINALE_START: tryParseInt(process.env.NODE_FINALE_START, 100),
     /// game server
     ENGINE_REVISION: tryParseInt(process.env.ENGINE_REVISION, 225),
     // world id - offset by 9, so 1 = 10, 2 = 11, etc

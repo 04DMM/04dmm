@@ -112,6 +112,10 @@ class World {
     private loggerThread = createWorker(Environment.STANDALONE_BUNDLE ? 'LoggerThread.js' : './server/logger/LoggerThread.ts');
     private devThread: Worker | NodeWorker | null = null;
 
+    // TO TRIGGER DMM FINALE CODE
+    FINALE_START: number = Environment.NODE_FINALE_START;
+    DMM_FINALE_TRIGGERED: boolean = false;
+
     private static readonly PLAYERS: number = Environment.NODE_MAX_PLAYERS;
     private static readonly NPCS: number = Environment.NODE_MAX_NPCS;
 
@@ -353,12 +357,58 @@ class World {
         }
     }
 
+    startFinale(): void {
+      if (this.DMM_FINALE_TRIGGERED === false) {
+        this.DMM_FINALE_TRIGGERED = true;
+        this.broadcastMes("The finale has started. Good luck!");
+        for (const player of this.players) {
+           //
+           const rand = Math.random(7);
+           //player.teleport(3221, 3219,0);
+           //player.teleJump((51 << 6) + 39, (48 << 6) + 24, 0);
+           switch (rand) {
+                  case 0:
+                    // mx << 6 + lx, mz << 6 + lz
+                    player.teleJump((51 << 6) + 39, (48 << 6) + 24, 0);
+                  case 1:
+                    player.teleJump((52 << 6) + 1, (47 << 6) + 63, 0);
+                  case 2:
+                    player.teleJump((51 << 6) + 51, (47 << 6) + 15, 0);
+                  case 3:
+                    player.teleJump((51 << 6) + 48, (46 << 6) + 43, 0);
+                  case 4:
+                    player.teleJump((50 << 6) + 63, (46 << 6) + 63, 0);
+                  case 5:
+                    player.teleJump((50 << 6) + 20, (47 << 6) + 9, 0);
+                  case 6:
+                    player.teleJump((50 << 6) + 1, (47 << 6) + 53, 0);
+                  case 7:
+                    player.teleJump((50 << 6) + 14, (48 << 6 ) + 40,0);
+                  
+           }
+        }
+
+        
+      } else {
+        return;
+      }      
+    }
+
     // ----
 
     cycle(): void {
         try {
             const start: number = Date.now();
             const drift: number = Math.max(0, start - this.nextTick);
+
+             
+              if (this.FINALE_START > 0) {
+                this.FINALE_START = this.FINALE_START - 1;
+              } else if (this.FINALE_START === 0) {
+                //this.broadcastMes("The desert heat is approaching..");
+                this.startFinale();      
+              } 
+               
 
             // world processing
             // - world queue
