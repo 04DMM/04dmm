@@ -381,6 +381,8 @@
 [command,p_locmerge](int $startCycle, int $endCycle, coord $southEast, coord $northWest);
 // info: Show the welcome screen
 [command,last_login_info]
+// info: for DMM calculating desert heat dmg, configurable on server, returns a number
+[command,calc_desert_heat]()(int)
 // info: Requires protected access - teleport the player to $coord, short distances (1-2 tiles) will visually walk/run
 [command,p_teleport](coord $coord)
 // info: Requires protected access - teleport the secondary player to $coord, short distances (1-2 tiles) will visually walk/run
