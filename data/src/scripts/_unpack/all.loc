@@ -12636,6 +12636,15 @@ op1=Open
 op2=Search for traps
 forceapproach=north
 
+[deadman_chest]
+name=Deadman's Chest
+desc=I'd die to know what's in it.
+model=wooden_chest
+active=yes
+op1=Open
+op2=Search for traps
+forceapproach=north
+
 [chest_50_coins]
 name=Chest
 desc=I wonder what's inside it.

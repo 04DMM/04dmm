@@ -217,6 +217,35 @@ members=yes
 iop1=Read
 tradeable=no
 
+[rune_gloves]
+name=Rune gloves
+desc=Gloves made of rune.
+cost=6000
+model=model_2649_obj
+recol1s=9473
+recol1d=5791
+2dxof=8
+2dyof=-8
+2dzoom=930
+2dyan=828
+2dxan=420
+weight=8oz
+members=yes
+iop2=Wear
+wearpos=hands
+manwear=model_179_obj_wear,0
+womanwear=model_356_obj_wear,0
+category=category_16
+param=stabattack,8
+param=slashattack,8
+param=crushattack,8
+param=stabdefence,8
+param=slashdefence,8
+param=crushdefence,8
+param=strengthbonus,8
+tradeable=no
+
+
 [klanks_gauntlets]
 name=Klank's gauntlets
 desc=Strong dwarvish gloves.
