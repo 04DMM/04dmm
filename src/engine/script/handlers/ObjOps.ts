@@ -179,7 +179,7 @@ const ObjOps: CommandHandlers = {
         state.activePlayer.invAdd(invType.id, obj.type, obj.count);
 
         // Vesta longsword
-        /*if (objType.id === 2887) {
+        if (objType.id === 2887) {
            World.broadcastMes(state.activePlayer.displayName + " has obtained Vesta's Longsword!");
         } else if (objType.id === 2888) {
            World.broadcastMes(state.activePlayer.displayName + " has obtained Morrigan's Thrownaxes!");
@@ -191,7 +191,7 @@ const ObjOps: CommandHandlers = {
            World.broadcastMes(state.activePlayer.displayName + " has obtained Statius's Warhammer!");
         } else if (objType.id === 2892) {
            World.broadcastMes(state.activePlayer.displayName + " has obtained Vesta's Spear!");
-        }*/
+        }
 
 
         const value = obj.count * objType.cost;
