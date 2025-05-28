@@ -204,11 +204,13 @@ while ($count >= 0) {
 
     def_int $roll = random($reward_rarity_denominator);
     $reward_rarity_denominator = sub($reward_rarity_denominator, $reward_rarity_numerator);
+
+    def_int $quantity_roll = ~random_range($reward_quantity_min, $reward_quantity_max);
     
     if (loc_type = deadman_chest) {
         inv_add(inv, $reward, $quantity_roll);
     } else if ($roll >= $reward_rarity_denominator) {
-        def_int $quantity_roll = ~random_range($reward_quantity_min, $reward_quantity_max);
+        //def_int $quantity_roll = ~random_range($reward_quantity_min, $reward_quantity_max);
         // Trapped chests can reward more than 1.
         inv_add(inv, $reward, multiply($quantity_roll, 5));
     }
