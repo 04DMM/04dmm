@@ -111,7 +111,13 @@ stat_advance(thieving, $experience);
 ~trapped_chest_check_for_reward($data);
 loc_change(loc_2574, 4); //opened chest
 p_delay(2);
-loc_change(loc_2572, $respawn_ticks); //looted chest
+//loc_change(loc_2572, $respawn_ticks); //looted chest
+
+if (loc_type = deadman_chest) {
+  loc_change(inviswall, $respawn_ticks);
+} else {
+  loc_change(loc_2572, $respawn_ticks);
+}
 
 [oploc1,loc_2572]
 mes("It looks like this chest has already been looted.");

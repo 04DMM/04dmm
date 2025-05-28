@@ -266,6 +266,11 @@ model=model_loc_83
 [00]
 model=model_loc_83
 
+[inviswall_noblock]
+model=model_loc_83
+blockwalk=no
+shadow=no
+
 [inviswall_blockrange]
 model=model_loc_83
 blockrange=no

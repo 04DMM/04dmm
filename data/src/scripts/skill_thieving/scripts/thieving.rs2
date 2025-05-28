@@ -116,6 +116,8 @@ $damage = calc($damage + 3);
 
 [proc,disarm_trapped_chest](dbrow $data, loc $loc, coord $loc_coord, int $loc_angle, locshape $loc_shape)
 // https://www.youtube.com/watch?v=5SxYEdRdiPU
+def_loc $original = loc_type;
+
 mes("You find a trap on the chest, "); // extra space matches OSRS
 p_delay(1);
 mes("You disable the trap.");
@@ -137,7 +139,13 @@ if (db_getfieldcount($data, trapped_chest:tele_coord) > 0) {
     sound_synth(lever, 0, 0);
     p_teleport(db_getfield($data, trapped_chest:tele_coord, 0));
 }
-loc_change(loc_2572, $respawn_ticks); //looted chest
+
+if ($original = deadman_chest) {
+  loc_change(inviswall_noblock, $respawn_ticks);
+} else {
+  loc_change(loc_2572, $respawn_ticks);
+}
+
 
 
 [proc,pick_pocket_check_for_reward](dbrow $data)
