@@ -401,6 +401,9 @@ const ScriptOpcodePointers: {
         require: ['p_active_player'],
         require2: ['p_active_player2']
     },
+    [ScriptOpcode.CALC_DESERT_HEAT]: {
+        require: ['active_player']
+    },
     [ScriptOpcode.P_WALK]: {
         require: ['p_active_player'],
         require2: ['p_active_player2']

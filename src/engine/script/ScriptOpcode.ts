@@ -19,6 +19,7 @@ export const enum ScriptOpcode {
     SWITCH,
     // 25 = push_varbit
     // 27 = pop_varbit
+    CALC_DESERT_HEAT,
     BRANCH_LESS_THAN_OR_EQUALS = 31, // official, see cs2
     BRANCH_GREATER_THAN_OR_EQUALS, // official, see cs2
     PUSH_INT_LOCAL, // official, see cs2
@@ -612,6 +613,7 @@ export const ScriptOpcodeMap: Map<string, number> = new Map([
     ['P_STOPACTION', ScriptOpcode.P_STOPACTION],
     ['P_TELEJUMP', ScriptOpcode.P_TELEJUMP],
     ['P_TELEPORT', ScriptOpcode.P_TELEPORT],
+    ['CALC_DESERT_HEAT', ScriptOpcode.CALC_DESERT_HEAT],
     ['P_WALK', ScriptOpcode.P_WALK],
     ['PLAYER_FINDALLZONE', ScriptOpcode.PLAYER_FINDALLZONE],
     ['PLAYER_FINDNEXT', ScriptOpcode.PLAYER_FINDNEXT],

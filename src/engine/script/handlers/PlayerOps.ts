@@ -418,6 +418,14 @@ const PlayerOps: CommandHandlers = {
         //state.activePlayer.teleport(coord.x, coord.z, coord.level);
     }),
 
+    [ScriptOpcode.CALC_DESERT_HEAT]: checkedHandler(ActivePlayer, state => {
+       const max_heat_damage: number = 20;
+       let actual_dmg: number  = ((Math.max(0, 1500 - state.activePlayer.totalLevel)) / 1500);
+       actual_dmg = Math.round(actual_dmg * max_heat_dmg);
+ 
+       state.pushInt(actual_dmg);      
+    }),
+
     // https://x.com/JagexAsh/status/1605130887292751873
     // https://x.com/JagexAsh/status/1698248664349614138
     [ScriptOpcode.P_WALK]: checkedHandler(ProtectedActivePlayer, state => {
