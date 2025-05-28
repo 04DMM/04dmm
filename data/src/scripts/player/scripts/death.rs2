@@ -87,6 +87,7 @@ healenergy(10000);
 
 ~reset_wipe;
 
+
 [proc,player_death_lose_items]
 if (staffmodlevel > 1 & map_production = true) { return; }
 
