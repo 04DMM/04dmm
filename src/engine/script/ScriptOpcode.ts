@@ -19,7 +19,6 @@ export const enum ScriptOpcode {
     SWITCH,
     // 25 = push_varbit
     // 27 = pop_varbit
-    CALC_DESERT_HEAT,
     BRANCH_LESS_THAN_OR_EQUALS = 31, // official, see cs2
     BRANCH_GREATER_THAN_OR_EQUALS, // official, see cs2
     PUSH_INT_LOCAL, // official, see cs2
@@ -168,6 +167,7 @@ export const enum ScriptOpcode {
     P_TELEJUMP, // official
     P_TELEPORT,
     P_WALK, // official
+    CALC_DESERT_HEAT,
     PLAYER_FINDALLZONE, // todo: replace with huntall
     PLAYER_FINDNEXT, // todo: replace with huntnext
     QUEUE, // official

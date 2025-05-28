@@ -307,6 +307,9 @@ export default class Player extends PathingEntity {
     input: InputTracking;
     submitInput: boolean = false;
 
+    // total level
+    totalLevel: number = 0;
+
     // runtime variables
     pid: number = -1;
     uid: number = -1;
@@ -1760,6 +1763,8 @@ export default class Player extends PathingEntity {
                 }
             }
 
+            this.totalLevel = total;
+
             const milestone = 250; // Level milestones = multiple of this number (should be >= 100)
             const prevMilestone = ((total - (this.baseLevels[stat] - before)) / milestone) | 0;
             const currMilestone = (total / milestone) | 0;
@@ -1783,6 +1788,17 @@ export default class Player extends PathingEntity {
             this.combatLevel = this.getCombatLevel();
             this.buildAppearance(InvType.WORN);
         }
+    }
+
+    getTotalLevel(): number {
+      let total = 0;
+            for (let stat = 0; stat < this.baseLevels.length; stat++) {
+                if (!PlayerStatEnabled[stat]) {
+                    continue;
+                }
+                total += this.baseLevels[stat];
+            }
+       return total;
     }
 
     changeStat(stat: number) {
