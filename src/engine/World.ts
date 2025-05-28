@@ -470,9 +470,10 @@ class World {
                 if (this.lastAnnouncement === 0) {
                  this.lastAnnouncement = Date.now();
                 } else if (Date.now() - this.lastAnnouncement > 300000) {
-                 const timeRemaining: number = this.FINALE_START * 0.6 / 60 / 1000;
+                 const timeRemainingSeconds: number = this.FINALE_START * 0.6;
                  this.lastAnnouncement = Date.now();
-                 this.broadcastMes("The finale will start in " + timeRemaining + " minutes.");
+                 const date = new Date(timeRemainingSeconds * 1000).toISOString().slice(11,19);
+                 this.broadcastMes("The finale will start in " + date);
                 }
               } else if (this.FINALE_START === 0) {
                 //this.broadcastMes("The desert heat is approaching..");
