@@ -43,6 +43,10 @@ export default class Loc extends NonPathingEntity {
         return (this.baseInfo >> 21) & 0x3;
     }
 
+    get original(): number {
+        return (this.baseInfo & 0x3fff);
+    }
+
     change(type: number, shape: number, angle: number) {
         this.currentInfo = this.packInfo(type, shape, angle);
     }
@@ -51,15 +55,22 @@ export default class Loc extends NonPathingEntity {
         this.currentInfo = this.baseInfo;
     }
 
+
+
     turn() {
         // Decrement lifecycle tick
         --this.lifecycleTick;
+        
         if (this.lifecycleTick === 0) {
             if (this.lifecycle === EntityLifeCycle.DESPAWN && this.isActive) {
                 World.removeLoc(this, 0);
             } else if (this.lifecycle === EntityLifeCycle.RESPAWN && this.isChanged() && this.isActive) {
+                if (this.original === 3387) {
+                   World.broadcastMes("[EVENT]: An interesting chest has spawned in Varrock...");
+                }
                 World.revertLoc(this);
             } else if (this.lifecycle === EntityLifeCycle.RESPAWN && !this.isActive) {
+                
                 World.addLoc(this, 0);
             } else {
                 // Fail safe in case no conditions are met (should never happen)
