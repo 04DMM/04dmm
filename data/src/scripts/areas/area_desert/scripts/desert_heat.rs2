@@ -9,7 +9,7 @@ if(~inzone_coord_pair_table(desert_zones, coord) = false | %desert = ^true) { //
 
 [proc,calculate_desertheat_timer]
 cleartimer(desert_heat);
-def_int $time = 5;
+def_int $time = 150;
 def_obj $head = inv_getobj(worn, ^wearpos_head);
 def_obj $body = inv_getobj(worn, ^wearpos_torso);
 def_obj $legs = inv_getobj(worn, ^wearpos_legs);

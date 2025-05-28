@@ -429,7 +429,7 @@ class World {
            if (this.lastAnnouncement === 0) {
                this.lastAnnouncement = Date.now();
                this.broadcastMes("There are " + playersRemaining.size + " players remaining! ");
-           } else if ((Date.now() - this.lastAnnouncement) > 100) {
+           } else if ((Date.now() - this.lastAnnouncement) > 60000) {
                this.lastAnnouncement = Date.now();
                this.broadcastMes("There are " + playersRemaining.size + " players remaining! ");
            }
@@ -469,8 +469,8 @@ class World {
                 this.FINALE_START = this.FINALE_START - 1;
                 if (this.lastAnnouncement === 0) {
                  this.lastAnnouncement = Date.now();
-                } else if (Date.now() - this.lastAnnouncement > 500) {
-                 const timeRemaining: number = this.FINALE_START * 0.6 / 60;
+                } else if (Date.now() - this.lastAnnouncement > 300000) {
+                 const timeRemaining: number = this.FINALE_START * 0.6 / 60 / 1000;
                  this.lastAnnouncement = Date.now();
                  this.broadcastMes("The finale will start in " + timeRemaining + " minutes.");
                 }
