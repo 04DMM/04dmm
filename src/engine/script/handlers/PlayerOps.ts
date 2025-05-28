@@ -418,7 +418,7 @@ const PlayerOps: CommandHandlers = {
         //state.activePlayer.teleport(coord.x, coord.z, coord.level);
     }),
 
-    [ScriptOpcode.CALC_DESERT_HEAT]: checkedHandler(ActivePlayer, state => {
+    [ScriptOpcode.CALC_DESERT_HEAT]: checkedHandler(ProtectedActivePlayer, state => {
        const max_heat_damage: number = 20;
        let actual_dmg: number  = ((Math.max(0, 1500 - state.activePlayer.totalLevel)) / 1500);
        actual_dmg = Math.round(actual_dmg * max_heat_dmg);
