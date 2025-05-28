@@ -1,4 +1,4 @@
-import type { ColumnType } from 'kysely';
+import type { ColumnType } from "kysely";
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   ? ColumnType<S, I | undefined, U>
   : ColumnType<T, T | undefined, T>;
@@ -220,6 +220,7 @@ export type DB = {
     login: login;
     message: message;
     message_status: message_status;
+    message_tag: message_tag;
     message_thread: message_thread;
     mod_action: mod_action;
     newspost: newspost;

@@ -33,6 +33,27 @@ if ($random < 32) {
     return (unidentified_dwarf_weed, 1);
 }
 
+[proc,randomfood](int $amt)(namedobj, int)
+def_int $random = 0;
+
+$random = random(128);
+
+if ($random < 15) {
+   return (bread, $amt);
+} else if ($random < 25) {
+   return (sardine, $amt);
+} else if ($random < 30) {
+   return (trout, $amt);
+} else if ($random < 33) {
+   return (salmon, $amt);
+} else if ($random < 35) {
+   return (bass, $amt);
+} else if ($random < 127) {
+   return (cabbage, $amt);
+} else if ($random < 128) {
+   return (shark, $amt);
+}
+
 // Name leaked
 [proc,randomjewel]()(namedobj, int)
 def_int $random = 0;
