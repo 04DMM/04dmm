@@ -74,7 +74,19 @@ if ($current_level < $thieving_level) {
     return;
 }
 
-~disarm_trapped_chest($data, $loc, $loc_coord, $loc_angle, $loc_shape);
+def_int $random = random(60);
+if (loc_type = deadman_chest) {
+  if ($random > 5) {
+    mes("You successfully open the Deadman's Chest.");
+    ~disarm_trapped_chest($data, $loc, $loc_coord, $loc_angle, $loc_shape);
+  } else {
+    mes("You fail to open the Deadman Chest.");
+  }
+} else {
+    ~disarm_trapped_chest($data, $loc, $loc_coord, $loc_angle, $loc_shape);
+}
+
+//~disarm_trapped_chest($data, $loc, $loc_coord, $loc_angle, $loc_shape);
 
 [label,activate_locked_chest]
 mes("This chest is locked");
