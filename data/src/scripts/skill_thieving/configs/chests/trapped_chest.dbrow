@@ -22,7 +22,7 @@ data=level,1
 data=experience,2500
 data=respawn_ticks,5
 data=loot,amulet_of_power,1,1,128
-data=loot,coins,10000,50000,128
+data=loot,coins,1,5000,128
 data=loot,rune_gloves,1,1,128
 
 [trapped_chest_chest_50_coins]
