@@ -211,6 +211,10 @@ if ($random < 25) {
 }
 
 [opheld1,starterkit]
+if (inv_freespace(inv) < 13) {
+  mes("You need 13 inventory spaces to open the Starter kit.");
+  return;
+}
 inv_delslot(inv, last_slot);
 inv_add(inv, tuna, 10);
 inv_add(inv, starterbow, 1);
@@ -219,7 +223,7 @@ inv_add(inv, starterstaff, 1);
 %starterstaff_charges = 500;
 %starterbow_charges = 1000;
 
-mes("You open the starter kit. There's everything you need.. well.. it's missing some skillz.");
+mes("You open the starter kit. You find everything you need. Except skill.");
 
 // i used this video. Osrs video from july 29 2020
 // https://youtu.be/Tp2VxwIWMcQ
