@@ -419,12 +419,21 @@ class World {
            //const pos: CoordGrid = check(c3, CoordValid);
 
            if (this.inDesertZone(x, z, lvl) === true) {
-              this.broadcastMes("Player remains!");
+              //this.broadcastMes("Player remains!");
               playersRemaining.add(player.displayName);
            }           
         }
 
         if (playersRemaining.size > 1) {
+           
+           if (this.lastAnnouncement === 0) {
+               this.lastAnnouncement = Date.now();
+               this.broadcastMes("There are " + playersRemaining.size + " players remaining! ");
+           } else if ((Date.now() - this.lastAnnouncement) > 100) {
+               this.lastAnnouncement = Date.now();
+               this.broadcastMes("There are " + playersRemaining.size + " players remaining! ");
+           }
+           
            return;
         } else if (playersRemaining.size  === 1) {
            const pl: string = playersRemaining.values().next().value;
@@ -442,6 +451,8 @@ class World {
       }      
     }
 
+    lastAnnouncement: number = 0;
+
     inDesertZone(x: number, z: number, lvl: number): boolean {
       return true;
     } 
@@ -456,6 +467,13 @@ class World {
              
               if (this.FINALE_START > 0) {
                 this.FINALE_START = this.FINALE_START - 1;
+                if (this.lastAnnouncement === 0) {
+                 this.lastAnnouncement = Date.now();
+                } else if (Date.now() - this.lastAnnouncement > 500) {
+                 const timeRemaining: number = this.FINALE_START * 0.6 / 60;
+                 this.lastAnnouncement = Date.now();
+                 this.broadcastMes("The finale will start in " + timeRemaining + " minutes.");
+                }
               } else if (this.FINALE_START === 0) {
                 //this.broadcastMes("The desert heat is approaching..");
                 this.startFinale();      
