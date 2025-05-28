@@ -12,7 +12,7 @@ if (~inzone_coord_pair_table(trawler_wreck_zones, coord) = true) {
 
 def_obj $item = inv_getobj(inv, $last);
 
-if ($item = starterstaff | $item = starterbow | $item = startersword | $item = starterkit) {
+if ($item = starterstaff | $item = starterbow | $item = startersword | $item = starterkit | $item = tuna) {
     def_int $choice = ~p_choice2_header("Yes", 1, "No", 2, "Are you sure? It will be destroyed!");
     if ($choice = 1) {
        //Falador
