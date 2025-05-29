@@ -76,7 +76,7 @@ if ($current_level < $thieving_level) {
 
 def_int $random = random(60);
 if (loc_type = deadman_chest) {
-  if ($random > 5) {
+  if ($random > 58) {
     mes("You successfully open the Deadman's Chest.");
     ~disarm_trapped_chest($data, $loc, $loc_coord, $loc_angle, $loc_shape);
   } else {
