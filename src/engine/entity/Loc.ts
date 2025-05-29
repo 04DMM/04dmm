@@ -67,7 +67,19 @@ export default class Loc extends NonPathingEntity {
             } else if (this.lifecycle === EntityLifeCycle.RESPAWN && this.isChanged() && this.isActive) {
                 if (this.original === 3387) {
                    World.broadcastMes("[EVENT]: An interesting chest has spawned in Varrock...");
+                   if (this.x === 29) {
+                     World.broadcastMes("[EVENT]: An interesting chest has spawned in the Gnome Stronghold...");
+                   } else if (this.x === 21) {
+                     World.broadcastMes("[EVENT]: An interesting chest has spawned in Falador...");  
+                   } else if (this.x === 35) {
+                     World.broadcastMes("[EVENT]: An interesting chest has spawned in Lumbridge...");
+                   } else if (this.x === 30) {
+                     World.broaddcastMes("[EVENT]: An interesting chest has spawned outside the Mage's Bank!");
+                   }
                 }
+              
+
+
                 World.revertLoc(this);
             } else if (this.lifecycle === EntityLifeCycle.RESPAWN && !this.isActive) {
                 
