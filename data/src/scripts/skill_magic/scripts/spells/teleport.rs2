@@ -8,8 +8,8 @@
 [softtimer,teleporttimer](int $spell)
 
 // Cast time has reached 10
-if (%teleport = 7) {
-   @magic_teleport($spell);
+if (%teleport > 6) {
+   @actual_teleport($spell);
 } else {
    //@magic_teleport($spell);
    //cleartimer(teleporttimer);
@@ -34,13 +34,11 @@ if (%teleport = 7) {
 
 return;
 
-[label,magic_teleport](int $spell)
-cleartimer(logouttimer);
-clearsofttimer(teleporttimer);
-//softtimer(teleporttimer, 2, $spell);
-if (%teleport = 7) {
+[label,actual_teleport](int $spell)
 %teleport = 0;
 clearsofttimer(teleporttimer);
+if_close;
+
 if_close;
 if (p_finduid(uid) = true) {
     cleartimer(logouttimer);
@@ -76,10 +74,63 @@ if (p_finduid(uid) = true) {
   // teleport player. Always a radius of 2
     ~player_teleport_normal(map_findsquare(db_getfield($spell_data, magic_spell_table:tele_coord, 0), 0, 2, ^map_findsquare_lineofwalk));
   } 
-} else {
-   %teleport = 0;
-   softtimer(teleporttimer, 2, $spell);
-}
+
+
+
+[label,magic_teleport](int $spell)
+cleartimer(logouttimer);
+clearsofttimer(teleporttimer);
+//softtimer(teleporttimer, 2, $spell);
+%teleport = 0;
+softtimer(teleporttimer, 2, $spell);
+
+
+
+
+
+//if (%teleport > 7) {
+//%teleport = 0;
+//clearsofttimer(teleporttimer);
+//if_close;
+//if (p_finduid(uid) = true) {
+   // cleartimer(logouttimer);
+    // look for spell in db
+ //   def_dbrow $spell_data = ~get_spell_data($spell);
+ //   if (~check_spell_requirements($spell_data)= false) {
+ //       return;
+ //   }
+ //  if($spell = ^ardougne_teleport & %elena_progress < ^elena_complete) {
+ //       mes("You must have completed Plague City to use this spell.");
+ //       return;
+ //   }
+  //  if($spell = ^watchtower_teleport & %itwatchtower_progress < ^itwatchtower_complete) {
+   //     mes("You must have completed Watch Tower to use this spell.");
+   //     return;
+  //  }
+  // https://www.reddit.com/r/2007scape/comments/b4vdki/watchtower_teleport_not_working_despite/, https://runescape.salmoneus.net/forums/topic/212538-cant-do-ardougne-tele-why-is-it-so/
+  //  if(($spell = ^ardougne_teleport & %elena_progress < ^elena_complete_read_scroll) | ($spell = ^watchtower_teleport & %itwatchtower_progress < ^itwatchtower_complete_read_scroll)) {
+   //     mes("You havn't learnt how to cast this spell yet.");
+   //     return;
+   // }
+   // if (~pre_tele_checks(coord) = false) {
+   //     return;
+   // }
+   // if (afk_event = ^true) {
+   //     ~macro_event_general_spawn(~macro_event_set_random);
+    //    return;
+   // }
+    // delete runes and give xp
+  //  ~delete_spell_runes($spell_data);
+  //  ~give_spell_xp($spell_data);
+    // give additional affects
+  // teleport player. Always a radius of 2
+//    ~player_teleport_normal(map_findsquare(db_getfield($spell_data, magic_spell_table:tele_coord, 0), 0, 2, ^map_findsquare_lineofwalk));
+//  } 
+//}
+// else {
+//   %teleport = 0;
+//   softtimer(teleporttimer, 2, $spell);
+//}
 
 [proc,player_teleport_normal](coord $coord)
 if_close;
