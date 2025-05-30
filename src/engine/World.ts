@@ -115,6 +115,7 @@ class World {
     // TO TRIGGER DMM FINALE CODE
     FINALE_START: number = Environment.NODE_FINALE_START;
     DMM_FINALE_TRIGGERED: boolean = false;
+    DMM_FINALE_CONCLUDED: boolean = false;
 
     private static readonly PLAYERS: number = Environment.NODE_MAX_PLAYERS;
     private static readonly NPCS: number = Environment.NODE_MAX_NPCS;
@@ -439,6 +440,7 @@ class World {
            const pl: string = playersRemaining.values().next().value;
            if (pl !== null) {
              this.broadcastMes("The winner of the 04 Deadman Mode Tournament is " + pl + " !!!! ");
+             this.DMM_FINALE_CONCLUDED = true;
            } else {
              this.broadcastMes("Ummmm.. something happened that shouldn't have.");
            }
@@ -1029,7 +1031,7 @@ class World {
             }
 
 
-            if (this.DMM_FINALE_TRIGGERED === true) {
+            if (this.DMM_FINALE_TRIGGERED === true & this.DMM_FINALE_CONCLUDED === false) {
                player.addSessionLog(LoggerEventType.ENGINE, 'Tried to login during finale - not allowed');
                return;
             }
