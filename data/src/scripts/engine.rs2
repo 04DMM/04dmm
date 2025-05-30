@@ -7,6 +7,8 @@
 // Server ops (1000-1999)
 // info: Get the world's current cycle count
 [command,map_clock]()(int)
+// info: Checks if DMM finale has started
+[command,finale_started]()(boolean)
 // info: Returns true if the world is configured as a members world
 [command,map_members]()(int)
 // info: Get the number of players in a given area
