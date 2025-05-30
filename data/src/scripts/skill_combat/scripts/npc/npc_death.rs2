@@ -19,15 +19,15 @@ if (finduid(%npc_aggressive_player) = true) {
     def_int $random = random(240);
     def_int $hp = npc_stat(hitpoints);
 
-    if ($hp > $random) {
+    //if ($hp > $random) {
        obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
-    }
+    //}
 
-    $random = random(240);
+    //$random = random(240);
 
-    if ($hp > $random) {
+    //if ($hp > $random) {
        obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
-    }
+    //}
 
     //obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
     if (npc_param(death_sound) ! null) {
