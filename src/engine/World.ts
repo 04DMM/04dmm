@@ -446,11 +446,14 @@ class World {
              this.broadcastMes("Ummmm.. something happened that shouldn't have.");
            }
            
-        } else {
-             this.broadcastMes(this.DMM_WINNER + " has won. The tournament is now over.");
-        }
+        } 
+          //   this.broadcastMes(this.DMM_WINNER + " has won. The tournament is now over.");
+        //}
 
         return;
+      } else if (this.DMM_FINALE_CONCLUDED === true) {
+
+         this.broadcastMes(this.DMM_WINNER + " has won. The tournament is now over.");
       }      
     }
 
