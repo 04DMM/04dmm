@@ -452,9 +452,11 @@ class World {
 
         return;
       } else if (this.DMM_FINALE_CONCLUDED === true) {
-
-         this.broadcastMes(this.DMM_WINNER + " has won. The tournament is now over.");
-      }      
+         if ((Date.now() - this.lastAnnouncement) > 60000) {
+             this.lastAnnouncement = Date.now();
+             this.broadcastMes(this.DMM_WINNER + " has won. The tournament is now over.");
+         } 
+        }      
     }
 
     DMM_WINNER: string = "";
