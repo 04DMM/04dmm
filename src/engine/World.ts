@@ -9,6 +9,7 @@ import kleur from 'kleur';
 import forge from 'node-forge';
 
 // lostcity
+import { CoordGrid } from '#/engine/CoordGrid.js';
 import CategoryType from '#/cache/config/CategoryType.js';
 import Component from '#/cache/config/Component.js';
 import DbRowType from '#/cache/config/DbRowType.js';
@@ -420,8 +421,6 @@ class World {
            //const pos: CoordGrid = check(c3, CoordValid);
 
            if (this.inDesertZone(x, z, lvl) === true) {
-              this.broadcastMes("Player X: " + x + " Player Z: " + z + " Player lvl: " + lvl);
-              //this.broadcastMes("Player remains!");
               playersRemaining.add(player.displayName);
            }           
         }
@@ -456,8 +455,42 @@ class World {
 
     lastAnnouncement: number = 0;
 
-    inDesertZone(x: number, z: number, lvl: number): boolean {
-      return true;
+    inZone(from: CoordGrid, to: CoordGrid, lvl, x, z): boolean {
+       //this.broadcastMes("From.x: " + from.x + " to.x: " + to.x + " x: " + x);
+       if (x < from.x || x > to.x) {
+            return false;
+        } else if (lvl < from.level || lvl > to.level) {
+            return false;
+        } else if (z < from.z || z > to.z) {
+            return false;
+        } else {
+            return true;            
+        }
+    }
+
+    inDesertZone(x: number, z: number, lvl: number): boolean {      
+      let bedabinCoordFrom = CoordGrid.parsePackedCoord("0_49_46_0_0");
+      let bedabinCoordTo = CoordGrid.parsePackedCoord("0_49_47_63_63");
+      
+      let centralWestFrom = CoordGrid.parsePackedCoord("0_50_46_0_0"); 
+      let centralWestTo = CoordGrid.parsePackedCoord("0_50_48_63_63");
+
+      let centralDesertFrom = CoordGrid.parsePackedCoord("0_51_46_0_0");
+      let centralDesertTo = CoordGrid.parsePackedCoord("0_51_48_30_63");
+
+      let centralSouthFrom = CoordGrid.parsePackedCoord("0_51_46_30_0");
+      let centralSouthTo = CoordGrid.parsePackedCoord("0_51_48_53_45");
+
+      let centralEastFrom = CoordGrid.parsePackedCoord("0_51_46_53_0");
+      let centralEastTo = CoordGrid.parsePackedCoord("0_52_48_63_63");       
+
+      let inBedabin = this.inZone(bedabinCoordFrom, bedabinCoordTo, lvl, x, z);
+      let inCentralWest = this.inZone(centralWestFrom, centralWestTo, lvl, x, z);
+      let inCentralDes = this.inZone(centralDesertFrom, centralDesertTo, lvl, x, z);
+      let inCentralSouth = this.inZone(centralSouthFrom, centralSouthTo, lvl, x, z);
+      let inCentralEast = this.inZone(centralEastFrom, centralEastTo, lvl, x, z);
+
+      return (inBedabin | inCentralWest | inCentralDes | inCenrtalSouth | inCentralEast);
     } 
 
     // ----

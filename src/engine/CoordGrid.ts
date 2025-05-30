@@ -155,5 +155,15 @@ export const CoordGrid = {
         const lx = x & 0x3f;
         const lz = z & 0x3f;
         return level + separator + mx + separator + mz + separator + lx + separator + lz;
-    }
+    },
+
+    parsePackedCoord(coordStr: string): { level: number, x: number, z: number } {
+       const [level, regionX, regionZ, localX, localZ] = coordStr.split('_').map(Number);
+
+       const x = (regionX << 6) + localX;
+       const z = (regionZ << 6) + localZ;
+
+       return { level, x, z };
+    } 
+
 } as const;

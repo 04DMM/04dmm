@@ -148,6 +148,8 @@ const ServerOps: CommandHandlers = {
         const to: CoordGrid = check(c2, CoordValid);
         const pos: CoordGrid = check(c3, CoordValid);
 
+        //World.broadcastMes("C1: " + c1 + " C2: " + c2 + " C3: " + c3);
+
         if (pos.x < from.x || pos.x > to.x) {
             state.pushInt(0);
         } else if (pos.level < from.level || pos.level > to.level) {
