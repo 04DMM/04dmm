@@ -439,19 +439,22 @@ class World {
         } else if (playersRemaining.size  === 1) {
            const pl: string = playersRemaining.values().next().value;
            if (pl !== null) {
-             this.broadcastMes("The winner of the 04 Deadman Mode Tournament is " + pl + " !!!! ");
+             this.broadcastMes(pl + " has won the 04 Deadman Mode Beta Tournament!");
              this.DMM_FINALE_CONCLUDED = true;
+             this.DMM_WINNER = pl;
            } else {
              this.broadcastMes("Ummmm.. something happened that shouldn't have.");
            }
            
         } else {
-             this.broadcastMes("No players remain.");
+             this.broadcastMes(this.DMM_WINNER + " has won. The tournament is now over.");
         }
 
         return;
       }      
     }
+
+    DMM_WINNER: string = "";
 
     lastAnnouncement: number = 0;
 
@@ -490,7 +493,7 @@ class World {
       let inCentralSouth = this.inZone(centralSouthFrom, centralSouthTo, lvl, x, z);
       let inCentralEast = this.inZone(centralEastFrom, centralEastTo, lvl, x, z);
 
-      return (inBedabin | inCentralWest | inCentralDes | inCenrtalSouth | inCentralEast);
+      return (inBedabin || inCentralWest || inCentralDes || inCentralSouth || inCentralEast);
     } 
 
     // ----
