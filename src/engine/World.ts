@@ -407,7 +407,7 @@ class World {
         }
 
         
-      } else {
+      } else if (this.DMM_FINALE_CONCLUDED === false) {
         // Check for remaining player alive in desert.
         const playersRemaining: Set<string> = new Set<string>();
         for(const player of  this.players) {
