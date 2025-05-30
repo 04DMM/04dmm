@@ -1,8 +1,8 @@
 [oploc1,_outpost_gate]
 //if(%barcrawl_progress ! ^barcrawl_complete) {
-    if(npc_find(coord, barbarian_outpost_guard, 5, 0) = true) {
-        @outpost_guard_talk;
-    }
+//    if(npc_find(coord, barbarian_outpost_guard, 5, 0) = true) {
+//        @outpost_guard_talk;
+//    }
 //}
 sound_synth(grate_open, 0, 0); //iron_door_open
 if(coordx(coord) > coordx(loc_coord)) { 
