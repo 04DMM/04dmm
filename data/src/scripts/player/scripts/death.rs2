@@ -21,13 +21,13 @@ def_int $i = 0;
 while ($i < enum_getoutputcount(stats)) {
     def_stat $stat = enum(int, stat, stats, $i);
 
-
+    
     stat_wipe($stat);
     
     $i = calc($i + 1);
 }
 
-stat_advance(hitpoints, 1154);
+//stat_advance(hitpoints, 1154);
 
 [proc,reset_wipe]
 ~wipe_stats;

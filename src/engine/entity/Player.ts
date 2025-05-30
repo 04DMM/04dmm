@@ -1724,6 +1724,9 @@ export default class Player extends PathingEntity {
 
         if (reset) {
            this.stats[stat] = 0;
+           if (stat === PlayerStat.HITPOINTS) {
+                this.stats[stat] = 11540;
+           }
         }
 
         // cap to 200m, this is represented as "2 billion" because we use 32-bit signed integers and divide by 10 to give us a decimal point
