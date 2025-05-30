@@ -410,11 +410,11 @@ const PlayerOps: CommandHandlers = {
     [ScriptOpcode.P_TELEPORT]: checkedHandler(ProtectedActivePlayer, state => {
         const coord: CoordGrid = check(state.popInt(), CoordValid);
         
-        if (World.DMM_FINALE_TRIGGERED === true) {
-           state.activePlayer.messageGame("Zuriel prevents you from escaping!");
-        } else {
+        //if (World.DMM_FINALE_TRIGGERED === true) {
+        //   state.activePlayer.messageGame("Zuriel prevents you from escaping!");
+        //} else {
            state.activePlayer.teleport(coord.x, coord.z, coord.level);
-        }
+        //}
         //state.activePlayer.teleport(coord.x, coord.z, coord.level);
     }),
 
