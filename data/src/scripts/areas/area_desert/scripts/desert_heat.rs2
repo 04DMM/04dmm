@@ -14,7 +14,7 @@ def_int $time;
 if (finale_started = true) {
    $time = 60;
 } else {
-   $time = 0;
+   $time = 150;
 }
 //def_int $time = 150;
 def_obj $head = inv_getobj(worn, ^wearpos_head);
