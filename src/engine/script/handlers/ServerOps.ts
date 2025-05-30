@@ -26,6 +26,10 @@ const ServerOps: CommandHandlers = {
         state.pushInt(World.currentTick);
     },
 
+    [ScriptOpcode.FINALE_STARTED]: state => {
+        state.pushInt(World.DMM_FINALE_TRIGGERED);
+    },
+  
     [ScriptOpcode.MAP_MEMBERS]: state => {
         state.pushInt(Environment.NODE_MEMBERS ? 1 : 0);
     },

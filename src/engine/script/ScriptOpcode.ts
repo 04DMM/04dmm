@@ -49,6 +49,7 @@ export const enum ScriptOpcode {
     MAP_BLOCKED, // official
     MAP_INDOORS,
     MAP_CLOCK, // official
+    FINALE_STARTED,
     MAP_LOCADDUNSAFE, // official
     MAP_MEMBERS, // official
     MAP_PLAYERCOUNT, // official, see giant dwarf cutscene
@@ -499,6 +500,7 @@ export const ScriptOpcodeMap: Map<string, number> = new Map([
     ['MAP_BLOCKED', ScriptOpcode.MAP_BLOCKED],
     ['MAP_INDOORS', ScriptOpcode.MAP_INDOORS],
     ['MAP_CLOCK', ScriptOpcode.MAP_CLOCK],
+    ['FINALE_STARTED', ScriptOpcode.FINALE_STARTED],
     ['MAP_LOCADDUNSAFE', ScriptOpcode.MAP_LOCADDUNSAFE],
     ['MAP_MEMBERS', ScriptOpcode.MAP_MEMBERS],
     ['MAP_PLAYERCOUNT', ScriptOpcode.MAP_PLAYERCOUNT],
