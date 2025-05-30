@@ -1,4 +1,7 @@
 [opnpc1,bedabin_nomad]
+@openbank;
+
+[opnpc3,bedabin_nomad]
 ~chatnpc("<p,neutral>Hello Effendi! How can I help you?");
 def_int $op = ~bedabin_nomad_options;
 while($op ! null) {
