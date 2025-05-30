@@ -420,6 +420,7 @@ class World {
            //const pos: CoordGrid = check(c3, CoordValid);
 
            if (this.inDesertZone(x, z, lvl) === true) {
+              this.broadcastMes("Player X: " + x + " Player Z: " + z + " Player lvl: " + lvl);
               //this.broadcastMes("Player remains!");
               playersRemaining.add(player.displayName);
            }           
