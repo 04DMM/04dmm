@@ -18,7 +18,7 @@ p_delay(3);
 
 [proc,wipe_stats]
 def_int $i = 0;
-while ($i < enum_getoutputcount(stats)) {
+while ($i <= enum_getoutputcount(stats)) {
     def_stat $stat = enum(int, stat, stats, $i);
 
     
