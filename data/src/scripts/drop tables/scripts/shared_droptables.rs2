@@ -65,7 +65,7 @@ if (inv_total(worn, ring_of_wealth) > 0) {
 }
 
 //10x more likely to hit megarare table
-if ($random < 5) {
+if ($random < 3) {
    if (map_members = ^true) {
         return (~megararetable);
     }
