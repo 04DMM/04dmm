@@ -45,7 +45,7 @@ data=runesrequired,null,1,null,1,null,null
 
 [magic_spell_body_talisman]
 table=magic_spell_table
-data=spell,^fire_talisman
+data=spell,^body_talisman
 data=members,false
 data=levelrequired,1
 data=tele_coord,0_39_75_27_38
