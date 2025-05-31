@@ -106,6 +106,8 @@ if ($data = null) {
     return;
 }
 
+
+
 //def_coord $enter;
 //$enter = db_getfield($data, runecraft_table:enter_coord, 0);
 // if they're already in the temple
@@ -121,7 +123,8 @@ if ($last_item = db_getfield($data, runecraft_table:talisman, 0)) {
 
      mes("You teleport directly to the altar.");
     ~talisman_locate_coord(db_getfield($data, runecraft_table:altar_coord, 0), coord);
-     p_telejump(map_findsquare(db_getfield($data, runecraft_table:enter_coord, 0)));
+     //p_telejump(map_findsquare(db_getfield($data, runecraft_table:enter_coord, 0)));
+     ~call_magic_teleport(db_getfield($data, runecraft_table:spell, 0));    
 }
 
 [opheld4,cosmic_talisman]

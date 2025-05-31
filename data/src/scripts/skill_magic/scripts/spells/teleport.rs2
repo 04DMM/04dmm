@@ -75,7 +75,11 @@ if (p_finduid(uid) = true) {
     ~player_teleport_normal(map_findsquare(db_getfield($spell_data, magic_spell_table:tele_coord, 0), 0, 2, ^map_findsquare_lineofwalk));
   } 
 
-
+[proc,call_magic_teleport](int $spell)
+cleartimer(logouttimer);
+clearsofttimer(teleporttimer);
+%teleport = 0;
+softtimer(teleporttimer, 2, $spell);
 
 [label,magic_teleport](int $spell)
 cleartimer(logouttimer);

@@ -58,3 +58,6 @@
 // npc spells
 ^skeleton_mage_attack = 100
 ^nezikchened_mage_attack = 101
+
+// RC teleports
+^air_talisman = 200

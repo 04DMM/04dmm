@@ -10,3 +10,4 @@ column=multiplier,int
 column=altar_coord,coord
 column=enter_coord,coord,int,int,int
 column=exit_coord,coord,int,int,int
+column=spell,int
