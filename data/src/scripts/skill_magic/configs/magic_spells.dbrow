@@ -5,7 +5,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_44_75_25_30
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_mind_talisman]
 table=magic_spell_table
@@ -14,7 +14,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_43_75_41_29
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_water_talisman]
 table=magic_spell_table
@@ -23,7 +23,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_42_75_37_32
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_earth_talisman]
 table=magic_spell_table
@@ -32,7 +32,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_41_75_33_30
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_fire_talisman]
 table=magic_spell_table
@@ -41,7 +41,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_40_75_16_48
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_body_talisman]
 table=magic_spell_table
@@ -50,7 +50,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_39_75_27_38
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_cosmic_talisman]
 table=magic_spell_table
@@ -59,7 +59,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_33_75_50_33
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_chaos_talisman]
 table=magic_spell_table
@@ -68,7 +68,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,3_35_75_35_47
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 [magic_spell_nature_talisman]
 table=magic_spell_table
@@ -77,7 +77,7 @@ data=members,false
 data=levelrequired,1
 data=tele_coord,0_37_75_32_35
 data=experience,1
-data=runesrequired,null,1,null,1,null,null
+data=runesrequired,null,0,null,0,null,null
 
 
 [magic_spell_enchant_level1]
