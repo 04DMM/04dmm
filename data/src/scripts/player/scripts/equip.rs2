@@ -51,9 +51,8 @@ if (p_finduid(uid) = true) {
        %iban_staff_charges = 2000;
        %autocast_spell = 41;
        %attackstyle_magic = 3;
-    } else {
-       %attackstyle_magic = 0;
-    }
+    } 
+    
 
     if ($obj = starterbow) {
       mes("You have <tostring(%starterbow_charges)> charges remaining on your Starter bow.");
@@ -79,6 +78,10 @@ if (p_finduid(uid) = true) {
         mes("You feel it would be cheating to put the ball in your pack whilst on the pitch.");
         return;
     }
+    if ($obj = ibanstaff) {
+       %attackstyle_magic = 0;
+    }
+
     def_int $count = inv_getnum(worn, $slot);
     def_int $overflow = inv_itemspace2(inv, $obj, $count, inv_size(inv));
     if ($overflow >= $count) {
