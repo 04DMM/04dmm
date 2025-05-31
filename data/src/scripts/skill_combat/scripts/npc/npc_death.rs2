@@ -17,7 +17,7 @@ npc_setmode(none);
 npc_arrivedelay; // arrivedelay for up to two ticks (current osrs too) https://youtu.be/Vsnkdq8OOMg?t=209
 if (finduid(%npc_aggressive_player) = true) {
     def_int $random = random(240);
-    def_int $hp = npc_stat(hitpoints);
+    def_int $hp = npc_basestat(hitpoints);
 
     if ($hp > $random) {
        obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
