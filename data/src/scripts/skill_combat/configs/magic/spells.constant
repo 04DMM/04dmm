@@ -61,3 +61,11 @@
 
 // RC teleports
 ^air_talisman = 200
+^mind_talisman = 201
+^earth_talisman = 202
+^water_talisman = 203
+^fire_talisman = 204
+^body_talisman = 205
+^chaos_talisman = 206
+^cosmic_talisman = 207
+^nature_talisman = 208
