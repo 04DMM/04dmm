@@ -146,16 +146,17 @@ if ($last_item = db_getfield($data, runecraft_table:talisman, 0)) {
         mes("There must be something special about this place.");
         return;
     }
-    if (inzone(^zanaris_nw, ^zanaris_se, coord) = true) {
-        ~talisman_locate_coord(db_getfield($data, runecraft_table:altar_coord, 0), coord);
-        return;
-    }
+    //if (inzone(^zanaris_nw, ^zanaris_se, coord) = true) {
+    //    ~talisman_locate_coord(db_getfield($data, runecraft_table:altar_coord, 0), coord);
+    //    return;
+    //}
     if (coordz(coord) > 4800) {
         mes("The talisman doesn't seem to work here...");
         return;
     }
   
     ~talisman_locate_coord(^shack_center, coord);
+    ~call_magic_teleport(db_getfield($data, runecraft_table:spell, 0));
 }
 
 [proc,talisman_locate_coord](coord $altar_coord, coord $player_coord)
