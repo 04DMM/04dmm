@@ -49,6 +49,7 @@ p_delay(0);
 ~damage_self($damage);
 npc_setmode(null);
 
+$stun_ticks = 2;
 mes("You've been stunned!");
 %action_delay = calc(map_clock + $stun_ticks);
 %stunned = calc(map_clock + $stun_ticks);
