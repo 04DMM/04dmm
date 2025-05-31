@@ -80,6 +80,7 @@ if (p_finduid(uid) = true) {
     }
     if ($obj = ibanstaff) {
        %attackstyle_magic = 0;
+       %autocast_spell = null;
     }
 
     def_int $count = inv_getnum(worn, $slot);
