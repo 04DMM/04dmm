@@ -26,6 +26,7 @@ data=multiplier,14
 data=altar_coord,0_46_54_38_58
 data=enter_coord,0_43_75_41_29,0,0,0
 data=exit_coord,0_46_54_36_55,0,0,0
+data=spell,^mind_talisman
 
 [runecraft_water]
 table=runecraft_table
@@ -40,6 +41,7 @@ data=multiplier,19
 data=altar_coord,0_49_49_49_29
 data=enter_coord,0_42_75_37_32,0,0,0
 data=exit_coord,0_49_49_46_26,0,0,0
+data=spell,^water_talisman
 
 [runecraft_earth]
 table=runecraft_table
@@ -54,6 +56,7 @@ data=multiplier,26
 data=altar_coord,0_51_54_42_18
 data=enter_coord,0_41_75_33_30,0,0,0
 data=exit_coord,0_51_54_39_21,0,0,0
+data=spell,^earth_talisman
 
 [runecraft_fire]
 table=runecraft_table
@@ -68,6 +71,7 @@ data=multiplier,35
 data=altar_coord,0_51_50_49_55
 data=enter_coord,0_40_75_16_48,0,0,0
 data=exit_coord,0_51_50_46_52,0,0,0
+data=spell,^fire_talisman
 
 [runecraft_body]
 table=runecraft_table
@@ -82,6 +86,7 @@ data=multiplier,46
 data=altar_coord,0_47_53_45_53
 data=enter_coord,0_39_75_27_38,0,2,0
 data=exit_coord,0_47_53_42_50,0,2,0
+data=spell,^body_talisman
 
 [runecraft_cosmic]
 table=runecraft_table
@@ -99,6 +104,7 @@ data=enter_coord,0_33_75_50_33,0,0,0
 data=enter_coord,0_33_75_30_53,0,0,0
 data=enter_coord,0_33_75_10_33,0,0,0
 data=exit_coord,0_49_148_37_29,0,0,0
+data=spell,^cosmic_talisman
 
 [runecraft_chaos]
 table=runecraft_table
@@ -121,6 +127,7 @@ data=exit_coord,0_47_56_52_13,0,0,0
 data=exit_coord,0_47_56_48_10,0,0,0
 data=exit_coord,0_47_56_47_7,0,0,0
 data=exit_coord,0_47_56_47_4,0,0,0
+data=spell,^chaos_talisman
 
 [runecraft_nature]
 table=runecraft_table
@@ -135,6 +142,7 @@ data=multiplier,91
 data=altar_coord,0_44_47_53_11
 data=enter_coord,0_37_75_32_35,0,0,0
 data=exit_coord,0_44_47_49_14,0,0,0
+data=spell,^nature_talisman
 
 [runecraft_law]
 table=runecraft_table
@@ -148,6 +156,7 @@ data=talisman,law_talisman
 data=altar_coord,0_50_50_21_18
 data=enter_coord,0_50_50_21_18,0,2,0
 data=exit_coord,0_50_50_21_18,0,2,0
+
 
 [runecraft_death]
 table=runecraft_table
