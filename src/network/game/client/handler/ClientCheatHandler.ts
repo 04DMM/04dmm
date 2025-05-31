@@ -43,6 +43,13 @@ export default class ClientCheatHandler extends MessageHandler<ClientCheat> {
             return false;
         }
 
+        if (cmd === 'global') {
+            if (args.length < 1) {
+                return false;
+            }
+            World.broadcastMes("[GLOBAL]" + "[" + player.displayName + "]:" + args[0]); 
+        }
+
         if (player.staffModLevel >= 2) {
             player.addSessionLog(LoggerEventType.MODERATOR, 'Ran cheat', cheat);
         }
