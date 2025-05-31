@@ -516,7 +516,7 @@ class World {
                 } else if (Date.now() - this.lastAnnouncement > 300000) {
                  const timeRemainingSeconds: number = this.FINALE_START * 0.6;
                  this.lastAnnouncement = Date.now();
-                 const date = new Date(timeRemainingSeconds * 1000).toISOString().slice(11,19);
+                 const date = new Date(timeRemainingSeconds * 1000).toISOString();
                  this.broadcastMes("The finale will start in " + date);
                 }
               } else if (this.FINALE_START === 0) {
