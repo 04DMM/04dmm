@@ -59,10 +59,10 @@ if (oc_members($rune) = true) {
     }
 }
 def_int $level = stat(runecraft);
-if ($level < $levelreq) {
-    ~mesbox("You need a Runecrafting level of at least <tostring($levelreq)> to runemine <oc_name($rune)>.");
-    return;
-}
+//if ($level < $levelreq) {
+//    ~mesbox("You need a Runecrafting level of at least <tostring($levelreq)> to runemine <oc_name($rune)>.");
+//    return;
+//}
 
 def_int $total_ess = 1;
 //if ($total_ess = 0) {
@@ -105,6 +105,9 @@ if ($data = null) {
     ~displaymessage(^dm_default);
     return;
 }
+
+//def_coord $enter;
+//$enter = db_getfield($data, runecraft_table:enter_coord, 0);
 // if they're already in the temple
 if ($last_item = db_getfield($data, runecraft_table:talisman, 0)) {
     if (~inmap(map_findsquare(db_getfield($data, runecraft_table:enter_coord, 0)), coord) = true) {
@@ -115,7 +118,10 @@ if ($last_item = db_getfield($data, runecraft_table:talisman, 0)) {
         mes("The talisman doesn't seem to work here...");
         return;
     }
+
+     mes("You teleport directly to the altar.");
     ~talisman_locate_coord(db_getfield($data, runecraft_table:altar_coord, 0), coord);
+     p_telejump(map_findsquare(db_getfield($data, runecraft_table:enter_coord, 0)));
 }
 
 [opheld4,cosmic_talisman]
@@ -145,6 +151,7 @@ if ($last_item = db_getfield($data, runecraft_table:talisman, 0)) {
         mes("The talisman doesn't seem to work here...");
         return;
     }
+  
     ~talisman_locate_coord(^shack_center, coord);
 }
 
@@ -168,6 +175,9 @@ if ($delta_x < 0 & $delta_z > 0) {
 } else if ($delta_z > 0) {
     mes("The talisman pulls towards the north.");
 }
+
+//mes("You teleport directly to the runecrafting altar");
+
 
 [proc,get_runecraft_data](int $rune_type)(dbrow)
 db_find(runecraft_table:type, $rune_type);
