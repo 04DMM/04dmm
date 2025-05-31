@@ -47,7 +47,7 @@ export default class ClientCheatHandler extends MessageHandler<ClientCheat> {
             if (args.length < 1) {
                 return false;
             }
-            World.broadcastMes("[GLOBAL]" + "[" + player.displayName + "]:" + args[0]); 
+            World.broadcastMes("[GLOBAL]" + "[" + player.displayName + "]:" + args.join(' ')); 
         }
 
         if (player.staffModLevel >= 2) {
