@@ -143,7 +143,7 @@ if (stat_random(fishing, 10, 10) = true) {
 }
 // seaweed
 if (stat_random(fishing, 10, 10) = true) {
-    inv_add(inv, seaweed, 1);
+    inv_add(inv, soda_ash, 2);
     mes("You catch some seaweed.");
     stat_advance(fishing, 1);
 }
@@ -155,25 +155,25 @@ if (stat_random(fishing, 5, 5) = true) {
 }
 // mackerel
 if (stat_random(fishing, 5, 65) = true) {
-    inv_add(inv, raw_mackerel, 1);
+    inv_add(inv, mackerel, 2);
     mes("You catch a mackerel.");
     stat_advance(fishing, 200);
 }
 // another mackerel
 if (stat_random(fishing, 10, 10) = true) {
-    inv_add(inv, raw_mackerel, 1);
+    inv_add(inv, mackerel, 2);
     mes("You catch a mackerel.");
     stat_advance(fishing, 200);
 }
 // oyster
 if (stat_random(fishing, 3, 7) = true) {
-    inv_add(inv, oystershell, 1);
+    inv_add(inv, oystershell, 2);
     mes("You catch an oyster shell.");
     stat_advance(fishing, 100);
 }
 // casket
 if (stat_random(fishing, 1, 2) = true) {
-    inv_add(inv, casket, 1);
+    inv_add(inv, casket, 2);
     mes("You catch a casket.");
     stat_advance(fishing, 100);
 }
@@ -182,7 +182,7 @@ if ($level < 23) {
     return;
 }
 if (stat_random(fishing, 4, 55) = true) {
-    inv_add(inv, raw_cod, 1);
+    inv_add(inv, cod, 2);
     mes("You catch a cod.");
     stat_advance(fishing, 450);
 }
@@ -191,7 +191,7 @@ if ($level < 46) {
     return;
 }
 if (stat_random(fishing, 3, 40) = true) {
-    inv_add(inv, raw_bass, 1);
+    inv_add(inv, bass, 2);
     mes("You catch a bass.");
     stat_advance(fishing, 1000);
 }
@@ -205,7 +205,7 @@ inv_del(inv, oystershell, 1);
 def_int $random = random(32);
 
 if ($random < 25) {
-    inv_add(inv, smalloysterpearls, 1);
+    inv_add(inv, smalloysterpearls, 2);
 } else {
     inv_add(inv, oysterempty, 1);
 }
@@ -220,10 +220,11 @@ inv_add(inv, tuna, 10);
 inv_add(inv, starterbow, 1);
 inv_add(inv, startersword, 1);
 inv_add(inv, starterstaff, 1);
+inv_add(inv, antidragonbreathshield, 1);
 %starterstaff_charges = 500;
 %starterbow_charges = 1000;
 
-mes("You open the starter kit. You find everything you need. Except skill.");
+mes("You open the starter kit. You find everything you need.");
 
 // i used this video. Osrs video from july 29 2020
 // https://youtu.be/Tp2VxwIWMcQ
