@@ -1,0 +1,29 @@
+
+> 2004scape@1.0.0 start
+> npm i && tsx src/app.ts
+
+
+> 2004scape@1.0.0 prepare
+> husky
+
+
+up to date, audited 911 packages in 4s
+
+240 packages are looking for funding
+  run `npm fund` for details
+
+4 high severity vulnerabilities
+
+Some issues need review, and may require choosing
+a different dependency.
+
+Run `npm audit` for details.
+6/1/2025 6:54:49 AM	 DEBUG	 Checking for compiler update
+6/1/2025 6:54:50 AM	 DEBUG	 Compiler is up to date
+6/1/2025 6:54:50 AM	 INFO	 Starting world
+6/1/2025 6:54:54 AM	 DEBUG	 Loaded 8019 scripts.
+6/1/2025 6:54:56 AM	 DEBUG	 Loading game map
+6/1/2025 6:55:28 AM	 INFO	 World ready: Visit http://localhost:8888/rs2.cgi
+6/1/2025 6:55:15 AM	 INFO	 Login server listening on port 43500
+6/1/2025 6:55:09 AM	 INFO	 Friend server listening on port 45099
+6/1/2025 6:55:10 AM	 INFO	 Logger server listening on port 43501

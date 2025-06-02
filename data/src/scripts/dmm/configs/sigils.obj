@@ -1,0 +1,181 @@
+[sigil_herb1]
+name=Sigil of Sanfew
+desc=Automatically cleans your dropped herbs.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_prayer1]
+name=Sigil of Abbot Langley
+desc=Automatically buries bones.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_fish1]
+name=Sigil of Grandpa Jack
+desc=Automatically cooks fish when fishing.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_smith1]
+name=Sigil of Doric
+desc=Automatically turns ores into bars when mining.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_fletch1]
+name=Sigil of the Magical Seer
+desc=Automatically strings fletched bows.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_thief1]
+name=Sigil of the Bandit
+desc=Never fail pickpocketing again.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_range3]
+name=Sigil of Nurmof
+desc=A cannon with unlimited ammo.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_wc1]
+name=Sigil of the Forester
+desc=Automatically notes logs when cutting trees.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_fm1]
+name=Sigil of Wintertodt
+desc=Restores your health rapidly after making a fire.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_melee1]
+name=Sigil of Obor
+desc=Makes you as strong as the legendary Obor.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_range1]
+name=Sigil of the Dagannoth
+desc=Provides you with unlimited ammunition for ranged attacks.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_mage1]
+name=Sigil of Wizard Mizgog
+desc=All curses cost no runes and have doubled effect.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+
+[sigil_alch1]
+name=Sigil of the Goblins
+desc=High alchemy now gives more gold.
+cost=10
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
