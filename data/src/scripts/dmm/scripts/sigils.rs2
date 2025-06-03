@@ -1,16 +1,144 @@
-[opheld1,sigil_herb1] @activate_sigil(last_slot);
-[opheld1,sigil_prayer1] @activate_sigil(last_slot);
-[opheld1,sigil_fish1] @activate_sigil(last_slot);
-[opheld1,sigil_smith1] @activate_sigil(last_slot);
-[opheld1,sigil_fletch1] @activate_sigil(last_slot);
-[opheld1,sigil_thief1] @activate_sigil(last_slot);
-[opheld1,sigil_range3] @activate_sigil(last_slot);
-[opheld1,sigil_wc1] @activate_sigil(last_slot);
-[opheld1,sigil_fm1] @activate_sigil(last_slot);
-[opheld1,sigil_melee1] @activate_sigil(last_slot);
-[opheld1,sigil_range1] @activate_sigil(last_slot);
-[opheld1,sigil_mage1] @activate_sigil(last_slot);
-[opheld1,sigil_alch1] @activate_sigil(last_slot);
+// Sigil activation bindings
+[opheld1,sigil_herb1] ~activate_sigil(last_slot);
+[opheld1,sigil_prayer1] ~activate_sigil(last_slot);
+[opheld1,sigil_fish1] ~activate_sigil(last_slot);
+[opheld1,sigil_smith1] ~activate_sigil(last_slot);
+[opheld1,sigil_fletch1] ~activate_sigil(last_slot);
+[opheld1,sigil_thief1] ~activate_sigil(last_slot);
+[opheld1,sigil_range3] ~activate_sigil(last_slot);
+[opheld1,sigil_wc1] ~activate_sigil(last_slot);
+[opheld1,sigil_fm1] ~activate_sigil(last_slot);
+[opheld1,sigil_melee1] ~activate_sigil(last_slot);
+[opheld1,sigil_range1] ~activate_sigil(last_slot);
+[opheld1,sigil_mage1] ~activate_sigil(last_slot);
+[opheld1,sigil_alch1] ~activate_sigil(last_slot);
 
-[label,activate_sigil](int $slot)
-mes("You activate the sigil.");
+// Sigil deactivation bindings
+[opheld1,sigil_herb1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_prayer1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_fish1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_smith1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_fletch1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_thief1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_range3_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_wc1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_fm1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_melee1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_range1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_mage1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_alch1_active] ~deactivate_sigil(last_slot);
+
+[proc,activate_sigil](namedobj $sigilobj) {
+   if (activesigils >= 3) {
+     mes("You already have 3 active sigils. Deactivate one to use");
+   } else {
+   switch ($sigil) {
+    case sigil_herb1:
+        %sigil_herb1 = 1;
+        break;
+    case sigil_prayer1:
+        %sigil_prayer1 = 1;
+        break;
+    case sigil_fish1:
+        %sigil_fish1 = 1;
+        break;
+    case sigil_smith1:
+        %sigil_smith1 = 1;
+        break;
+    case sigil_fletch1:
+        %sigil_fletch1 = 1;
+        break;
+    case sigil_thief1:
+        %sigil_thief1 = 1;
+        break;
+    case sigil_range3:
+        %sigil_range3 = 1;
+        break;
+    case sigil_wc1:
+        %sigil_wc1 = 1;
+        break;
+    case sigil_fm1:
+        %sigil_fm1 = 1;
+        break;
+    case sigil_melee1:
+        %sigil_melee1 = 1;
+        break;
+    case sigil_range1:
+        %sigil_range1 = 1;
+        break;
+    case sigil_mage1:
+        %sigil_mage1 = 1;
+        break;
+    case sigil_alch1:
+        %sigil_alch1 = 1;
+        break;
+     }
+
+     inv_setslot(inv, last_slot, oc_param($sigilobj, next_obj_stage), 1);
+     mes("Sigil activated.");
+  }
+}
+
+[proc,deactivate_sigil](namedobj $sigilobj) {
+   switch ($sigilobj) {
+    case sigil_herb1:
+        %sigil_herb1 = 0;
+        break;
+    case sigil_prayer1:
+        %sigil_prayer1 = 0;
+        break;
+    case sigil_fish1:
+        %sigil_fish1 = 0;
+        break;
+    case sigil_smith1:
+        %sigil_smith1 = 0;
+        break;
+    case sigil_fletch1:
+        %sigil_fletch1 = 0;
+        break;
+    case sigil_thief1:
+        %sigil_thief1 = 0;
+        break;
+    case sigil_range3:
+        %sigil_range3 = 0;
+        break;
+    case sigil_wc1:
+        %sigil_wc1 = 0;
+        break;
+    case sigil_fm1:
+        %sigil_fm1 = 0;
+        break;
+    case sigil_melee1:
+        %sigil_melee1 = 0;
+        break;
+    case sigil_range1:
+        %sigil_range1 = 0;
+        break;
+    case sigil_mage1:
+        %sigil_mage1 = 0;
+        break;
+    case sigil_alch1:
+        %sigil_alch1 = 0;
+        break;
+     }
+
+     inv_setslot(inv, last_slot, oc_param($sigilobj, next_obj_stage), 1);
+}
+
+[proc,activesigils]()(int) {
+    int $count = 0;
+    if (%sigil_herb1 != 0) { $count += 1; }
+    if (%sigil_prayer1 != 0) { $count += 1; }
+    if (%sigil_fish1 != 0) { $count += 1; }
+    if (%sigil_smith1 != 0) { $count += 1; }
+    if (%sigil_fletch1 != 0) { $count += 1; }
+    if (%sigil_thief1 != 0) { $count += 1; }
+    if (%sigil_range3 != 0) { $count += 1; }
+    if (%sigil_wc1 != 0) { $count += 1; }
+    if (%sigil_fm1 != 0) { $count += 1; }
+    if (%sigil_melee1 != 0) { $count += 1; }
+    if (%sigil_range1 != 0) { $count += 1; }
+    if (%sigil_mage1 != 0) { $count += 1; }
+    if (%sigil_alch1 != 0) { $count += 1; }
+    return $count;
+}
