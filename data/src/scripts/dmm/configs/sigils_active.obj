@@ -1,5 +1,5 @@
 [sigil_herb1_active]
-name=Sigil of Sanfew (Active)
+name=Sigil of Sanfew (t)
 desc=Currently auto-cleansing your herbs.
 cost=10
 model=model_2759_obj
@@ -11,11 +11,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_herb1
 
 [sigil_prayer1_active]
-name=Sigil of Abbot Langley (Active)
+name=Sigil of Abbot Langley (t)
 desc=Currently auto-burying bones.
 cost=10
 model=model_2759_obj
@@ -27,11 +27,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_prayer1
 
 [sigil_fish1_active]
-name=Sigil of Grandpa Jack (Active)
+name=Sigil of Grandpa Jack (t)
 desc=Currently cooking fish while fishing.
 cost=10
 model=model_2759_obj
@@ -43,11 +43,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_fish1
 
 [sigil_smith1_active]
-name=Sigil of Doric (Active)
+name=Sigil of Doric (t)
 desc=Currently smelting ores into bars automatically.
 cost=10
 model=model_2759_obj
@@ -59,11 +59,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_smith1
 
 [sigil_fletch1_active]
-name=Sigil of the Magical Seer (Active)
+name=Sigil of the Magical Seer (t)
 desc=Currently stringing bows automatically.
 cost=10
 model=model_2759_obj
@@ -75,11 +75,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_fletch1
 
 [sigil_thief1_active]
-name=Sigil of the Bandit (Active)
+name=Sigil of the Bandit (t)
 desc=Currently preventing pickpocketing failure.
 cost=10
 model=model_2759_obj
@@ -91,11 +91,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_thief1
 
 [sigil_range3_active]
-name=Sigil of Nurmof (Active)
+name=Sigil of Nurmof (t)
 desc=Cannon is active with unlimited ammo.
 cost=10
 model=model_2759_obj
@@ -107,11 +107,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_range3
 
 [sigil_wc1_active]
-name=Sigil of the Forester (Active)
+name=Sigil of the Forester (t)
 desc=Currently auto-noting logs.
 cost=10
 model=model_2759_obj
@@ -123,11 +123,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_wc1
 
 [sigil_fm1_active]
-name=Sigil of Wintertodt (Active)
+name=Sigil of Wintertodt (t)
 desc=Currently restoring health from firemaking.
 cost=10
 model=model_2759_obj
@@ -139,11 +139,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_fm1
 
 [sigil_melee1_active]
-name=Sigil of Obor (Active)
+name=Sigil of Obor (t)
 desc=Currently empowering melee strength.
 cost=10
 model=model_2759_obj
@@ -155,11 +155,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_melee1
 
 [sigil_range1_active]
-name=Sigil of the Dagannoth (Active)
+name=Sigil of the Dagannoth (t)
 desc=Currently providing infinite ranged ammunition.
 cost=10
 model=model_2759_obj
@@ -171,11 +171,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_range1
 
 [sigil_mage1_active]
-name=Sigil of Wizard Mizgog (Active)
+name=Sigil of Wizard Mizgog (t)
 desc=Curses now cost no runes and have double effect.
 cost=10
 model=model_2759_obj
@@ -187,11 +187,11 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_mage1
 
 [sigil_alch1_active]
-name=Sigil of the Goblins (Active)
+name=Sigil of the Goblins (t)
 desc=High alchemy yields increased gold.
 cost=10
 model=model_2759_obj
@@ -203,5 +203,5 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_alch1
