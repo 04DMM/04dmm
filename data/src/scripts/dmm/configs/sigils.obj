@@ -11,7 +11,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_herb1_active
 
 [sigil_prayer1]
@@ -27,7 +27,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_prayer1_active
 
 [sigil_fish1]
@@ -43,7 +43,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_fish1_active
 
 [sigil_smith1]
@@ -59,7 +59,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_smith1_active
 
 [sigil_fletch1]
@@ -75,7 +75,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_fletch1_active
 
 [sigil_thief1]
@@ -91,7 +91,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_thief1_active
 
 [sigil_range3]
@@ -107,7 +107,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_range3_active
 
 [sigil_wc1]
@@ -123,7 +123,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_wc1_active
 
 [sigil_fm1]
@@ -139,7 +139,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_fm1_active
 
 [sigil_melee1]
@@ -155,7 +155,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_melee1_active
 
 [sigil_range1]
@@ -171,7 +171,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_range1_active
 
 [sigil_mage1]
@@ -187,7 +187,7 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_mage1_active
 
 [sigil_alch1]
@@ -203,5 +203,5 @@ model=model_2759_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Activate
+iop1=Tap
 param=next_obj_stage,sigil_alch1_active
