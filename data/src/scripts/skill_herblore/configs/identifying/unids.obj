@@ -14,6 +14,7 @@ model=model_2364_obj
 weight=7g
 respawnrate=200
 // guessed name
+param=herb,guam_leaf
 
 [unidentified_marrentill]
 category=category_773
@@ -28,6 +29,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,marentill
 
 [unidentified_tarromin]
 category=category_773
@@ -42,6 +44,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,tarromin
 
 [unidentified_harralander]
 category=category_773
@@ -56,6 +59,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,harralander
 
 [unidentified_ranarr]
 iop1=Identify
@@ -69,6 +73,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,ranarr_weed
 
 [unidentified_irit]
 iop1=Identify
@@ -82,6 +87,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,irit_leaf
 
 [unidentified_avantoe]
 iop1=Identify
@@ -95,6 +101,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,avantoe
 
 [unidentified_kwuarm]
 iop1=Identify
@@ -108,6 +115,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,kwuarm
 
 [unidentified_cadantine]
 iop1=Identify
@@ -121,6 +129,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,cadantine
 
 [unidentified_dwarf_weed]
 iop1=Identify
@@ -134,6 +143,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,dwarf_weed
 
 [unidentified_torstol]
 iop1=Identify
@@ -147,6 +157,7 @@ model=model_2364_obj
 2dxan=376
 weight=7g
 // guessed name
+param=herb,unidentified_torstol
 
 [unidentified_snake_weed]
 name=Unidentified herb
@@ -167,6 +178,7 @@ iop1=Identify
 weight=7g
 tradeable=no
 // guessed name
+// param=herb,snake_weed
 
 [unidentified_ardrigal]
 name=Unidentified herb
@@ -245,3 +257,4 @@ model=model_2364_obj
 2dyan=1588
 2dxan=376
 weight=7g
+param=herb,lantadyme

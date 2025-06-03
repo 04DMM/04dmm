@@ -47,8 +47,11 @@ if ($random < 32) {
 }
 
 if (%sigil_herb1 = true) {
-    def_int $experience = oc_param($herb, identified_herb_exp);
+    //def_int $experience = oc_param($herb, identified_herb_exp);
     mes("Your Sigil of Sanfew identifies the herbs for you.");
+    //stat_advance(herblore, $experience);
+    $herb = oc_param($herb, herb);
+    def_int $experience = oc_param($herb, identified_herb_exp);
     stat_advance(herblore, $experience);
     return($herb, 1);
 } else {

@@ -9,3 +9,7 @@ default=0
 [identified_herb_message]
 type=string
 default=null
+
+[herb]
+type=namedobj
+default=null
