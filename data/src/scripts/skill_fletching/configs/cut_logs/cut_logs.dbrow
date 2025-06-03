@@ -5,7 +5,7 @@ data=shafts,15
 data=objchoices,shortbow,longbow
 data=shortbow,unstrung_shortbow,5,50
 data=longbow,unstrung_longbow,10,100
-data=sigil_shortbow,shortbow,10,15
+data=sigil_shortbow,shortbow,5,15
 data=sigil_longbow,longbow,10,15
 
 [fletching_oak]
@@ -15,7 +15,7 @@ data=objchoices,oak_shortbow,oak_longbow
 data=shortbow,unstrung_oak_shortbow,20,165
 data=longbow,unstrung_oak_longbow,25,250
 data=sigil_shortbow,oak_shortbow,20,15
-data=sigil_longbow,oak_longbow,20,15
+data=sigil_longbow,oak_longbow,25,15
 
 [fletching_willow]
 table=fletch_bow_table
@@ -24,7 +24,7 @@ data=objchoices,willow_shortbow,willow_longbow
 data=shortbow,unstrung_willow_shortbow,35,333
 data=longbow,unstrung_willow_longbow,40,415
 data=sigil_shortbow,willow_shortbow,35,15
-data=sigil_longbow,willow_longbow,35,15
+data=sigil_longbow,willow_longbow,40,15
 
 [fletching_maple]
 table=fletch_bow_table
@@ -33,7 +33,7 @@ data=objchoices,maple_shortbow,maple_longbow
 data=shortbow,unstrung_maple_shortbow,50,500
 data=longbow,unstrung_maple_longbow,55,583
 data=sigil_shortbow,maple_shortbow,50,15
-data=sigil_longbow,maple_longbow,50,15
+data=sigil_longbow,maple_longbow,55,15
 
 [fletching_yew]
 table=fletch_bow_table
@@ -42,7 +42,7 @@ data=objchoices,yew_shortbow,yew_longbow
 data=shortbow,unstrung_yew_shortbow,65,675
 data=longbow,unstrung_yew_longbow,70,750
 data=sigil_shortbow,yew_shortbow,65,15
-data=sigil_longbow,yew_longbow,65,15
+data=sigil_longbow,yew_longbow,70,15
 
 [fletching_magic]
 table=fletch_bow_table
