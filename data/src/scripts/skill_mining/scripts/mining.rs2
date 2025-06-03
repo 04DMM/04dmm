@@ -137,7 +137,18 @@ if (random($chance) = ^true) {
     if(inzone(^crest_perfect_mine_lower_bound, ^crest_perfect_mine_upper_bound, coord) = true) {
         $output = perfect_gold_ore;
     }
-    inv_add(inv, $output, multiply(1,2));
+    if (%sigil_smith1 = true) {
+      def_namedobj $bar = oc_param($output, smeltsto);
+      if ($bar ! null) {
+        inv_add(inv, $output, multiply(1,2));
+      
+       def_struct $struct = oc_param($bar, smelting_struct);
+       def_int $exp = struct_param($struct, productexp);
+       stat_advance(smithing, $exp);
+       }   
+    } else {
+      inv_add(inv, $output, multiply(1,2));
+    }
     stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
@@ -174,7 +185,20 @@ if (random($chance) = ^true) {
     loc_change(loc_param(next_loc_stage_mining), $respawn);
     sound_synth(sound_230, 0, 0); // Sudden says its sound_230
     anim(null, 0);
-    inv_add(inv, db_getfield($data, mining_table:rock_output, 0), multiply(1,2));
+    def_namedobj $output = db_getfield($data, mining_table:rock_output, 0);
+    if (%sigil_smith1 = true) {
+       def_namedobj $bar = oc_param($output, smeltsto);
+       if ($bar ! null) {
+           inv_add(inv, $bar, multiply(1,2));
+       
+       def_struct $struct = oc_param($bar, smelting_struct);
+       def_int $exp = struct_param($struct, productexp);
+       stat_advance(smithing, $exp);
+       }
+    } else {
+       inv_add(inv, $output, multiply(1,2));
+    }
+
     stat_advance(mining, db_getfield($data, mining_table:rock_exp, 0));
     mes("You manage to mine some <db_getfield($data, mining_table:ore_name, 0)>.");
     return;
