@@ -13,7 +13,6 @@ members=yes
 tradeable=yes
 iop1=Tap
 param=next_obj_stage,sigil_herb1_active
-iop5=Destroy
 
 [sigil_prayer1]
 name=Sigil of Abbot Langley
@@ -30,6 +29,7 @@ members=yes
 tradeable=yes
 iop1=Tap
 param=next_obj_stage,sigil_prayer1_active
+
 
 [sigil_fish1]
 name=Sigil of Grandpa Jack

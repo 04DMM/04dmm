@@ -13,8 +13,20 @@
 [opheld1,sigil_mage1] ~activate_sigil(last_slot);
 [opheld1,sigil_alch1] ~activate_sigil(last_slot);
 
-// Destroy
-[opheld5,sigil_herb1] ~destroy_sigil(last_slot);
+// Sigil destroy bindings (active forms)
+[opheld5,sigil_herb1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_prayer1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_fish1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_smith1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_fletch1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_thief1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_range3_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_wc1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_fm1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_melee1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_range1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_mage1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_alch1_active] ~destroy_sigil(last_slot);
 
 // Sigil deactivation bindings
 [opheld1,sigil_herb1_active] ~deactivate_sigil(last_slot);
@@ -32,7 +44,44 @@
 [opheld1,sigil_alch1_active] ~deactivate_sigil(last_slot);
 
 [proc,destroy_sigil] (int $last_slot) {
-   mes("Destroying sigil.");
+   def_obj $sigilobj = inv_getobj(inv, $last_slot);
+
+   def_int $choice = ~p_choice2_header("Yes", 1, "No", 2, "Are you sure? It will be destroyed!");
+   if ($choice = 1) {
+
+    switch_obj($sigilobj) {
+        case sigil_herb1_active :
+            %sigil_herb1 = false;
+        case sigil_prayer1_active :
+            %sigil_prayer1 = false;
+        case sigil_fish1_active :
+            %sigil_fish1 = false;
+        case sigil_smith1_active :
+            %sigil_smith1 = false;
+        case sigil_fletch1_active :
+            %sigil_fletch1 = false;
+        case sigil_thief1_active :
+            %sigil_thief1 = false;
+        case sigil_range3_active :
+            %sigil_range3 = false;
+        case sigil_wc1_active :
+            %sigil_wc1 = false;
+        case sigil_fm1_active :
+            %sigil_fm1 = false;
+        case sigil_melee1_active :
+            %sigil_melee1 = false;
+        case sigil_range1_active :
+            %sigil_range1 = false;
+        case sigil_mage1_active :
+            %sigil_mage1 = false;
+        case sigil_alch1_active :
+            %sigil_alch1 = false;
+    }
+     
+     inv_delslot(inv, $last_slot);
+   } else if ($choice = 2) {
+      return;
+   }   
 }
 
 [proc,activate_sigil](int $last_slot) {
