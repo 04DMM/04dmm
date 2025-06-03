@@ -1,51 +1,52 @@
 [sigil_herb1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_prayer1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_fish1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_smith1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_fletch1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_thief1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_range3]
 scope=perm
-type=int
+type=boolean
 
 [sigil_wc1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_fm1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_melee1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_range1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_mage1]
 scope=perm
-type=int
+type=boolean
 
 [sigil_alch1]
 scope=perm
-type=int
+type=boolean
+

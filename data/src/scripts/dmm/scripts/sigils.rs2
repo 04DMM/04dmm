@@ -29,7 +29,7 @@
 [opheld1,sigil_alch1_active] ~deactivate_sigil(last_slot);
 
 [proc,activate_sigil](namedobj $sigilobj) {
-   if (activesigils >= 3) {
+   if (~count_sigils >= 3) {
      mes("You already have 3 active sigils. Deactivate one to use");
    } else {
    switch ($sigil) {
@@ -125,7 +125,7 @@
      inv_setslot(inv, last_slot, oc_param($sigilobj, next_obj_stage), 1);
 }
 
-[proc,activesigils]()(int) {
+[proc,count_sigils]()(int) {
     int $count = 0;
     if (%sigil_herb1 != 0) { $count += 1; }
     if (%sigil_prayer1 != 0) { $count += 1; }
