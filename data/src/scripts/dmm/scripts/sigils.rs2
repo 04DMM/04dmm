@@ -31,6 +31,8 @@
 [proc,activate_sigil](int $last_slot) {
     def_obj $sigilobj = inv_getobj(inv, $last_slot);
 
+  
+
     if (~count_sigils >= 3) {
         mes("You already have 3 active sigils. Deactivate one to use");
     } else {
@@ -63,8 +65,12 @@
                 %sigil_alch1 = true;
         }
 
+        anim(human_runecraft, 0);
+        spotanim_pl(runecrafting, 96, 0);
+        sound_synth(fire_blast_all, 0, 0);
+
         inv_setslot(inv, $last_slot, oc_param($sigilobj, next_obj_stage), 1);
-        mes("Sigil activated.");
+        mes("Sigil tapped.");
     }
 }
 
@@ -72,35 +78,40 @@
     def_obj $sigilobj = inv_getobj(inv, $last_slot);
   
     switch_obj($sigilobj) {
-        case sigil_herb1 :
+        case sigil_herb1_active :
             %sigil_herb1 = false;
-        case sigil_prayer1 :
+        case sigil_prayer1_active :
             %sigil_prayer1 = false;
-        case sigil_fish1 :
+        case sigil_fish1_active :
             %sigil_fish1 = false;
-        case sigil_smith1 :
+        case sigil_smith1_active :
             %sigil_smith1 = false;
-        case sigil_fletch1 :
+        case sigil_fletch1_active :
             %sigil_fletch1 = false;
-        case sigil_thief1 :
+        case sigil_thief1_active :
             %sigil_thief1 = false;
-        case sigil_range3 :
+        case sigil_range3_active :
             %sigil_range3 = false;
-        case sigil_wc1 :
+        case sigil_wc1_active :
             %sigil_wc1 = false;
-        case sigil_fm1 :
+        case sigil_fm1_active :
             %sigil_fm1 = false;
-        case sigil_melee1 :
+        case sigil_melee1_active :
             %sigil_melee1 = false;
-        case sigil_range1 :
+        case sigil_range1_active :
             %sigil_range1 = false;
-        case sigil_mage1 :
+        case sigil_mage1_active :
             %sigil_mage1 = false;
-        case sigil_alch1 :
+        case sigil_alch1_active :
             %sigil_alch1 = false;
     }
 
+        anim(human_runecraft, 0);
+        spotanim_pl(runecrafting, 96, 0);
+        sound_synth(fire_strike_fail, 0, 0);
+
     inv_setslot(inv, $last_slot, oc_param($sigilobj, next_obj_stage), 1);
+    mes("Untapped sigil.");
 }
 
 [proc,count_sigils]()(int) {
@@ -118,5 +129,6 @@
     if (%sigil_range1 = true) { $count = calc($count + 1); }
     if (%sigil_mage1 = true) { $count = calc($count + 1); }
     if (%sigil_alch1 = true) { $count = calc($count + 1); }
+    //mes("Active sigil count <tostring($count)>");
     return($count);
 }
