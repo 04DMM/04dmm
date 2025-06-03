@@ -53,7 +53,7 @@ if ($product = $obj2) {
          $product, $level, $sigil_exp = db_getfield($data, fletch_bow_table:sigil_shortbow, 0);
          def_namedobj $temp;
          def_int $tempint;
-         $temp, $tempint, $fletching_experience = db_getfield($data, fletch_bow_table:shortbow, 0)  
+         $temp, $tempint, $fletching_experience = db_getfield($data, fletch_bow_table:shortbow, 0);  
     } else {
          $product, $level, $fletching_experience = db_getfield($data, fletch_bow_table:shortbow, 0);
     }
@@ -63,7 +63,7 @@ if ($product = $obj2) {
          $product, $level, $sigil_exp = db_getfield($data, fletch_bow_table:sigil_longbow, 0);
          def_namedobj $temp;
          def_int $tempint;
-         $temp, $tempint, $fletching_experience = db_getfield($data, fletch_bow_table:longbow, 0)
+         $temp, $tempint, $fletching_experience = db_getfield($data, fletch_bow_table:longbow, 0);
     } else {
          $product, $level, $fletching_experience = db_getfield($data, fletch_bow_table:longbow, 0);
     }
