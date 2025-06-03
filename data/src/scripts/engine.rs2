@@ -794,7 +794,7 @@
 // info: Get the base stock of $obj in the inv config
 [command,inv_stockbase](inv $inv, obj $obj)(int)
 // info: Add an object to an inventory
-[command,inv_add](inv $inv, namedobj $obj, int $count)
+[command,inv_add](inv $inv, obj $obj, int $count)
 // info: Add an object to a secondary inventory
 [command,.inv_add](inv $inv, namedobj $obj, int $count)
 // info: Replace an object in an inventory
