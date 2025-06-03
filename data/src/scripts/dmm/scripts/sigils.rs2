@@ -1,0 +1,16 @@
+[opheld1,sigil_herb1] @activate_sigil(last_slot);
+[opheld1,sigil_prayer1] @activate_sigil(last_slot);
+[opheld1,sigil_fish1] @activate_sigil(last_slot);
+[opheld1,sigil_smith1] @activate_sigil(last_slot);
+[opheld1,sigil_fletch1] @activate_sigil(last_slot);
+[opheld1,sigil_thief1] @activate_sigil(last_slot);
+[opheld1,sigil_range3] @activate_sigil(last_slot);
+[opheld1,sigil_wc1] @activate_sigil(last_slot);
+[opheld1,sigil_fm1] @activate_sigil(last_slot);
+[opheld1,sigil_melee1] @activate_sigil(last_slot);
+[opheld1,sigil_range1] @activate_sigil(last_slot);
+[opheld1,sigil_mage1] @activate_sigil(last_slot);
+[opheld1,sigil_alch1] @activate_sigil(last_slot);
+
+[label,activate_sigil](int $slot)
+mes("You activate the sigil.");

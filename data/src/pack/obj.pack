@@ -2903,4 +2903,29 @@
 2902=rune_gloves
 
 // Sigils
-
+2903=sigil_herb1
+2904=sigil_prayer1
+2905=sigil_fish1
+2906=sigil_smith1
+2907=sigil_fletch1
+2908=sigil_thief1
+2909=sigil_range3
+2910=sigil_wc1
+2911=sigil_fm1
+2912=sigil_melee1
+2913=sigil_range1
+2914=sigil_mage1
+2915=sigil_alch1
+2916=sigil_herb1_active
+2917=sigil_prayer1_active
+2918=sigil_fish1_active
+2919=sigil_smith1_active
+2920=sigil_fletch1_active
+2921=sigil_thief1_active
+2922=sigil_range3_active
+2923=sigil_wc1_active
+2924=sigil_fm1_active
+2925=sigil_melee1_active
+2926=sigil_range1_active
+2927=sigil_mage1_active
+2928=sigil_alch1_active
