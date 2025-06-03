@@ -4,6 +4,8 @@ column=shafts,int
 column=objchoices,namedobj,namedobj
 column=shortbow,namedobj,int,int
 column=longbow,namedobj,int,int
+column=sigil_shortbow,namedobj,int,int
+column=sigil_longbow,namedobj,int,int
 
 [fletching_table]
 column=item,obj

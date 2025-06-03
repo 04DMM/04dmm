@@ -47,11 +47,26 @@ def_int $count = 1;
 def_int $fletching_experience = multiply($shaft_count, 5);
 def_string $message;
 // 2005-osrs, rsc
+def_int $sigil_exp = 0;
 if ($product = $obj2) {
-    $product, $level, $fletching_experience = db_getfield($data, fletch_bow_table:shortbow, 0);
+    if (%sigil_fletch1 = true) {
+         $product, $level, $sigil_exp = db_getfield($data, fletch_bow_table:sigil_shortbow, 0);
+         def_namedobj $temp;
+         def_int $tempint;
+         $temp, $tempint, $fletching_experience = db_getfield($data, fletch_bow_table:shortbow, 0)  
+    } else {
+         $product, $level, $fletching_experience = db_getfield($data, fletch_bow_table:shortbow, 0);
+    }
     $message = "You carefully cut the wood into a shortbow.";
 } else if ($product = $obj3) {
-    $product, $level, $fletching_experience = db_getfield($data, fletch_bow_table:longbow, 0);
+    if (%sigil_fletch1 = true) {
+         $product, $level, $sigil_exp = db_getfield($data, fletch_bow_table:sigil_longbow, 0);
+         def_namedobj $temp;
+         def_int $tempint;
+         $temp, $tempint, $fletching_experience = db_getfield($data, fletch_bow_table:longbow, 0)
+    } else {
+         $product, $level, $fletching_experience = db_getfield($data, fletch_bow_table:longbow, 0);
+    }
     $message = "You carefully cut the wood into a longbow.";
 } else {
     $message = "You carefully cut the wood into <tostring($shaft_count)> arrow shafts.";
@@ -66,5 +81,5 @@ if (stat(fletching) < $level) {
 // make one bow at a time
 inv_del(inv, $log, 1);
 mes($message);
-stat_advance(fletching, $fletching_experience);
+stat_advance(fletching, calc($fletching_experience + $sigil_exp));
 inv_add(inv, $product, $count);
