@@ -51,7 +51,11 @@ if ($fish2 ! null) { // if fish2 isnt null and roll for 2nd fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        ~auto_cook_item($fish2, 2);
+        if (%sigil_fish1 = true) {
+          ~auto_cook_item($fish2, 2);
+        } else {
+           inv_add(inv, $fish2, multiply(1,2));
+        }
         //inv_add(inv, $fish2, multiply(1,2));
         stat_advance(fishing, struct_param($struct2, productexp));
         mes(struct_param($struct2, productmessage));
@@ -68,7 +72,11 @@ if ($fish1 ! null) { // else if fish1 isnt null and roll for 1st fish passes
         // give fish and display message
         //Autocook
         //@cook_item($passes_roll, $anim, $cookmessage, $succesmessage, $burnmessage, $uncooked_item, $cooked_item, $burnt_item, $additional_item, $experience);
+        if (%sigil_fish1 = true) {
         ~auto_cook_item($fish1, 2);
+        } else {
+          inv_add(inv, $fish1, multiply(1,2));
+        }
         //inv_add(inv, $fish1, multiply(1,2));
         stat_advance(fishing, struct_param($struct1, productexp));
         mes(struct_param($struct1, productmessage));
@@ -85,7 +93,11 @@ if ($fish2 ! null) { // if fish2 isnt null and roll for 2nd fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
+        if (%sigil_fish1 = true) {
         ~auto_cook_item($fish1, 2);
+        } else {
+           inv_add(inv, $fish2, multiply(1,2));
+        }
         //inv_add(inv, $fish2, multiply(1,2));
         stat_advance(fishing, struct_param($struct2, productexp));
         mes(struct_param($struct2, productmessage));
@@ -100,7 +112,11 @@ if ($fish1 ! null) { // else if fish1 isnt null and roll for 1st fish passes
             inv_del(inv, $bait, 1);
         }
         // give fish and display message
-        ~auto_cook_item($fish1, 2);
+        if (%sigil_fish1 = true) {
+           ~auto_cook_item($fish1, 2);
+        } else {
+           inv_add(inv, $fish1, multiply(1,2));
+        }
         //inv_add(inv, $fish1, multiply(1,2));
         stat_advance(fishing, struct_param($struct1, productexp));
         mes(struct_param($struct1, productmessage));

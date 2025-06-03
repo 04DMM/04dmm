@@ -143,25 +143,39 @@ if (stat_random(fishing, 10, 10) = true) {
 }
 // seaweed
 if (stat_random(fishing, 10, 10) = true) {
-    inv_add(inv, soda_ash, 2);
+    if (%sigil_fish1 = true) {
+       inv_add(inv, soda_ash, 2);
+    } else {
+       inv_add(inv, seaweed, 2);
+    }
+    //inv_add(inv, soda_ash, 2);
     mes("You catch some seaweed.");
     stat_advance(fishing, 1);
 }
 // leather gloves
 if (stat_random(fishing, 5, 5) = true) {
+       
     inv_add(inv, leather_gloves, 1);
     mes("You catch some gloves.");
     stat_advance(fishing, 10);
 }
 // mackerel
 if (stat_random(fishing, 5, 65) = true) {
-    inv_add(inv, mackerel, 2);
+    if (%sigil_fish1 = true) {
+       inv_add(inv, mackerel, 2);
+    } else {
+       inv_add(inv, raw_mackerel, 2);
+    }
     mes("You catch a mackerel.");
     stat_advance(fishing, 200);
 }
 // another mackerel
 if (stat_random(fishing, 10, 10) = true) {
-    inv_add(inv, mackerel, 2);
+    if (%sigil_fish1 = true) {
+       inv_add(inv, mackerel, 2);
+    } else {
+       inv_add(inv, raw_mackerel, 2);
+    }
     mes("You catch a mackerel.");
     stat_advance(fishing, 200);
 }
@@ -182,7 +196,11 @@ if ($level < 23) {
     return;
 }
 if (stat_random(fishing, 4, 55) = true) {
-    inv_add(inv, cod, 2);
+    if (%sigil_fish1 = true) {
+       inv_add(inv, cod, 2);
+    } else {
+       inv_add(inv, raw_cod, 2);
+    }
     mes("You catch a cod.");
     stat_advance(fishing, 450);
 }
@@ -191,7 +209,11 @@ if ($level < 46) {
     return;
 }
 if (stat_random(fishing, 3, 40) = true) {
-    inv_add(inv, bass, 2);
+    if (%sigil_fish1 = true) {
+      inv_add(inv, bass, 2);
+    } else {
+      inv_add(inv, raw_bass, 2);
+    }
     mes("You catch a bass.");
     stat_advance(fishing, 1000);
 }
