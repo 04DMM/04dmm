@@ -99,21 +99,25 @@ def_boolean $protecting_item = false;
 if (%prayer_protectitems = ^true) { $protecting_item = true; }
 inv_clear(deathkeep);
 
-if($skulled = false) {
-    ~move_priciest_item_on_hero_to_death;
-    ~move_priciest_item_on_hero_to_death;
-    ~move_priciest_item_on_hero_to_death;
-}
-if($protecting_item = true) {
-    ~move_priciest_item_on_hero_to_death;
-}
+//if($skulled = false) {
+//    ~move_priciest_item_on_hero_to_death;
+//    ~move_priciest_item_on_hero_to_death;
+//    ~move_priciest_item_on_hero_to_death;
+//}
+//if($protecting_item = true) {
+//    ~move_priciest_item_on_hero_to_death;
+//}
 
 def_int $i = 0;
 def_int $size = inv_size(inv);
 while ($i < $size) {
+    def_obj $iobj = inv_getobj(inv, $i);
     if (inv_getnum(inv, $i) > 0) {
         if (oc_category(inv_getobj(inv, $i)) = armour_godcape) {
             mes(oc_param(inv_getobj(inv, $i), lose_cape_message));
+        }
+        if (oc_tradeable($iobj) = false) {
+           inv_moveitem(inv,deathkeep,$iobj,1);
         }
     }
     $i = calc($i + 1);
@@ -123,18 +127,41 @@ $i = 0;
 $size = inv_size(worn);
 while ($i < $size) {
     if (inv_getnum(worn, $i) > 0) {
+        def_obj $iobj = inv_getobj(inv, $i);
         if (oc_category(inv_getobj(worn, $i)) = armour_godcape) {
             mes(oc_param(inv_getobj(worn, $i), lose_cape_message));
+        }
+        if (oc_tradeable($iobj) = false) {
+           inv_moveitem(inv,deathkeep,$iobj,1);
         }
     }
     $i = calc($i + 1);
 }
 
-inv_dropall(inv, coord, ^lootdrop_duration);
-inv_dropall(worn, coord, ^lootdrop_duration);
+$i = 0;
+$size = inv_size(bank);
+while ($i < $size) {
+ def_obj $item = inv_getobj(bank, $i);
+ def_int $total = inv_total(bank, $item);
+ if ($item ! null) {
+  if (~is_starter_kit_item($item) = true) {
+    // Do nothing
+  } else if (oc_tradeable($item) = false) {
+    // Do nothing
+  } else {
+     inv_delslot(bank, $i);
+  }
+  
+ }
+  $i = calc($i + 1);
+}
+
+//inv_dropall(inv, coord, ^lootdrop_duration);
+//inv_dropall(worn, coord, ^lootdrop_duration);
 obj_addall(coord, bones, 1, ^lootdrop_duration);
-//~moveallinv(deathkeep, inv);
-//inv_clear(deathkeep);
+~moveallinv(deathkeep, inv);
+inv_clear(deathkeep);
+
 
 [softtimer,pvpimmunity_timer] 
 if (%pvpimmunity = 0) {
