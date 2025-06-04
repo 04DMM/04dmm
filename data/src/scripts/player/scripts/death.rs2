@@ -31,8 +31,8 @@ while ($i <= enum_getoutputcount(stats)) {
 
 [proc,reset_wipe]
 ~wipe_stats;
-~reset_all_quests;
-inv_clear(bank);
+//~reset_all_quests;
+//inv_clear(bank);
 inv_clear(inv);
 inv_clear(worn);
 
@@ -220,7 +220,9 @@ while ($i < $size) {
   def_int $total = inv_total(bank, $item);
   if ($item ! null) {
   if (~is_starter_kit_item($item) = true) {
-  
+    // Do nothing
+  } else if (oc_tradeable($item) = false) {
+    // Do nothing
   } else {
      inv_delslot(bank, $i);
      if (oc_cert($item) = $item) {
