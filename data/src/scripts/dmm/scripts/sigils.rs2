@@ -43,6 +43,9 @@
 [opheld1,sigil_mage1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_alch1_active] ~deactivate_sigil(last_slot);
 
+// Cannoneering handler
+[opheld2,sigil_range3_active] ~fire_cannon(last_slot);
+
 [proc,destroy_sigil] (int $last_slot) {
    def_obj $sigilobj = inv_getobj(inv, $last_slot);
 
@@ -187,4 +190,13 @@
     if (%sigil_alch1 = true) { $count = calc($count + 1); }
     //mes("Active sigil count <tostring($count)>");
     return($count);
+}
+
+
+[proc,fire_cannon](int $last_slot) {
+   if (gettimer(sigil_cannon_rotate) > 0) {
+       cleartimer(sigil_cannon_rotate);
+   } else {
+       settimer(sigil_cannon_rotate, 1, 0);
+   }
 }
