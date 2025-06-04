@@ -249,7 +249,7 @@
 
 [proc,count_sigils]()(int) {
     def_int $count = 0;
-    if ($sigil_bananas1 = true) { $count = calc($count + 1); }
+    if (%sigil_bananas1 = true) { $count = calc($count + 1); }
     if (%sigil_life1 = true) { $count = calc($count + 1); }
     if (%sigil_reach1 = true) { $count = calc($count + 1); }
     if (%sigil_random1 = true) { $count = calc($count + 1); }
