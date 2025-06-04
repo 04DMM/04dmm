@@ -201,7 +201,7 @@ while ($i < $size) {
         if (oc_category(inv_getobj(worn, $i)) = armour_godcape) {
             mes(oc_param(inv_getobj(worn, $i), lose_cape_message));
             inv_delslot(worn, $i);
-        } else if (oc_tradeable($iobj) = false) (
+        } else if (oc_tradeable($iobj) = false) {
             inv_moveitem(worn,deathkeep,$iobj, 1);
         } else {
             // Change so that items only show for the person that killed you
