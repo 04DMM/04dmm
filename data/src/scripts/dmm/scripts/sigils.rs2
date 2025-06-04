@@ -120,6 +120,7 @@
             case sigil_fm1 :
                 %sigil_fm1 = true;
             case sigil_melee1 :
+                p_run(^player_run_off);
                 %sigil_melee1 = true;
             case sigil_range1 :
                 %sigil_range1 = true;
