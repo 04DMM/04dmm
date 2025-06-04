@@ -333,7 +333,7 @@ param=next_obj_stage,sigil_bananas1
 param=no_alchemy,1
 
 [sigil_life1_active]
-name=Sigil of Life
+name=Sigil of Life (t)
 desc=When you die, protect all your stats.
 cost=10
 model=model_2759_obj
