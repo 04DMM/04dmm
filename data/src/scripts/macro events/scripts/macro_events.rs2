@@ -36,6 +36,7 @@ def_npc $event_npc = ~macro_event_npc($event);
 npc_add($event_coord, $event_npc, 1000);
 %macro_event_uid = npc_uid;
 session_log(^log_moderator, "Random event spawned: <nc_debugname(npc_type)>");
+
 switch_int ($event) {
     case ^macro_event_swarm : ~macro_event_swarm_spawn;
     case ^macro_event_triffid_friendly : ~macro_event_triffid_spawn;
@@ -43,6 +44,7 @@ switch_int ($event) {
     case ^macro_event_genie : ~macro_event_genie_spawn;
     case ^macro_event_mysterious_old_man_general : ~macro_event_mysterious_old_man_general_spawn;
 }
+
 
 [proc,macro_event_area](coord $coord)(boolean)
 if (~in_duel_arena($coord) = true) {
@@ -92,6 +94,12 @@ if (map_members = ^true) {
 return($event_npc);
 
 [proc,macro_event_set_random]()(int)
+
+// Always genie
+if ($sigil_random1 = true) {
+   return(2);
+}
+
 if (map_members = ^true) {
     return(~random_range(1, enum_getoutputcount(general_macro_events_members)));
 } else {
