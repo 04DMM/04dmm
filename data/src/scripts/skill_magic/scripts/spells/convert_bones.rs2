@@ -9,6 +9,7 @@ if (p_finduid(uid) = true) {
     if (~check_spell_requirements($spell_data) = false) {
         return;
     }
+   
     def_namedobj $product;
     def_seq $anim;
     def_spotanim $spotanim;
@@ -23,9 +24,9 @@ if (p_finduid(uid) = true) {
        spotanim_pl($spotanim, 92, 0);
        stat_heal(hitpoints, 5, 0);
        p_delay(2);
+   
     } else {
     // look for spell in db
-    def_dbrow $spell_data = ~get_spell_data($spell);
     if (~check_spell_requirements($spell_data) = false) {
         return;
     }
