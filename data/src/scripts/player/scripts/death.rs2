@@ -170,9 +170,12 @@ def_int $i = 0;
 def_int $size = inv_size(inv);
 while ($i < $size) {
     if (inv_getnum(inv, $i) > 0) {
+        def_obj $iobj = inv_getobj(inv, $i);
         if (oc_category(inv_getobj(inv, $i)) = armour_godcape) {
             mes(oc_param(inv_getobj(inv, $i), lose_cape_message));
             inv_delslot(inv, $i);
+        } else if (oc_tradeable($iobj) = false) {
+            // Do nothing, leave in inv 
         } else {
             def_obj $item = inv_getobj(inv, $i);
             def_int $total = inv_total(inv, $item);
