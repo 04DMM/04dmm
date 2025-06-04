@@ -254,13 +254,13 @@ while ($i < $size) {
     }
     $i = calc($i + 1);
 }
-if (%sigil_defence1 = true) {
- $stabdefence = add($stabdefence, 100);
- $slashdefence = add($slashdefence, 100);
- $crushdefence = add($crushdefence, 100);
- $magicdefence = add($magicdefence, 100);
- $rangedefence = add($rangedefence, 100);
-}
+//if (%sigil_defence1 = true) {
+// $stabdefence = add($stabdefence, 100);
+// $slashdefence = add($slashdefence, 100);
+// $crushdefence = add($crushdefence, 100);
+// $magicdefence = add($magicdefence, 100);
+// $rangedefence = add($rangedefence, 100);
+//}
 return($stabattack, $slashattack, $crushattack, $magicattack, $rangeattack, $stabdefence, $slashdefence, $crushdefence, $magicdefence, $rangedefence, $strengthbonus, $prayerbonus, $rangebonus);
 
 [proc,.equip_get_bonuses]()(int, int, int, int, int, int, int, int, int, int, int, int, int)
@@ -304,13 +304,13 @@ while ($i < $size) {
     }
     $i = calc($i + 1);
 }
-if (.%sigil_defence1 = true) {
-   $stabdefence = add($stabdefence, 100);
-   $slashdefence = add($slashdefence, 100);
-   $crushdefence = add($crushdefence, 100);
-   $magicdefence = add($magicdefence, 100);
-   $rangedefence = add($rangedefence, 100);
-}
+//if (.%sigil_defence1 = true) {
+//   $stabdefence = add($stabdefence, 100);
+//   $slashdefence = add($slashdefence, 100);
+//   $crushdefence = add($crushdefence, 100);
+//   $magicdefence = add($magicdefence, 100);
+//   $rangedefence = add($rangedefence, 100);
+//}
 
 return($stabattack, $slashattack, $crushattack, $magicattack, $rangeattack, $stabdefence, $slashdefence, $crushdefence, $magicdefence, $rangedefence, $strengthbonus, $prayerbonus, $rangebonus);
 
