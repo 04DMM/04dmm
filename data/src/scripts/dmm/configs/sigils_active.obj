@@ -16,6 +16,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_herb1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_prayer1_active]
 name=Sigil of Abbot Langley (t)
@@ -35,6 +36,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_prayer1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_fish1_active]
 name=Sigil of Grandpa Jack (t)
@@ -54,6 +56,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_fish1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_smith1_active]
 name=Sigil of Doric (t)
@@ -73,6 +76,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_smith1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_fletch1_active]
 name=Sigil of the Magical Seer (t)
@@ -92,6 +96,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_fletch1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_thief1_active]
 name=Sigil of the Bandit (t)
@@ -111,6 +116,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_thief1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_range3_active]
 name=Sigil of Nurmof (t)
@@ -131,6 +137,7 @@ iop1=Untap
 iop2=Setup
 param=next_obj_stage,sigil_range3
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_wc1_active]
 name=Sigil of the Forester (t)
@@ -150,7 +157,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_wc1
 iop5=Destroy
-
+param=no_alchemy,1
 
 [sigil_fm1_active]
 name=Sigil of Wintertodt (t)
@@ -170,6 +177,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_fm1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_melee1_active]
 name=Sigil of Obor (t)
@@ -189,6 +197,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_melee1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_range1_active]
 name=Sigil of the Dagannoth (t)
@@ -208,6 +217,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_range1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_mage1_active]
 name=Sigil of Mizgog (t)
@@ -227,6 +237,7 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_mage1
 iop5=Destroy
+param=no_alchemy,1
 
 [sigil_alch1_active]
 name=Sigil of the Goblins (t)
@@ -246,3 +257,4 @@ tradeable=no
 iop1=Untap
 param=next_obj_stage,sigil_alch1
 iop5=Destroy
+param=no_alchemy,1

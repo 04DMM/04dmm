@@ -13,6 +13,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_herb1_active
+param=no_alchemy,1
 
 [sigil_prayer1]
 name=Sigil of Abbot Langley
@@ -29,7 +30,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_prayer1_active
-
+param=no_alchemy,1
 
 [sigil_fish1]
 name=Sigil of Grandpa Jack
@@ -46,6 +47,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_fish1_active
+param=no_alchemy,1
 
 [sigil_smith1]
 name=Sigil of Doric
@@ -62,6 +64,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_smith1_active
+param=no_alchemy,1
 
 [sigil_fletch1]
 name=Sigil of the Magical Seer
@@ -78,6 +81,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_fletch1_active
+param=no_alchemy,1
 
 [sigil_thief1]
 name=Sigil of the Bandit
@@ -94,6 +98,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_thief1_active
+param=no_alchemy,1
 
 [sigil_range3]
 name=Sigil of Nurmof
@@ -110,6 +115,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_range3_active
+param=no_alchemy,1
 
 [sigil_wc1]
 name=Sigil of the Forester
@@ -126,6 +132,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_wc1_active
+param=no_alchemy,1
 
 [sigil_fm1]
 name=Sigil of Wintertodt
@@ -142,6 +149,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_fm1_active
+param=no_alchemy,1
 
 [sigil_melee1]
 name=Sigil of Obor
@@ -158,6 +166,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_melee1_active
+param=no_alchemy,1
 
 [sigil_range1]
 name=Sigil of the Dagannoth
@@ -174,6 +183,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_range1_active
+param=no_alchemy,1
 
 [sigil_mage1]
 name=Sigil of Mizgog
@@ -190,6 +200,7 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_mage1_active
+param=no_alchemy,1
 
 [sigil_alch1]
 name=Sigil of the Goblins
@@ -206,3 +217,4 @@ members=yes
 tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_alch1_active
+param=no_alchemy,1
