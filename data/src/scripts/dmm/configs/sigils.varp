@@ -53,3 +53,7 @@ type=boolean
 [sigil_defence1]
 scope=perm
 type=boolean
+
+[sigil_random1]
+scope=perm
+type=boolean
