@@ -178,9 +178,9 @@ while ($i < $size) {
 //inv_dropall(inv, coord, ^lootdrop_duration);
 //inv_dropall(worn, coord, ^lootdrop_duration);
 obj_addall(coord, bones, 1, ^lootdrop_duration);
+inv_clear(inv);
 ~moveallinv(deathkeep, inv);
 inv_clear(deathkeep);
-
 
 [softtimer,pvpimmunity_timer] 
 if (%pvpimmunity = 0) {
