@@ -15,6 +15,7 @@
 
 [opheld1,sigil_defence1] ~activate_sigil(last_slot);
 [opheld1,sigil_random1] ~activate_sigil(last_slot);
+[opheld1,sigil_reach1] ~activate_sigil(last_slot);
 
 // Sigil destroy bindings (active forms)
 [opheld5,sigil_herb1_active] ~destroy_sigil(last_slot);
@@ -33,6 +34,7 @@
 
 [opheld5,sigil_defence1_active] ~destroy_sigil(last_slot);
 [opheld5,sigil_random1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_reach1_active] ~destroy_sigil(last_slot);
 
 // Sigil deactivation bindings
 [opheld1,sigil_herb1_active] ~deactivate_sigil(last_slot);
@@ -51,6 +53,7 @@
 
 [opheld1,sigil_defence1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_random1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_reach1_active] ~deactivate_sigil(last_slot);
 
 // Cannoneering handler
 [opheld2,sigil_range3_active] ~fire_cannon(last_slot);
@@ -62,6 +65,8 @@
    if ($choice = 1) {
 
     switch_obj($sigilobj) {
+        case sigil_reach1_active :
+            %sigil_reach1 = false;
         case sigil_random1_active :
             %sigil_random1 = false;
         case sigil_herb1_active :
@@ -124,6 +129,8 @@
         mes("You already have 3 active sigils. Deactivate one to use");
     } else {
         switch_obj($sigilobj) {
+            case sigil_reach1 : 
+                %sigil_reach1 = true;
             case sigil_random1 :
                 %sigil_random1 = true;
             case sigil_defence1 :
@@ -177,6 +184,8 @@
     def_obj $sigilobj = inv_getobj(inv, $last_slot);
   
     switch_obj($sigilobj) {
+        case sigil_reach1_active :
+            %sigil_reach1 = false;
         case sigil_random1_active :
             %sigil_random1 = false;
         case sigil_herb1_active :
@@ -222,6 +231,7 @@
 
 [proc,count_sigils]()(int) {
     def_int $count = 0;
+    if (%sigil_reach1 = true) { $count = calc($count + 1); }
     if (%sigil_random1 = true) { $count = calc($count + 1); }
     if (%sigil_herb1 = true) { $count = calc($count + 1); }
     if (%sigil_prayer1 = true) { $count = calc($count + 1); }

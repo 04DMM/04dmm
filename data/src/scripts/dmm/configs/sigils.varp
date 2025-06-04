@@ -57,3 +57,8 @@ type=boolean
 [sigil_random1]
 scope=perm
 type=boolean
+
+[sigil_reach1]
+scope=perm
+type=boolean
+
