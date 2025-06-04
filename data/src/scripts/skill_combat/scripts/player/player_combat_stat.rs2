@@ -78,6 +78,14 @@ $effective_magic_defence = add($effective_magic_defence, 8); // no idea if there
 %damagetype = $damagetype;
 %damagestyle = $damagestyle;
 
+if (%sigil_defence1 = true) {
+   $stabdefence = add($stabdefence, 100);
+   $slashdefence = add($slashdefence, 100);
+   $crushdefence = add($crushdefence, 100);
+   $magicdefence = add($magicdefence, 100);
+   $rangedefence = add($rangedefence, 100);
+}
+
 // defence rolls and attack rolls
 %com_stabattack = ~combat_stat($effective_attack, $stabattack);
 %com_stabdef = ~combat_stat($effective_defence, $stabdefence);
@@ -89,15 +97,6 @@ $effective_magic_defence = add($effective_magic_defence, 8); // no idea if there
 %com_magicdef = ~combat_stat($effective_magic_defence, $magicdefence);
 %com_rangeattack = ~combat_stat($effective_ranged, $rangeattack);
 %com_rangedef = ~combat_stat($effective_defence, $rangedefence);
-
-if (%sigil_defence1 = true) {
-  %com_stabdef = add(%com_stabdef, 100);
-  %com_slashdef = add(%com_slashdef, 100);
-  %com_crushdef = add(%com_crushdef, 100);
-  %com_magicdef = add(%com_crushdef, 100);
-  %com_rangedef = add(%com_rangedef, 100);
-}
-
 
 def_int $melee_strength = ~combat_stat($effective_strength, $strengthbonus);
 def_int $ranged_strength = ~combat_stat($effective_ranged, $rangebonus);
@@ -190,6 +189,14 @@ $effective_magic_defence = add($effective_magic_defence, 8); // no idea if there
 // style related varps
 .%damagetype = $damagetype;
 .%damagestyle = $damagestyle;
+
+if (.%sigil_defence1 = true) {
+   $stabdefence = add($stabdefence, 100);
+   $slashdefence = add($slashdefence, 100);
+   $crushdefence = add($crushdefence, 100);
+   $magicdefence = add($magicdefence, 100);
+   $rangedefence = add($rangedefence, 100);
+}
 
 // defence rolls and attack rolls
 .%com_stabattack = ~combat_stat($effective_attack, $stabattack);
