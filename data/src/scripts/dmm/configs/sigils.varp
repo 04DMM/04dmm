@@ -62,3 +62,10 @@ type=boolean
 scope=perm
 type=boolean
 
+[sigil_bananas1]
+scope=perm
+type=boolean
+
+[sigil_life1]
+scope=perm
+type=boolean
