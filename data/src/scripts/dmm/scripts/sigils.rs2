@@ -94,8 +94,16 @@
     if (~inzone_coord_pair_table(bank_zones, coord) = false) {
       mes("You can't tap your sigil outside of a bank.");
       return;
-     }  
+     } 
 
+    def_namedobj $active_form = oc_param($sigilobj, next_obj_stage);
+    def_int $t_inv = inv_total(inv, $active_form);
+    def_int $t_bank = inv_total(bank, $active_form);
+
+    if ($t_inv > 0 | $t_bank > 0) {
+       mes("You can only have one sigil of this type active at a time.");
+       return;
+    }
 
     if (~count_sigils >= 3) {
         mes("You already have 3 active sigils. Deactivate one to use");
