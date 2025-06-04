@@ -250,6 +250,14 @@ while ($i < $size) {
         $rangedefence = calc($rangedefence + oc_param($obj, rangedefence));
         $strengthbonus = calc($strengthbonus + oc_param($obj, strengthbonus));
         $prayerbonus = calc($prayerbonus + oc_param($obj, prayerbonus));
+
+        if (%sigil_defence1 = true) {
+           $stabdefence = add($stabdefence, 100);
+           $slashdefence = add($slashdefence, 100);
+           $crushdefence = add($crushdefence, 100);
+           $magicdefence = add($magicdefence, 100);
+           $rangedefence = add($rangedefence, 100);
+        }
     }
     $i = calc($i + 1);
 }

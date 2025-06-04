@@ -13,6 +13,8 @@
 [opheld1,sigil_mage1] ~activate_sigil(last_slot);
 [opheld1,sigil_alch1] ~activate_sigil(last_slot);
 
+[opheld1,sigil_defence1] ~activate_sigil(last_slot);
+
 // Sigil destroy bindings (active forms)
 [opheld5,sigil_herb1_active] ~destroy_sigil(last_slot);
 [opheld5,sigil_prayer1_active] ~destroy_sigil(last_slot);
@@ -28,6 +30,8 @@
 [opheld5,sigil_mage1_active] ~destroy_sigil(last_slot);
 [opheld5,sigil_alch1_active] ~destroy_sigil(last_slot);
 
+[opheld5,sigil_defence1_active] ~destroy_sigil(last_slot);
+
 // Sigil deactivation bindings
 [opheld1,sigil_herb1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_prayer1_active] ~deactivate_sigil(last_slot);
@@ -42,6 +46,8 @@
 [opheld1,sigil_range1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_mage1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_alch1_active] ~deactivate_sigil(last_slot);
+
+[opheld1,sigil_defence1_active] ~deactivate_sigil(last_slot);
 
 // Cannoneering handler
 [opheld2,sigil_range3_active] ~fire_cannon(last_slot);

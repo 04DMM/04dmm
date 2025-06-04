@@ -28,6 +28,9 @@ def_int $damage = 0;
 // https://oldschool.runescape.wiki/w/Combat#PvP_bonus_experience
 if (~pvp_hit_roll(%damagetype) = true) {
     def_int $maxhit = %com_maxhit;
+    if (%sigil_melee1 = true) {
+      $maxhit = multiply($maxhit, 2);
+    }
     if (~.check_protect_prayer(^melee_style) = true) {
         $maxhit = scale(6, 10, $maxhit); // reduction of 40%
     }
