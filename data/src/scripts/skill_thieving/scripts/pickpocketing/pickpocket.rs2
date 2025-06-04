@@ -107,12 +107,14 @@ def_int $current_level = stat(thieving);
 def_int $thieving_level = db_getfield($data, pickpocket:level, 0);
 
 // Skips level check
-if (%sigil_thief1 = false) {
-if ($current_level < $thieving_level) {
+if (%sigil_thief1 = true) {
+    mes("Your Sigil of the Bandit ignores the thieving requirement.");
+}
+else if ($current_level < $thieving_level) {
     ~mesbox("You need level <tostring($thieving_level)> thieving to pick the <$pocket>.");
     return;
 }
-}
+
 
 if (add(%lastcombat, 8) > map_clock) {
     mes("You can't pickpocket during combat.");
