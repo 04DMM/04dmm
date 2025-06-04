@@ -4,3 +4,7 @@ scope=perm
 [last_starter_kit]
 scope=perm
 type=int
+
+[starterkit_timer]
+scope=perm
+type=int

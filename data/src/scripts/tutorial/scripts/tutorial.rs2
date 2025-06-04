@@ -316,14 +316,34 @@ inv_add(inv, bronze_pickaxe, 1);
 //inv_clear(bank);
 inv_add(bank, coins, 25);
 
-if (calc(map_clock - %last_starter_kit) > 144000 ) {
+if (gettimer(starterkit_timer) < 0) {
    inv_add(inv, starterkit, 1);
+   %starterkit_timer = 24000;
+   settimer(starterkit, 100);
 } else {
-   mes("You can only receive a starter kit once per day. You will not spawn with another.");
+   mes("You can obtain another starter kit in 4 hours.");
 }
+
+//if (sub(%last_starter_kit, 144000) < 0) {
+//   inv_add(inv, starterkit, 1);
+//   %last_starter_kit = map_clock;
+//} else {
+//   mes("You can only receive a starter kit once per day. You will not spawn with another.");
+//}
 //~stat_reset_all;
 
 ~initalltabs;
 ~update_all(inv_getobj(worn, ^wearpos_rhand));
 
 session_log(^log_adventure, "Completed tutorial island");
+
+[timer,starterkit_timer]
+if (%starterkit_timer = 0) {
+    cleartimer(starterkit_timer);
+    return;
+}
+else if (%starterkit_timer > 0) {
+    %starterkit_timer = sub(starterkit_timer, 100);
+    return;
+}
+
