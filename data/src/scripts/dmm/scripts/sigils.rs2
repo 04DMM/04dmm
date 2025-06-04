@@ -66,6 +66,7 @@
         case sigil_thief1_active :
             %sigil_thief1 = false;
         case sigil_range3_active :
+            cleartimer(sigil_cannon_rotate);
             %sigil_range3 = false;
         case sigil_wc1_active :
             %sigil_wc1 = false;
@@ -150,6 +151,7 @@
         case sigil_thief1_active :
             %sigil_thief1 = false;
         case sigil_range3_active :
+            cleartimer(sigil_cannon_rotate);
             %sigil_range3 = false;
         case sigil_wc1_active :
             %sigil_wc1 = false;
