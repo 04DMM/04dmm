@@ -189,6 +189,16 @@ return;
 [proc,is_sigil_mage1_spell](int $spell)(boolean) {
     if ($spell = ^weaken) {
       return(true);
+    } else if ($spell = ^curse) {
+      return(true);
+    } else if ($spell = ^confuse) {
+      return(true);
+    } else if ($spell = ^vulnerability) {
+      return(true);
+    } else if ($spell = ^enfeeble) {
+      return(true);
+    } else if ($spell = ^stun) {
+      return(true);
     } else { 
       return(false);
     }
