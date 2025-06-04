@@ -49,3 +49,7 @@ type=boolean
 [sigil_alch1]
 scope=perm
 type=boolean
+
+[sigil_defence1]
+scope=perm
+type=boolean
