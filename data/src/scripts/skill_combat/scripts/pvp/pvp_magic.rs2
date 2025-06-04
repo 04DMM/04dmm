@@ -147,6 +147,9 @@ while ($i < db_getfieldcount($spell_data, magic_spell_table:stat_change)) {
             // nothing ever uses this but i guess if someone wants to add some heal spell or something
             .stat_boost($stat, $constant, $percent);
         } else {
+            if (inv_total(inv, sigil_mage1_active) > 0) {
+               $percent = multiply($percent, 3);
+            }
             .mes("You feel weakened.");
             .stat_drain($stat, abs($constant), abs($percent));
         }

@@ -270,10 +270,20 @@ spotanim_npc(failedspell_impact, 92, $duration);
 def_stat $stat;
 def_int $constant;
 def_int $percent;
+
+//if (inv_total(inv, sigil_mage1_active) > 0) {
+//   $percent = multiply($percent, 3);
+//}
+
 def_npc_stat $npc_stat;
 def_int $i = 0;
 while ($i < db_getfieldcount($spell_data, magic_spell_table:stat_change)) {
     $stat, $constant, $percent = db_getfield($spell_data, magic_spell_table:stat_change, $i);
+  
+    if (inv_total(inv, sigil_mage1_active) > 0) {
+      $percent = multiply($percent, 3);
+    }
+
     $npc_stat = ~convert_stat_to_npc_stat($stat);
     if (npc_stat($npc_stat) >= npc_basestat($npc_stat)) {
         if ($constant > 0 & $percent > 0) {
