@@ -73,7 +73,11 @@ spotanim_pl(oc_param($ammo, proj_launch), 96, 0);
 if (~in_duel_arena(coord) = true) {
     inv_moveitem(worn, duelarrows, $ammo, 1); // give rangers their arrows back from duels
 } else {
-    inv_del(worn, $ammo, 1);
+    if (%sigil_range1 = true) {
+       // Infinite ammo with range t1
+    } else { 
+       inv_del(worn, $ammo, 1);
+    }
 }
 def_int $delay = 30;
 switch_category(oc_category($rhand)) {
