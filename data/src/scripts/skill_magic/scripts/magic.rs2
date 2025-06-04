@@ -45,6 +45,12 @@ if ($rhand = starterstaff & %starterstaff_charges > 0 & $spell = ^fire_strike) {
   return(true);
 }
 
+if (inv_total(inv, sigil_mage1_active) > 0) {
+   if (~is_sigil_mage1_spell($spell) = true) {
+     return(true);
+   }
+}
+
 // check if player has required runes
 if (inv_total(inv, $rune1) < $rune_count1 & $rune1 ! null) {
     mes("You do not have enough <~string_removeright(oc_name($rune1), 5)> Runes to cast this spell.");
@@ -179,3 +185,11 @@ while ($i <= db_getfieldcount($data, magic_spell_table:specificobj_reqmessage)) 
     $i = calc($i + 1);
 }
 return;
+
+[proc,is_sigil_mage1_spell](int $spell)(boolean) {
+    if ($spell = ^weaken) {
+      return(true);
+    } else { 
+      return(false);
+    }
+}
