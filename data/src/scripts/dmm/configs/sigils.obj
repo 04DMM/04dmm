@@ -176,8 +176,8 @@ iop1=Tap
 param=next_obj_stage,sigil_range1_active
 
 [sigil_mage1]
-name=Sigil of Wizard Mizgog
-desc=All curses cost no runes and have doubled effect.
+name=Sigil of Mizgog
+desc=All curses cost no runes and have triple effect.
 cost=10
 model=model_2759_obj
 2dxof=-2

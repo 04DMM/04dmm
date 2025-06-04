@@ -210,8 +210,8 @@ param=next_obj_stage,sigil_range1
 iop5=Destroy
 
 [sigil_mage1_active]
-name=Sigil of Wizard Mizgog (t)
-desc=Curses now cost no runes and have double effect.
+name=Sigil of Mizgog (t)
+desc=Curses now cost no runes and have triple effect.
 cost=10
 model=model_2759_obj
 recol1s=10650
