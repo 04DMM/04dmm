@@ -97,7 +97,7 @@ param=next_obj_stage,sigil_thief1_active
 
 [sigil_range3]
 name=Sigil of Nurmof
-desc=A cannon with unlimited ammo.
+desc=Become a cannon with unlimited ammo.
 cost=10
 model=model_2759_obj
 2dxof=-2
@@ -161,7 +161,7 @@ param=next_obj_stage,sigil_melee1_active
 
 [sigil_range1]
 name=Sigil of the Dagannoth
-desc=Provides you with unlimited ammunition for ranged attacks.
+desc=Provides you with unlimited ammunition.
 cost=10
 model=model_2759_obj
 2dxof=-2
