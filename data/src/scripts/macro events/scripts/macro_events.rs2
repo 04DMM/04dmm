@@ -96,7 +96,7 @@ return($event_npc);
 [proc,macro_event_set_random]()(int)
 
 // Always genie
-if ($sigil_random1 = true) {
+if (%sigil_random1 = true) {
    return(2);
 }
 
