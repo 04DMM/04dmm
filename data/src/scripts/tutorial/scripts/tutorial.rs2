@@ -300,7 +300,7 @@ if_close;
 %tutorial_progress = ^tutorial_complete;
 //p_telejump(0_50_50_22_22);
 
-inv_clear(inv);
+//inv_clear(inv);
 inv_add(inv, bronze_axe, 1);
 inv_add(inv, tinderbox, 1);
 inv_add(inv, net, 1);
@@ -312,12 +312,16 @@ inv_add(inv, bronze_pickaxe, 1);
 
 
 
-inv_clear(worn);
-inv_clear(bank);
+//inv_clear(worn);
+//inv_clear(bank);
 inv_add(bank, coins, 25);
-inv_add(inv, starterkit, 1);
 
-~stat_reset_all;
+if (calc(map_clock - %last_starter_kit) > 144000 ) {
+   inv_add(inv, starterkit, 1);
+} else {
+   mes("You can only receive a starter kit once per day. You will not spawn with another.");
+}
+//~stat_reset_all;
 
 ~initalltabs;
 ~update_all(inv_getobj(worn, ^wearpos_rhand));

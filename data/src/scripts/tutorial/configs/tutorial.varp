@@ -1,2 +1,6 @@
 [tutorial_progress]
 scope=perm
+
+[last_starter_kit]
+scope=perm
+type=int

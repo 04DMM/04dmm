@@ -33,20 +33,20 @@ while ($i <= enum_getoutputcount(stats)) {
 ~wipe_stats;
 //~reset_all_quests;
 //inv_clear(bank);
-inv_clear(inv);
-inv_clear(worn);
+//inv_clear(inv);
+//inv_clear(worn);
 
 p_teleport(0_48_48_22_35);
 
-%thieving_stall_timer = 0;
+//%thieving_stall_timer = 0;
 %cat_growth = 0;
 %follower_obj = null;
 %follower_uid = null;
-%handelmort_traps_disabled = 0;
-%thread_used = 0;
-%magearena = 0;
-%bunny_ears_unlocked = 0;
-%scythe_unlocked = 0;
+//%handelmort_traps_disabled = 0;
+//%thread_used = 0;
+//%magearena = 0;
+//%bunny_ears_unlocked = 0;
+//%scythe_unlocked = 0;
 %tutorial_progress = 0;
 
 p_logout;
@@ -130,9 +130,9 @@ while ($i < $size) {
     $i = calc($i + 1);
 }
 
-//inv_dropall(inv, coord, ^lootdrop_duration);
-//inv_dropall(worn, coord, ^lootdrop_duration);
-//obj_addall(coord, bones, 1, ^lootdrop_duration);
+inv_dropall(inv, coord, ^lootdrop_duration);
+inv_dropall(worn, coord, ^lootdrop_duration);
+obj_addall(coord, bones, 1, ^lootdrop_duration);
 //~moveallinv(deathkeep, inv);
 //inv_clear(deathkeep);
 
@@ -176,6 +176,7 @@ while ($i < $size) {
             inv_delslot(inv, $i);
         } else if (oc_tradeable($iobj) = false) {
             // Do nothing, leave in inv 
+            inv_moveitem(inv,deathkeep,$iobj,1);
         } else {
             def_obj $item = inv_getobj(inv, $i);
             def_int $total = inv_total(inv, $item);
@@ -196,9 +197,12 @@ $i = 0;
 $size = inv_size(worn);
 while ($i < $size) {
     if (inv_getnum(worn, $i) > 0) {
+        def_obj $iobj = inv_getobj(worn, $i);
         if (oc_category(inv_getobj(worn, $i)) = armour_godcape) {
             mes(oc_param(inv_getobj(worn, $i), lose_cape_message));
             inv_delslot(worn, $i);
+        } else if (oc_tradeable($iobj) = false) (
+            inv_moveitem(worn,deathkeep,$iobj, 1);
         } else {
             // Change so that items only show for the person that killed you
             //both_dropslot(worn, coord, $i, ^lootdrop_duration);
