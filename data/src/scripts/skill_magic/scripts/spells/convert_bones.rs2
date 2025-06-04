@@ -6,9 +6,6 @@
 if (p_finduid(uid) = true) {
 
     def_dbrow $spell_data = ~get_spell_data($spell);
-    if (~check_spell_requirements($spell_data) = false) {
-        return;
-    }
    
     def_namedobj $product;
     def_seq $anim;
