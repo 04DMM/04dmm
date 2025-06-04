@@ -2916,6 +2916,7 @@
 2913=sigil_range1
 2914=sigil_mage1
 2915=sigil_alch1
+2916=sigil_defence1
 2916=sigil_herb1_active
 2917=sigil_prayer1_active
 2918=sigil_fish1_active
@@ -2929,3 +2930,4 @@
 2926=sigil_range1_active
 2927=sigil_mage1_active
 2928=sigil_alch1_active
+2929=sigil_defence1_active
