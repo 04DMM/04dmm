@@ -89,6 +89,7 @@
         case sigil_defence1_active :
             %sigil_defence1 = false;
             ~update_bonuses;
+            ~player_combat_stat;
     }
      
      inv_delslot(inv, $last_slot);
@@ -121,6 +122,7 @@
             case sigil_defence1 :
                 %sigil_defence1 = true;
                 ~update_bonuses;
+                ~player_combat_stat;
             case sigil_herb1 :
                 %sigil_herb1 = true;
             case sigil_prayer1 :
@@ -198,6 +200,7 @@
         case sigil_defence1_active :
             %sigil_defence1 = false;
             ~update_bonuses;
+            ~player_combat_stat;
     }
 
         anim(human_runecraft, 0);
