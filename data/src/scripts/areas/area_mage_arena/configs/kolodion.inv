@@ -3,7 +3,7 @@ scope=shared
 size=40
 restock=yes
 stackall=yes
-allstock=yes
+allstock=no
 
 //T1 SIGILS
 stock1=sigil_herb1,5,1000
