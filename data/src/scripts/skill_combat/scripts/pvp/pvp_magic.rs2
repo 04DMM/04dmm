@@ -163,9 +163,9 @@ if (~high_priority_walktrigger_exists = true) {
 }
 def_int $freeze_time = db_getfield($spell_data, magic_spell_table:freeze_time, 0);
 if ($freeze_time > 0) {
-    if (~.check_protect_prayer(^magic_style) = true) {
-        $freeze_time = divide($freeze_time, 2); // 50% reduction https://oldschool.runescape.wiki/w/Update:RS2_bugfixes_-_part_4
-    }
+    //if (~.check_protect_prayer(^magic_style) = true) {
+    //    $freeze_time = divide($freeze_time, 2); // 50% reduction https://oldschool.runescape.wiki/w/Update:RS2_bugfixes_-_part_4
+    //}
     if (.p_finduid(.uid) = true) {
         .p_walk(.coord);
     }
