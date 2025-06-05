@@ -6,23 +6,23 @@ stackall=yes
 allstock=yes
 
 //T1 SIGILS
-stock1=sigil_herb1,5,50000
-stock2=sigil_prayer1,5,50000
-stock3=sigil_fish1,5,50000
-stock4=sigil_fletch1,5,50000
-stock5=sigil_smith1,5,50000
-stock6=sigil_wc1,5,50000
+stock1=sigil_herb1,5,1000
+stock2=sigil_prayer1,5,1000
+stock3=sigil_fish1,5,1000
+stock4=sigil_fletch1,5,1000
+stock5=sigil_smith1,5,1000
+stock6=sigil_wc1,5,1000
 
 //T2 SIGILS
-stock7=sigil_thief1,1,1000000
-stock8=sigil_defence1,1,1000000
-stock9=sigil_life1,1,1000000
-stock10=sigil_bananas1,1,1000000
+stock7=sigil_thief1,1,1000
+stock8=sigil_defence1,1,1000
+stock9=sigil_life1,1,1000
+stock10=sigil_bananas1,1,1000
 
 //T3 SIGILS
-stock11=sigil_melee1,1,5000000
-stock12=sigil_range3,1,5000000
-stock13=sigil_range1,1,5000000
-stock14=sigil_random1,1,5000000
-stock15=sigil_reach1,1,5000000
-stock16=sigil_mage1,1,5000000
+stock11=sigil_melee1,1,6000
+stock12=sigil_range3,1,6000
+stock13=sigil_range1,1,6000
+stock14=sigil_random1,1,6000
+stock15=sigil_reach1,1,6000
+stock16=sigil_mage1,1,6000
