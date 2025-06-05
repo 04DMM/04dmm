@@ -419,7 +419,7 @@ const PlayerOps: CommandHandlers = {
     }),
 
     [ScriptOpcode.CALC_DESERT_HEAT]: checkedHandler(ProtectedActivePlayer, state => {
-       const max_heat_damage: number = 20;
+       const max_heat_damage: number = 50;
        //let reduce_dmg_by: number = 0;
        //reduce_dmg_by = Math.max(0, 1500 - state.activePlayer.totalLevel
        
@@ -428,7 +428,7 @@ const PlayerOps: CommandHandlers = {
           state.activePlayer.totalLevel = state.activePlayer.getTotalLevel();
        }       
 
-       let actual_dmg: number  = ((Math.max(0, 1500 - state.activePlayer.totalLevel)) / 1500);
+       let actual_dmg: number  = ((Math.max(0, 1881 - state.activePlayer.totalLevel)) / 1881);
        actual_dmg = Math.round(actual_dmg * max_heat_damage);
  
        state.pushInt(actual_dmg);      
