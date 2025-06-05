@@ -14,11 +14,11 @@ switch_int(random(8)) {
 def_int $i = 0;
 def_int $j = 0;
 // 8 rounds of bolts, 1 round per tick, defer to world since the bolts will still occur after iban is deleted
-while($i < 8) {
+while($i < 16) {
     $j = 0;
-    while($j < 25) {
-        def_coord $bolt_coord = movecoord(npc_coord, random(6), 0, random(12));
-        if(map_blocked($bolt_coord) = false) {
+    while($j < 100) {
+        def_coord $bolt_coord = movecoord(npc_coord, ~random_range(-12, 12), ~random_range(-12, 12), ~random_range(-12, 12));
+        //if(map_blocked($bolt_coord) = false) {
             spotanim_map(ibansbolt, $bolt_coord, 0, 0);
             huntall($bolt_coord, 0, 0);
             if (huntnext = true) {
@@ -31,7 +31,7 @@ while($i < 8) {
                         sound_synth(stunned, 0, 0);
                     }
                 }
-            }
+          // }
         }
         $j = add($j, 1);
     }
