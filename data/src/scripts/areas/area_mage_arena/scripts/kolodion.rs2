@@ -62,6 +62,10 @@ if ($choice = 1) {
     return;
 }
 
+[opnpc3,kolodion]
+~openshop_activenpc;
+
+
 [label,kolodion_can_i_fight_here]
 ~chatplayer("<p,quiz>Can I fight here?");
 ~chatnpc("<p,shifty>My arena is open to any high level wizard, but this is|no game. Many wizards fall in this arena, never to rise|again. The strongest mages have been destroyed.");

@@ -83,6 +83,7 @@ desc=He runs the mage arena.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
+op3=Trade
 recol1s=22712
 recol1d=31
 recol2s=31649
@@ -108,6 +109,11 @@ head1=model_48_npc_head
 head2=model_82_idk_head
 head3=model_68_obj_wear
 wanderrange=1
+param=owned_shop,sigilshop
+param=shop_sell_multiplier,1300
+param=shop_buy_multiplier,400
+param=shop_delta,30
+param=shop_title,Kolodion's Secret Sigils
 
 [kolodion_defeated]
 vislevel=hide
