@@ -112,7 +112,7 @@ if(inv_total(inv, water_skin1) > 0) {
 }
 if($drank = true) {
     if (finale_started = true) { 
-       mes("The desert heat is too hot. Even water won't save you.);
+       mes("The desert heat is too hot. Even water won't save you.");
     } else {
        mes("You take a drink of water.");
        anim(human_eat, 0);
@@ -129,6 +129,7 @@ if(inv_total(inv, water_skin0) > 0) {
        mes("You should get a waterskin for any travelling in the desert.");
     }
 }
+
 mes("You start dying of thirst while you're in the desert.");
 def_int $heat_damage = 0;
 if (finduid(uid) = true) {
