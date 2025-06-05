@@ -144,7 +144,7 @@ $i = 0;
 $size = inv_size(worn);
 while ($i < $size) {
     if (inv_getnum(worn, $i) > 0) {
-        def_obj $iobj = inv_getobj(inv, $i);
+        def_obj $iobj = inv_getobj(worn, $i);
         //if ($iobj ! null) {
         if (oc_category(inv_getobj(worn, $i)) = armour_godcape) {
             mes(oc_param(inv_getobj(worn, $i), lose_cape_message));
