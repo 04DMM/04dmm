@@ -111,16 +111,23 @@ if(inv_total(inv, water_skin1) > 0) {
     $drank = true;
 }
 if($drank = true) {
-    mes("You take a drink of water.");
-    anim(human_eat, 0);
-    sound_synth(liquid, 0, 0);
-    ~calculate_desertheat_timer;
-    return;
+    if (finale_started = true) { 
+       mes("The desert heat is too hot. Even water won't save you.);
+    } else {
+       mes("You take a drink of water.");
+       anim(human_eat, 0);
+       sound_synth(liquid, 0, 0);
+       ~calculate_desertheat_timer;
+       return;
+    }
 }
+
 if(inv_total(inv, water_skin0) > 0) {
     mes("Perhaps you should fill up one of your empty waterskins."); // this is always plural
 } else {
-    mes("You should get a waterskin for any travelling in the desert.");
+    if (finale_started = false) {
+       mes("You should get a waterskin for any travelling in the desert.");
+    }
 }
 mes("You start dying of thirst while you're in the desert.");
 def_int $heat_damage = 0;
