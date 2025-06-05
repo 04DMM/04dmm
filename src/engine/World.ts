@@ -503,6 +503,8 @@ class World {
 
     // ----
 
+    ANNOUNCEMENT_FREQUENCY: number = 300000;
+
     cycle(): void {
         try {
             const start: number = Date.now();
@@ -513,11 +515,20 @@ class World {
                 this.FINALE_START = this.FINALE_START - 1;
                 if (this.lastAnnouncement === 0) {
                  this.lastAnnouncement = Date.now();
-                } else if (Date.now() - this.lastAnnouncement > 300000) {
+                } else if (Date.now() - this.lastAnnouncement > ANNOUNCEMENT_FREQUENCY) {
                  const timeRemainingSeconds: number = this.FINALE_START * 0.6;
                  this.lastAnnouncement = Date.now();
-                 const date = new Date(timeRemainingSeconds * 1000).toISOString();
-                 this.broadcastMes("The finale will start in " + date);
+                 // Announce every minute before the finale.
+                 if (timeRemainingSeconds < 3600) {
+                   this.ANNOUNCEMENT_FREQUENCY = 60000;
+                 }
+
+                 if (timeRemainingSeconds < 600) {
+                   this.ANNOUNCEMENT_FREQUENCY = 6000;
+                 }
+                 //const date = new Date(timeRemainingSeconds * 1000).toISOString();
+                 const readableTime = this.formatDuration(timeRemainingSeconds);
+                 this.broadcastMes("The finale will start in " + readableTime);
                 }
               } else if (this.FINALE_START === 0) {
                 //this.broadcastMes("The desert heat is approaching..");
@@ -2143,6 +2154,25 @@ class World {
             }
         }
     }
+
+  formatDuration(seconds: number): string {
+
+    const days = Math.floor(seconds / 86400);
+    seconds %= 86400;
+    const hours = Math.floor(seconds / 3600);
+    seconds %= 3600;
+    const minutes = Math.floor(seconds / 60);
+    seconds %= 60;
+    seconds = Math.round(seconds);
+
+    const parts = [];
+    if (days) parts.push(`${days} day${days !== 1 ? 's' : ''}`);
+    if (hours) parts.push(`${hours} hour${hours !== 1 ? 's' : ''}`);
+    if (minutes) parts.push(`${minutes} minute${minutes !== 1 ? 's' : ''}`);
+    if (seconds || parts.length === 0) parts.push(`${seconds} second${seconds !== 1 ? 's' : ''}`);
+
+    return parts.join(', ');
+  }
 
     onFriendMessage(msg: FriendThreadMessage) {
         const { opcode, data } = msg;
