@@ -1,13 +1,12 @@
 [ai_timer,lord_iban_boss_controller]
 // do stuff
 
-//def_int $random_spawn = random(100);
-
-if (%npc_int = 100) {
+// Spawn lord iban once every 12 hours for 30 minutes
+if (%npc_int = 72000) {
    %npc_int = 0;
    announce("Lord Iban: This means nothing. We will find you. You'll all die!");
-   npc_add(npc_coord, chicken, 100);
+   npc_add(npc_coord, lord_iban_boss, 3000);
 } else {
-  %npc_int = add(%npc_int, 10);
+   %npc_int = add(%npc_int, 100);
 }
 
