@@ -173,6 +173,7 @@ export const enum ScriptOpcode {
     PLAYER_FINDNEXT, // todo: replace with huntnext
     QUEUE, // official
     SAY, // official
+    ANNOUNCE,
     WALKTRIGGER, // official
     SETTIMER,
     SOFTTIMER, // official
@@ -621,6 +622,7 @@ export const ScriptOpcodeMap: Map<string, number> = new Map([
     ['PLAYER_FINDNEXT', ScriptOpcode.PLAYER_FINDNEXT],
     ['QUEUE', ScriptOpcode.QUEUE],
     ['SAY', ScriptOpcode.SAY],
+    ['ANNOUNCE', ScriptOpcode.ANNOUNCE],
     ['WALKTRIGGER', ScriptOpcode.WALKTRIGGER],
     ['SETTIMER', ScriptOpcode.SETTIMER],
     ['SOFTTIMER', ScriptOpcode.SOFTTIMER],

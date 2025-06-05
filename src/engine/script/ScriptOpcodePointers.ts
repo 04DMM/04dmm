@@ -420,6 +420,9 @@ const ScriptOpcodePointers: {
         require: ['active_player'],
         require2: ['active_player2']
     },
+    [ScriptOpcode.ANNOUNCE]: {
+        require: ['active_npc']        
+    },
     [ScriptOpcode.SETIDKIT]: {
         require: ['p_active_player']
     },
