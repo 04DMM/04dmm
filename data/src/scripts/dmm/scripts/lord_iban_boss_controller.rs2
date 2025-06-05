@@ -1,0 +1,9 @@
+[ai_timer,lord_iban_boss_controller]
+// do stuff
+
+def_int $random_spawn = random(100);
+
+if ($random_spawn > 90) {
+   npc_say("Spawning a random chicken!");
+   npc_add(npc_coord, chicken, 100);
+}
