@@ -5,7 +5,7 @@
 
 if (%npc_int = 100) {
    %npc_int = 0;
-   npc_say("Spawning a random chicken!");
+   announce("Lord Iban: This means nothing. We will find you. You'll all die!");
    npc_add(npc_coord, chicken, 100);
 } else {
   %npc_int = add(%npc_int, 10);

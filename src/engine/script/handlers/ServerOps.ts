@@ -26,6 +26,10 @@ const ServerOps: CommandHandlers = {
         state.pushInt(World.currentTick);
     },
 
+    [ScriptOpcode.ANNOUNCE]: state => {
+        World.broadcastMes(state.popString());
+    },
+
     [ScriptOpcode.FINALE_STARTED]: state => {
         state.pushInt(World.DMM_FINALE_TRIGGERED);
     },
