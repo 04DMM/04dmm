@@ -18,7 +18,7 @@ stock7=mithril_battleaxe,1,3000
 // https://classic.runescape.wiki/w/Lumbridge_General_Store
 // https://web.archive.org/web/20050313104939/http://server6.uploadit.org/files/Nishkid64-lumbridgegeneralstore.JPG  (full stocks) 2004
 // https://web.archive.org/web/20060117095525/http://runehq.com/images/cityguides/Lumbridge/lumbridgegeneralstorestock.png (late 2005 or early 2006)
-scope=shared
+//scope=shared
 size=40
 restock=yes
 stackall=yes

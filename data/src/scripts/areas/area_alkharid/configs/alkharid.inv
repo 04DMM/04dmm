@@ -28,7 +28,7 @@ stock6=adamant_platelegs,1,13000
 
 [generalshop3]
 // https://classic.runescape.wiki/w/Al_Kharid_General_Store
-scope=shared
+//scope=shared
 size=40
 restock=yes
 stackall=yes

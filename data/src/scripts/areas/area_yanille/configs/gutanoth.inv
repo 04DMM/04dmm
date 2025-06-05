@@ -19,7 +19,7 @@ stock7=hammer,5,100
 // https://oldschool.runescape.wiki/w/Grud%27s_Herblore_Stall. (Trivia)
 // https://classic.runescape.wiki/w/Grud%27s_herblaw_stall
 // https://web.archive.org/web/20120521193813im_/http://www.runehq.com/images/cityguides/OrgerArea/grudsstore.png (full stocks)
-scope=shared
+//scope=shared
 size=40
 restock=yes
 stackall=yes

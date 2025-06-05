@@ -1,7 +1,7 @@
 [taxfree]
 // https://classic.runescape.wiki/w/Bandit_Camp_General_Store
 // https://storage.googleapis.com/tannerdino/images/rsbandit4.gif
-scope=shared
+//scope=shared
 size=40
 restock=yes
 stackall=yes

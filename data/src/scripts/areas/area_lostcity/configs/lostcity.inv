@@ -23,7 +23,7 @@ stock1=ruby_ring,5,500
 // https://classic.runescape.wiki/w/Zanaris_General_Store
 // http://web.archive.org/web/20060523095122im_/http://www.runehq.com/images/cityguides/generalstore.png (full stocks)
 // https://web.archive.org/web/20071108025714im_/http://runehq.com/image/cityguides/Zanaris/generalstore.png 28,june,2006
-scope=shared
+//scope=shared
 size=40
 restock=yes
 stackall=yes

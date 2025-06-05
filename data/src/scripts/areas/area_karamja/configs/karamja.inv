@@ -13,7 +13,7 @@ stock3=jug_wine,1,15000
 [generalshop7]
 // https://web.archive.org/web/20120411154205im_/http://www.runehq.com/images/cityguides/karamjacity/karamjageneralstock.gif
 // https://storage.googleapis.com/tannerdino/images/karamja7.jpg (full stocks)
-scope=shared
+//scope=shared
 size=40
 restock=yes
 stackall=yes

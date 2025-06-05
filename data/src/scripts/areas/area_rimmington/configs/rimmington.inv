@@ -17,7 +17,7 @@ stock7=holy_symbol_mould,3,100
 [generalshop6]
 // https://classic.runescape.wiki/w/Rimmington_General_Store
 // https://web.archive.org/web/20070824001708im_/http://runehq.com/images/cityguides/Rimmington/r6.jpg (full stocks)
-scope=shared
+//scope=shared
 size=40
 restock=yes
 stackall=yes
