@@ -113,8 +113,9 @@ sound_synth(found_gem, 0, 0);
 
 
 
-~mesbox("Your wish has been granted!|You have been awarded <tostring(multiply($base_level, 10))> <enum(stat, string, stat_names, $stat)> experience!");
-~mesbox("The genie also completes a random quest for you!");
+//~complete_random_quest;
+mes("Your wish has been granted!|You have been awarded <tostring(multiply($base_level, 10))> <enum(stat, string, stat_names, $stat)> experience!");
+mes("The genie also completes a random quest for you!");
 ~complete_random_quest;
 
 [proc,complete_random_quest]
