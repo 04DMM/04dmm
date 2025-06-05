@@ -515,7 +515,7 @@ class World {
                 this.FINALE_START = this.FINALE_START - 1;
                 if (this.lastAnnouncement === 0) {
                  this.lastAnnouncement = Date.now();
-                } else if (Date.now() - this.lastAnnouncement > ANNOUNCEMENT_FREQUENCY) {
+                } else if (Date.now() - this.lastAnnouncement > this.ANNOUNCEMENT_FREQUENCY) {
                  const timeRemainingSeconds: number = this.FINALE_START * 0.6;
                  this.lastAnnouncement = Date.now();
                  // Announce every minute before the finale.
