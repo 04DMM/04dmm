@@ -1,7 +1,7 @@
 [sigil_herb1]
 name=Sigil of Sanfew
 desc=Automatically cleans your dropped herbs.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -18,7 +18,7 @@ param=no_alchemy,1
 [sigil_prayer1]
 name=Sigil of Abbot Langley
 desc=Automatically buries bones.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -35,7 +35,7 @@ param=no_alchemy,1
 [sigil_fish1]
 name=Sigil of Grandpa Jack
 desc=Automatically cooks fish when fishing.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -52,7 +52,7 @@ param=no_alchemy,1
 [sigil_smith1]
 name=Sigil of Doric
 desc=Automatically turns ores into bars when mining.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -69,7 +69,7 @@ param=no_alchemy,1
 [sigil_fletch1]
 name=Sigil of the Magical Seer
 desc=Automatically strings fletched bows.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -86,7 +86,7 @@ param=no_alchemy,1
 [sigil_thief1]
 name=Sigil of the Bandit
 desc=Never fail pickpocketing again.
-cost=10
+cost=1000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -103,7 +103,7 @@ param=no_alchemy,1
 [sigil_range3]
 name=Sigil of Nurmof
 desc=Become a cannon with unlimited ammo.
-cost=10
+cost=5000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -120,7 +120,7 @@ param=no_alchemy,1
 [sigil_wc1]
 name=Sigil of the Forester
 desc=Automatically notes logs when cutting trees.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -137,7 +137,7 @@ param=no_alchemy,1
 [sigil_fm1]
 name=Sigil of Wintertodt
 desc=Restores your health rapidly after making a fire.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -154,7 +154,7 @@ param=no_alchemy,1
 [sigil_melee1]
 name=Sigil of Obor
 desc=Makes you as strong as the legendary Obor.
-cost=10
+cost=5000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -171,7 +171,7 @@ param=no_alchemy,1
 [sigil_range1]
 name=Sigil of the Dagannoth
 desc=Provides you with unlimited ammunition.
-cost=10
+cost=5000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -188,7 +188,7 @@ param=no_alchemy,1
 [sigil_mage1]
 name=Sigil of Mizgog
 desc=All curses cost no runes and have triple effect.
-cost=10
+cost=5000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -205,7 +205,7 @@ param=no_alchemy,1
 [sigil_alch1]
 name=Sigil of the Goblins
 desc=High alchemy now gives more gold.
-cost=10
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -222,7 +222,7 @@ param=no_alchemy,1
 [sigil_defence1]
 name=Sigil of Oziach
 desc=Increases all defensive stats by 100.
-cost=10
+cost=1000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -239,7 +239,7 @@ param=no_alchemy,1
 [sigil_random1]
 name=Sigil of The Genie
 desc=All random events are now genies.
-cost=10
+cost=1000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -257,7 +257,7 @@ param=no_alchemy,1
 [sigil_reach1]
 name=Sigil of Farcast
 desc=Increases the range of all attacks by 2.
-cost=10
+cost=5000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -274,7 +274,7 @@ param=no_alchemy,1
 [sigil_bananas1]
 name=Sigil of Karamja
 desc=Bones to Bananas instantly heals 5 and requires no reagants.
-cost=10
+cost=1000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
@@ -291,7 +291,7 @@ param=no_alchemy,1
 [sigil_life1]
 name=Sigil of Life
 desc=When you die, protect all of your stats.
-cost=10
+cost=1000000
 model=model_2759_obj
 2dxof=-2
 2dyof=3
