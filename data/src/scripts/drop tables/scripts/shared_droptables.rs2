@@ -74,7 +74,11 @@ if ($random < 15) {
 } else if ($random < 35) {
    return (bass, $amt);
 } else if ($random < 127) {
-   return (cabbage, $amt);
+   if (stat(thieving) < 50) {
+      return (cabbage, $amt);
+   } else {
+      return (cert_cabbage, $amt);
+   }
 } else if ($random < 128) {
    return (shark, $amt);
 }
