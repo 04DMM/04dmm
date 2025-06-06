@@ -1,3 +1,24 @@
+[ai_queue3,lord_iban_boss] @lord_iban_boss_drop_table;
+
+[label,lord_iban_boss_drop_table]
+gosub(npc_death);
+
+def_namedobj $d1;
+def_namedobj $d2;
+def_namedobj $d3;
+def_namedobj $r1;
+def_int $count = 1;
+
+$d1, $d2, $d3, $r1, $count = ~lord_iban_boss_loot;
+
+obj_addall(npc_coord, $d1, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $d2, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $d3, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $r1, $count, ^lootdrop_duration);
+
+announce("Lord Iban: The weak will be culled, as father says.");
+announce("Lord Iban has been slain.");
+
 [ai_timer,lord_iban_boss]
 npc_facesquare(movecoord(npc_coord, 8, 0, 0));
 //npc_anim(sitting_throne_attack, 0);
@@ -8,7 +29,7 @@ switch_int(random(8)) {
     case 3 : npc_say("You belong in the slave pits!");
     case 4 : npc_say("You will die, frail mortal.");
     case 5 : npc_say("You dare to defy me?!?");
-    case 6 : npc_say("Who dares desecrate my temple!");
+    case 6 : npc_say("Who dares desecrate my castle!");
     case 7 : npc_say("I am the great Iban, I cannot die!");
 }
 def_int $i = 0;
@@ -37,13 +58,25 @@ while($i < 16) {
         $last_bolt = $bolt_coord;
         $j = add($j, 1);
     }
+
+    if (modulo($i, 4) = 0) {
+       def_int $lcount = 1;
+       def_namedobj $lobj;
+
+       $lobj, $lcount = ~breachloot;
+
+       obj_addall($last_bolt, $lobj, $lcount, ^lootdrop_duration);
+    }
     $i = add($i, 1);
     world_delay(0);
 }
-def_int $lcount = 1;
-def_namedobj $lobj;
 
-$lobj, $lcount = ~breachloot;
+//def_int $lcount = 1;
+//def_namedobj $lobj;
+
+//$lobj, $lcount = ~breachloot;
 
 // Add loot every 6 seconds
-obj_addall($last_bolt, $lobj, $lcount, ^lootdrop_duration);
+
+npc_say("Lord Iban: Father, forgive them.");
+//obj_addall($last_bolt, $lobj, $lcount, ^lootdrop_duration);
