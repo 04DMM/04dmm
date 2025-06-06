@@ -21,7 +21,7 @@ recol1d=22025
 2dxan=264
 weight=1kg
 category=category_91
-param=smeltsto,soft_clay
+param=smeltsto,softclay
 
 [copper_ore]
 cost=3
