@@ -1,0 +1,16 @@
+[ai_timer,cannon_boss_controller]
+// do stuff
+
+// Spawn lord iban once every 12 hours for 30 minutes
+
+def_int $random_chance = multiply(1000, random(10));
+def_int $threshhold = sub(36000, $random_chance);
+
+if (%npc_int > $threshhold) {
+   %npc_int = 0;
+   announce("Nulodion: I've got balls of steel!");
+   npc_add(npc_coord, prince_ali_boss, 3000);
+} else {
+   %npc_int = add(%npc_int, 100);
+}
+

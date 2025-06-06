@@ -1,0 +1,155 @@
+[ai_queue3,cannon_boss] @cannon_boss_drop_table;
+
+[ai_applayer2,cannon_boss]
+
+[ai_opplayer2,cannon_boss]
+
+// When Ali gets attacked
+[ai_queue1,cannon_boss]
+
+[ai_queue2,cannon_boss]
+
+[label,cannon_boss_drop_table]
+
+cleartimer(sigil_cannon_rotate);
+
+gosub(npc_death);
+
+def_namedobj $d1;
+def_namedobj $d2;
+def_namedobj $d3;
+def_namedobj $r1;
+def_int $count = 1;
+
+$d1, $d2, $d3, $r1, $count = ~prince_ali_boss_loot;
+
+obj_addall(npc_coord, $d1, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $d2, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $d3, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $r1, $count, ^lootdrop_duration);
+
+announce("Nulodion: I needed dragon balls.");
+announce("Nulodion has been slain.");
+
+[ai_timer,cannon_boss]
+//npc_facesquare(movecoord(npc_coord, 8, 0, 0));
+//npc_anim(sitting_throne_attack, 0);
+switch_int(random(8)) {
+    case 0 : npc_say("Cannon!");
+    case 1 : npc_say("Fire!");
+    case 2 : npc_say("Shoot!");
+    case 3 : npc_say("I'm not short!");
+    case 4 : npc_say("Hammer time!");
+    case 5 : npc_say("I'm going to steel your life!");
+    case 6 : npc_say("I am the creator of the Dwarf MultiCannon you know.");
+    case 7 : npc_say("Fresh out the mining guild, you are.");
+}
+
+[ai_spawn,cannon_boss]
+settimer(sigil_cannon_rotate, 1, 0);
+
+[timer,cannon_boss_rotate]
+settimer(sigil_cannon_rotate, 1, modulo(add($dir, 1), 8));
+
+def_coord $center = movecoord(npc_coord, 1, 0, 1);
+def_coord $close_range = movecoord($center, 0, 0, 3);
+def_coord $medium_range = movecoord($center, 0, 0, 7);
+def_coord $long_range = movecoord($center, 0, 0, 14);
+// start north, going clockwise
+if ($dir = 0) {
+    // automatically starts spinning: https://youtu.be/TeQXQDaawO0?t=234
+    // at https://youtu.be/WWyNTsMXjTE?t=26 the cannon doesnt auto rotate immediately 
+    // but at https://youtu.be/WWyNTsMXjTE?t=219 the cannon does
+    //if (%mcannon_ammo < 1) {
+    //    mes("Your cannon is out of ammo!"); // https://youtu.be/TeQXQDaawO0?t=239
+    //    cleartimer(cannon_rotate);
+    //    return;
+    //}
+    $close_range = movecoord($center, 0, 0, 3);
+    $medium_range = movecoord($center, 0, 0, 7);
+    $long_range = movecoord($center, 0, 0, 14);
+    //loc_anim(mcannon_ne_turn);
+} else if ($dir = 1) {
+    $close_range = movecoord($center, 2, 0, 2);
+    $medium_range = movecoord($center, 5, 0, 5);
+    $long_range = movecoord($center, 12, 0, 12);
+    //loc_anim(mcannon_e_turn);
+} else if ($dir = 2) {
+    $close_range = movecoord($center, 3, 0, 0);
+    $medium_range = movecoord($center, 7, 0, 0);
+    $long_range = movecoord($center, 14, 0, 0);
+    //loc_anim(mcannon_se_turn);
+} else if ($dir = 3) {
+    $close_range = movecoord($center, 2, 0, -2);
+    $medium_range = movecoord($center, 5, 0, -5);
+    $long_range = movecoord($center, 12, 0, -12);
+    //loc_anim(mcannon_s_turn);
+} else if ($dir = 4) {
+    $close_range = movecoord($center, 0, 0, -3);
+    $medium_range = movecoord($center, 0, 0, -7);
+    $long_range = movecoord($center, 0, 0, -14);
+    //loc_anim(mcannon_sw_turn);
+} else if ($dir = 5) {
+    $close_range = movecoord($center, -2, 0, -2);
+    $medium_range = movecoord($center, -5, 0, -5);
+    $long_range = movecoord($center, -12, 0, -12);
+    //loc_anim(mcannon_w_turn);
+} else if ($dir = 6) {
+    $close_range = movecoord($center, -3, 0, 0);
+    $medium_range = movecoord($center, -7, 0, 0);
+    $long_range = movecoord($center, -14, 0, 0);
+    //loc_anim(mcannon_nw_turn);
+} else if ($dir = 7) {
+    $close_range = movecoord($center, -2, 0, 2);
+    $medium_range = movecoord($center, -5, 0, 5);
+    $long_range = movecoord($center, -12, 0, 12);
+    //loc_anim(mcannon_n_turn);
+}
+
+// Check close range
+if (huntall($close_range, 1, 1) = true) {
+    if (lineofsight($center, npc_coord) = true) {
+        jump(cannon_boss_cannon_fire);
+    }
+}
+
+// Check med range
+if (npc_hunt($medium_range, 2, 1) = true) {
+    if (lineofsight($center, npc_coord) = true) {
+        jump(cannon_boss_cannon_fire);
+    }
+}
+
+// Check long range
+if (npc_hunt($long_range, 5, 1) = true) {
+    if (lineofsight($center, npc_coord) = true) {
+        jump(cannon_boss_cannon_fire);
+    }
+}
+
+
+
+
+[label,cannon_boss_cannon_fire]
+//if (~npc_is_attackable = false) {
+//    return;
+//}
+//if (~player_in_combat_check = false) { // https://youtu.be/TeQXQDaawO0?t=247
+//    return;
+//}
+// map_projanim	id=53, starttime=0, endtime=40, angle=2, progress=11, startheight=36, endheight=35
+// (coord $coord, npc_uid $uid, spotanim $spotanim, int $startheight, int $endheight, int $delay, int $angle, int $length, int $offset, int $step)(int)
+def_int $duration = ~npc_projectile(movecoord(npc_coord, 1, 0, 1), npc_uid, cannonball_travel, 36, 35, 0, 2, 35, 0, 5);
+//%mcannon_ammo = sub(%mcannon_ammo, 1);
+~sound_within_distance(mcannon_fire, 0, coord, 10);
+def_int $damage = 0;
+//if (~player_npc_hit_roll(%damagetype) = true) {
+    $damage = randominc(30);
+    //def_int $damage_capped = min($damage, npc_stat(hitpoints));
+    //stat_advance(ranged, multiply(scale(%npc_combat_xp_multiplier, 1000, scale(200, 100, $damage_capped)), 10));
+    //npc_heropoints($damage_capped);
+//}
+
+
+//~npc_retaliate(divide($duration, 30));
+//npc_queue(2, $damage, divide($duration, 30)); // ai_queue2 takes uncapped damage (avoids npcs from tick healing)
