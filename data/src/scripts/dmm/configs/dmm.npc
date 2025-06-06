@@ -265,3 +265,4 @@ param=strengthbonus,255
 param=attackbonus,255
 param=attackrate,1
 timer=100
+moverestrict=nomove
