@@ -42,8 +42,8 @@ iop2=Wear
 2dzoom=770
 2dyan=160
 2dxan=152
-param=magicattack,4
-param=magicdefence,4
+param=magicattack,8
+param=magicdefence,8
 
 [robinhoodhat]
 name=Robin hood hat
