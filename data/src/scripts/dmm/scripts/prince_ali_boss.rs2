@@ -170,4 +170,4 @@ npc_say("Prince Ali: A gift from Bandos.");
 [proc,prince_ali_drain]
 mes("Prince Ali's hit drains your prayer.");
 sound_synth(prayer_drain, 0, 0);
-stat_sub(prayer, 1, 0); // division by 2 round up, thats why percent isn't being used 
+stat_sub(prayer, 5, 0); // division by 2 round up, thats why percent isn't being used 
