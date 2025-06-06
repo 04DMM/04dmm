@@ -10,9 +10,6 @@
 [ai_queue2,cannon_boss]
 
 [label,cannon_boss_drop_table]
-
-cleartimer(cannon_boss_rotate);
-
 gosub(npc_death);
 
 def_namedobj $d1;
@@ -45,7 +42,7 @@ switch_int(random(8)) {
     case 7 : npc_say("Fresh out the mining guild, you are.");
 }
 
-def_int $dir = %npc_int1;
+def_int $dir = %npc_int;
 
 def_coord $center = movecoord(npc_coord, 1, 0, 1);
 def_coord $close_range = movecoord($center, 0, 0, 3);
@@ -94,6 +91,8 @@ if ($dir = 0) {
     //loc_anim(mcannon_n_turn);
 }
 
+%npc_int = modulo(add($dir, 1), 8);
+
 // Check close range
 huntall($close_range, 1, 1);
     while(huntnext = true) {
@@ -117,8 +116,6 @@ huntall($long_range, 3, 1);
          jump(cannon_boss_cannon_fire);
       }
     }
-
-%npc_int1 = modulo(add($dir, 1), 8);
 
 [label,cannon_boss_cannon_fire]
 //if (~npc_is_attackable = false) {
