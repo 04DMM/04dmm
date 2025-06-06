@@ -41,9 +41,9 @@ while($i < 16) {
     world_delay(0);
 }
 def_int $lcount = 1;
-def_obj $lobj;
+def_namedobj $lobj;
 
 $lobj, $lcount = ~breachloot;
 
 // Add loot every 6 seconds
-obj_add($last_bolt, $lobj, $lcount, ^lootdrop_duration);
+obj_addall($last_bolt, $lobj, $lcount, ^lootdrop_duration);
