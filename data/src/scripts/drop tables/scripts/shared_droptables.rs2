@@ -268,6 +268,38 @@ if ($random < 1) {
     
 }
 
+[proc,prince_ali_boss_loot]()(namedobj, namedobj, namedobj, namedobj, int)
+
+// Guaranteed
+def_namedobj $g1 = dragon_scimitar;
+def_namedobj $g2 = red_dragonhide_body;
+def_namedobj $g3 = red_dragonhide_chaps;
+
+def_namedobj $r1;
+def_int $count = 1;
+
+def_int $random = random(6);
+
+if ($random < 1) {
+   $r1 = 4dose2strength;
+   $count = 10;
+} else if ($random < 2) {
+   $r1 = cert_kwuarm;
+   $count = 300;
+} else if ($random < 3) {
+   $r1 = rune_full_helm_saradomin;
+} else if ($random < 4) {
+   $r1 = amulet_of_glory;
+} else if ($random < 5) {
+   $r1 = robinhoodhat;
+} else if ($random < 6) {
+   $r1 = sigil_reach1;
+}
+
+return($g1, $g2, $g3, $r1, $count);
+
+
+
 [proc,lord_iban_boss_loot]()(namedobj, namedobj, namedobj, namedobj, int)
 
 // Guaranteed
