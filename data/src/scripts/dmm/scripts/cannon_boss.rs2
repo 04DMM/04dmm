@@ -11,7 +11,7 @@
 
 [label,cannon_boss_drop_table]
 
-cleartimer(sigil_cannon_rotate);
+cleartimer(cannon_boss_rotate);
 
 gosub(npc_death);
 
@@ -45,11 +45,7 @@ switch_int(random(8)) {
     case 7 : npc_say("Fresh out the mining guild, you are.");
 }
 
-[ai_spawn,cannon_boss]
-settimer(sigil_cannon_rotate, 1, 0);
-
-[timer,cannon_boss_rotate]
-settimer(sigil_cannon_rotate, 1, modulo(add($dir, 1), 8));
+def_int $dir = %npc_int1;
 
 def_coord $center = movecoord(npc_coord, 1, 0, 1);
 def_coord $close_range = movecoord($center, 0, 0, 3);
@@ -57,14 +53,6 @@ def_coord $medium_range = movecoord($center, 0, 0, 7);
 def_coord $long_range = movecoord($center, 0, 0, 14);
 // start north, going clockwise
 if ($dir = 0) {
-    // automatically starts spinning: https://youtu.be/TeQXQDaawO0?t=234
-    // at https://youtu.be/WWyNTsMXjTE?t=26 the cannon doesnt auto rotate immediately 
-    // but at https://youtu.be/WWyNTsMXjTE?t=219 the cannon does
-    //if (%mcannon_ammo < 1) {
-    //    mes("Your cannon is out of ammo!"); // https://youtu.be/TeQXQDaawO0?t=239
-    //    cleartimer(cannon_rotate);
-    //    return;
-    //}
     $close_range = movecoord($center, 0, 0, 3);
     $medium_range = movecoord($center, 0, 0, 7);
     $long_range = movecoord($center, 0, 0, 14);
@@ -107,28 +95,30 @@ if ($dir = 0) {
 }
 
 // Check close range
-if (huntall($close_range, 1, 1) = true) {
-    if (lineofsight($center, npc_coord) = true) {
+huntall($close_range, 1, 1);
+    while(huntnext = true) {
+       if (lineofsight($center, coord) = true) {
         jump(cannon_boss_cannon_fire);
+       }
     }
-}
 
 // Check med range
-if (npc_hunt($medium_range, 2, 1) = true) {
-    if (lineofsight($center, npc_coord) = true) {
+huntall($medium_range, 2, 1);
+    while(huntnext = true) {
+    if (lineofsight($center, coord) = true) {
         jump(cannon_boss_cannon_fire);
     }
-}
+    }
 
 // Check long range
-if (npc_hunt($long_range, 5, 1) = true) {
-    if (lineofsight($center, npc_coord) = true) {
-        jump(cannon_boss_cannon_fire);
+huntall($long_range, 3, 1);
+    while(huntnext = true) {
+      if (lineofsight($center, coord) = true) {
+         jump(cannon_boss_cannon_fire);
+      }
     }
-}
 
-
-
+%npc_int = modulo(add(%npc_int1, 1), 8);
 
 [label,cannon_boss_cannon_fire]
 //if (~npc_is_attackable = false) {
@@ -139,8 +129,7 @@ if (npc_hunt($long_range, 5, 1) = true) {
 //}
 // map_projanim	id=53, starttime=0, endtime=40, angle=2, progress=11, startheight=36, endheight=35
 // (coord $coord, npc_uid $uid, spotanim $spotanim, int $startheight, int $endheight, int $delay, int $angle, int $length, int $offset, int $step)(int)
-def_int $duration = ~npc_projectile(movecoord(npc_coord, 1, 0, 1), npc_uid, cannonball_travel, 36, 35, 0, 2, 35, 0, 5);
-//%mcannon_ammo = sub(%mcannon_ammo, 1);
+def_int $duration = ~player_projectile(movecoord(coord, 1, 0, 1), npc_coord, uid, cannonball_travel, 36, 35, 0, 2, 35, 0, 5);
 ~sound_within_distance(mcannon_fire, 0, coord, 10);
 def_int $damage = 0;
 //if (~player_npc_hit_roll(%damagetype) = true) {
@@ -150,6 +139,7 @@ def_int $damage = 0;
     //npc_heropoints($damage_capped);
 //}
 
+queue(combat_damage_player, 0, $damage);
 
 //~npc_retaliate(divide($duration, 30));
 //npc_queue(2, $damage, divide($duration, 30)); // ai_queue2 takes uncapped damage (avoids npcs from tick healing)
