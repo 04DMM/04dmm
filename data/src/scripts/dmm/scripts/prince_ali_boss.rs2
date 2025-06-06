@@ -1,0 +1,173 @@
+[ai_queue3,prince_ali_boss] @prince_ali_boss_drop_table;
+
+[ai_applayer2,prince_ali_boss]
+if (%npc_action_delay > map_clock) {
+    return;
+}
+if (~npc_check_notcombat = false) {
+    npc_setmode(null);
+    return;
+}
+if (~npc_check_notcombat_self = false) {
+    return;
+}
+
+if (npc_range(coord) > 1) {
+   npc_say("HAH! This is a duel to the death!");
+   spotanim_map(smokepuff, npc_coord, 124, 0);
+   if (p_finduid(%npc_attacking_uid) = true) {
+      p_telejump(npc_coord);
+   }
+   npc_tele(coord);
+   npc_facesquare(coord);
+}
+
+npc_anim(npc_param(attack_anim), 0);
+~npc_meleeattack;
+
+//npc_sethuntmode(aggressive_melee);
+//npc_setmode(opplayer2);
+
+[ai_opplayer2,prince_ali_boss]
+if (%npc_action_delay > map_clock) {
+    return;
+}
+if (~npc_check_notcombat = false) {
+    npc_setmode(null);
+    return;
+}
+if (~npc_check_notcombat_self = false) {
+    return;
+}
+
+//spotanim_map(smokepuff, npc_coord, 124, 0);
+//if (p_finduid(%npc_attacking_uid) = true) {
+//   npc_say("HAH! This is a duel to the death!");
+//   p_telejump(npc_coord);
+//}
+//p_telejump(npc_coord);
+//npc_tele(coord);
+npc_facesquare(coord);
+npc_anim(npc_param(attack_anim), 0);
+~npc_meleeattack;
+npc_sethuntmode(king_dragon);
+
+
+// When they take damage
+//[ai_queue2,prince_ali_boss]
+//if (finduid(%npc_aggressive_player) = true) {
+//  npc_tele(coord); 
+//  ~npc_default_retaliate;
+//}
+
+// When Ali gets attacked
+[ai_queue1,prince_ali_boss]
+if (finduid(%npc_aggressive_player) = true) {
+   spotanim_map(smokepuff, npc_coord, 124, 0);
+   npc_facesquare(coord);
+   npc_tele(coord);
+   npc_anim(npc_param(attack_anim), 0);
+   ~npc_meleeattack;
+   ~npc_default_retaliate;
+   //npc_setmode(opplayer2);
+}
+
+[ai_queue2,prince_ali_boss]
+
+
+if (finduid(%npc_attacking_uid) = true) {
+~prince_ali_drain;
+}
+
+if (last_int > 0) {
+   def_int $lcount = 1;
+   def_namedobj $lobj;
+
+   $lobj, $lcount = ~breachloot;
+   obj_addall(npc_coord, $lobj, $lcount, ^lootdrop_duration);
+}
+
+~npc_default_damage(last_int);
+
+
+
+[label,prince_ali_boss_drop_table]
+gosub(npc_death);
+
+def_namedobj $d1;
+def_namedobj $d2;
+def_namedobj $d3;
+def_namedobj $r1;
+def_int $count = 1;
+
+$d1, $d2, $d3, $r1, $count = ~lord_iban_boss_loot;
+
+obj_addall(npc_coord, $d1, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $d2, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $d3, 1, ^lootdrop_duration);
+obj_addall(npc_coord, $r1, $count, ^lootdrop_duration);
+
+announce("Prince Ali: Al Qawlu Qawlu Sawarim.");
+announce("Prince Ali has been slain.");
+
+[ai_timer,prince_ali_boss]
+//npc_facesquare(movecoord(npc_coord, 8, 0, 0));
+//npc_anim(sitting_throne_attack, 0);
+switch_int(random(8)) {
+    case 0 : npc_say("I'll show you why I was in jail!");
+    case 1 : npc_say("Die Effendi!");
+    case 2 : npc_say("For Al-Kharid!");
+    case 3 : npc_say("Get back to Lumbridge!");
+    case 4 : npc_say("You will die.");
+    case 5 : npc_say("Mizgog!?");
+    case 6 : npc_say("Shameful!");
+    case 7 : npc_say("Al-Kharid is the greatest empire.");
+}
+//def_int $i = 0;
+//def_int $j = 0;
+//def_coord $last_bolt;
+// 8 rounds of bolts, 1 round per tick, defer to world since the bolts will still occur after iban is deleted
+//while($i < 16) {
+//    $j = 0;
+//    while($j < 100) {
+//        def_coord $bolt_coord = movecoord(npc_coord, ~random_range(-12, 12), ~random_range(-12, 12), ~random_range(-12, 12));
+        //if(map_blocked($bolt_coord) = false) {
+        //    spotanim_map(ibansbolt, $bolt_coord, 0, 0);
+        //    huntall($bolt_coord, 0, 0);
+        //    if (huntnext = true) {
+        //        if(p_finduid(uid) = true) { // this isn't queued or anything
+        //            ~damage_self(~random_range(5, 50));
+        //            if(lineofwalk(coord, movecoord(coord, 2, 0, 0)) = true) {
+        //                p_telejump(movecoord(coord, 1, 0, 0));
+        //                anim(human_stunned, 0);
+        //                spotanim_pl(stunned, 124, 0);
+        //                sound_synth(stunned, 0, 0);
+        //            }
+        //        }
+          // }
+        //}
+  //      $last_bolt = $bolt_coord;
+  //      $j = add($j, 1);
+  //  }
+
+    //if (modulo($i, 4) = 0) {
+    //   def_int $lcount = 1;
+    //   def_namedobj $lobj;
+    //
+    //   $lobj, $lcount = ~breachloot;
+//
+  //     obj_addall($last_bolt, $lobj, $lcount, ^lootdrop_duration);
+  //  }
+   // $i = add($i, 1);
+   // world_delay(0);
+//}
+
+
+npc_say("Prince Ali: A gift from Bandos.");
+
+
+
+[proc,prince_ali_drain]
+mes("Prince Ali's hit drains your prayer.");
+sound_synth(prayer_drain, 0, 0);
+stat_sub(prayer, 1, 0); // division by 2 round up, thats why percent isn't being used 

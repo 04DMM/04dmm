@@ -1,0 +1,12 @@
+[ai_timer,prince_ali_boss_controller]
+// do stuff
+
+// Spawn lord iban once every 12 hours for 30 minutes
+if (%npc_int = 100) {
+   %npc_int = 0;
+   announce("Prince Ali: Come lock me up!");
+   npc_add(npc_coord, prince_ali_boss, 3000);
+} else {
+   %npc_int = add(%npc_int, 100);
+}
+
