@@ -2,7 +2,7 @@
 // do stuff
 
 // Spawn lord iban once every 12 hours for 30 minutes
-if (%npc_int = 100) {
+if (%npc_int = 36000) {
    %npc_int = 0;
    announce("Lord Iban: This means nothing. We will find you. You'll all die!");
    npc_add(npc_coord, lord_iban_boss, 3000);
