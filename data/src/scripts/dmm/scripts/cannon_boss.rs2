@@ -9,7 +9,7 @@ def_namedobj $d3;
 def_namedobj $r1;
 def_int $count = 1;
 
-$d1, $d2, $d3, $r1, $count = ~prince_ali_boss_loot;
+$d1, $d2, $d3, $r1, $count = ~cannon_boss_loot;
 
 obj_addall(npc_coord, $d1, 1, ^lootdrop_duration);
 obj_addall(npc_coord, $d2, 1, ^lootdrop_duration);
