@@ -81,7 +81,7 @@ attack=255
 strength=255
 defence=255
 magic=255
-timer=10
+timer=100
 //huntmode=cowardly
 //huntrange=20
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8998

@@ -13,6 +13,7 @@ switch_int(random(8)) {
 }
 def_int $i = 0;
 def_int $j = 0;
+def_coord $last_bolt;
 // 8 rounds of bolts, 1 round per tick, defer to world since the bolts will still occur after iban is deleted
 while($i < 16) {
     $j = 0;
@@ -33,8 +34,16 @@ while($i < 16) {
                 }
           // }
         }
+        $last_bolt = $bolt_coord;
         $j = add($j, 1);
     }
     $i = add($i, 1);
     world_delay(0);
 }
+def_int $lcount = 1;
+def_obj $lobj;
+
+$lobj, $lcount = ~breachloot;
+
+// Add loot every 6 seconds
+obj_add($last_bolt, $lobj, $lcount, ^lootdrop_duration);
