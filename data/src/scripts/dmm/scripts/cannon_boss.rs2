@@ -118,7 +118,7 @@ huntall($long_range, 3, 1);
       }
     }
 
-%npc_int = modulo(add(%npc_int1, 1), 8);
+%npc_int1 = modulo(add($dir, 1), 8);
 
 [label,cannon_boss_cannon_fire]
 //if (~npc_is_attackable = false) {
