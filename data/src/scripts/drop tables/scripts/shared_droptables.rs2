@@ -268,14 +268,14 @@ if ($random < 1) {
     
 }
 
-[proc,lord_iban_boss_loot]()(namedobj, namedobj, namedobj, namedobj, int)
+[proc,lord_iban_boss_loot]()(obj, obj, obj, obj, int)
 
 // Guaranteed
-def_namedobj $g1 = ibanstaff;
-def_namedobj $g2 = zamrobetop;
-def_namedobj $g3 = zamrobebottom;
+def_obj $g1 = ibanstaff;
+def_obj $g2 = zamrobetop;
+def_obj $g3 = zamrobebottom;
 
-def_namedobj $r1;
+def_obj $r1;
 def_int $count = 1;
 
 def_int $random = random(6);
