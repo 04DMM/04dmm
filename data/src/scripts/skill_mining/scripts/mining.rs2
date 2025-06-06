@@ -140,7 +140,7 @@ if (random($chance) = ^true) {
     if (%sigil_smith1 = true) {
       def_namedobj $bar = oc_param($output, smeltsto);
       if ($bar ! null) {
-        inv_add(inv, $bar, multiply(1,2));
+        inv_add(inv, oc_cert($bar), multiply(1,2));
       
        def_struct $struct = oc_param($bar, smelting_struct);
        def_int $exp = struct_param($struct, productexp);
@@ -189,7 +189,7 @@ if (random($chance) = ^true) {
     if (%sigil_smith1 = true) {
        def_namedobj $bar = oc_param($output, smeltsto);
        if ($bar ! null) {
-           inv_add(inv, $bar, multiply(1,2));
+           inv_add(inv, oc_cert($bar), multiply(1,2));
        
        def_struct $struct = oc_param($bar, smelting_struct);
        def_int $exp = struct_param($struct, productexp);

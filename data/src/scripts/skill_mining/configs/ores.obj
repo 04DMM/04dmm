@@ -21,6 +21,7 @@ recol1d=22025
 2dxan=264
 weight=1kg
 category=category_91
+param=smeltsto,soft_clay
 
 [copper_ore]
 cost=3
@@ -191,3 +192,4 @@ recol1d=4226
 2dxan=368
 weight=5lb
 category=category_91
+param=smeltsto,steel_bar
