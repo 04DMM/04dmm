@@ -109,7 +109,7 @@ if (map_multiway(.coord) = true) {
    return(true);
 }
 
-if (~inzone_coord_pair_table(bank_zones, .coord) = true) {
+if (~inzone_coord_pair_table(bank_zones, coord) = true) {
    mes("You cannot attack a player in the bank.");
    return(false);
 }
