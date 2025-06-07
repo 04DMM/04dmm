@@ -100,6 +100,11 @@ if (add(%lastcombat_pvp, 24) > map_clock) {
 // Actually means "can be attacked"
 // And this function is talking about an enemy, not yourself
 [proc,pvp_in_combat_check]()(boolean)
+
+if (map_multiway(.coord) = true) {
+   return(true);
+}
+
 if (~inzone_coord_pair_table(bank_zones, .coord) = true) {
    mes("You cannot attack a player in the bank.");
    return(false);
