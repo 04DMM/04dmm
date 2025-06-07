@@ -211,7 +211,6 @@ switch_int ($quest) {
                 case 46 : queue(tree_quest_complete, 0);
                 case 47 : queue(totem_quest_complete, 0);
                 case 48 : queue(upass_quest_complete, 0);
-                          inv_add(inv, ibanstaff, 1);
                 case 49 : 
                     %itwatchtower_progress = ^itwatchtower_complete;
                     inv_add(inv, watchtowerspell, 1);
