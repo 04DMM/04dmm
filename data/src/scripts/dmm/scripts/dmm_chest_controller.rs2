@@ -1,0 +1,15 @@
+[ai_timer,dmm_chest_controller]
+// do stuff
+
+def_int $random_chance = multiply(1000, random(10));
+def_int $threshhold = sub(36000, $random_chance);
+
+// Spawn lord iban once every 12 hours for 30 minutes
+if (%npc_int > $threshhold) {
+   %npc_int = 0;
+   announce("Lord Iban: This means nothing. We will find you. You'll all die!");
+   npc_add(npc_coord, lord_iban_boss, 3000);
+} else {
+   %npc_int = add(%npc_int, 100);
+}
+
