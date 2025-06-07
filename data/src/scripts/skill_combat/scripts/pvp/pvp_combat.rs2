@@ -101,6 +101,10 @@ if (add(%lastcombat_pvp, 24) > map_clock) {
 // And this function is talking about an enemy, not yourself
 [proc,pvp_in_combat_check]()(boolean)
 
+if (in_tutorial_island(.coord) = true) {
+   return(false);
+}
+
 if (map_multiway(.coord) = true) {
    return(true);
 }
