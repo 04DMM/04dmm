@@ -181,6 +181,7 @@ obj_addall(coord, bones, 1, ^lootdrop_duration);
 inv_clear(inv);
 ~moveallinv(deathkeep, inv);
 inv_clear(deathkeep);
+inv_clear(worn);
 
 [softtimer,pvpimmunity_timer] 
 if (%pvpimmunity = 0) {
