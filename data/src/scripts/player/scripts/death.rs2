@@ -150,7 +150,7 @@ while ($i < $size) {
             mes(oc_param(inv_getobj(worn, $i), lose_cape_message));
         }
         if (oc_tradeable($iobj) = false) {
-           inv_moveitem(inv,deathkeep,$iobj,1);
+           inv_moveitem(worn,deathkeep,$iobj,1);
         }
         //}
     }
