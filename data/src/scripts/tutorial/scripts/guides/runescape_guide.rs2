@@ -10,19 +10,19 @@ switch_int(%tutorial_progress) {
 [label,runescape_guide_welcome]
 if (true = true) {
     ~chatnpc("<p,neutral>Where do you want to start?");
-    def_int $choice = ~p_choice4("Falador", 1, "Gnome Stronghold", 2, "Karamja", 3, "Varrock", 4);
+    def_int $choice = ~p_choice4("Edgeville", 1, "Karamja", 2, "Draynor Village", 3, "Al Kharid", 4);
     if ($choice = 1) {
        //Falador
-       p_teleport(0_46_52_21_49);       
+       p_teleport(0_48_54_15_40);       
     } else if ($choice = 2) {
        //Gnome
-       p_teleport(0_38_53_42_46); 
+       p_teleport(0_45_49_38_40); 
     } else if ($choice = 3) {
        //Karamja
-       p_teleport(0_45_49_45_36);
+       p_teleport(0_48_50_33_51);
     } else if ($choice = 4) {
       // Varrock
-      p_teleport(0_50_53_12_31);
+      p_teleport(0_51_49_29_27);
     }
 
     %tutorial_progress = ^tutorial_complete;
