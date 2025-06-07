@@ -2025,7 +2025,6 @@ export default class Player extends PathingEntity {
     isInWilderness(): boolean {
 
 
-        return true;
 
         if (this.x >= 3053 && this.x <= 3156 && this.z >= 3056 && this.z <= 3136) {
            return false;
