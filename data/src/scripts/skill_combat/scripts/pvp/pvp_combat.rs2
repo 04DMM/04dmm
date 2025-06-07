@@ -105,15 +105,14 @@ if (~in_tutorial_island(.coord) = true) {
    return(false);
 }
 
-if (map_multiway(.coord) = true) {
-   return(true);
-}
-
 if (~inzone_coord_pair_table(bank_zones, coord) = true) {
    mes("You cannot attack a player in the bank.");
    return(false);
 }
 
+if (map_multiway(.coord) = true) {
+   return(true);
+}
 
 if (.%pvpimmunity > 0) {
     mes("This player has recently killed someone and is immune to attack while they loot.");

@@ -3,12 +3,34 @@
 
 def_int $random_chance = multiply(1000, random(10));
 def_int $threshhold = sub(36000, $random_chance);
+//def_int $threshhold = 0;
 
-// Spawn lord iban once every 12 hours for 30 minutes
 if (%npc_int > $threshhold) {
+
+   def_int $angle = ^loc_east;
+   def_locshape $shape = centrepiece_straight;
+
    %npc_int = 0;
-   announce("Lord Iban: This means nothing. We will find you. You'll all die!");
-   npc_add(npc_coord, lord_iban_boss, 3000);
+   def_int $spot = random(4);
+   def_coord $c_coord;
+   switch_int($spot) {
+       case 0 :
+           announce("A mysterious chest has spawned in Falador!");
+           $c_coord = 0_46_52_21_51;
+           loc_add($c_coord, deadman_chest, $angle, $shape, 3000); 
+       case 1 :
+           announce("A mysterious chest has spawned in Varrock!");
+           $c_coord = 0_50_53_13_32;
+           loc_add($c_coord, deadman_chest, $angle, $shape, 3000);
+       case 2 : 
+           announce("A mysterious chest has spawned in Ardougne!");
+           $c_coord = 0_41_51_37_37;
+           loc_add($c_coord, deadman_chest, $angle, $shape, 3000);
+       case 3 : 
+           announce("A mysterious chest has spawned in Lumbridge!");
+           $c_coord = 0_50_50_21_18;
+           loc_add($c_coord, deadman_chest, $angle, $shape, 3000);
+    }
 } else {
    %npc_int = add(%npc_int, 100);
 }
