@@ -250,7 +250,7 @@ if (inv_total(worn, gauntlets_of_chaos) > 0 & $spell >= ^wind_bolt & $spell <= ^
     $maxhit = add($maxhit, 3);
 }
 if (inv_total(worn, zurielstaff) > 0) {
-    $maxhit = multiply($maxhit, 2);
+    $maxhit = divide(multiply($maxhit, 3), 2);
 }
 
 return($maxhit);
@@ -263,7 +263,7 @@ walktrigger(pvp_frozen);
 
 [walktrigger,pvp_frozen]
 if (.finduid(%pk_binder) = true) {
-    if (distance(coord, .coord) > 10) { // https://youtu.be/SC4KF1JWVl8&t=76
+    if (distance(coord, .coord) > 12) { // https://youtu.be/SC4KF1JWVl8&t=76
         return;
     }
     if (map_clock < %frozen) {

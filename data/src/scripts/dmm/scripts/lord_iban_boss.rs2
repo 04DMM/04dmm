@@ -66,9 +66,13 @@ while($i < 16) {
        $lobj, $lcount = ~breachloot;
 
        obj_addall($last_bolt, $lobj, $lcount, ^lootdrop_duration);
+       
+       $lobj, $lcount = ~breachloot;       
+
+       obj_addall($last_bolt, $lobj, $lcount, ^lootdrop_duration);
     }
     $i = add($i, 1);
-    world_delay(0);
+    world_delay(4);
 }
 
 //def_int $lcount = 1;

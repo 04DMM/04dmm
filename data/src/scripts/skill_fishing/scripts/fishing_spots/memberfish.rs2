@@ -144,9 +144,9 @@ if (stat_random(fishing, 10, 10) = true) {
 // seaweed
 if (stat_random(fishing, 10, 10) = true) {
     if (%sigil_fish1 = true) {
-       inv_add(inv, soda_ash, 2);
+       inv_add(inv, oc_cert(soda_ash), 5);
     } else {
-       inv_add(inv, seaweed, 2);
+       inv_add(inv, seaweed, 5);
     }
     //inv_add(inv, soda_ash, 2);
     mes("You catch some seaweed.");
@@ -162,9 +162,9 @@ if (stat_random(fishing, 5, 5) = true) {
 // mackerel
 if (stat_random(fishing, 5, 65) = true) {
     if (%sigil_fish1 = true) {
-       inv_add(inv, mackerel, 2);
+       inv_add(inv, oc_cert(mackerel), 5);
     } else {
-       inv_add(inv, raw_mackerel, 2);
+       inv_add(inv, raw_mackerel, 5);
     }
     mes("You catch a mackerel.");
     stat_advance(fishing, 200);
@@ -172,22 +172,22 @@ if (stat_random(fishing, 5, 65) = true) {
 // another mackerel
 if (stat_random(fishing, 10, 10) = true) {
     if (%sigil_fish1 = true) {
-       inv_add(inv, mackerel, 2);
+       inv_add(inv, oc_cert(mackerel), 5);
     } else {
-       inv_add(inv, raw_mackerel, 2);
+       inv_add(inv, raw_mackerel, 5);
     }
     mes("You catch a mackerel.");
     stat_advance(fishing, 200);
 }
 // oyster
 if (stat_random(fishing, 3, 7) = true) {
-    inv_add(inv, oystershell, 2);
+    inv_add(inv, oystershell, 5);
     mes("You catch an oyster shell.");
     stat_advance(fishing, 100);
 }
 // casket
 if (stat_random(fishing, 1, 2) = true) {
-    inv_add(inv, casket, 2);
+    inv_add(inv, oc_cert(casket), 5);
     mes("You catch a casket.");
     stat_advance(fishing, 100);
 }
@@ -197,7 +197,7 @@ if ($level < 23) {
 }
 if (stat_random(fishing, 4, 55) = true) {
     if (%sigil_fish1 = true) {
-       inv_add(inv, cod, 2);
+       inv_add(inv, oc_cert(cod), 5);
     } else {
        inv_add(inv, raw_cod, 2);
     }
@@ -210,7 +210,7 @@ if ($level < 46) {
 }
 if (stat_random(fishing, 3, 40) = true) {
     if (%sigil_fish1 = true) {
-      inv_add(inv, bass, 2);
+      inv_add(inv, oc_cert(bass), 5);
     } else {
       inv_add(inv, raw_bass, 2);
     }

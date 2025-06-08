@@ -281,7 +281,7 @@ switch_obj($uncooked_item) {
 inv_del(inv, $uncooked_item, 1);
 
 if ($passes_roll = true) {
-    inv_add(inv, $cooked_item, $multiply);
+    inv_add(inv, oc_cert($cooked_item), $multiply);
     if (compare($succesmessage, "0") ! 0) {
         mes($succesmessage);
     }
@@ -291,7 +291,7 @@ if ($passes_roll = true) {
         return;
     }
     if ($additional_item ! null) {
-        inv_add(inv, $additional_item, 1);
+        inv_add(inv, oc_cert($additional_item), 1);
     }
 } else {
     inv_add(inv, $burnt_item, 1);
