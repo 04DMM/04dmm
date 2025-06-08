@@ -100,7 +100,7 @@ switch_loc (loc_type) {
 ~stealing_check_for_reward($data);
 stat_advance(thieving, $experience);
 // Temp note: dur does not need updated
-if (%sigil_thief1 = false) {
+if (%sigil_thief1 ! true) {
   loc_change(market_stall, $respawn_ticks);
 }
 
