@@ -70,6 +70,11 @@ if (~stealing_check_for_guard($data) = true) {
 def_int $experience = db_getfield($data, stealing:experience, 0);
 // osrs is 2x respawn speed, since they removed the scale by playercount
 def_int $respawn_ticks = ~scale_by_playercount(db_getfield($data, stealing:respawn_ticks, 0));
+
+if (%sigil_thief1 = true) {
+  $respawn_ticks = 1;
+}
+
 anim(human_pickuptable, 0);
 sound_synth(pick, 0, 0);
 // p_delay here was added with this update: https://oldschool.runescape.wiki/w/Update:Special_Attacks
@@ -100,9 +105,9 @@ switch_loc (loc_type) {
 ~stealing_check_for_reward($data);
 stat_advance(thieving, $experience);
 // Temp note: dur does not need updated
-if (%sigil_thief1 ! true) {
-  loc_change(market_stall, $respawn_ticks);
-}
+loc_change(market_stall, $respawn_ticks);
+
+
 
 [label,activate_trapped_chest]
 p_arrivedelay;
