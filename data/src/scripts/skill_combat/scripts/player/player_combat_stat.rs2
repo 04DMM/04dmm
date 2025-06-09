@@ -82,7 +82,6 @@ if (%sigil_defence1 = true) {
    $stabdefence = add($stabdefence, 100);
    $slashdefence = add($slashdefence, 100);
    $crushdefence = add($crushdefence, 100);
-   $magicdefence = add($magicdefence, 100);
    $rangedefence = add($rangedefence, 100);
 }
 
