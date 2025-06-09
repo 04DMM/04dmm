@@ -232,6 +232,10 @@ if (db_getfieldcount($spell_data, magic_spell_table:spotanim_origin) > 0) {
 }
 // shoot spell projectile
 %action_delay = add(map_clock, 5);
+if (%sigil_mage4 = true) {
+   %action_delay = sub(%action_delay, 1);
+}
+
 def_int $duration = 0;
 if (db_getfieldcount($spell_data, magic_spell_table:spotanim_proj) > 0) {
     $duration = ~player_projectile(coord, .coord, .uid, db_getfield($spell_data, magic_spell_table:spotanim_proj, 0));
@@ -241,6 +245,7 @@ if (db_getfieldcount($spell_data, magic_spell_table:spotanim_proj) > 0) {
 if (~player_autocast_enabled = true & db_getfield($spell_data, magic_spell_table:continue_by_autocast, 0) = true) {
     p_opplayert(db_getfield(~get_spell_data(%autocast_spell), magic_spell_table:spellcom, 0));
 }
+
 return($duration);
 
 [proc,magic_spell_maxhit](dbrow $spell_data)(int)

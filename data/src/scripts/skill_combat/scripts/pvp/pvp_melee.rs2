@@ -60,3 +60,7 @@ if ($weapon = null) {
         .queue(poison_player, 0, $poison_severity);
     }
 }
+
+if (%sigil_melee4 = true) {
+  %action_delay = sub(%action_delay, 1);
+}

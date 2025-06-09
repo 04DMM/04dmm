@@ -65,6 +65,10 @@ if (%damagestyle = ^style_ranged_rapid) {
     %action_delay = sub(%action_delay, 1);
 }
 
+if (%sigil_range4 = true) {
+    %action_delay = sub(%action_delay, 1);
+}
+
 ~ranged_dropammo_pvp($ammo, 5, sub(divide($delay, 30), 2));
 
 
