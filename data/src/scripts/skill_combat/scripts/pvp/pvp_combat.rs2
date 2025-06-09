@@ -357,6 +357,18 @@ if (inv_getobj(worn, ^wearpos_ring) = ring_of_recoil & .finduid(%pk_predator1) =
     .queue(recoil_damage, 0, $recoil_damage);
     ~ring_of_recoil_lose_charge($recoil_damage);
 }
+
+if (.finduid(%pk_predator1) = true) {
+if (.%sigil_dragon1 = true) {
+   def_int $rand = random(5);
+   if ($rand = 0) {
+      def_int $duration = ~player_projectile(.coord, coord, uid, firebreath_travel, 92, 31, 51, 16, -5, 64, 10);
+      $damage = add($damage, 5);
+      mes("You're burnt by the opponents Dragonfire Sigil!");
+   }
+}
+}
+
 ~damage_self($damage);
 
 [queue,recoil_damage](int $damage) // seperate queue to avoid infinite recoil loop

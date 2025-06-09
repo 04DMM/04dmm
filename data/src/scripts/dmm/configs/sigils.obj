@@ -304,3 +304,91 @@ tradeable=no
 iop1=Tap
 param=next_obj_stage,sigil_life1_active
 param=no_alchemy,1
+
+[sigil_bh1]
+name=Sigil of Bounty Hunting
+desc=Teleports you to a random player once an hour.
+cost=1000000
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_bh1_active
+param=no_alchemy,1
+
+[sigil_dragon1]
+name=Sigil of Dragonfire
+desc=20% chance to deal 5 damage when attacking.
+cost=1000000
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_dragon1_active
+param=no_alchemy,1
+
+[sigil_mage4]
+name=Sigil of Kolodion
+desc=Entangles now deal 30 damage and root for 20 seconds.
+cost=1000000
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_mage4_active
+param=no_alchemy,1
+
+[sigil_range4]
+name=Sigil of Morrigan
+desc=Ranged attacks are 1 tick faster.
+cost=1000000
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_range4_active
+param=no_alchemy,1
+
+[sigil_melee4]
+name=Sigil of The Fremmenik
+desc=Melee attacks are 1 tick faster.
+cost=1000000
+model=model_2759_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_melee4_active
+param=no_alchemy,1
+
+
+
