@@ -290,6 +290,11 @@ if (.%pvpimmunity > 0) {
 [proc,pvp_hit_roll](int $damagetype)(boolean)
 def_int $attack_roll = ~player_attack_roll_specific($damagetype);
 def_int $defence_roll = ~.player_defence_roll_specific($damagetype);
+
+if ($damagetype = ^magic_style & %sigil_mage1 = true) {
+  $attack_roll = divide(multiply($attack_roll, 3), 2);
+}
+
 //mes("Clock: <tostring(map_clock)>, Player A: <tostring($attack_roll)>, NPC D: <tostring($defence_roll)>, Player Max: <tostring(%com_maxhit)>");
 //mes("Attack roll: <tostring($attack_roll)>, Defence roll: <tostring($defence_roll)>");
 if (randominc($attack_roll) > randominc($defence_roll)) {
