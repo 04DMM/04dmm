@@ -211,7 +211,7 @@ def_int $defence_roll = ~player_defence_roll_specific(^magic_style);
 if (randominc($attack_roll) > randominc($defence_roll)) {
     $damage = randominc(~kbd_special_breath_maxhit);
     def_int $random = random(2); // 50% chance upon successful hit to inflict a unique effect (osrs)
-    if (inv_total(worn, antidragonbreathshield) > 0) { // Not sure what it is exactly, ash says "Well protect player"
+    if (inv_total(worn, antidragonbreathshield) > 0 | inv_total(worn, dragon_sq_shield) > 0) { // Not sure what it is exactly, ash says "Well protect player"
         $random = random(8); // 1/8 chance (osrs).
         if ($random ! 0) {
             mes("Your shield absorbs most of the dragon's toxic breath!"); // https://youtu.be/KhI0x-fSKac?list=PLn23LiLYLb1bYAFU3Vdk3N9niuHs-b-4-&t=157
@@ -242,7 +242,7 @@ def_int $defence_roll = ~player_defence_roll_specific(^magic_style);
 if (randominc($attack_roll) > randominc($defence_roll)) {
     $damage = randominc(~kbd_special_breath_maxhit);
     def_int $random = random(2); // 50% chance upon successful hit to inflict a unique effect (osrs)
-    if (%prayer_protectfrommagic = ^true & inv_total(worn, antidragonbreathshield) > 0) {
+    if (%prayer_protectfrommagic = ^true & (inv_total(worn, antidragonbreathshield) > 0 | inv_total(worn, dragon_sq_shield) > 0)) {
         $random = random(8); // 1/8 chance (osrs). Not sure what it is exactly, ash says "Well protect player"
         if ($random ! 0) {
             mes("Your shield absorbs most of the dragon's shocking breath!"); // https://youtu.be/iXYRtqL-GNw?t=9
@@ -288,7 +288,7 @@ def_int $defence_roll = ~player_defence_roll_specific(^magic_style);
 if (randominc($attack_roll) > randominc($defence_roll)) {
     $damage = randominc(~kbd_special_breath_maxhit);
     def_int $random = random(2); // 50% chance upon successful hit to inflict a unique effect (osrs)
-    if (inv_total(worn, antidragonbreathshield) > 0) { // Not sure what it is exactly, ash says "Well protect player"
+    if (inv_total(worn, antidragonbreathshield) > 0 | inv_total(worn, dragon_sq_shield) > 0) { // Not sure what it is exactly, ash says "Well protect player"
         $random = random(8); // 1/8 chance (osrs). 
         if ($random ! 0) {
             mes("Your shield absorbs most of the dragon's icy breath!"); // https://youtu.be/91eqk3Lu_Qw?list=PLn23LiLYLb1bYAFU3Vdk3N9niuHs-b-4-&t=70
@@ -335,7 +335,7 @@ if (%prayer_protectfrommagic = ^true) {
     mes("You manage to resist some of the dragon's fiery breath!"); // https://youtu.be/R3ozXHcQkgs?list=PLn23LiLYLb1bYAFU3Vdk3N9niuHs-b-4-&t=78
     $maxhit = 20;
 }
-if (inv_total(worn, antidragonbreathshield) > 0) {
+if (inv_total(worn, antidragonbreathshield) > 0 | inv_total(worn, dragon_sq_shield) > 0) {
     mes("Your shield absorbs most of the dragon's fiery breath!");
     $maxhit = 15;
 }
@@ -351,7 +351,7 @@ def_int $maxhit = 50;
 if (%prayer_protectfrommagic = ^true) {
     $maxhit = 15;
 }
-if (inv_total(worn, antidragonbreathshield) > 0) {
+if (inv_total(worn, antidragonbreathshield) > 0 | inv_total(worn, dragon_sq_shield) > 0) {
     $maxhit = 10;
 }
 return($maxhit);
