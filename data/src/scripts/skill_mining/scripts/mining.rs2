@@ -141,9 +141,14 @@ if (random($chance) = ^true) {
       def_namedobj $bar = oc_param($output, smeltsto);
       if ($bar ! null) {
         inv_add(inv, oc_cert($bar), multiply(1,5));
-      
+
        def_struct $struct = oc_param($bar, smelting_struct);
        def_int $exp = struct_param($struct, productexp);
+
+       if ($bar = gold_bar & inv_total(worn, gauntlets_of_goldsmithing) > 0) {
+            $exp = scale(5, 2, $exp); // 2.5x
+       }
+
        stat_advance(smithing, $exp);
        }   
     } else {
