@@ -29,6 +29,9 @@ if ($null = inv_size(duelwinnings)) {
 }
 
 [opplayer1,_]
+mes("You are not allowed to duel on Deadman Mode.");
+return;
+
 if (.busy = true) {
     mes("<.displayname> is busy at the moment."); // https://youtu.be/YkJQDvB14-U?t=26
     return;
