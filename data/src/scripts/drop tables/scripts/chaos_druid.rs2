@@ -38,7 +38,7 @@ if ($random < 7)  {
 } else if ($random < 77) {
     obj_add(npc_coord, coins, 35, ^lootdrop_duration);
 } else if ($random < 87) {
-    obj_add(npc_coord, vial_water, 1, ^lootdrop_duration);
+    obj_add(npc_coord, cert_vial_water, 10, ^lootdrop_duration);
 } else if ($random < 88) {
     obj_add(npc_coord, bronze_longsword, 1, ^lootdrop_duration);
 } else if ($random < 89) {
