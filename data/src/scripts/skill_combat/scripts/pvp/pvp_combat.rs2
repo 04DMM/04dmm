@@ -105,7 +105,6 @@ if (add(%lastcombat_pvp, 24) > map_clock) {
 // Actually means "can be attacked"
 // And this function is talking about an enemy, not yourself
 [proc,pvp_in_combat_check]()(boolean)
-
 if (~in_tutorial_island(.coord) = true) {
    return(false);
 }
@@ -124,7 +123,9 @@ if (.%pvpimmunity > 0) {
     return(false);
 }
 
-
+if (add(.%lasttargetchange, 24) < map_clock & .%pk_predator1 ! uid) {
+   return(true);
+}
 
     // if you have been attacked in the last 8 ticks, and the last person to attack you isnt your opponent
     // or an npc attacked you
@@ -137,6 +138,9 @@ if (.%pvpimmunity > 0) {
         //}
 
         if (%pk_predator1 ! .uid & %pk_predator1 ! null) {
+            if (npc_finduid(.%aggressive_npc) = true) {
+              return(true);
+            }
             mes("Your opponent is already fighting someone.");
             return(false);
         }
@@ -153,139 +157,22 @@ if (.%pvpimmunity > 0) {
     }
     // if your opponent has been attacked in the last 8 ticks, and the opponents last attacker is not you
     // or an npc attacked them 
-    if (add(.%lastcombat, 8) > map_clock) {
+    if (add(.%lastcombat, 16) > map_clock) {
         if (npc_finduid(.%aggressive_npc) = true) {
             return(true);
         }
 
         if (.%pk_predator1 ! uid & .%pk_predator1 ! null) {
-            mes("Someone else is already fighting your opponent.");
-            return(false);
+              mes("Someone else is already fighting your opponent.");
+              return(false);
         }
+
         //if (npc_finduid(.%aggressive_npc) = true) {
         //    //mes("Poo  else is already fighting your opponent.");
         //    return(true);
         //}
     }
 
-
-
-
-
-// if multi, return true
-//if (map_multiway(.coord) = false) {
-
-     
-
-    // Checks if your enemy has dealt damage in pvp in the past 8 ticks 
-    //if (add(.%lastpvpdamagedealt, 24) > map_clock) {
-      // You can attack them if they were the last person who attacked you
-    //  if (%pk_predator1 = .uid) {
-    //     return(true);
-    //  } else {
-    //     mes("Your opponent is already fighting someone.");
-    //     return(false);
-    //  }
-
-      // You can't attack them if they weren't the last person who attacked you
-      
-
-      // If they dealt damage but you aren't being attacked, return false
-
-      //if (%pk_predator1 = .uid & %pk_predator1 ! null) {
-      //   // Can attack them back if you are their target
-      //   return(true);
-      //} 
-    //}
-
-    // If your opponent has been attacked
-    //if (add(.%lastcombat, 24) > map_clock) {
-    //   // Check if their pk_predator is you
-    //   if (.%pk_predator1 = uid) {
-    //      return(true);
-    //   } else {
-    //      mes("Your opponent is already fighting someone.");
-    //      return(false);
-    //   }
-   // }
-
-    // If you're under attack
-    //if (add(%lastcombat, 24) > map_clock) {
-    //   // And the person you're trying to attack isn't you
-    //   if (.%pk_predator1 ! uid & .%pk_predator1 = null) {
-    //      mes("I've decided to attack someone else");
-    //      return(false);
-    //   }
-    //}
-
-    // If you're already attacking someone
-    //if (add(%lastpvpdamagedealt, 24) > map_clock) {
-    //   if (.%pk_predator1 ! uid) {
-    //      mes("You're already attacking someone.");
-     //     return(false);
-    //   }
-    //}
-
-    // If neither you've dealt damage and your opponent hasn't received damage
-    //return(true);
-
-    // Checks if your enemy has received damage in pvp in the last 8 ticks
-
-
-    // If you've gotten experience in pvp, but the person last person to attack you is your opponent,
-    // you're not in combat
-    // pk_predator is the uid of last person who attacked you
-    // . prefix is opponent
-    // .uid is opponent uid
-    // %pk_predator1 is the person attacking you
-    //if (add(%lastcombat, 8) > map_clock) {
-    //    return(true); 
-        // %pk_predator1 is the last person to attack you
-         // % .uid is the person attempting to attack you
-         // "If the last person to attack you is not the person currently attacking you, return true 
-         //if (%pk_predator1 ! .uid & %pk_predator1 ! null) {
-         //   return(true);
-         //} else {
-         //   return(true);
-        // }
-        //if (%pk_predator1 ! .uid & %pk_predator1 ! null) {
-        //    return(false);
-        //}
-        //if (%.pk_predator1 = uid & %pk_predator1 ! null ) {
-        //    return(true);
-       // }
-    //}
-
-
-    // if you have been attacked in the last 8 ticks, and the last person to attack you isnt your opponent
-    // or an npc attacked you
-    // https://cdn.discordapp.com/attachments/1126857544523063367/1332910417856565249/found-old-drive-with-rsdemon-and-some-screenshots-v0-36uacu7glqzd1.png?ex=67999c0f&is=67984a8f&hm=a4c34a40791a120dba06adebb15a652a722e486fddd6d5a9e47ee9aa2c329fb3&
-    // 2006 year / osrs mes I'm already under attack.
-    // here's one from 2004: https://youtu.be/IC2n8t76DDY?t=34
-    //if (add(%lastcombat, 8) > map_clock) {
-    //    if (%pk_predator1 ! .uid & %pk_predator1 ! null) {
-    //        mes("I'm already under attack");
-    //        return(true);
-    //    }
-    //    if (npc_finduid(%aggressive_npc) = true) {
-    //        mes("I'm already under attack");
-    //        return(true);
-    //    }
-    //}
-    // if your opponent has been attacked in the last 8 ticks, and the opponents last attacker is not you
-    // or an npc attacked them 
-    //if (add(.%lastcombat, 8) > map_clock) {
-    //    if (.%pk_predator1 ! uid & .%pk_predator1 ! null) {
-    //        mes("Someone else is already fighting your opponent.");
-    //        return(false);
-    //    }
-    //    if (npc_finduid(.%aggressive_npc) = true) {
-    //        mes("Someone else is already fighting your opponent.");
-    //        return(false);
-    //    }
-    //}
-//}
-//return(true);
 
 [proc,pvp_hit_roll](int $damagetype)(boolean)
 def_int $attack_roll = ~player_attack_roll_specific($damagetype);

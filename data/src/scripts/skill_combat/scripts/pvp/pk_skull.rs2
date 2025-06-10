@@ -12,6 +12,7 @@ return(true);
 if (~deserves_pk_skull = true) {
     ~pk_skull(^pk_skull_duration);
 }
+
 // for preys
 %pk_prey2 = %pk_prey1;
 %pk_prey1 = .uid; 
@@ -25,6 +26,15 @@ if (~deserves_pk_skull = true) {
 %pk_predator3 = %pk_predator2;
 %pk_predator2 = %pk_predator1;
 %pk_predator1 = .uid;
+
+
+// If targets change, update
+if (%pk_prey1 ! %pk_prey2 | .%pk_predator1 ! .%pk_predator2) {
+   %lasttargetchange = map_clock;
+   .%lasttargetchange = map_clock;
+   mes("Your opponent has changed!");
+   .mes("Your opponent has changed!");
+}
 
 // Set our last combat as well
 %lastcombat = map_clock;

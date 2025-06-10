@@ -93,3 +93,7 @@ type=boolean
 [sigil_starter_obtained]
 scope=perm
 type=boolean
+
+[lasttargetchange]
+type=int
+protect=no
