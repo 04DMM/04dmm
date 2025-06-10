@@ -25,6 +25,11 @@ inv_stoptransmit(shop_template_side:inv);
 inv_stoptransmit(shop_template:inv);
 
 [proc,can_sell_obj](obj $item)(boolean)
+if (add(%lastcombat, 8) > map_clock) {
+   mes("You cannot sell items in combat.");
+   return(false);
+}
+
 def_boolean $item_is_tradable = oc_tradeable(oc_uncert($item));
 if ($item = coins) {
     mes("You can't sell this item to a shop.");
