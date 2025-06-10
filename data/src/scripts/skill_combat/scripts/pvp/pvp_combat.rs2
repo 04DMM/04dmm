@@ -123,7 +123,7 @@ if (.%pvpimmunity > 0) {
     return(false);
 }
 
-if (add(.%lasttargetchange, 24) < map_clock & .%pk_predator1 ! uid) {
+if (add(.%lasttargetchange, 500) < map_clock & .%pk_predator1 ! uid) {
    return(true);
 }
 
