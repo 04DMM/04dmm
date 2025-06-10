@@ -325,7 +325,7 @@ param=no_alchemy,1
 [sigil_dragon1]
 name=Sigil of Dragonfire
 desc=20% chance to deal 5 damage when attacking.
-cost=1000000
+cost=50000
 model=model_2759_obj
 2dxof=-2
 2dyof=3

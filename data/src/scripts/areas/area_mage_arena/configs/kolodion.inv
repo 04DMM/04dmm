@@ -26,3 +26,5 @@ stock13=sigil_range1,1,6000
 stock14=sigil_random1,1,6000
 stock15=sigil_reach1,1,6000
 stock16=sigil_mage1,1,6000
+
+stock17=sigil_dragon1,5,1000
