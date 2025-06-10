@@ -19,6 +19,8 @@ if (finduid(%npc_aggressive_player) = true) {
     def_int $random = random(240);
     def_int $hp = npc_basestat(hitpoints);
 
+    if (npc_findhero = ^true) {
+
     if ($hp > $random) {
        obj_add(npc_coord, ~randomjewel, ^lootdrop_duration);
     }
@@ -43,6 +45,7 @@ if (finduid(%npc_aggressive_player) = true) {
               mes("Your Sigil of Abbot Langley blesses you.");
           }
         }
+    }
     }
 
     %aggressive_npc = null;
