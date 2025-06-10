@@ -13,7 +13,7 @@ if (~is_alchable($item, $spell_data) = false) {
     return;
 }
 
-if (add(%lastcombat, 8) > map_clock) {
+if (add(%lastcombat, 16) > map_clock) {
    mes("You cannot high alch in combat.");
    return;
 }
@@ -55,7 +55,7 @@ if (~is_alchable($item, $spell_data) = false) {
     return;
 }
 
-if (add(%lastcombat, 8) > map_clock) {
+if (add(%lastcombat, 16) > map_clock) {
    mes("You cannot low alch in combat.");
    return;
 }
