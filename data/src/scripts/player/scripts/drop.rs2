@@ -1,6 +1,13 @@
 [opheld5,_] ~dropslot(last_slot);
 
 [proc,dropslot](int $last)
+
+if (add(%lastcombat, 16) > map_clock) {
+  mes("You cannot drop items while under attack.");
+  return;
+}
+
+
 if (~in_duel_arena(coord) = true) {
     mes("You cannot drop items here."); // osrs pvp arena
     return;
