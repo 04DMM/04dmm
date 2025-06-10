@@ -36,6 +36,15 @@ if (%sigil_starter_obtained ! true) {
    }
 }
 
+if (%starterkit_timer = 0) {
+   ~chatnpc("<p,angry> Here's another starter kit!");
+   inv_add(inv, starterkit, 1);
+   %starterkit_timer = 24000;
+   settimer(starterkit_timer, 100);
+   return;
+} else {
+   mes("You must wait 4 hours in between claims to get another Starter Kit.");
+}
 
 if (%magearena < ^mage_arena_started) {
     ~chatplayer("<p,neutral>Hello there. What is this place?");
