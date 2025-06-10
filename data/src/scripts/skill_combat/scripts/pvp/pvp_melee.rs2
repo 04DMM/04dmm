@@ -62,5 +62,7 @@ if ($weapon = null) {
 }
 
 if (%sigil_melee4 = true) {
-  %action_delay = sub(%action_delay, 1);
+  if (%action_delay >= 5) {
+     %action_delay = sub(%action_delay, 1);
+  }
 }

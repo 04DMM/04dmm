@@ -24,7 +24,9 @@ if (%damagestyle = ^style_ranged_rapid) {
 }
 
 if (%sigil_range4 = true) {
+    if (%action_delay >= 5) {
     %action_delay = sub(%action_delay, 1);
+    }
 }
 
 def_obj $ammo = null;
