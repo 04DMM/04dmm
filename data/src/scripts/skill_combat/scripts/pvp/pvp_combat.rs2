@@ -163,7 +163,9 @@ if (add(.%lasttargetchange, 500) < map_clock & .%pk_predator1 ! uid) {
         }
 
         if (.%pk_predator1 ! uid & .%pk_predator1 ! null) {
-              mes("Someone else is already fighting your opponent.");
+              def_int $time = sub(map_clock, .%lasttargetchange);
+              $time = sub(300, divide(multiply($time, 6), 10));
+              mes("You can attack your opponent in <tostring($time)> seconds");
               return(false);
         }
 
