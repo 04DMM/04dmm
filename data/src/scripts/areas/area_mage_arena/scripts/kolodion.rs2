@@ -1,4 +1,42 @@
 [opnpc1,kolodion]
+if (%sigil_starter_obtained ! true) {
+   ~chatnpc("<p,angry>Welcome Deadman! I have something to offer you.");
+   ~chatnpc("<p,angry>You can only choose one of my powerful sigils per account.");
+   ~chatnpc("<p,angry>Do you understand?");
+   def_int $choice = ~p_choice2("Yes", 1, "No", 2);
+   if ($choice = 1) {
+      ~chatnpc("<p,angry> The combat style you choose will reduce your attack speed in that style. Choose wisely.");
+      def_int $choice2 = ~p_choice3("Mage", 1, "Melee", 2, "Ranged", 3);
+      
+      if (inv_freespace(inv) > 0) {
+
+      
+        if ($choice2 = 1) {
+          inv_add(inv, sigil_mage4, 1);
+          %sigil_starter_obtained = true;
+          return;
+        } else if ($choice2 = 2) {
+          inv_add(inv, sigil_melee4, 1);
+          %sigil_starter_obtained = true;
+        } else if ($choice2 = 3) {
+          inv_add(inv, sigil_range4, 1);
+          %sigil_starter_obtained = true;
+        }
+
+        ~chatnpc("<p,angry> Yuuuuuuup.");
+        return;
+
+      } else {
+        mes("You need a free inventory spot to choose a sigil.");
+        return;
+      }
+   } else if ($choice = 2) {
+      ~chatnpc("<p,angry> Talk to me when you're ready then.");
+      return;
+   }
+}
+
+
 if (%magearena < ^mage_arena_started) {
     ~chatplayer("<p,neutral>Hello there. What is this place?");
     // https://web.archive.org/web/20050306051554/http://runevillage.com/rs2specialMageArena.php

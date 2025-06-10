@@ -431,7 +431,7 @@ recol2d=8456
 
 [sigil_mage4_active]
 name=Sigil of Kolodion (t)
-desc=Improved entangles.
+desc=Increased attack rate.
 cost=1000000
 model=model_2759_obj
 2dxof=-2

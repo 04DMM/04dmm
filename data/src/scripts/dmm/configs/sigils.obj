@@ -341,7 +341,7 @@ param=no_alchemy,1
 
 [sigil_mage4]
 name=Sigil of Kolodion
-desc=Entangles now deal 30 damage and root for 20 seconds.
+desc=Increased magic attack rate.
 cost=1000000
 model=model_2759_obj
 2dxof=-2
@@ -358,7 +358,7 @@ param=no_alchemy,1
 
 [sigil_range4]
 name=Sigil of Morrigan
-desc=Ranged attacks are 1 tick faster.
+desc=Increased ranged attack rate.
 cost=1000000
 model=model_2759_obj
 2dxof=-2
@@ -375,7 +375,7 @@ param=no_alchemy,1
 
 [sigil_melee4]
 name=Sigil of The Fremmenik
-desc=Melee attacks are 1 tick faster.
+desc=Increased melee attack rate.
 cost=1000000
 model=model_2759_obj
 2dxof=-2

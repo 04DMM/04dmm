@@ -89,3 +89,7 @@ type=boolean
 [sigil_melee4]
 scope=perm
 type=boolean
+
+[sigil_starter_obtained]
+scope=perm
+type=boolean
