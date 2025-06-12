@@ -1,3 +1,5 @@
+type=overlay
+
 [wind_strike]
 type=graphic
 x=1
@@ -5,10 +7,12 @@ y=1
 buttontype=target
 width=20
 height=20
+overlayer=com_47
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
 script1op4=inv_contains,wornitems:wear,mystic_air_staff
+
 script1=gt,0
 script2op1=inv_count,inventory:inv,mindrune
 script2=gt,0
@@ -16,6 +20,9 @@ script3op1=stat_level,magic
 script3=gt,0
 graphic=magicoff,0
 activegraphic=magicon,0
+actionverb=Cast on
+actiontarget=npc,player
+action=Wind strike
 
 [confuse]
 type=graphic
@@ -24,6 +31,7 @@ y=1
 buttontype=target
 width=20
 height=20
+overlayer=com_54
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -43,6 +51,9 @@ script4op1=stat_level,magic
 script4=gt,2
 graphic=magicoff,1
 activegraphic=magicon,1
+actionverb=Cast on
+actiontarget=npc,player
+action=Confuse
 
 [water_strike]
 type=graphic
@@ -51,6 +62,7 @@ y=1
 buttontype=target
 width=20
 height=20
+overlayer=com_63
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -67,6 +79,9 @@ script4op1=stat_level,magic
 script4=gt,4
 graphic=magicoff,2
 activegraphic=magicon,2
+actionverb=Cast on
+actiontarget=npc,player
+action=Water strike
 
 [enchant_lvl1]
 type=graphic
@@ -75,6 +90,7 @@ y=1
 buttontype=target
 width=20
 height=20
+overlayer=com_72
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -86,6 +102,9 @@ script3op1=stat_level,magic
 script3=gt,6
 graphic=magicoff,3
 activegraphic=magicon,3
+actionverb=Cast on
+actiontarget=heldobj
+action=Enchant Lvl-1 Jewelry
 
 [earth_strike]
 type=graphic
@@ -94,6 +113,7 @@ y=1
 buttontype=target
 width=20
 height=20
+overlayer=com_79
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -110,6 +130,9 @@ script4op1=stat_level,magic
 script4=gt,8
 graphic=magicoff,4
 activegraphic=magicon,4
+actionverb=Cast on
+actiontarget=npc,player
+action=Earth strike
 
 [weaken]
 type=graphic
@@ -118,6 +141,7 @@ y=1
 buttontype=target
 width=20
 height=20
+overlayer=com_88
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -137,6 +161,9 @@ script4op1=stat_level,magic
 script4=gt,10
 graphic=magicoff,5
 activegraphic=magicon,5
+actionverb=Cast on
+actiontarget=npc,player
+action=Weaken
 
 [fire_strike]
 type=graphic
@@ -145,6 +172,7 @@ y=1
 buttontype=target
 width=20
 height=20
+overlayer=com_97
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -161,6 +189,9 @@ script4op1=stat_level,magic
 script4=gt,12
 graphic=magicoff,6
 activegraphic=magicon,6
+actionverb=Cast on
+actiontarget=npc,player
+action=Fire strike
 
 [bones_to_bananas]
 type=graphic
@@ -169,6 +200,7 @@ y=1
 buttontype=normal
 width=20
 height=20
+overlayer=com_106
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -197,6 +229,7 @@ y=25
 buttontype=target
 width=20
 height=20
+overlayer=com_115
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
@@ -208,6 +241,9 @@ script3op1=stat_level,magic
 script3=gt,16
 graphic=magicoff,8
 activegraphic=magicon,8
+actionverb=Cast on
+actiontarget=npc,player
+action=Wind bolt
 
 [curse]
 type=graphic
@@ -216,6 +252,7 @@ y=25
 buttontype=target
 width=20
 height=20
+overlayer=com_122
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -235,6 +272,9 @@ script4op1=stat_level,magic
 script4=gt,18
 graphic=magicoff,9
 activegraphic=magicon,9
+actionverb=Cast on
+actiontarget=npc,player
+action=Curse
 
 [lowlvl_alchemy]
 type=graphic
@@ -243,6 +283,7 @@ y=25
 buttontype=target
 width=20
 height=20
+overlayer=com_131
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -254,6 +295,9 @@ script3op1=stat_level,magic
 script3=gt,20
 graphic=magicoff,10
 activegraphic=magicon,10
+actionverb=Cast on
+actiontarget=heldobj
+action=Low level alchemy
 
 [water_bolt]
 type=graphic
@@ -262,6 +306,7 @@ y=25
 buttontype=target
 width=20
 height=20
+overlayer=com_138
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -278,6 +323,9 @@ script4op1=stat_level,magic
 script4=gt,22
 graphic=magicoff,11
 activegraphic=magicon,11
+actionverb=Cast on
+actiontarget=npc,player
+action=Water bolt
 
 [varrock_teleport]
 type=graphic
@@ -286,6 +334,7 @@ y=25
 buttontype=normal
 width=20
 height=20
+overlayer=com_147
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -311,6 +360,7 @@ y=25
 buttontype=target
 width=20
 height=20
+overlayer=com_156
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
@@ -322,6 +372,9 @@ script3op1=stat_level,magic
 script3=gt,26
 graphic=magicoff,13
 activegraphic=magicon,13
+actionverb=Cast on
+actiontarget=heldobj
+action=Enchant Lvl-2 Jewelry
 
 [earth_bolt]
 type=graphic
@@ -330,6 +383,7 @@ y=25
 buttontype=target
 width=20
 height=20
+overlayer=com_163
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -346,6 +400,9 @@ script4op1=stat_level,magic
 script4=gt,28
 graphic=magicoff,14
 activegraphic=magicon,14
+actionverb=Cast on
+actiontarget=npc,player
+action=Earth bolt
 
 [lumbridge_teleport]
 type=graphic
@@ -354,6 +411,7 @@ y=49
 buttontype=normal
 width=20
 height=20
+overlayer=com_172
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -379,6 +437,7 @@ y=49
 buttontype=target
 width=20
 height=20
+overlayer=com_181
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
@@ -390,6 +449,9 @@ script3op1=stat_level,magic
 script3=gt,32
 graphic=magicoff,16
 activegraphic=magicon,16
+actionverb=Cast on
+actiontarget=obj
+action=Telekinetic grab
 
 [fire_bolt]
 type=graphic
@@ -398,6 +460,7 @@ y=49
 buttontype=target
 width=20
 height=20
+overlayer=com_188
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -414,6 +477,9 @@ script4op1=stat_level,magic
 script4=gt,34
 graphic=magicoff,17
 activegraphic=magicon,17
+actionverb=Cast on
+actiontarget=npc,player
+action=Fire bolt
 
 [falador_teleport]
 type=graphic
@@ -422,6 +488,7 @@ y=49
 buttontype=normal
 width=20
 height=20
+overlayer=com_197
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -447,6 +514,7 @@ y=49
 buttontype=target
 width=20
 height=20
+overlayer=com_206
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -463,6 +531,9 @@ script4op1=stat_level,magic
 script4=gt,38
 graphic=magicoff,19
 activegraphic=magicon,19
+actionverb=Cast on
+actiontarget=npc
+action=Crumble undead
 
 [wind_blast]
 type=graphic
@@ -471,6 +542,7 @@ y=49
 buttontype=target
 width=20
 height=20
+overlayer=com_215
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
@@ -482,6 +554,9 @@ script3op1=stat_level,magic
 script3=gt,40
 graphic=magicoff,20
 activegraphic=magicon,20
+actionverb=Cast on
+actiontarget=npc,player
+action=Wind blast
 
 [superheat_item]
 type=graphic
@@ -490,6 +565,7 @@ y=49
 buttontype=target
 width=20
 height=20
+overlayer=com_222
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -501,6 +577,9 @@ script3op1=stat_level,magic
 script3=gt,42
 graphic=magicoff,21
 activegraphic=magicon,21
+actionverb=Cast on
+actiontarget=heldobj
+action=Superheat Item
 
 [camelot_teleport]
 type=graphic
@@ -509,6 +588,7 @@ y=49
 buttontype=normal
 width=20
 height=20
+overlayer=com_229
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
@@ -529,6 +609,7 @@ y=73
 buttontype=target
 width=20
 height=20
+overlayer=com_236
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -545,6 +626,9 @@ script4op1=stat_level,magic
 script4=gt,46
 graphic=magicoff,23
 activegraphic=magicon,23
+actionverb=Cast on
+actiontarget=npc,player
+action=Water blast
 
 [enchant_lvl3]
 type=graphic
@@ -553,6 +637,7 @@ y=73
 buttontype=target
 width=20
 height=20
+overlayer=com_245
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -564,6 +649,9 @@ script3op1=stat_level,magic
 script3=gt,48
 graphic=magicoff,24
 activegraphic=magicon,24
+actionverb=Cast on
+actiontarget=heldobj
+action=Enchant Lvl-3 Jewelry
 
 [earth_blast]
 type=graphic
@@ -572,6 +660,7 @@ y=73
 buttontype=target
 width=20
 height=20
+overlayer=com_269
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -588,6 +677,9 @@ script4op1=stat_level,magic
 script4=gt,52
 graphic=magicoff,25
 activegraphic=magicon,25
+actionverb=Cast on
+actiontarget=npc,player
+action=Earth blast
 
 [highlvl_alchemy]
 type=graphic
@@ -596,6 +688,7 @@ y=73
 buttontype=target
 width=20
 height=20
+overlayer=com_278
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -607,6 +700,9 @@ script3op1=stat_level,magic
 script3=gt,54
 graphic=magicoff,26
 activegraphic=magicon,26
+actionverb=Cast on
+actiontarget=heldobj
+action=High level alchemy
 
 [water_orb]
 type=graphic
@@ -615,6 +711,7 @@ y=73
 buttontype=target
 width=20
 height=20
+overlayer=com_285
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -628,6 +725,9 @@ script4op1=stat_level,magic
 script4=gt,56
 graphic=magicoff,27
 activegraphic=magicon,27
+actionverb=Cast on
+actiontarget=loc
+action=Charge water orb
 
 [enchant_lvl4]
 type=graphic
@@ -636,6 +736,7 @@ y=97
 buttontype=target
 width=20
 height=20
+overlayer=com_294
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -647,6 +748,9 @@ script3op1=stat_level,magic
 script3=gt,56
 graphic=magicoff,28
 activegraphic=magicon,28
+actionverb=Cast on
+actiontarget=heldobj
+action=Enchant Lvl-4 Jewelry
 
 [fire_blast]
 type=graphic
@@ -655,6 +759,7 @@ y=97
 buttontype=target
 width=20
 height=20
+overlayer=com_308
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -671,6 +776,9 @@ script4op1=stat_level,magic
 script4=gt,58
 graphic=magicoff,29
 activegraphic=magicon,29
+actionverb=Cast on
+actiontarget=npc,player
+action=Fire blast
 
 [earth_orb]
 type=graphic
@@ -679,6 +787,7 @@ y=97
 buttontype=target
 width=20
 height=20
+overlayer=com_317
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -692,6 +801,9 @@ script4op1=stat_level,magic
 script4=gt,59
 graphic=magicoff,30
 activegraphic=magicon,30
+actionverb=Cast on
+actiontarget=loc
+action=Charge earth orb
 
 [wind_wave]
 type=graphic
@@ -700,6 +812,7 @@ y=97
 buttontype=target
 width=20
 height=20
+overlayer=com_326
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
@@ -711,6 +824,9 @@ script3op1=stat_level,magic
 script3=gt,61
 graphic=magicoff,31
 activegraphic=magicon,31
+actionverb=Cast on
+actiontarget=npc,player
+action=Wind wave
 
 [fire_orb]
 type=graphic
@@ -719,6 +835,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_333
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -732,6 +849,9 @@ script4op1=stat_level,magic
 script4=gt,62
 graphic=magicoff,32
 activegraphic=magicon,32
+actionverb=Cast on
+actiontarget=loc
+action=Charge fire orb
 
 [water_wave]
 type=graphic
@@ -740,6 +860,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_342
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -756,6 +877,9 @@ script4op1=stat_level,magic
 script4=gt,64
 graphic=magicoff,33
 activegraphic=magicon,33
+actionverb=Cast on
+actiontarget=npc,player
+action=Water wave
 
 [air_orb]
 type=graphic
@@ -764,6 +888,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_351
 script1op1=inv_count,inventory:inv,airrune
 script1op2=inv_contains,wornitems:wear,staff_of_air
 script1op3=inv_contains,wornitems:wear,air_battlestaff
@@ -777,6 +902,9 @@ script4op1=stat_level,magic
 script4=gt,65
 graphic=magicoff,34
 activegraphic=magicon,34
+actionverb=Cast on
+actiontarget=loc
+action=Charge air orb
 
 [enchant_lvl5]
 type=graphic
@@ -785,6 +913,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_369
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -801,6 +930,9 @@ script4op1=stat_level,magic
 script4=gt,67
 graphic=magicoff,35
 activegraphic=magicon,35
+actionverb=Cast on
+actiontarget=heldobj
+action=Enchant Lvl-5 Jewelry
 
 [earth_wave]
 type=graphic
@@ -809,6 +941,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_378
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -825,6 +958,9 @@ script4op1=stat_level,magic
 script4=gt,69
 graphic=magicoff,36
 activegraphic=magicon,36
+actionverb=Cast on
+actiontarget=npc,player
+action=Earth wave
 
 [fire_wave]
 type=graphic
@@ -833,6 +969,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_401
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -849,6 +986,9 @@ script4op1=stat_level,magic
 script4=gt,74
 graphic=magicoff,37
 activegraphic=magicon,37
+actionverb=Cast on
+actiontarget=npc,player
+action=Fire wave
 
 [saradomin_strike]
 type=graphic
@@ -857,6 +997,7 @@ y=97
 buttontype=target
 width=20
 height=20
+overlayer=com_450
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -875,6 +1016,9 @@ script5op1=stat_level,magic
 script5=gt,59
 graphic=magicoff,46
 activegraphic=magicon,46
+actionverb=Cast on
+actiontarget=npc,player
+action=Saradomin strike
 
 [claws_of_guthix]
 type=graphic
@@ -883,6 +1027,7 @@ y=97
 buttontype=target
 width=20
 height=20
+overlayer=com_461
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -901,6 +1046,9 @@ script5op1=stat_level,magic
 script5=gt,59
 graphic=magicoff,45
 activegraphic=magicon,45
+actionverb=Cast on
+actiontarget=npc,player
+action=Claws of Guthix
 
 [flames_of_zamorak]
 type=graphic
@@ -909,6 +1057,7 @@ y=97
 buttontype=target
 width=20
 height=20
+overlayer=com_472
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -927,6 +1076,9 @@ script5op1=stat_level,magic
 script5=gt,59
 graphic=magicoff,44
 activegraphic=magicon,44
+actionverb=Cast on
+actiontarget=npc,player
+action=Flames of Zamorak
 
 [charge]
 type=graphic
@@ -935,6 +1087,7 @@ y=145
 buttontype=normal
 width=20
 height=20
+overlayer=com_483
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -968,7 +1121,6 @@ y=9
 width=178
 height=72
 colour=0x726451
-fill=no
 
 [com_44]
 layer=com_42
@@ -978,7 +1130,6 @@ y=10
 width=176
 height=70
 colour=0x726451
-fill=no
 
 [com_45]
 layer=com_42
@@ -988,7 +1139,6 @@ y=10
 width=177
 height=71
 colour=0x2E2B23
-fill=no
 
 [com_46]
 layer=com_42
@@ -1071,8 +1221,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_53]
 layer=com_47
@@ -1087,8 +1237,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_54]
 type=layer
@@ -1173,8 +1323,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_61]
 layer=com_54
@@ -1192,8 +1342,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_62]
 layer=com_54
@@ -1208,8 +1358,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_63]
 type=layer
@@ -1294,8 +1444,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_70]
 layer=com_63
@@ -1313,8 +1463,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_71]
 layer=com_63
@@ -1329,8 +1479,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_72]
 type=layer
@@ -1404,8 +1554,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_78]
 layer=com_72
@@ -1419,8 +1569,8 @@ script1=gt,0
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_79]
 type=layer
@@ -1505,8 +1655,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_86]
 layer=com_79
@@ -1524,8 +1674,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_87]
 layer=com_79
@@ -1540,8 +1690,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_88]
 type=layer
@@ -1626,8 +1776,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_95]
 layer=com_88
@@ -1645,8 +1795,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_96]
 layer=com_88
@@ -1661,8 +1811,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_97]
 type=layer
@@ -1747,8 +1897,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_104]
 layer=com_97
@@ -1766,8 +1916,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_105]
 layer=com_97
@@ -1782,8 +1932,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_106]
 type=layer
@@ -1868,8 +2018,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_113]
 layer=com_106
@@ -1887,8 +2037,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_114]
 layer=com_106
@@ -1903,8 +2053,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_115]
 type=layer
@@ -1978,8 +2128,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_121]
 layer=com_115
@@ -1994,8 +2144,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_122]
 type=layer
@@ -2080,8 +2230,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_129]
 layer=com_122
@@ -2099,8 +2249,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_130]
 layer=com_122
@@ -2115,8 +2265,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_131]
 type=layer
@@ -2190,8 +2340,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_137]
 layer=com_131
@@ -2206,8 +2356,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_138]
 type=layer
@@ -2292,8 +2442,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_145]
 layer=com_138
@@ -2311,8 +2461,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_146]
 layer=com_138
@@ -2327,8 +2477,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_147]
 type=layer
@@ -2413,8 +2563,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_154]
 layer=com_147
@@ -2432,8 +2582,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_155]
 layer=com_147
@@ -2448,8 +2598,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_156]
 type=layer
@@ -2523,8 +2673,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_162]
 layer=com_156
@@ -2539,8 +2689,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_163]
 type=layer
@@ -2625,8 +2775,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_170]
 layer=com_163
@@ -2644,8 +2794,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_171]
 layer=com_163
@@ -2660,8 +2810,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_172]
 type=layer
@@ -2746,8 +2896,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_179]
 layer=com_172
@@ -2765,8 +2915,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_180]
 layer=com_172
@@ -2781,8 +2931,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_181]
 type=layer
@@ -2856,8 +3006,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_187]
 layer=com_181
@@ -2872,8 +3022,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_188]
 type=layer
@@ -2958,8 +3108,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_195]
 layer=com_188
@@ -2977,8 +3127,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_196]
 layer=com_188
@@ -2993,8 +3143,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_197]
 type=layer
@@ -3079,8 +3229,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_204]
 layer=com_197
@@ -3098,8 +3248,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_205]
 layer=com_197
@@ -3114,8 +3264,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_206]
 type=layer
@@ -3200,8 +3350,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_213]
 layer=com_206
@@ -3219,8 +3369,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_214]
 layer=com_206
@@ -3235,8 +3385,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_215]
 type=layer
@@ -3310,8 +3460,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_221]
 layer=com_215
@@ -3326,8 +3476,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_222]
 type=layer
@@ -3401,8 +3551,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_228]
 layer=com_222
@@ -3417,8 +3567,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_229]
 type=layer
@@ -3492,8 +3642,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_235]
 layer=com_229
@@ -3508,8 +3658,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_236]
 type=layer
@@ -3594,8 +3744,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_243]
 layer=com_236
@@ -3613,8 +3763,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_244]
 layer=com_236
@@ -3629,8 +3779,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_245]
 type=layer
@@ -3704,8 +3854,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_251]
 layer=com_245
@@ -3720,8 +3870,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_252]
 type=layer
@@ -3816,8 +3966,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_260]
 layer=com_252
@@ -3832,8 +3982,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_261]
 layer=com_252
@@ -3848,8 +3998,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_262]
 type=layer
@@ -3923,8 +4073,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_268]
 layer=com_262
@@ -3939,8 +4089,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_269]
 type=layer
@@ -4025,8 +4175,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_276]
 layer=com_269
@@ -4044,8 +4194,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_277]
 layer=com_269
@@ -4060,8 +4210,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_278]
 type=layer
@@ -4135,8 +4285,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_284]
 layer=com_278
@@ -4151,8 +4301,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_285]
 type=layer
@@ -4238,8 +4388,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/30
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_292]
 layer=com_285
@@ -4254,8 +4404,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_293]
 layer=com_285
@@ -4270,8 +4420,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_294]
 type=layer
@@ -4345,8 +4495,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/10
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_300]
 layer=com_294
@@ -4361,8 +4511,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_301]
 type=layer
@@ -4436,8 +4586,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_307]
 layer=com_301
@@ -4452,8 +4602,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_308]
 type=layer
@@ -4538,8 +4688,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_315]
 layer=com_308
@@ -4557,8 +4707,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_316]
 layer=com_308
@@ -4573,8 +4723,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_317]
 type=layer
@@ -4660,8 +4810,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/30
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_324]
 layer=com_317
@@ -4676,8 +4826,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_325]
 layer=com_317
@@ -4692,8 +4842,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_326]
 type=layer
@@ -4767,8 +4917,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_332]
 layer=com_326
@@ -4783,8 +4933,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_333]
 type=layer
@@ -4870,8 +5020,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/30
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_340]
 layer=com_333
@@ -4886,8 +5036,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_341]
 layer=com_333
@@ -4902,8 +5052,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_342]
 type=layer
@@ -4988,8 +5138,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/7
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_349]
 layer=com_342
@@ -5007,8 +5157,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_350]
 layer=com_342
@@ -5023,8 +5173,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_351]
 type=layer
@@ -5110,8 +5260,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/30
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_358]
 layer=com_351
@@ -5126,8 +5276,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_359]
 layer=com_351
@@ -5142,8 +5292,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_360]
 type=layer
@@ -5228,8 +5378,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_367]
 layer=com_360
@@ -5247,8 +5397,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_368]
 layer=com_360
@@ -5263,8 +5413,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_369]
 type=layer
@@ -5349,8 +5499,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/15
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_376]
 layer=com_369
@@ -5368,8 +5518,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/15
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_377]
 layer=com_369
@@ -5384,8 +5534,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_378]
 type=layer
@@ -5470,8 +5620,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/7
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_385]
 layer=com_378
@@ -5489,8 +5639,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_386]
 layer=com_378
@@ -5505,8 +5655,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [iban_blast]
 type=graphic
@@ -5515,6 +5665,7 @@ y=73
 buttontype=target
 width=20
 height=20
+overlayer=com_252
 script1op1=inv_count,inventory:inv,firerune
 script1op2=inv_contains,wornitems:wear,staff_of_fire
 script1op3=inv_contains,wornitems:wear,fire_battlestaff
@@ -5530,6 +5681,9 @@ script4op1=inv_count,wornitems:wear,ibanstaff
 script4=gt,0
 graphic=magicoff,38
 activegraphic=magicon,38
+actionverb=Cast on
+actiontarget=npc,player
+action=Iban blast
 
 [ardougne_teleport]
 type=graphic
@@ -5538,6 +5692,7 @@ y=73
 buttontype=normal
 width=20
 height=20
+overlayer=com_262
 script1op1=inv_count,inventory:inv,waterrune
 script1op2=inv_contains,wornitems:wear,staff_of_water
 script1op3=inv_contains,wornitems:wear,water_battlestaff
@@ -5558,6 +5713,7 @@ y=97
 buttontype=normal
 width=20
 height=20
+overlayer=com_301
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -5578,6 +5734,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_360
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -5597,6 +5754,9 @@ script4op1=stat_level,magic
 script4=gt,65
 graphic=magicoff,41
 activegraphic=magicon,41
+actionverb=Cast on
+actiontarget=npc,player
+action=Vulnerability
 
 [enfeeble]
 type=graphic
@@ -5605,6 +5765,7 @@ y=121
 buttontype=target
 width=20
 height=20
+overlayer=com_392
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -5624,6 +5785,9 @@ script4op1=stat_level,magic
 script4=gt,72
 graphic=magicoff,42
 activegraphic=magicon,42
+actionverb=Cast on
+actiontarget=npc,player
+action=Enfeeble
 
 [com_392]
 type=layer
@@ -5708,8 +5872,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/8
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_399]
 layer=com_392
@@ -5727,8 +5891,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/8
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_400]
 layer=com_392
@@ -5743,8 +5907,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_401]
 type=layer
@@ -5829,8 +5993,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/7
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_408]
 layer=com_401
@@ -5848,8 +6012,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_409]
 layer=com_401
@@ -5864,8 +6028,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [stun]
 type=graphic
@@ -5874,6 +6038,7 @@ y=145
 buttontype=target
 width=20
 height=20
+overlayer=com_411
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -5893,6 +6058,9 @@ script4op1=stat_level,magic
 script4=gt,79
 graphic=magicoff,43
 activegraphic=magicon,43
+actionverb=Cast on
+actiontarget=npc,player
+action=Stun
 
 [com_411]
 type=layer
@@ -5977,8 +6145,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/12
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_418]
 layer=com_411
@@ -5996,8 +6164,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/12
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_419]
 layer=com_411
@@ -6012,8 +6180,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [bind]
 type=graphic
@@ -6022,6 +6190,7 @@ y=25
 buttontype=target
 width=20
 height=20
+overlayer=com_421
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -6038,6 +6207,9 @@ script4op1=stat_level,magic
 script4=gt,19
 graphic=magicoff2,0
 activegraphic=magicon2,0
+actionverb=Cast on
+actiontarget=npc,player
+action=Bind
 
 [com_421]
 type=layer
@@ -6122,8 +6294,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_428]
 layer=com_421
@@ -6141,8 +6313,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_429]
 layer=com_421
@@ -6157,8 +6329,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [snare]
 type=graphic
@@ -6167,6 +6339,7 @@ y=73
 buttontype=target
 width=20
 height=20
+overlayer=com_431
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -6183,6 +6356,9 @@ script4op1=stat_level,magic
 script4=gt,49
 graphic=magicoff2,1
 activegraphic=magicon2,1
+actionverb=Cast on
+actiontarget=npc,player
+action=Snare
 
 [com_431]
 type=layer
@@ -6267,8 +6443,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_438]
 layer=com_431
@@ -6286,8 +6462,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_439]
 layer=com_431
@@ -6302,8 +6478,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [entangle]
 type=graphic
@@ -6312,6 +6488,7 @@ y=145
 buttontype=target
 width=20
 height=20
+overlayer=com_441
 script1op1=inv_count,inventory:inv,earthrune
 script1op2=inv_contains,wornitems:wear,staff_of_earth
 script1op3=inv_contains,wornitems:wear,earth_battlestaff
@@ -6328,6 +6505,9 @@ script4op1=stat_level,magic
 script4=gt,78
 graphic=magicoff2,2
 activegraphic=magicon2,2
+actionverb=Cast on
+actiontarget=npc,player
+action=Entangle
 
 [com_441]
 type=layer
@@ -6412,8 +6592,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_448]
 layer=com_441
@@ -6431,8 +6611,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/5
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_449]
 layer=com_441
@@ -6447,8 +6627,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_450]
 type=layer
@@ -6533,8 +6713,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_457]
 layer=com_450
@@ -6549,8 +6729,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_458]
 layer=com_450
@@ -6568,8 +6748,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_459]
 layer=com_450
@@ -6596,8 +6776,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_461]
 type=layer
@@ -6682,8 +6862,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_468]
 layer=com_461
@@ -6698,8 +6878,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_469]
 layer=com_461
@@ -6717,8 +6897,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_470]
 layer=com_461
@@ -6745,8 +6925,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_472]
 type=layer
@@ -6831,8 +7011,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/4
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_479]
 layer=com_472
@@ -6847,8 +7027,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/2
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_480]
 layer=com_472
@@ -6866,8 +7046,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_481]
 layer=com_472
@@ -6894,8 +7074,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/1
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_483]
 type=layer
@@ -6980,8 +7160,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_490]
 layer=com_483
@@ -6996,8 +7176,8 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
+activecolour=0x00C000
 
 [com_491]
 layer=com_483
@@ -7015,51 +7195,5 @@ center=yes
 font=p11
 shadowed=yes
 text=%1/3
-activecolour=0x00C000
 colour=0xC00000
-
-[Fire Barrage]
-type=graphic
-x=250
-y=250
-width=32
-height=32
-graphic=miscgraphics,0
-
-[test]
-type=text
-x=254
-y=261
-width=32
-height=32
-font=p12
-text=New Text
-
-[fire_barrage1]
-type=graphic
-x=154
-y=134
-buttontype=target
-width=32
-height=32
-graphic=magicoff2,2
-
-[zuriels_will]
-layer=
-type=graphic
-x=74
-y=145
-buttontype=normal
-width=20
-height=20
-graphic=magicoff2,3
-activegraphic=magicon2,3
-option=Cast @gre@Zuriel's Will
-
-[com_493]
-type=layer
-x=250
-y=250
-width=32
-height=32
-overlayer=com_461
+activecolour=0x00C000
