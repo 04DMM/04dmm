@@ -282,3 +282,11 @@ data=members,true
 data=levelrequired,80
 data=runesrequired,firerune,3,bloodrune,3,airrune,3
 data=experience,1800
+
+[magic_spell_zurielswill]
+table=magic_spell_table
+data=spell,^zurielswill
+data=members,true
+data=levelrequired,94
+data=runesrequired,firerune,20,bloodrune,20,airrune,20
+data=experience,3600

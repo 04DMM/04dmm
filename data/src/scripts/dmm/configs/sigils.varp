@@ -97,3 +97,7 @@ type=boolean
 [lasttargetchange]
 type=int
 protect=no
+
+[zurielswill]
+type=int
+protect=no

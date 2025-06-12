@@ -29,10 +29,10 @@ if(%junglepotion_progress < ^junglepotion_get_volencia_moss) {
 ~junglepotion_pick_herb("rock", unidentified_volencia_moss, junglepotion_rock_empty);
 
 [oploc2,junglepotion_wall_fungus]
-if(%junglepotion_progress < ^junglepotion_get_rogues_purse) {
-	mes("Unfortunately, you find nothing of interest.");
-	return;
-}
+//if(%junglepotion_progress < ^junglepotion_get_rogues_purse) {
+//	mes("Unfortunately, you find nothing of interest.");
+//	return;
+//}
 ~junglepotion_pick_herb("wall", unidentified_rogues_purse, null);
 
 [oploc2,junglepotion_rocks]
