@@ -17,11 +17,14 @@ if (npc_stat(hitpoints) = 0) {
 
 // check hit, give combat xp
 def_int $damage = 0;
-if (~player_npc_hit_roll(%damagetype) = true) {
+if (~player_npc_hit_roll(%damagetype) = true | %sigil_melee1_spec = true) {
     def_int $maxhit = %com_maxhit;
-    if (%sigil_melee1 = true) {
-       $maxhit = multiply($maxhit, 2);
-    }
+    
+    if (%sigil_melee1_spec = true) {
+        $maxhit = divide(multiply($maxhit, 5), 4);
+        %sigil_melee1_spec = false;
+    } 
+    
     if (npc_type = count_draynor & inv_total(inv, garlic) > 0) {
         $maxhit = add($maxhit, 1);
     }

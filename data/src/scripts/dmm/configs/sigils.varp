@@ -101,3 +101,12 @@ protect=no
 [zurielswill]
 type=int
 protect=no
+
+[sigil_melee1_spec]
+type=boolean
+protect=no
+
+[obor_spec_cooldown]
+type=int
+protect=no
+

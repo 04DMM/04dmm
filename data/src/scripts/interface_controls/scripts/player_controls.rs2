@@ -33,11 +33,6 @@ if (p_finduid(uid) = true) {
 
 [if_button,controls:com_5]
 if_close;
-if (%sigil_melee1 = true) {
-   mes("You cannot run while Sigil of Obor is active.");
-   return;
-}
-
 
 if (p_finduid(uid) = true) {
     p_clearpendingaction;

@@ -62,7 +62,11 @@
 [opheld1,sigil_range3_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_wc1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_fm1_active] ~deactivate_sigil(last_slot);
-[opheld1,sigil_melee1_active] ~deactivate_sigil(last_slot);
+
+// Obor spec
+[opheld1,sigil_melee1_active] ~use_obor_spec(last_slot);
+[opheld2,sigil_melee1_active] ~deactivate_sigil(last_slot);
+
 [opheld1,sigil_range1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_mage1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_alch1_active] ~deactivate_sigil(last_slot);
@@ -211,7 +215,6 @@
             case sigil_fm1 :
                 %sigil_fm1 = true;
             case sigil_melee1 :
-                p_run(^player_run_off);
                 %sigil_melee1 = true;
             case sigil_range1 :
                 %sigil_range1 = true;
@@ -357,3 +360,22 @@
    }
 }
 
+[proc,use_obor_spec](int $last_slot) {
+  if (%obor_spec_cooldown <= 0 | %obor_spec_cooldown = null) {
+    say("Obor Smash!");
+    anim(human_runecraft, 0);
+    //spotanim_pl(catapultimpact, 92, 3);
+    %sigil_melee1_spec = true;
+    %obor_spec_cooldown = 100;
+    settimer(obor_spec, 1);
+  } else {
+     mes("Obor's ability is still on cooldown.");
+  }
+}
+
+[timer,obor_spec]
+if (%obor_spec_cooldown < 0) {
+  cleartimer(obor_spec);
+} else {
+  %obor_spec_cooldown = sub(%obor_spec_cooldown, 1);
+}

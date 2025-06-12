@@ -26,11 +26,15 @@ p_opplayer(2);
 def_int $damage = 0;
 // not sure if xp multipler exists for us or not?!
 // https://oldschool.runescape.wiki/w/Combat#PvP_bonus_experience
-if (~pvp_hit_roll(%damagetype) = true) {
+
+if (~pvp_hit_roll(%damagetype) = true | %sigil_melee1_spec = true) {
     def_int $maxhit = %com_maxhit;
-    if (%sigil_melee1 = true) {
-      $maxhit = multiply($maxhit, 2);
+
+    if (%sigil_melee1_spec = true) {
+        %sigil_melee1_spec = false;
+        $maxhit = divide(multiply($maxhit, 5), 4);
     }
+
     if (~.check_protect_prayer(^melee_style) = true) {
         $maxhit = scale(6, 10, $maxhit); // reduction of 40%
     }
