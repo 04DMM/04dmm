@@ -13,40 +13,16 @@ if (%flames_of_zamorak_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_t
     return;
 }
 ~pvm_spell_cast($spell_data);
-// Temp comment out for now
-if (false = true) {
-//if (%zurielswill > 0) {
+
+if (%zurielswill > 0) {
  npc_huntall(npc_coord, 1, 0);
  while (npc_huntnext = true) {
-  if (~player_npc_hit_roll(^magic_style) = true) {
-      def_int $maxhit = ~magic_spell_maxhit($spell_data);
-      if (inv_total(worn, zamorak_cape) > 0 & inv_total(worn, zamorak_staff) > 0) {
-          if (npc_stat(magic) = npc_basestat(magic)) { // https://oldschool.runescape.wiki/w/Update:Contact!
-              npc_statsub(magic, 1, 5); // npc_statdrain ?
-          }
-          if (%charge_god_spell > 0) {
-              $maxhit = scale(3, 2, $maxhit);
-          }
-      }
-      ~pvm_spell_success($spell_data, $maxhit, 64);
-  } else {
-      ~pvm_spell_fail($spell_data, 64);
+  if (map_multiway(npc_coord) = true) {
+     ~cast_zamorak_pvm($spell_data);
   }
  }
 } else {
- if (~player_npc_hit_roll(^magic_style) = true) {
-     def_int $maxhit = ~magic_spell_maxhit($spell_data);
-     if (inv_total(worn, zamorak_cape) > 0 & inv_total(worn, zamorak_staff) > 0) {
-         if (npc_stat(magic) = npc_basestat(magic)) { // https://oldschool.runescape.wiki/w/Update>            npc_statsub(magic, 1, 5); // npc_statdrain ?
-         }
-         if (%charge_god_spell > 0) {
-             $maxhit = scale(3, 2, $maxhit);
-         }
-     }
-     ~pvm_spell_success($spell_data, $maxhit, 64);
- } else {
-    ~pvm_spell_fail($spell_data, 64);
- }
+  ~cast_zamorak_pvm($spell_data);
 }
 
 if (%flames_of_zamorak_casts = ^mage_arena_spell_last_cast) {
@@ -56,4 +32,20 @@ if (%flames_of_zamorak_casts = ^mage_arena_spell_last_cast) {
     ~mesbox("Congratulations. Your ability to summon the Flames of Zamorak has|improved. You may now use this spell outside of the Arena.");
 } else if (%flames_of_zamorak_casts < ^mage_arena_spell_last_cast) {
     %flames_of_zamorak_casts = add(%flames_of_zamorak_casts, 1);
+}
+
+[proc,cast_zamorak_pvm](dbrow $spell_data) 
+if (~player_npc_hit_roll(^magic_style) = true) {
+     def_int $maxhit = ~magic_spell_maxhit($spell_data);
+     if (inv_total(worn, zamorak_cape) > 0 & inv_total(worn, zamorak_staff) > 0) {
+         if (npc_stat(magic) = npc_basestat(magic)) { // https://oldschool.runescape.wiki/w/Update>           
+            npc_statsub(magic, 1, 5); //          
+         }
+         if (%charge_god_spell > 0) {
+             $maxhit = scale(3, 2, $maxhit);
+         }
+     }
+   ~pvm_spell_success($spell_data, $maxhit, 64);
+} else {
+   ~pvm_spell_fail($spell_data, 64);
 }

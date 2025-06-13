@@ -17,18 +17,39 @@ if (%flames_of_zamorak_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_t
 ~set_pk_vars;
 ~pvp_spell_cast($spell_data);
 // spell hit
-if (~pvp_hit_roll(^magic_style) = true) {
-    def_int $maxhit = ~magic_spell_maxhit($spell_data);
-    if (inv_total(worn, zamorak_cape) > 0 & inv_total(worn, zamorak_staff) > 0 | inv_total(worn, zurielstaff) > 0) {
-        if (.stat(magic) = .stat_base(magic)) { // https://oldschool.runescape.wiki/w/Update:Contact!
-            .stat_drain(magic, 1, 5);
-            .mes("You feel your magical powers weaken.");
-        }
-        if (%charge_god_spell > 0) {
-            $maxhit = scale(3, 2, $maxhit);
-        }
+if (%zurielswill > 0) {
+
+  huntall(.coord, 1, 0);
+  while (.huntnext = true) {
+   if (map_multiway(.coord) = true) {
+      ~cast_zamorak_pvp($spell_data);
     }
-    ~pvp_spell_success($spell_data, $maxhit, 64);
+  }
+
+  npc_huntall(.coord, 1, 0);
+  while (npc_huntnext = true) {
+    if (map_multiway(npc_coord) = true) {
+     ~cast_zamorak_pvm($spell_data);
+    }
+  }
+
 } else {
-    ~pvp_spell_fail($spell_data, 64);
+  ~cast_zamorak_pvp($spell_data);
 }
+
+[proc,cast_zamorak_pvp](dbrow $spell_data)
+ if (~pvp_hit_roll(^magic_style) = true) {
+     def_int $maxhit = ~magic_spell_maxhit($spell_data);
+     if (inv_total(worn, zamorak_cape) > 0 & inv_total(worn, zamorak_staff) > 0 | inv_total(worn, zurielstaff) > 0) {
+         if (.stat(magic) = .stat_base(magic)) { // https://oldschool.runescape.wiki/w/Update:Contact!
+             .stat_drain(magic, 1, 5);
+             .mes("You feel your magical powers weaken.");
+         }
+         if (%charge_god_spell > 0) {
+             $maxhit = scale(3, 2, $maxhit);
+         }
+     }
+     ~pvp_spell_success($spell_data, $maxhit, 64);
+ } else {
+     ~pvp_spell_fail($spell_data, 64);
+ }
