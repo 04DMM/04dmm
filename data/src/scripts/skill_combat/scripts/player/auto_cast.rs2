@@ -15,6 +15,7 @@
 [if_button,staff_spells:ssb13] ~set_autocast_spell(^water_wave);
 [if_button,staff_spells:ssb14] ~set_autocast_spell(^earth_wave);
 [if_button,staff_spells:ssb15] ~set_autocast_spell(^fire_wave);
+[if_button,staff_spells:ssb16] ~set_autocast_spell(^saradomin_strike);
 
 [label,open_autocast_interface]
 if_close;

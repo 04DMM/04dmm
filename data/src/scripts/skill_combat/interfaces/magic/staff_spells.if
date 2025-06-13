@@ -383,8 +383,8 @@ activegraphic=magicon,37
 // Sara strike autocast
 [ssb16]
 type=graphic
-x=74
-y=168
+x=24
+y=164
 buttontype=normal
 width=20
 height=20
@@ -403,8 +403,8 @@ script3op1=inv_count,inventory:inv,bloodrune
 script3=gt,1
 script4op1=stat_level,magic
 script4=gt,60
-graphic=magicoff,37
-activegraphic=magicon,37
+graphic=magicoff,46
+activegraphic=magicon,46
 
 [com_16]
 type=layer
@@ -2555,8 +2555,8 @@ activecolour=0x00C000
 
 [cancelspell]
 type=text
-x=143
-y=169
+x=148
+y=173
 buttontype=normal
 width=36
 height=14
