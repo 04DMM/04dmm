@@ -16,6 +16,9 @@
 [if_button,staff_spells:ssb14] ~set_autocast_spell(^earth_wave);
 [if_button,staff_spells:ssb15] ~set_autocast_spell(^fire_wave);
 [if_button,staff_spells:ssb16] ~set_autocast_spell(^saradomin_strike);
+[if_button,staff_spells:ssb17] ~set_autocast_spell(^claws_of_guthix);
+[if_button,staff_spells:ssb18] ~set_autocast_spell(^flames_of_zamorak);
+[if_button,staff_spells:ssb19] ~set_autocast_spell(^iban_blast);
 
 [label,open_autocast_interface]
 if_close;
