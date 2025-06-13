@@ -28,11 +28,11 @@ if (p_finduid(uid) = true) {
         mes("gnomeball pitch");
         return;
     }
+    def_obj $previous = inv_getobj(worn, ^wearpos_rhand);
     if (~try_equip($slot) = false) {
         mes("You don't have enough free space to do that.");
         return;
     }
-    def_obj $previous = inv_getobj(worn, ^wearpos_rhand);
     // todo: this needs a better home...
     if (%tutorial_progress < ^tutorial_complete) {
      if (%tutorial_progress = ^combat_instructor_unequipping_items) {
@@ -45,49 +45,37 @@ if (p_finduid(uid) = true) {
         }
     }
 
-    // Save autocast spell if used
     if (oc_category($previous) = weapon_staff & ~player_autocast_enabled = true) {
         %lastautocast_spell = %autocast_spell;
-        mes("Saving previous autocast spell.");
+        //mes("Saving previous autocast spell. <tostring(%lastautocast_spell)>");
     }
 
     ~update_all($previous);
 
     if (oc_category($obj) = weapon_staff & %lastautocast_spell ! null) {
         %iban_staff_charges = 2000;
-        %autocast_spell = %lastautocast_spell;
-        //~set_autocast_spell(%lastautocast_spell);
-        %attackstyle_magic = togglebit(%attackstyle_magic, 0);
-        mes("Autocasting previous spell.");
+        ~set_autocast_spell(%lastautocast_spell);
+        if_close;
+        if (%attackstyle_magic = 0) {
+           mes("You need to choose a spell first."); // https://youtu.be/Mo6AcO4rg4A?t=69
+           return;
+        }
+        if (p_finduid(uid) = true) {
+            %attackstyle_magic = togglebit(%attackstyle_magic, 0);
+            return;
+        }
+        //mes("Autocasting previous spell. <tostring(%autocast_spell)>");
     } else {
-       %autocast_spell = null;
-       //%attackstyle_magic = 0;
+       //%autocast_spell = null;
+       %attackstyle_magic = 0;
     }
-
-    //if (oc_wearpos($obj) = ^wearpos_rhand) {
-    //     %attackstyle_magic = 0;
-    //     %autocast_spell = null;
-    //}
-
-
-    //if ($obj = ibanstaff) {
-    //   ~set_autocast_spell(41);
-    //   %iban_staff_charges = 2000;
-    //   %autocast_spell = 41;
-    //   %attackstyle_magic = 3;
-    //} 
-    
 
     if ($obj = starterbow) {
       mes("You have <tostring(%starterbow_charges)> charges remaining on your Starter bow.");
     }
 
     if ($obj = starterstaff) {
-      //%magearena = ^mage_arena_staff_given;
-      //%flames_of_zamorak_casts = ^mage_arena_spell_finished;
       mes("You have <tostring(%starterstaff_charges)> charges remaining on your Starter staff.");
-      //%attackstyle_magic = 3;
-      //%autocast_spell = ^fire_strike;
     }
 }
 
@@ -112,7 +100,7 @@ if (p_finduid(uid) = true) {
      // Save autocast spell if used
     if (oc_category($obj) = weapon_staff) {
         %lastautocast_spell = %autocast_spell;
-        mes("Saving previous autocast spell.");
+        //mes("Saving previous autocast spell. <tostring(%lastautocast_spell)>");
     }
 
     inv_moveitem(worn, inv, $obj, sub($count, $overflow));

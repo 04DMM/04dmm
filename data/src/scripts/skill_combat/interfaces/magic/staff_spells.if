@@ -2671,7 +2671,7 @@ height=68
 center=yes
 font=p12
 shadowed=yes
-text=Level 60 : Claws of Guthix (autocast)
+text=Level 60 : Claws of Guthix
 colour=0xFFF000
 
 [com_187]
@@ -2715,7 +2715,7 @@ height=68
 center=yes
 font=p12
 shadowed=yes
-text=Level 60 : Flames of Zamorak (autocast)
+text=Level 60 : Flames of Zamorak
 colour=0xFFF000
 
 [com_197]
@@ -2759,7 +2759,7 @@ height=68
 center=yes
 font=p12
 shadowed=yes
-text=Level 50 : Iban's Blast (autocast)
+text=Level 50 : Iban's Blast
 colour=0xFFF000
 
 [com_207]
