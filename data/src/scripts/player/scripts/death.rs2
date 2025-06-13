@@ -18,49 +18,42 @@ p_delay(3);
 
 [proc,wipe_stats]
 
-if (%sigil_life1 = true) {
-   mes("Your Sigil of Life protects your skills.");
-   if (inv_total(inv, sigil_life1_active) > 0) {
-       %sigil_life1 = false;
-       inv_del(inv, sigil_life1_active, 1);
-   } else if (inv_total(bank, sigil_life1_active) > 0) {
-       %sigil_life1 = false;
-       inv_del(bank, sigil_life1_active, 1);
-   }
-   // Just in case
-   %sigil_life1 = false;
-} else {  
-     def_int $i = 0;
-     while ($i <= enum_getoutputcount(stats)) {
-      def_stat $stat = enum(int, stat, stats, $i);
+//if (%sigil_life1 = true) {
+//   mes("Your Sigil of Life protects your bank.");
+//   if (inv_total(inv, sigil_life1_active) > 0) {
+//       %sigil_life1 = false;
+//       inv_del(inv, sigil_life1_active, 1);
+//   } else if (inv_total(bank, sigil_life1_active) > 0) {
+//       %sigil_life1 = false;
+//      inv_del(bank, sigil_life1_active, 1);
+//   }
+//   // Just in case
+//   %sigil_life1 = false;
+//} else {  
 
+def_int $i = 0;
+ while ($i <= enum_getoutputcount(stats)) {
+ def_stat $stat = enum(int, stat, stats, $i);
+  
+ stat_wipe($stat);
     
-      stat_wipe($stat);
-    
-      $i = calc($i + 1);
-     }
+ $i = calc($i + 1);
 }
 
 //stat_advance(hitpoints, 1154);
 
 [proc,reset_wipe]
-~wipe_stats;
-//~reset_all_quests;
-//inv_clear(bank);
-//inv_clear(inv);
-//inv_clear(worn);
+
+if (%pk_skull > 0) {
+   ~wipe_stats;
+   mes("Dying while skulled has reduced half of your XP.");
+}
 
 p_teleport(0_48_48_22_35);
 
-//%thieving_stall_timer = 0;
 %cat_growth = 0;
 %follower_obj = null;
 %follower_uid = null;
-//%handelmort_traps_disabled = 0;
-//%thread_used = 0;
-//%magearena = 0;
-//%bunny_ears_unlocked = 0;
-//%scythe_unlocked = 0;
 %tutorial_progress = 0;
 
 p_logout;
@@ -93,13 +86,14 @@ p_stopaction;
 
 ~stat_reset_all;
 healenergy(10000);
-~clear_pk_skull;
 ~clear_poison;
 ~update_all($prev_wep);
 ~initalltabs;
 // todo: end poison timer ~player_end_poison
 
 ~reset_wipe;
+
+~clear_pk_skull;
 
 
 [proc,player_death_lose_items]
