@@ -37,3 +37,25 @@ iop2=Close
 iop5=Destroy
 param=no_alchemy,1
 tradeable=no
+
+[depositbox]
+name=Safety Deposit Box
+desc=Useful for keeping items safe on death.
+model=model_2348_obj
+recol1s=32767
+recol1d=0
+recol2s=11456
+recol2d=32640
+manwear=model_488_obj_wear,0
+womanwear=model_488_obj_wear,0
+2dxof=1
+2dyof=-10
+2dzoom=660
+2dyan=1968
+2dxan=196
+weight=35g
+tradeable=no
+param=no_alchemy,1
+iop2=View
+iop3=Empty
+iop5=Destroy

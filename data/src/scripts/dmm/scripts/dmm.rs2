@@ -7,6 +7,75 @@
 [opheld2,lootbucket_open] ~close_lootbucket(last_slot);
 [opheld5,lootbucket_open] ~destroy_lootbucket(last_slot);
 
+// Depo box 
+[opheld2,depositbox] ~view_depositbox(last_slot);
+[opheld3,depositbox] ~empty_depositbox(last_slot);
+[opheld5,depositbox] ~destroy_depositbox(last_slot);
+
+//Deposit Box
+[opheldu,depositbox]
+if (~inzone_coord_pair_table(bank_zones, coord) = false) {
+   mes("You can't deposit items into this outside of a bank.");
+   return;
+}
+
+if (oc_stackable(last_useitem) = true) {
+   mes("You can't place stackable items in the deposit box.");
+   return;
+}
+
+if (oc_tradeable(last_useitem) = false) {
+   mes("You can't place untradeable items in the deposit box.");
+   return;
+}
+
+if (inv_freespace(depositbox) > 0) {
+   inv_moveitem(inv, depositbox, last_useitem, 1);
+   mes("You have <tostring(inv_freespace(depositbox))> slots in your safety box.");
+} else {
+   mes("Your deposit box is full.");
+}
+
+[proc,view_depositbox](int $last_slot)
+inv_transmit(inv, bank_side:inv);
+inv_transmit(depositbox, bank_main:inv);
+if_openmain_side(bank_main, bank_side);
+
+[proc,empty_depositbox](int $last_slot)
+if (~inzone_coord_pair_table(bank_zones, coord) = true) {
+  mes("You take what you can from your deposit box.");
+  def_int $bucketsize = inv_size(depositbox);
+  def_int $i = 0;
+  while ($i < $bucketsize) {
+   if (inv_getnum(depositbox, $i) > 0) {
+      def_obj $lobj = inv_getobj(depositbox, $i);
+      def_int $lobj_count = inv_total(depositbox, $lobj);
+      if (inv_freespace(inv) > 0) {
+         inv_moveitem(depositbox,inv,$lobj,$lobj_count);
+      }
+   }
+   $i = calc($i + 1);
+  }
+} else {
+  mes("You can't access your deposit box outside of a safe zone.");
+}
+
+[proc,destroy_depositbox](int $last_slot)
+if (~inzone_coord_pair_table(bank_zones, coord) = false) {
+  mes("You can't destroy a deposit box outside the safe zone.");
+  return;
+}
+
+def_int $choice = ~p_choice2_header("Yes", 1, "No", 2, "Are you sure? This will be destroyed");
+
+if ($choice = 1) {
+ inv_delslot(inv, $last_slot);
+ inv_clear(depositbox);
+} else if ($choice = 2) {
+ return;
+}
+
+
 [opheldu,lootbucket]
 mes("The loot bucket is not open.");
 
@@ -59,8 +128,8 @@ if (~inzone_coord_pair_table(bank_zones, coord) = false) {
 
 def_int $choice = ~p_choice2_header("Yes", 1, "No", 2, "Are you sure? This will be destroyed.");
 if ($choice = 1) {
- inv_delslot(inv, $last_slot);  
- inv_clear(lootbucket);
+  inv_delslot(inv, $last_slot);  
+  inv_clear(lootbucket);
 } else if ($choice = 2) {
- return;
+  return;
 }
