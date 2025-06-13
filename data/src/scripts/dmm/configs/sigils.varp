@@ -110,3 +110,10 @@ protect=no
 type=int
 protect=no
 
+[lastattackstyle_magic]
+type=int
+scope=perm
+
+[lastautocast_spell]
+type=int
+scope=perm

@@ -45,19 +45,37 @@ if (p_finduid(uid) = true) {
         }
     }
 
-    ~update_all($previous);
-
-    if (oc_wearpos($obj) = ^wearpos_rhand) {
-         %attackstyle_magic = 0;
-         %autocast_spell = null;
+    // Save autocast spell if used
+    if (oc_category($previous) = weapon_staff & ~player_autocast_enabled = true) {
+        %lastautocast_spell = %autocast_spell;
+        mes("Saving previous autocast spell.");
     }
 
-    if ($obj = ibanstaff) {
-       ~set_autocast_spell(41);
-       %iban_staff_charges = 2000;
-       %autocast_spell = 41;
-       %attackstyle_magic = 3;
-    } 
+    ~update_all($previous);
+
+    if (oc_category($obj) = weapon_staff & %lastautocast_spell ! null) {
+        %iban_staff_charges = 2000;
+        %autocast_spell = %lastautocast_spell;
+        //~set_autocast_spell(%lastautocast_spell);
+        %attackstyle_magic = togglebit(%attackstyle_magic, 0);
+        mes("Autocasting previous spell.");
+    } else {
+       %autocast_spell = null;
+       //%attackstyle_magic = 0;
+    }
+
+    //if (oc_wearpos($obj) = ^wearpos_rhand) {
+    //     %attackstyle_magic = 0;
+    //     %autocast_spell = null;
+    //}
+
+
+    //if ($obj = ibanstaff) {
+    //   ~set_autocast_spell(41);
+    //   %iban_staff_charges = 2000;
+    //   %autocast_spell = 41;
+    //   %attackstyle_magic = 3;
+    //} 
     
 
     if ($obj = starterbow) {
@@ -68,8 +86,8 @@ if (p_finduid(uid) = true) {
       //%magearena = ^mage_arena_staff_given;
       //%flames_of_zamorak_casts = ^mage_arena_spell_finished;
       mes("You have <tostring(%starterstaff_charges)> charges remaining on your Starter staff.");
-      %attackstyle_magic = 3;
-      %autocast_spell = ^fire_strike;
+      //%attackstyle_magic = 3;
+      //%autocast_spell = ^fire_strike;
     }
 }
 
@@ -83,17 +101,20 @@ if (p_finduid(uid) = true) {
         mes("You feel it would be cheating to put the ball in your pack whilst on the pitch.");
         return;
     }
-    if ($obj = ibanstaff) {
-       %attackstyle_magic = 0;
-       %autocast_spell = null;
-    }
-
+    
     def_int $count = inv_getnum(worn, $slot);
     def_int $overflow = inv_itemspace2(inv, $obj, $count, inv_size(inv));
     if ($overflow >= $count) {
         mes("You don't have enough free space to do that.");
         return;
     }
+
+     // Save autocast spell if used
+    if (oc_category($obj) = weapon_staff) {
+        %lastautocast_spell = %autocast_spell;
+        mes("Saving previous autocast spell.");
+    }
+
     inv_moveitem(worn, inv, $obj, sub($count, $overflow));
     ~update_all($obj);
 }

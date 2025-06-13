@@ -38,6 +38,7 @@ if_close;
 if (p_finduid(uid) = true) {
     def_dbrow $spell_data = ~get_spell_data($spell);
     if (~check_spell_requirements($spell_data) = false) {
+        mes("You don't meet the requirements to autocast this spell.");
         return;
     }
     // set auto cast varp
@@ -47,6 +48,8 @@ if (p_finduid(uid) = true) {
     if_settext(combat_staff_2:auto_spell, db_getfield($spell_data, magic_spell_table:name, 0));
 
     ~initalltabs;
+} else {
+   mes("Could not find player.");
 }
 
 [proc,player_autocast_enabled]()(boolean)

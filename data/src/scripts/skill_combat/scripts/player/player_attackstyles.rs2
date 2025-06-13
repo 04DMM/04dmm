@@ -102,6 +102,7 @@ if ($previous = null | $obj = null | oc_category($previous) ! oc_category($obj))
     %attackstyle_magic = 0;
     %autocast_spell = null;
 }
+
 if (~inzone_coord_pair_table(gnomeball_zones, coord) = true) {
     if_settab(gnomeball, 0);
     return;
