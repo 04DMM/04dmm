@@ -1,0 +1,66 @@
+//Lootbucket 
+[opheld2,lootbucket] ~open_lootbucket(last_slot);
+[opheld3,lootbucket] ~empty_lootbucket(last_slot);
+[opheld5,lootbucket] ~destroy_lootbucket(last_slot);
+
+//Lootbucket open
+[opheld2,lootbucket_open] ~close_lootbucket(last_slot);
+[opheld5,lootbucket_open] ~destroy_lootbucket(last_slot);
+
+[opheldu,lootbucket]
+mes("The loot bucket is not open.");
+
+[opheldu,lootbucket_open]
+if (inv_freespace(lootbucket) > 0) {
+  def_int $total = inv_total(inv, last_useitem);
+  def_int $count = 1;
+  if (oc_stackable(last_useitem) = true) {
+      $count = $total;
+  } 
+  inv_moveitem(inv, lootbucket, last_useitem, $count);
+} else {
+  mes("Your lootbucket is full!");
+}
+
+[proc,empty_lootbucket](int $last_slot)
+if (~inzone_coord_pair_table(bank_zones, coord) = true) {
+  mes("You take what you can from your loot bucket.");
+  def_int $bucketsize = inv_size(lootbucket);
+  def_int $i = 0;
+  while ($i < $bucketsize) {
+   if (inv_getnum(lootbucket, $i) > 0) {
+      def_obj $lobj = inv_getobj(lootbucket, $i);
+      def_int $lobj_count = inv_total(lootbucket, $lobj);
+      if (inv_freespace(inv) > 0) {
+         inv_moveitem(lootbucket,inv,$lobj,$lobj_count);
+      }
+   }
+   $i = calc($i + 1);
+  }
+} else {
+  mes("You can't access your loot bucket outside of a safe zone.");
+}
+
+[proc,open_lootbucket](int $last_slot)
+def_obj $obj = inv_getobj(inv, $last_slot);
+inv_del(inv, $obj, 1);
+inv_add(inv, oc_param($obj, next_obj_stage), 1);
+
+[proc,close_lootbucket](int $last_slot)
+def_obj $obj = inv_getobj(inv, $last_slot);
+inv_del(inv, $obj, 1);
+inv_add(inv, oc_param($obj, next_obj_stage), 1);
+
+[proc,destroy_lootbucket](int $last_slot)
+if (~inzone_coord_pair_table(bank_zones, coord) = false) {
+  mes("You can't destroy a loot bucket outside the safe zone.");
+  return;
+} 
+
+def_int $choice = ~p_choice2_header("Yes", 1, "No", 2, "Are you sure? This will be destroyed.");
+if ($choice = 1) {
+ inv_delslot(inv, $last_slot);  
+ inv_clear(lootbucket);
+} else if ($choice = 2) {
+ return;
+}

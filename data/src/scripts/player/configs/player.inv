@@ -20,3 +20,13 @@ protect=no
 
 [deathkeep]
 size=4
+
+[depositbox]
+size=10
+scope=perm
+
+[lootbucket]
+size=28
+scope=perm
+runweight=yes
+protect=no

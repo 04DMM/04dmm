@@ -115,6 +115,14 @@ return(false);
 // experience lamps, quest items, etc.
 [proc,bank_find_obj_unbankable](obj $obj)(boolean)
 switch_obj ($obj) {
+    case lootbucket : 
+         if (inv_freespace(lootbucket) ! 28) {
+            return(false);
+         } else {
+            mes("You can't bank a loot bucket with items inside.");
+            return(true);
+         }
+    case lootbucket_open : return(true);
     case macro_genilamp : return(true); // cant bank xp lamps
     case default : return(false);
 }

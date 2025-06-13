@@ -2957,3 +2957,7 @@
 
 2947=sigil_melee4
 2948=sigil_melee4_active
+
+//Lootbucket
+2949=lootbucket
+2950=lootbucket_open
