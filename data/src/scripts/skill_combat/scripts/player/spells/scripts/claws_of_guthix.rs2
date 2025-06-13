@@ -44,6 +44,10 @@ if (~player_npc_hit_roll(^magic_style) = true) {
             $maxhit = scale(3, 2, $maxhit);
         }
     }
+
+    if (~pvm_freeze_allowed($spell_data) = true & %zurielswill > 0) {
+       ~pvm_freeze_effect($spell_data);
+    }
     ~pvm_spell_success($spell_data, $maxhit, 64);
 } else {
     ~pvm_spell_fail($spell_data, 64);
