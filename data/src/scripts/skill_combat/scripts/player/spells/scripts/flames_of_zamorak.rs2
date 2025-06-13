@@ -14,16 +14,17 @@ if (%flames_of_zamorak_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_t
 }
 ~pvm_spell_cast($spell_data);
 
-if (%zurielswill > 0) {
+if (%zurielswill > 0 & map_multiway(npc_coord) = true) {
  npc_huntall(npc_coord, 1, 0);
  while (npc_huntnext = true) {
   if (map_multiway(npc_coord) = true) {
      ~cast_zamorak_pvm($spell_data);
   }
  }
-} else {
-  ~cast_zamorak_pvm($spell_data);
-}
+} 
+
+~cast_zamorak_pvm($spell_data);
+
 
 if (%flames_of_zamorak_casts = ^mage_arena_spell_last_cast) {
     // https://youtu.be/cX7x62vqRV0?list=PLn23LiLYLb1Y4vxMPWXM-CVEvOUfuAP_o&t=439

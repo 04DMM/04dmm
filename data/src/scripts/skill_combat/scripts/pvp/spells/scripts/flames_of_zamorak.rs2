@@ -17,7 +17,7 @@ if (%flames_of_zamorak_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_t
 ~set_pk_vars;
 ~pvp_spell_cast($spell_data);
 // spell hit
-if (%zurielswill > 0) {
+if (%zurielswill > 0 & map_multiway(.coord) = true) {
 
   huntall(.coord, 1, 0);
   while (.huntnext = true) {

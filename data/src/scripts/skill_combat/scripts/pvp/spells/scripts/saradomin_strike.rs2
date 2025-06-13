@@ -17,7 +17,7 @@ if (%saradomin_strike_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_ta
 ~pvp_spell_cast($spell_data);
 
 
-if (%zurielswill > 0) {
+if (%zurielswill > 0 & map_multiway(.coord) = true) {
   huntall(.coord, 1, 0);
   while (.huntnext = true) {
    if (map_multiway(.coord) = true) {

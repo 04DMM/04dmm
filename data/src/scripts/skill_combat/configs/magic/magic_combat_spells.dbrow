@@ -470,6 +470,7 @@ data=sound_fail,saradomin_strike_fail
 data=continue_by_autocast,true
 data=maxhit,20
 data=stat_change,prayer,-1,0
+data=freeze_time,32
 
 [magic_spell_claws_of_guthix]
 table=magic_spell_table
@@ -489,6 +490,7 @@ data=sound_fail,claws_of_guthix_fail
 data=continue_by_autocast,true
 data=maxhit,20
 data=stat_change,defence,-1,-5
+data=freeze_time,32
 
 [magic_spell_flames_of_zamorak]
 table=magic_spell_table
@@ -508,6 +510,7 @@ data=sound_fail,flames_of_zamorak_fail
 data=continue_by_autocast,true
 data=maxhit,20
 data=stat_change,magic,-1,-5
+data=freeze_time,32
 
 [magic_spell_iban_blast]
 table=magic_spell_table
