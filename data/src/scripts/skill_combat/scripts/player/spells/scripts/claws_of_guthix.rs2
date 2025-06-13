@@ -14,6 +14,26 @@ if (%claws_of_guthix_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_tab
 }
 ~pvm_spell_cast($spell_data);
 
+if (%zurielswill > 0) {
+   npc_huntall(npc_coord, 1, 0);
+   while (npc_huntnext = true) {
+      if (map_multiway(npc_coord) = true) {
+          ~cast_guthix_pvm($spell_data);
+      }
+   } 
+} else {
+   ~cast_guthix_pvm($spell_data);
+}
+
+if (%claws_of_guthix_casts = ^mage_arena_spell_last_cast) {
+    mes("You can now cast Claws of Guthix outside the Arena.");
+    %claws_of_guthix_casts = ^mage_arena_spell_finished;
+    ~mesbox("Congratulations. Your ability to summon the Claws of Guthix has|improved. You may now use this spell outside of the Arena.");
+} else if (%claws_of_guthix_casts < ^mage_arena_spell_last_cast) {
+    %claws_of_guthix_casts = add(%claws_of_guthix_casts, 1);
+}
+
+[proc,cast_guthix_pvm](dbrow $spell_data)
 if (~player_npc_hit_roll(^magic_style) = true) {
     def_int $maxhit = ~magic_spell_maxhit($spell_data);
     if (inv_total(worn, guthix_cape) > 0 & inv_total(worn, guthix_staff) > 0) {
@@ -27,11 +47,4 @@ if (~player_npc_hit_roll(^magic_style) = true) {
     ~pvm_spell_success($spell_data, $maxhit, 64);
 } else {
     ~pvm_spell_fail($spell_data, 64);
-}
-if (%claws_of_guthix_casts = ^mage_arena_spell_last_cast) {
-    mes("You can now cast Claws of Guthix outside the Arena.");
-    %claws_of_guthix_casts = ^mage_arena_spell_finished;
-    ~mesbox("Congratulations. Your ability to summon the Claws of Guthix has|improved. You may now use this spell outside of the Arena.");
-} else if (%claws_of_guthix_casts < ^mage_arena_spell_last_cast) {
-    %claws_of_guthix_casts = add(%claws_of_guthix_casts, 1);
 }

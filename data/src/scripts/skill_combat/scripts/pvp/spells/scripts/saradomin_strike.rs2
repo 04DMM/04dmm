@@ -15,6 +15,29 @@ if (%saradomin_strike_casts < ^mage_arena_spell_finished & ~inzone_coord_pair_ta
 
 ~set_pk_vars;
 ~pvp_spell_cast($spell_data);
+
+
+if (%zurielswill > 0) {
+  huntall(.coord, 1, 0);
+  while (.huntnext = true) {
+   if (map_multiway(.coord) = true) {
+      ~cast_saradomin_pvp($spell_data);
+    }
+  }
+
+  npc_huntall(.coord, 1, 0);
+  while (npc_huntnext = true) {
+    if (map_multiway(npc_coord) = true) {
+     ~cast_saradomin_pvm($spell_data);
+    }
+  }
+
+} else {
+  ~cast_saradomin_pvp($spell_data);
+}
+
+[proc,cast_saradomin_pvp](dbrow $spell_data)
+
 // spell hit
 if (~pvp_hit_roll(^magic_style) = true) {
     def_int $maxhit = ~magic_spell_maxhit($spell_data);
