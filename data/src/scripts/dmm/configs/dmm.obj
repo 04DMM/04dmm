@@ -16,6 +16,7 @@ param=next_obj_stage,lootbucket_open
 iop2=Open
 iop3=Empty
 iop5=Destroy
+tradeable=no
 
 [lootbucket_open]
 name=Looting Bucket (o)

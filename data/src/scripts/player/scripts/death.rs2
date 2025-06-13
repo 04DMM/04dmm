@@ -183,6 +183,7 @@ inv_clear(inv);
 ~moveallinv(deathkeep, inv);
 inv_clear(deathkeep);
 inv_clear(worn);
+inv_clear(lootbucket);
 
 [softtimer,pvpimmunity_timer] 
 if (%pvpimmunity = 0) {
@@ -272,6 +273,36 @@ while ($i < $size) {
     $i = calc($i + 1);
 }
 
+// Give lootbucket contents
+$i = 0;
+$size = inv_size(lootbucket);
+while ($i < $size) {
+    if (inv_getnum(lootbucket, $i) > 0) {
+        def_obj $iobj = inv_getobj(lootbucket, $i);
+        //if ($iobj ! null) {
+        if (oc_category(inv_getobj(lootbucket, $i)) = armour_godcape) {
+            mes(oc_param(inv_getobj(lootbucket, $i), lose_cape_message));
+            inv_delslot(lootbucket, $i);
+        } else if (oc_tradeable($iobj) = false) {
+            inv_moveitem(lootbucket,deathkeep,$iobj, 1);
+        } else {
+            // Change so that items only show for the person that killed you
+            //both_dropslot(worn, coord, $i, ^lootdrop_duration);
+            def_obj $item = inv_getobj(lootbucket, $i);
+            def_int $total = inv_total(lootbucket, $item);
+            if (~is_starter_kit_item($item) = true) {
+
+            } else {
+              //both_dropslot(worn, coord, $i, ^lootdrop_duration);
+              inv_delslot(lootbucket, $i);
+              .obj_add(coord, $item, $total, ^lootdrop_duration);
+            }
+        }
+        //}
+    }
+    $i = calc($i + 1);
+}
+
 
 if (%sigil_life1 = true) {
    mes("Your Sigil of Life protects your bank.");
@@ -328,8 +359,8 @@ if (%sigil_life1 = true) {
 .obj_add(coord, bones, 1, ^lootdrop_duration);
 
 ~moveallinv(deathkeep, inv);
+inv_clear(lootbucket);
 inv_clear(deathkeep);
-
 
 [proc,is_starter_kit_item](obj $item)(boolean)
 if ($item = starterkit | $item = tuna | $item = starterstaff | $item = startersword | $item = starterbow) {
