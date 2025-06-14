@@ -25,6 +25,16 @@
 [opheld1,sigil_range4] ~activate_sigil(last_slot);
 [opheld1,sigil_mage4] ~activate_sigil(last_slot);
 
+// New sigil activation bindings
+[opheld1,sigil_smith2] ~activate_sigil(last_slot);
+[opheld1,sigil_mining2] ~activate_sigil(last_slot);
+[opheld1,sigil_wc2] ~activate_sigil(last_slot);
+[opheld1,sigil_herblore2] ~activate_sigil(last_slot);
+[opheld1,sigil_rc3] ~activate_sigil(last_slot);
+[opheld1,sigil_fishing2] ~activate_sigil(last_slot);
+[opheld1,sigil_cooking1] ~activate_sigil(last_slot);
+[opheld1,sigil_agility2] ~activate_sigil(last_slot);
+
 // Sigil destroy bindings (active forms)
 [opheld5,sigil_herb1_active] ~destroy_sigil(last_slot);
 [opheld5,sigil_prayer1_active] ~destroy_sigil(last_slot);
@@ -52,6 +62,16 @@
 [opheld5,sigil_life1_active] ~destroy_sigil(last_slot);
 [opheld5,sigil_bananas1_active] ~destroy_sigil(last_slot);
 
+// New sigil destroy bindings (active forms)
+[opheld5,sigil_smith2_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_mining2_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_wc2_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_herblore2_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_rc3_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_fishing2_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_cooking1_active] ~destroy_sigil(last_slot);
+[opheld5,sigil_agility2_active] ~destroy_sigil(last_slot);
+
 // Sigil deactivation bindings
 [opheld1,sigil_herb1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_prayer1_active] ~deactivate_sigil(last_slot);
@@ -62,6 +82,16 @@
 [opheld1,sigil_range3_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_wc1_active] ~deactivate_sigil(last_slot);
 [opheld1,sigil_fm1_active] ~deactivate_sigil(last_slot);
+
+// New sigil deactivation bindings
+[opheld1,sigil_smith2_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_mining2_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_wc2_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_herblore2_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_rc3_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_fishing2_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_cooking1_active] ~deactivate_sigil(last_slot);
+[opheld1,sigil_agility2_active] ~deactivate_sigil(last_slot);
 
 // Obor spec
 [opheld1,sigil_melee1_active] ~use_obor_spec(last_slot);
@@ -145,6 +175,24 @@
             %sigil_defence1 = false;
             ~update_bonuses;
             ~player_combat_stat;
+
+        // New sigil destroy state reset
+        case sigil_smith2_active :
+            %sigil_smith2 = false;
+        case sigil_mining2_active :
+            %sigil_mining2 = false;
+        case sigil_wc2_active :
+            %sigil_wc2 = false;
+        case sigil_herblore2_active :
+            %sigil_herblore2 = false;
+        case sigil_rc3_active :
+            %sigil_rc3 = false;
+        case sigil_fishing2_active :
+            %sigil_fishing2 = false;
+        case sigil_cooking1_active :
+            %sigil_cooking1 = false;
+        case sigil_agility2_active :
+            %sigil_agility2 = false;
     }
      
      inv_delslot(inv, $last_slot);
@@ -222,6 +270,24 @@
                 %sigil_mage1 = true;
             case sigil_alch1 :
                 %sigil_alch1 = true;
+
+            // New sigils
+            case sigil_smith2 :
+                %sigil_smith2 = true;
+            case sigil_mining2 :
+                %sigil_mining2 = true;
+            case sigil_wc2 :
+                %sigil_wc2 = true;
+            case sigil_herblore2 :
+                %sigil_herblore2 = true;
+            case sigil_rc3 :
+                %sigil_rc3 = true;
+            case sigil_fishing2 :
+                %sigil_fishing2 = true;
+            case sigil_cooking1 :
+                %sigil_cooking1 = true;
+            case sigil_agility2 :
+                %sigil_agility2 = true;
         }
 
         anim(human_runecraft, 0);
@@ -291,6 +357,24 @@
             %sigil_defence1 = false;
             ~update_bonuses;
             ~player_combat_stat;
+
+        // New sigils
+        case sigil_smith2_active :
+            %sigil_smith2 = false;
+        case sigil_mining2_active :
+            %sigil_mining2 = false;
+        case sigil_wc2_active :
+            %sigil_wc2 = false;
+        case sigil_herblore2_active :
+            %sigil_herblore2 = false;
+        case sigil_rc3_active :
+            %sigil_rc3 = false;
+        case sigil_fishing2_active :
+            %sigil_fishing2 = false;
+        case sigil_cooking1_active :
+            %sigil_cooking1 = false;
+        case sigil_agility2_active :
+            %sigil_agility2 = false;
     }
 
         anim(human_runecraft, 0);
@@ -326,6 +410,16 @@
     if (%sigil_mage1 = true) { $count = calc($count + 1); }
     if (%sigil_alch1 = true) { $count = calc($count + 1); }
     if (%sigil_defence1 = true) { $count = calc($count + 1); }
+
+    // New sigils
+    if (%sigil_smith2 = true) { $count = calc($count + 1); }
+    if (%sigil_mining2 = true) { $count = calc($count + 1); }
+    if (%sigil_wc2 = true) { $count = calc($count + 1); }
+    if (%sigil_herblore2 = true) { $count = calc($count + 1); }
+    if (%sigil_rc3 = true) { $count = calc($count + 1); }
+    if (%sigil_fishing2 = true) { $count = calc($count + 1); }
+    if (%sigil_cooking1 = true) { $count = calc($count + 1); }
+    if (%sigil_agility2 = true) { $count = calc($count + 1); }
     //mes("Active sigil count <tostring($count)>");
     return($count);
 }
@@ -359,6 +453,7 @@
        settimer(sigil_cannon_rotate, 1, 0);
    }
 }
+
 
 [proc,use_obor_spec](int $last_slot) {
   if (%obor_spec_cooldown <= 0 | %obor_spec_cooldown = null) {

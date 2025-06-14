@@ -1,0 +1,135 @@
+[sigil_smith2]
+name=Sigil of the Smith
+desc=Increased Smithing efficiency.
+cost=1000000
+model=model_2760_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_smith2_active
+param=no_alchemy,1
+
+[sigil_mining2]
+name=Sigil of the Miner
+desc=Increased Mining efficiency.
+cost=1000000
+model=model_2761_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_mining2_active
+param=no_alchemy,1
+
+[sigil_wc2]
+name=Sigil of the Woodcutter
+desc=Increased Woodcutting efficiency.
+cost=1000000
+model=model_2762_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_wc2_active
+param=no_alchemy,1
+
+[sigil_herblore2]
+name=Sigil of the Herbalist
+desc=Increased Herblore efficiency.
+cost=1000000
+model=model_2763_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_herblore2_active
+param=no_alchemy,1
+
+[sigil_rc3]
+name=Sigil of Rune Crafting
+desc=Increased Runecrafting efficiency.
+cost=1000000
+model=model_2764_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_rc3_active
+param=no_alchemy,1
+
+[sigil_fishing2]
+name=Sigil of the Angler
+desc=Increased Fishing efficiency.
+cost=1000000
+model=model_2765_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_fishing2_active
+param=no_alchemy,1
+
+[sigil_cooking1]
+name=Sigil of the Chef
+desc=Increased Cooking efficiency.
+cost=1000000
+model=model_2766_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_cooking1_active
+param=no_alchemy,1
+
+[sigil_agility2]
+name=Sigil of the Acrobat
+desc=Increased Agility efficiency.
+cost=1000000
+model=model_2767_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Tap
+param=next_obj_stage,sigil_agility2_active
+param=no_alchemy,1

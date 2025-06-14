@@ -1,0 +1,135 @@
+[sigil_smith2_active]
+name=Sigil of the Smith (Active)
+desc=Increased Smithing efficiency. (Active)
+cost=0
+model=model_2760_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_smith2
+param=no_alchemy,1
+
+[sigil_mining2_active]
+name=Sigil of the Miner (Active)
+desc=Increased Mining efficiency. (Active)
+cost=0
+model=model_2761_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_mining2
+param=no_alchemy,1
+
+[sigil_wc2_active]
+name=Sigil of the Woodcutter (Active)
+desc=Increased Woodcutting efficiency. (Active)
+cost=0
+model=model_2762_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_wc2
+param=no_alchemy,1
+
+[sigil_herblore2_active]
+name=Sigil of the Herbalist (Active)
+desc=Increased Herblore efficiency. (Active)
+cost=0
+model=model_2763_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_herblore2
+param=no_alchemy,1
+
+[sigil_rc3_active]
+name=Sigil of Rune Crafting (Active)
+desc=Increased Runecrafting efficiency. (Active)
+cost=0
+model=model_2764_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_rc3
+param=no_alchemy,1
+
+[sigil_fishing2_active]
+name=Sigil of the Angler (Active)
+desc=Increased Fishing efficiency. (Active)
+cost=0
+model=model_2765_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_fishing2
+param=no_alchemy,1
+
+[sigil_cooking1_active]
+name=Sigil of the Chef (Active)
+desc=Increased Cooking efficiency. (Active)
+cost=0
+model=model_2766_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_cooking1
+param=no_alchemy,1
+
+[sigil_agility2_active]
+name=Sigil of the Acrobat (Active)
+desc=Increased Agility efficiency. (Active)
+cost=0
+model=model_2767_obj
+2dxof=-2
+2dyof=3
+2dzoom=580
+2dyan=156
+2dxan=444
+weight=12g
+members=yes
+tradeable=no
+iop1=Deactivate
+param=next_obj_stage,sigil_agility2
+param=no_alchemy,1
