@@ -127,11 +127,24 @@ if (stat_random(woodcutting, $tree_chance_low, $tree_chance_high) = true) {
     def_namedobj $product = db_getfield($data, woodcutting_trees:product, 0);
     mes("You get some <lowercase(oc_name($product))>.");
     stat_advance(woodcutting, db_getfield($data, woodcutting_trees:productexp, 0));
+    def_int $nestrand = random(256);
+    def_boolean $pass = false;
+    if ($nestrand = 0) {
+       $pass = true;
+    }
+
     if (%sigil_wc1 = true) {
        inv_add(inv, oc_cert($product), multiply(1,5));
+       if ($pass = true) {
+          inv_add(inv, oc_cert(birdnest), multiply(1,5));
+       }
     } else {
        inv_add(inv, $product, multiply(1, 5));
+       if ($pass = true) {
+         inv_add(inv, birdnest, multiply(1, 5));
+       }
     }
+
     if (random($deplete_chance) = 0) {
         $respawnrate = ~scale_by_playercount($respawnrate);
         loc_change(loc_param(next_loc_stage), $respawnrate);
