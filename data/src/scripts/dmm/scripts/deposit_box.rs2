@@ -1,12 +1,15 @@
-[inv_button1,depositbox_main:inv] @depositbox_deposit(last_slot, 1);
-[inv_button2,depositbox_main:inv] @depositbox_deposit(last_slot, 5);
-[inv_button3,depositbox_main:inv] @depositbox_deposit(last_slot, 10);
-[inv_button4,depositbox_main:inv] @depositbox_deposit(last_slot, ^max_32bit_int);
-[inv_button5,depositbox_main:inv] @depositbox_deposit(last_slot, null);
-[inv_buttond,depositbox_main:inv] inv_movetoslot(inv, inv, last_slot, last_targetslot);
+[inv_button1,depositbox_main:inv] @depositbox_withdraw(last_slot, 1);
+[inv_button2,depositbox_main:inv] @depositbox_withdraw(last_slot, 5);
+[inv_button3,depositbox_main:inv] @depositbox_withdraw(last_slot, 10);
+[inv_button4,depositbox_main:inv] @depositbox_withdraw(last_slot, ^max_32bit_int);
+[inv_button5,depositbox_main:inv] @depositbox_withdraw(last_slot, null);
+[inv_buttond,depositbox_main:inv] inv_movetoslot(depositbox, depositbox, last_slot, last_targetslot);
+//[if_button,depositbox_main:com_94] %depositbox_noted = 0;
+//[if_button,depositbox_main:com_93] %depositbox_noted = 1;
 [if_close,depositbox_main] @closedepositbox;
 
-[label,opendepositbox]
+[proc,opendepositbox]
+//%depositbox_noted = 0;
 ~reorganize_inv(depositbox);
 inv_transmit(inv, depositbox_side:inv);
 inv_transmit(depositbox, depositbox_main:inv);
@@ -15,35 +18,67 @@ if_openmain_side(depositbox_main, depositbox_side);
 [label,closedepositbox]
 inv_stoptransmit(depositbox_side:inv);
 inv_stoptransmit(depositbox_main:inv);
+queue(reorganize_depositbox, 0); // confirmed queued
 
-[proc,depositbox_deposit](int $slot, int $requested_number)
-def_obj $item = inv_getobj(inv, $slot);
+[queue,reorganize_depositbox]
+~reorganize_inv(depositbox);
+
+[label,depositbox_withdraw](int $slot, int $requested_number)
+def_obj $item = inv_getobj(depositbox, $slot);
 if ($requested_number <= 0) {
-    p_countdialog;
-    if (last_int <= 0) return;
-    $requested_number = last_int;
+   p_countdialog;
+   if (last_int <= 0) return;
+   $requested_number = last_int;
 }
-def_int $number = inv_total(inv, $item);
+
+def_int $number = inv_total(depositbox, $item);
 if ($requested_number < $number) $number = $requested_number;
-~depositbox_deposit_request(inv, $item, $number, $slot);
+
+~depositbox_withdraw_request(inv, $item, $number, $slot);
+
+[proc,depositbox_withdraw_request](inv $inv, obj $obj, int $amount, int $slot)
+if (inv_itemspace($inv, $obj, $amount, inv_size($inv)) = false) {
+  if (inv_freespace($inv) = 0) {
+     mes("You don't have enough inventory space.");
+     return;
+  }
+}
+def_int $overflow = inv_itemspace2($inv, $obj, $amount, inv_size($inv));
+def_int $withdraw = sub($amount, $overflow);
+
+if ($withdraw > 0) {
+ session_log(^log_moderator, "Withdrew <oc_debugname($obj)> x<tostring($withdraw)> from deposit box"); 
+ inv_moveitem(depositbox, $inv, $obj, $withdraw);
+}
 
 [proc,depositbox_deposit_request](inv $inv, obj $obj, int $amount, int $slot)
-def_int $overflow = inv_itemspace2(depositbox, oc_uncert($obj), $amount, ^max_32bit_int);
-if (sub(^max_32bit_int, $amount) < inv_total(depositbox, $obj)) {
-    mes("You already have a full stack of that item in your deposit box.");
-} else if ($overflow >= $amount) {
-    mes("You don't have enough space in your deposit box.");
-    return;
+if (oc_stackable($obj) = true) {
+   mes("You cannot keep stackable items in the safety deposit box.");
+   return;
 }
+
+if (oc_tradeable($obj) = false) {
+  mes("You cannot keep untradeable items in the safety deposit box.");
+  return;
+}
+
+def_int $overflow = inv_itemspace2(depositbox, $obj, $amount, ^max_32bit_int);
+if (sub(^max_32bit_int, $amount) < inv_total(depositbox, $obj)) {
+  mes("You already have a full stack of that item in the deposit box.");
+} else if ($overflow >= $amount) {
+  mes("You don't have enough space in your deposit box.");
+}
+
 def_int $deposit = sub($amount, $overflow);
 if ($deposit > 0) {
-    session_log(^log_moderator, "Deposited <oc_debugname($obj)> x<tostring($deposit)> into deposit box");
-    inv_moveitem_uncert($inv, depositbox, $obj, $deposit);
+    session_log(^log_moderator, "Deposited <oc_debugname($obj)> x<tostring($deposit)> into bank");
+    inv_moveitem($inv, depositbox, $obj, $deposit);
 }
 
 [proc,depositbox_check_nobreak](obj $obj)(boolean)
 if (~bank_find_obj_unbankable($obj) = true) {
-    mes("A magical force prevents you from depositing this item!");
+    mes("A magical force prevents you from using this item in the deposit box!");
     return(true);
 }
 return(false);
+

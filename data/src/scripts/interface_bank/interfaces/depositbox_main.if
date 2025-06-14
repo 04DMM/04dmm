@@ -717,7 +717,7 @@ width=151
 height=14
 font=b12
 shadowed=yes
-text=The Bank of RuneScape
+text=Safety Deposit Box
 colour=0xFF981F
 
 [com_90]
@@ -756,70 +756,70 @@ option3=Withdraw 10
 option4=Withdraw All
 option5=Withdraw X
 
-[com_93]
-type=graphic
-x=294
-y=283
-buttontype=select
-width=72
-height=36
-script1op1=pushvar,bank_noted
-script1=eq,1
-graphic=combatboxes,0
-activegraphic=combatboxes,1
+//[com_93]
+//type=graphic
+//x=294
+//y=283
+//buttontype=select
+//width=72
+//height=36
+//script1op1=pushvar,bank_noted
+//script1=eq,1
+//graphic=combatboxes,0
+//activegraphic=combatboxes,1
 
-[com_94]
-type=graphic
-x=150
-y=283
-buttontype=select
-width=72
-height=36
-script1op1=pushvar,bank_noted
-script1=eq,0
-graphic=combatboxes,0
-activegraphic=combatboxes,1
+//[com_94]
+//type=graphic
+//x=150
+//y=283
+//buttontype=select
+//width=72
+//height=36
+//script1op1=pushvar,bank_noted
+//script1=eq,0
+//graphic=combatboxes,0
+//activegraphic=combatboxes,1
 
-[com_95]
-type=text
-x=161
-y=287
-width=50
-height=14
-font=p12
-shadowed=yes
-text=Withdraw
-colour=0xFF981F
+//[com_95]
+//type=text
+//x=161
+//y=287
+//width=50
+//height=14
+//font=p12
+//shadowed=yes
+//text=Withdraw
+//colour=0xFF981F
 
-[com_96]
-type=text
-x=165
-y=300
-width=41
-height=14
-font=p12
-shadowed=yes
-text=as item
-colour=0xFF981F
+//[com_96]
+//type=text
+//x=165
+//y=300
+//width=41
+//height=14
+//font=p12
+//shadowed=yes
+//text=as item
+//colour=0xFF981F
 
-[com_97]
-type=text
-x=305
-y=287
-width=50
-height=14
-font=p12
-shadowed=yes
-text=Withdraw
-colour=0xFF981F
+//[com_97]
+//type=text
+//x=305
+//y=287
+//width=50
+//height=14
+//font=p12
+//shadowed=yes
+//text=Withdraw
+//colour=0xFF981F
 
-[com_98]
-type=text
-x=308
-y=300
-width=43
-height=14
-font=p12
-shadowed=yes
-text=as note
-colour=0xFF981F
+//[com_98]
+//type=text
+//x=308
+//y=300
+//width=43
+//height=14
+//font=p12
+//shadowed=yes
+//text=as note
+//colour=0xFF981F

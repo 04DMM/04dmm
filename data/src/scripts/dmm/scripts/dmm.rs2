@@ -37,9 +37,12 @@ if (inv_freespace(depositbox) > 0) {
 }
 
 [proc,view_depositbox](int $last_slot)
-inv_transmit(inv, bank_side:inv);
-inv_transmit(depositbox, bank_main:inv);
-if_openmain_side(bank_main, bank_side);
+if (~inzone_coord_pair_table(bank_zones, coord) = false) {
+   mes("You can't view this outside of a bank.");
+   return;
+}
+
+~opendepositbox;
 
 [proc,empty_depositbox](int $last_slot)
 if (~inzone_coord_pair_table(bank_zones, coord) = true) {

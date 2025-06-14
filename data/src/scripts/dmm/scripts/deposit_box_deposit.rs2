@@ -1,0 +1,25 @@
+[inv_button1,depositbox_side:inv] @depositbox_deposit(last_slot, 1);
+[inv_button2,depositbox_side:inv] @depositbox_deposit(last_slot, 5);
+[inv_button3,depositbox_side:inv] @depositbox_deposit(last_slot, 10);
+[inv_button4,depositbox_side:inv] @depositbox_deposit(last_slot, ^max_32bit_int);
+[inv_button5,depositbox_side:inv] @depositbox_deposit(last_slot, null);
+[inv_buttond,depositbox_side:inv] inv_movetoslot(inv, inv, last_slot, last_targetslot);
+
+[label,depositbox_deposit](int $slot, int $requested_number)
+def_obj $item = inv_getobj(inv, $slot);
+
+if ($requested_number <= 0) {
+  p_countdialog;
+  if (last_int <= 0) return;
+  $requested_number = last_int;
+}
+
+def_int $number = inv_total(inv, $item);
+if ($requested_number < $number ) $number = $requested_number;
+
+if (~bank_find_obj_unbankable($item) = true | inv_freespace(depositbox) < $number) {
+  mes("You don't have enough space to deposit that many.");
+  return;
+}
+
+~depositbox_deposit_request(inv, $item, $number, $slot);
