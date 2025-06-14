@@ -128,6 +128,9 @@ if (random($chance) = ^true) {
     // deplete
     def_int $respawn = ~scale_by_playercount(db_getfield($data, mining_table:rock_respawnrate, 0));
     // Temp note: dur does not need updated
+    if (%sigil_mining2 = true) {
+       $respawn = 1;
+    }
     loc_change(loc_param(next_loc_stage_mining), $respawn);
     sound_synth(sound_230, 0, 0); // Sudden says its sound_230
     anim(null, 0);
@@ -186,6 +189,10 @@ if (random($chance) = ^true) {
 } else if (stat_random(mining, db_getfield($data, mining_table:rock_successchance, 0)) = true) {
     // deplete
     def_int $respawn = ~scale_by_playercount(db_getfield($data, mining_table:rock_respawnrate, 0));
+
+    if (%sigil_mining2 = true) {
+       $respawn = 1;
+    }
     // Temp note: dur does not need updated
     loc_change(loc_param(next_loc_stage_mining), $respawn);
     sound_synth(sound_230, 0, 0); // Sudden says its sound_230
@@ -244,6 +251,10 @@ if (stat_random(mining, $low, $high) = true) {
     // p_delay(0);
     // deplete
     def_int $respawn = ~scale_by_playercount(db_getfield($data, mining_table:rock_respawnrate, 0));
+
+    if (%sigil_mining2 = true) { 
+       $respawn = 1;
+    }
     // Temp note: dur does not need updated
     loc_change(loc_param(next_loc_stage_mining), $respawn);
     // stop mining, give ore and xp.
