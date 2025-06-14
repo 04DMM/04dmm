@@ -151,3 +151,7 @@ type=boolean
 [sigil_agility2]
 scope=perm
 type=boolean
+
+[sigil_herb2_cooldown]
+scope=perm
+type=int

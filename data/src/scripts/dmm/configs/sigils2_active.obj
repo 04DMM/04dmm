@@ -15,7 +15,7 @@ recol2d=8456
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_smith2
 param=no_alchemy,1
 
@@ -36,7 +36,7 @@ recol2d=8456
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_mining2
 param=no_alchemy,1
 
@@ -57,7 +57,7 @@ recol2d=8456
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_wc2
 param=no_alchemy,1
 
@@ -78,7 +78,8 @@ recol2d=8456
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Activate
+iop2=Untap
 param=next_obj_stage,sigil_herblore2
 param=no_alchemy,1
 
@@ -95,7 +96,7 @@ model=model_2764_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_rc3
 param=no_alchemy,1
 
@@ -112,7 +113,7 @@ model=model_2765_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_fishing2
 param=no_alchemy,1
 
@@ -129,7 +130,7 @@ model=model_2766_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_cooking1
 param=no_alchemy,1
 
@@ -146,6 +147,6 @@ model=model_2767_obj
 weight=12g
 members=yes
 tradeable=no
-iop1=Deactivate
+iop1=Untap
 param=next_obj_stage,sigil_agility2
 param=no_alchemy,1
