@@ -202,19 +202,19 @@ if ($random < 8) {
 } else if ($random < 33) {
    return (zurielstaff, 1);
 } else if ($random < 36) {
-   return (sigil_melee1, 1);
+   return (~randomsigilt2, 1);
 } else if ($random < 39) {
-   return (sigil_range1, 1);
+   return (~randomsigilt2, 1);
 } else if ($random < 42) {
-   return (sigil_range3, 1);
+   return (~randomsigilt2, 1);
 } else if ($random < 45) {
-   return (sigil_life1, 1);
+   return (~randomsigilt2, 1);
 } else if ($random < 48) {
-   return (sigil_reach1, 1);
+   return (~randomsigilt2, 1);
 } else if ($random < 51) {
-   return (sigil_mage1, 1);
+   return (~randomsigilt2, 1);
 } else if ($random < 54) {
-   return (sigil_random1, 1);
+   return (~randomsigilt2, 1);
 }
 
 [proc,randomjunk]()(namedobj, int) // guess
