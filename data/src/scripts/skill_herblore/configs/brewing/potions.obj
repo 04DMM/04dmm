@@ -1154,3 +1154,171 @@ recol1d=28570
 weight=25g
 members=yes
 tradeable=no
+
+// Super restores
+[4dose2statrestore]
+name=Super Restore(4)
+desc=4 doses of stat restoration potion.
+iop1=Drink
+cost=110
+model=model_2789_obj
+recol1s=15855
+recol1d=31744
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,3dose2statrestore
+param=decant_potion_enum,potion_2restore
+param=dose_count,4
+// jagex name
+
+// Super restores
+[3dose2statrestore]
+name=Super Restore(3)
+desc=3 doses of stat restoration potion.
+iop1=Drink
+cost=110
+model=model_2697_obj
+recol1s=15855
+recol1d=31744
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,2dose2statrestore
+param=decant_potion_enum,potion_2restore
+param=dose_count,3
+// jagex name
+
+// Super restores
+[2dose2statrestore]
+name=Super Restore(2)
+desc=2 doses of stat restoration potion.
+iop1=Drink
+cost=110
+model=model_2384_obj
+recol1s=15855
+recol1d=31744
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,1dose2statrestore
+param=decant_potion_enum,potion_2restore
+param=dose_count,2
+// jagex name
+
+// Super restores
+[1dose2statrestore]
+name=Super Restore(1)
+desc=1 dose of stat restoration potion.
+iop1=Drink
+cost=110
+model=model_2621_obj
+recol1s=15855
+recol1d=31744
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_2restore
+param=dose_count,1
+// jagex name
+
+// Saradomin Brews
+[4dosesarabrew]
+name=Saradomin Brew(4)
+desc=4 dose of saradomin brew.
+iop1=Drink
+cost=110
+model=model_2789_obj
+recol1s=15855
+recol1d=32640
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,3dosesarabrew
+param=decant_potion_enum,potion_sarabrew
+param=dose_count,4
+// jagex name
+
+// Saradomin Brews
+[3dosesarabrew]
+name=Saradomin Brew(3)
+desc=3 dose of saradomin brew.
+iop1=Drink
+cost=110
+model=model_2697_obj
+recol1s=15855
+recol1d=32640
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,2dosesarabrew
+param=decant_potion_enum,potion_sarabrew
+param=dose_count,3
+// jagex name
+
+// Saradomin Brews
+[2dosesarabrew]
+name=Saradomin Brew(2)
+desc=2 dose of saradomin brew.
+iop1=Drink
+cost=110
+model=model_2384_obj
+recol1s=15855
+recol1d=32640
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,1dosesarabrew
+param=decant_potion_enum,potion_sarabrew
+param=dose_count,2
+// jagex name
+
+// Saradomin Brews
+[1dosesarabrew]
+name=Saradomin Brew(1)
+desc=1 dose of saradomin brew.
+iop1=Drink
+cost=110
+model=model_2621_obj
+recol1s=15855
+recol1d=32640
+2dyof=-1
+2dzoom=550
+2dyan=1996
+2dxan=84
+weight=35g
+category=category_69
+members=yes
+param=next_obj_stage,vial_empty
+param=decant_potion_enum,potion_sarabrew
+param=dose_count,1
+// jagex name

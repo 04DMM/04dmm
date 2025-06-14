@@ -24,6 +24,12 @@ if(last_useitem = ground_bat_bones) {
 }
 ~attempt_brew_potion(last_useslot, last_slot);
 
+[opheldu,snapdragonvial]
+~attempt_brew_potion(last_useslot, last_slot);
+
+[opheldu,toadflaxvial]
+~attempt_brew_potion(last_useslot, last_slot);
+
 [opheldu,marrentillvial]
 ~attempt_brew_potion(last_useslot, last_slot);
 
@@ -76,6 +82,9 @@ if(last_useitem = ground_bat_bones) {
 ~attempt_brew_potion(last_useslot, last_slot);
 
 [opheldu,wine_of_zamorak]
+~attempt_brew_potion(last_useslot, last_slot);
+
+[opheldu,crushednest]
 ~attempt_brew_potion(last_useslot, last_slot);
 
 [proc,attempt_brew_potion](int $use_slot, int $last_slot)(boolean)

@@ -176,3 +176,35 @@ model=model_2742_obj
 2dxan=136
 weight=100g
 members=yes
+
+[crushednest]
+name=Crushed nest
+desc=Finely ground birds and bird shit.
+model=model_2742_obj
+recol1s=21140
+recol1d=24135
+2dxof=-6
+2dzoom=1210
+2dyan=1892
+2dxan=264
+members=yes
+cost=20
+weight=7g
+param=brew_potion_struct,3dosesarabrew
+// guessed name
+
+[birdnest]
+model=model_2678_obj
+2dxof=4
+2dyof=-8
+2dzoom=840
+2dyan=132
+2dxan=248
+members=yes
+cost=20
+weight=7g
+name=Bird nest
+desc=Useful for making potions.
+param=grindable_ingredient_refined,crushednest
+param=grindable_ingredient_message,You grind the nest to dust.
+// jagex name
