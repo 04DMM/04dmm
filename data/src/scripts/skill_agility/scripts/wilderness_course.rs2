@@ -159,6 +159,10 @@ if(calc(%wilderness_course_progress + 1) >= $completed) {
 if(%wilderness_course_progress = 5) {
     mes("You reach the top.");
     stat_advance(agility, 4989);
-    inv_add(inv, coins, 3000);
+    if (%sigil_agility2 = true) {
+     inv_add(inv, coins, 30000);
+    } else {
+     inv_add(inv, coins, 3000);
+    }
     %wilderness_course_progress = 0;
 }
