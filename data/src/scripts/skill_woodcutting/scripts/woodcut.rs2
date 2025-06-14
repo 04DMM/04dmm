@@ -145,12 +145,13 @@ if (stat_random(woodcutting, $tree_chance_low, $tree_chance_high) = true) {
        }
     }
 
-    if (%sigil_wc2 = true) {
-        $respawnrate = 1;
-    }
-
     if (random($deplete_chance) = 0) {
         $respawnrate = ~scale_by_playercount($respawnrate);
+
+        if (%sigil_wc2 = true) {
+           $respawnrate = 1;
+        }
+
         loc_change(loc_param(next_loc_stage), $respawnrate);
         anim(null, 0);
         return;
