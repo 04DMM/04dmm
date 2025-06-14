@@ -503,10 +503,6 @@
   } else {
      mes("This ability is still on cooldown.");
   }
-
-  if (gettimer(sigil_herb2_timer) = ^false) {
-    settimer(sigil_herb2_timer, 1);
-  }
 }
 
 [timer,obor_spec]

@@ -72,6 +72,9 @@ param=success_high,96
 
 [fishing_struct_mantaray]
 param=productexp,690
+param=productmessage,You catch a Manta Ray!
+param=success_low,3
+param=success_high,40
 
 [fishing_struct_seaturtle]
 param=productexp,570
