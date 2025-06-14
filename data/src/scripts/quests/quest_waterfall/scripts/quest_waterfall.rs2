@@ -270,7 +270,7 @@ mes("and are washed up by the riverside.");
 
 [oploc1,loc_2000]
 mes("You open the door and walk through."); // RS3
-p_teleport(0_39_54_15_7);
+p_teleport(0_39_53_31_21);
 
 [oploc1,loc_2022]
 mes("You climb in the barrel and start rocking.");
