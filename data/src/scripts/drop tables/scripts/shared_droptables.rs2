@@ -295,13 +295,13 @@ if ($random < 1) {
    $r1 = cert_kwuarm;
    $count = 300;
 } else if ($random < 3) {
-   $r1 = rune_full_helm_saradomin;
+   $r1 = ~randomsigilt3;
 } else if ($random < 4) {
-   $r1 = amulet_of_glory;
+   $r1 = ~randomsigilt3;
 } else if ($random < 5) {
    $r1 = robinhoodhat;
 } else if ($random < 6) {
-   $r1 = sigil_reach1;
+   $r1 = ~randomsigilt3;
 }
 
 return($g1, $g2, $g3, $r1, $count);
@@ -327,13 +327,13 @@ if ($random < 1) {
    $r1 = cert_irit_leaf;
    $count = 300;
 } else if ($random < 3) {
-   $r1 = rune_full_helm_zamorak;
+   $r1 = ~randomsigilt3;
 } else if ($random < 4) {
-   $r1 = amulet_of_glory;
+   $r1 = ~randomsigilt3;
 } else if ($random < 5) {
    $r1 = boots_wizard;
 } else if ($random < 6) {
-   $r1 = sigil_mage1;
+   $r1 = ~randomsigilt3;
 }
 
 return($g1, $g2, $g3, $r1, $count);
@@ -359,11 +359,11 @@ if ($random < 1) {
 } else if ($random < 3) {
    $r1 = boots_ranger;
 } else if ($random < 4) {
-   $r1 = sigil_life1;
+   $r1 = ~randomsigilt3;
 } else if ($random < 5) {
-   $r1 = sigil_smith1;
+   $r1 = ~randomsigilt3;
 } else if ($random < 6) {
-   $r1 = sigil_range1;
+   $r1 = ~randomsigilt3;
 }
 
 return($g1, $g2, $g3, $r1, $count);

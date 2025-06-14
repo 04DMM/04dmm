@@ -1,0 +1,43 @@
+[proc,randomsigilt3]()(namedobj)
+
+def_int $random = random(128);
+
+if ($random < 15) {
+   return (sigil_random1);
+} else if ($random < 30) {
+   return (sigil_melee1);
+} else if ($random < 45) {
+   return (sigil_range3);
+} else if ($random < 60) {
+   return (sigil_mage1);
+} else if ($random < 75) {
+   return (sigil_defence1);
+} else if ($random < 90) {
+   return (sigil_thief1);
+} else if ($random < 105) {
+   return (sigil_rc3);
+}
+
+[proc,randomsigilt2]()(namedobj)
+
+def_int $random = random(128);
+
+if ($random < 15) {
+   return (sigil_range1);
+} else if ($random < 30) {
+   return (sigil_life1);
+} else if ($random < 45) {
+   return (sigil_mining2);
+} else if ($random < 60) {
+   return (sigil_wc2);
+} else if ($random < 75) {
+   return (sigil_herblore2);
+} else if ($random < 90) {
+   return (sigil_fishing2);
+} else if ($random < 105) {
+   return (sigil_agility2);
+} else if ($random < 120) {
+   return (sigil_smith2);
+} else if ($random < 128) {
+   return (sigil_bananas1);
+}
