@@ -175,8 +175,6 @@
             %sigil_defence1 = false;
             ~update_bonuses;
             ~player_combat_stat;
-
-        // New sigil destroy state reset
         case sigil_smith2_active :
             %sigil_smith2 = false;
         case sigil_mining2_active :
@@ -270,8 +268,6 @@
                 %sigil_mage1 = true;
             case sigil_alch1 :
                 %sigil_alch1 = true;
-
-            // New sigils
             case sigil_smith2 :
                 %sigil_smith2 = true;
             case sigil_mining2 :
@@ -357,8 +353,6 @@
             %sigil_defence1 = false;
             ~update_bonuses;
             ~player_combat_stat;
-
-        // New sigils
         case sigil_smith2_active :
             %sigil_smith2 = false;
         case sigil_mining2_active :

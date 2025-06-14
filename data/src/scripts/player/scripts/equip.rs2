@@ -45,15 +45,17 @@ if (p_finduid(uid) = true) {
         }
     }
 
-    if (oc_category($previous) = weapon_staff & ~player_autocast_enabled = true) {
+    if ($previous ! null & oc_category($previous) = weapon_staff & ~player_autocast_enabled = true) {
+        mes("trigger here.");
         %lastautocast_spell = %autocast_spell;
         //mes("Saving previous autocast spell. <tostring(%lastautocast_spell)>");
     }
 
     ~update_all($previous);
 
-    if (oc_category($obj) = weapon_staff & %lastautocast_spell ! null) {
+    if ($previous ! null & oc_category($obj) = weapon_staff & %lastautocast_spell > 0) {
         %iban_staff_charges = 2000;
+        mes("trigger there.");
         ~set_autocast_spell(%lastautocast_spell);
         if_close;
         if (%attackstyle_magic = 0) {
@@ -66,7 +68,7 @@ if (p_finduid(uid) = true) {
         }
         //mes("Autocasting previous spell. <tostring(%autocast_spell)>");
     } else {
-       //%autocast_spell = null;
+       %autocast_spell = null;
        %attackstyle_magic = 0;
     }
 
