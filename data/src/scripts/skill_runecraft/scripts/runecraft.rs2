@@ -65,6 +65,11 @@ def_int $level = stat(runecraft);
 //}
 
 def_int $total_ess = inv_total(inv, blankrune);
+
+if (%sigil_rc3 = true) {
+   $total_ess = 1;
+}
+
 if ($total_ess = 0) {
     // osrs has rune essences. But when mining rune ess in this version it says rune stones
     // so this is just a guess
