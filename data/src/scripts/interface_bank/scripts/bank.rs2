@@ -116,7 +116,7 @@ return(false);
 [proc,bank_find_obj_unbankable](obj $obj)(boolean)
 switch_obj ($obj) {
     case lootbucket : 
-         if (inv_freespace(lootbucket) ! 28) {
+         if (inv_freespace(lootbucket) > 27) {
             return(false);
          } else {
             mes("You can't bank a loot bucket with items inside.");

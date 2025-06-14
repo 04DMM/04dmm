@@ -1,6 +1,7 @@
 //Lootbucket 
 [opheld2,lootbucket] ~open_lootbucket(last_slot);
 [opheld3,lootbucket] ~empty_lootbucket(last_slot);
+[opheld4,lootbucket] ~view_lootbucket(last_slot);
 [opheld5,lootbucket] ~destroy_lootbucket(last_slot);
 
 //Lootbucket open
@@ -43,6 +44,15 @@ if (~inzone_coord_pair_table(bank_zones, coord) = false) {
 }
 
 ~opendepositbox;
+
+[if_close,lootbucket_main] @closelootbucket_if;
+
+[label,closelootbucket_if]
+inv_stoptransmit(lootbucket_main:inv);
+
+[proc,view_lootbucket](int $last_slot)
+inv_transmit(lootbucket, lootbucket_main:inv);
+if_openmain(lootbucket_main);
 
 [proc,empty_depositbox](int $last_slot)
 if (~inzone_coord_pair_table(bank_zones, coord) = true) {
