@@ -595,6 +595,15 @@ data=consumable,1dosestatrestore
 data=consume_message1,You drink some of your stat restoration potion.
 data=message_delay,1
 
+[super_restore_potion_consume_messages]
+table=consume_messages_table
+data=consumable,4dose2statrestore
+data=consumable,3dose2statrestore
+data=consumable,2dose2statrestore
+data=consumable,1dose2statrestore
+data=consume_message1,You drink some of your stat restoration potion.
+data=message_delay,1
+
 [defence_potion_consume_messages]
 table=consume_messages_table
 data=consumable,4dose1defense
@@ -656,6 +665,15 @@ data=consumable,4dosepotionofzamorak
 data=consumable,3dosepotionofzamorak
 data=consumable,2dosepotionofzamorak
 data=consumable,1dosepotionofzamorak
+data=consume_message1,You drink some of the foul liquid.
+data=message_delay,1
+
+[saradomin_brew_consume_messages]
+table=consume_messages_table
+data=consumable,4dosesarabrew
+data=consumable,3dosesarabrew
+data=consumable,2dosesarabrew
+data=consumable,1dosesarabrew
 data=consume_message1,You drink some of the foul liquid.
 data=message_delay,1
 

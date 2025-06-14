@@ -26,6 +26,7 @@ model=model_2343_obj
 2dxan=252
 weight=7g
 param=brew_potion_struct,3dose1restore
+param=brew_potion_struct_secondary,3dose2statrestore
 // jagex name
 
 [limpwurt_root]
