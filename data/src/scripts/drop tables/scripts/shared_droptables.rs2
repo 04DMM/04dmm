@@ -11,7 +11,11 @@ $random = random(128);
 
 def_namedobj $herb;
 
-if ($random < 32) {
+if ($random < 3) {
+    $herb = unidentified_snapdragon;
+} else if ($random < 6) {
+    $herb = unidentified_toadflax;
+} else if ($random < 32) {
     //return (unidentified_guam, 1);
     $herb = unidentified_guam;
 } else if ($random < 56) {
