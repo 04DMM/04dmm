@@ -113,7 +113,6 @@ stat_advance($stat, multiply($base_level, 100)); // stat level * 10
 sound_synth(found_gem, 0, 0);
 
 mes("Your wish has been granted! You have been awarded <tostring(multiply($base_level, 10))> <enum(stat, string, stat_names, $stat)> experience!");
-mes("The genie also completes a random quest for you!");
 ~complete_random_quest;
 
 [proc,complete_random_quest]

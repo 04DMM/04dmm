@@ -64,13 +64,13 @@ def_int $level = stat(runecraft);
 //    return;
 //}
 
-def_int $total_ess = 1;
-//if ($total_ess = 0) {
-//    // osrs has rune essences. But when mining rune ess in this version it says rune stones
-//    // so this is just a guess
-//    ~mesbox("You do not have any rune stones to bind.");
-//    return;
-//}
+def_int $total_ess = inv_total(inv, blankrune);
+if ($total_ess = 0) {
+    // osrs has rune essences. But when mining rune ess in this version it says rune stones
+    // so this is just a guess
+    ~mesbox("You do not have any rune stones to bind.");
+    return;
+}
 
 anim(human_runecraft, 0);
 spotanim_pl(runecrafting, 96, 0);
@@ -90,11 +90,11 @@ if(sub(^max_32bit_int, inv_total(inv, $rune)) < $craft_count) {
 // if $craft_count uses free_space as the value, it may not round exactly to $rune_count_per_ess
 $total_ess = calc($craft_count / $rune_count_per_ess);
 
-//inv_del(inv, blankrune, $total_ess);
+inv_del(inv, blankrune, $total_ess);
 stat_advance(runecraft, calc($craft_count * db_getfield($data, runecraft_table:experience, 0)));
 // later revs they just use oc_name($rune), i think after 2007 or so
 mes("You bind the temple's power into <db_getfield($data, runecraft_table:name, 0)> Runes.");
-inv_add(inv, $rune, multiply($craft_count, 5));
+inv_add(inv, $rune, multiply($craft_count, 1));
 p_delay(1);
 
 
