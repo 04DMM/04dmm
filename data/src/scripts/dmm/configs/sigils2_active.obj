@@ -62,7 +62,7 @@ param=next_obj_stage,sigil_wc2
 param=no_alchemy,1
 
 [sigil_herblore2_active]
-name=Sigil of the Herbalist (t)
+name=Sigil of Potion Making (t)
 desc=Increased Herblore efficiency. 
 cost=0
 model=model_2759_obj
@@ -84,7 +84,7 @@ param=next_obj_stage,sigil_herblore2
 param=no_alchemy,1
 
 [sigil_rc3_active]
-name=Sigil of Rune Crafting (Active)
+name=Sigil of Essence (t)
 desc=Increased Runecrafting efficiency. (Active)
 cost=0
 model=model_2759_obj
@@ -105,7 +105,7 @@ param=next_obj_stage,sigil_rc3
 param=no_alchemy,1
 
 [sigil_fishing2_active]
-name=Sigil of the Angler (Active)
+name=Sigil of the Angler (t)
 desc=Increased Fishing efficiency. (Active)
 cost=0
 model=model_2759_obj
@@ -126,7 +126,7 @@ param=next_obj_stage,sigil_fishing2
 param=no_alchemy,1
 
 [sigil_cooking1_active]
-name=Sigil of the Chef (Active)
+name=Sigil of the Chef (t)
 desc=Increased Cooking efficiency. (Active)
 cost=0
 model=model_2759_obj
@@ -147,7 +147,7 @@ param=next_obj_stage,sigil_cooking1
 param=no_alchemy,1
 
 [sigil_agility2_active]
-name=Sigil of the Acrobat (Active)
+name=Sigil of the Acrobat (t)
 desc=Increased Agility efficiency. (Active)
 cost=0
 model=model_2759_obj
