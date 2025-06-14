@@ -233,7 +233,7 @@ if ($random < 25) {
 }
 
 [opheld1,starterkit]
-if (inv_freespace(inv) < 13) {
+if (inv_freespace(inv) < 15) {
   mes("You need 13 inventory spaces to open the Starter kit.");
   return;
 }
@@ -243,6 +243,8 @@ inv_add(inv, starterbow, 1);
 inv_add(inv, startersword, 1);
 inv_add(inv, starterstaff, 1);
 inv_add(inv, antidragonbreathshield, 1);
+inv_add(inv, lootbucket, 1);
+inv_add(inv, depositbox, 1);
 %starterstaff_charges = 500;
 %starterbow_charges = 1000;
 
