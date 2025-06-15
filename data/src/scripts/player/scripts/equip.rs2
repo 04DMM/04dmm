@@ -67,7 +67,9 @@ if (p_finduid(uid) = true) {
             return;
         }
         //mes("Autocasting previous spell. <tostring(%autocast_spell)>");
-    } else {
+    } 
+
+    if (oc_wearpos($obj) = ^wearpos_rhand & ($previous ! $obj)) {
        %autocast_spell = null;
        %attackstyle_magic = 0;
     }
