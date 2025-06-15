@@ -63,10 +63,11 @@ if ($weapon = null) {
     if ($damage > 0 & $poison_severity > 0 & random(4) = 0) { // 1/4 chance to poison
         .queue(poison_player, 0, $poison_severity);
     }
+
+    def_int $rate = oc_param($weapon, attackrate);
+ 
+    if (%sigil_melee4 = true & $rate >= 5) {
+       %action_delay = add(map_clock, sub($rate, 1));
+    }
 }
 
-if (%sigil_melee4 = true) {
-  if (%action_delay >= 5) {
-     %action_delay = sub(%action_delay, 1);
-  }
-}

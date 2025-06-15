@@ -60,11 +60,11 @@ if ($weapon = null) {
     %action_delay = add(map_clock, 4);
 } else {
     %action_delay = add(map_clock, oc_param($weapon, attackrate));
-}
 
-if (%sigil_melee4 = true) {
-    if (%action_delay >= 5) {
-       %action_delay = sub(%action_delay, 1);
+    def_int $rate = oc_param($weapon, attackrate);
+
+    if (%sigil_melee4 = true & $rate >= 5) {
+       %action_delay = add(map_clock, sub($rate, 1));
     }
 }
 
