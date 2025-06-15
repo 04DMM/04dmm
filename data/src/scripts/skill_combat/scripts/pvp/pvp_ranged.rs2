@@ -60,15 +60,18 @@ if ($rhand = null) {
     if ($damage > 0 & $poison_severity > 0 & random(4) = 0) { // 1/4 chance to poison
         .queue(poison_player, 0, $poison_severity);
     }
+
+    def_int $rate = oc_param($rhand, attackrate);
+
+    if (%sigil_range4 = true) {
+       if ($rate >= 5) {
+         %action_delay = add(map_clock, sub($rate, 1));
+       }
+    }
+
 }
 if (%damagestyle = ^style_ranged_rapid) {
     %action_delay = sub(%action_delay, 1);
-}
-
-if (%sigil_range4 = true) {
-    if (%action_delay >= 5) {
-       %action_delay = sub(%action_delay, 1);
-    }
 }
 
 ~ranged_dropammo_pvp($ammo, 5, sub(divide($delay, 30), 2));

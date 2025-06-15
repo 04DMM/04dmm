@@ -28,8 +28,12 @@ if (%zurielswill > 0 & map_multiway(npc_coord) = true) {
 if (%saradomin_strike_casts = ^mage_arena_spell_last_cast) {
     mes("You can now cast Saradomin Strike outside the Arena.");
     %saradomin_strike_casts = ^mage_arena_spell_finished;
-    ~mesbox("Congratulations. Your ability to summon a Saradomin Strike has|improved. You may now use this spell outside of the Arena."); // osr>    %saradomin_strike_casts = add(%saradomin_strike_casts, 1);
+    ~mesbox("Congratulations. Your ability to summon a Saradomin Strike has|improved. You may now use this spell outside of the Arena.");
+} else if (%saradomin_strike_casts < ^mage_arena_spell_last_cast) {
+    %saradomin_strike_casts = add(%saradomin_strike_casts, 1);
 }
+
+
 
 [proc,cast_saradomin_pvm](dbrow $spell_data)
 if (~player_npc_hit_roll(^magic_style) = true) {
